@@ -1,0 +1,31 @@
+[project]
+name = 'counter-radicalize'
+version = '0.1.0'
+description = 'Analysis of extremist rhetoric using prosody, semantics, and argument mapping.'
+authors = [
+    {name = 'frammenti',email = 'fra.mmenti@inventati.org'}
+]
+license = 'GPL-3.0'
+license-files = ['LICENSE']
+readme = 'README.md'
+requires-python = '>=3.13,<3.14'
+dependencies = [
+]
+
+[tool.poetry]
+packages = [{ include = 'models/vox_profile_release' }]
+
+[tool.poetry.group.dev.dependencies]
+torch = {extras = ['audio'], version = '^2.8.0'}
+torchinfo = "^1.8.0"
+transformers = "^4.55.0"
+datasets = "^4.0.0"
+ipykernel = "^6.30.1"
+matplotlib = "^3.10.5"
+ipywidgets = "^8.1.7"
+loralib = "^0.1.2"
+torchcodec = "^0.6.0"
+
+[build-system]
+requires = ['poetry-core>=2.0.0,<3.0.0']
+build-backend = 'poetry.core.masonry.api'
