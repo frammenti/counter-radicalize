@@ -6,7 +6,7 @@
 </script>
 
 <template>
-    <img src="/counter-radicalize/web-app-manifest-512x512.png" alt="Emotion Circle" />
+    <img src="/web-app-manifest-512x512.png" alt="Emotion Circle" />
 </template>
 
 <style scoped>
