@@ -33,12 +33,12 @@ const playtime = ref<number>(0)
 
 <style scoped>
 #transcript {
-  max-height: 50vh;
+  max-height: 40%;
   overflow-y: scroll;
 }
 
 #circle {
-  height: 30vh;
+  height: 30%;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -6,5 +6,12 @@
 </script>
 
 <template>
-    <p>Emotion Circle</p>
+    <img src="/counter-radicalize/web-app-manifest-512x512.png" alt="Emotion Circle" />
 </template>
+
+<style scoped>
+img {
+  width: auto;
+  height: 80%;
+}
+</style>
