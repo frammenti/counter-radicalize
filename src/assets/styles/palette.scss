@@ -1,0 +1,23 @@
+@use 'sass:color';
+@use 'sass:list';
+
+$blue: rgb(20, 96, 189);
+$light-blue: rgb(116, 157, 206);
+$black: rgb(36, 36, 36);
+$white: rgb(255, 255, 255);
+$slate: rgb(33, 53, 71);
+
+$theme: (
+  primary: $blue $light-blue,
+  shadow: color.change($blue, $alpha: 0.75) color.change($light-blue, $alpha: 0.75),
+  bg: $white $black,
+  text: $slate color.change($white, $alpha: 0.87)
+);
+
+@mixin set-theme() {
+  @each $var, $colors in $theme {
+    $light: list.nth($colors, 1);
+    $dark: list.nth($colors, 2);
+    --#{$var}-color: light-dark(#{$light}, #{$dark});
+  }
+}
