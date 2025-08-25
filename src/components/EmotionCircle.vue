@@ -1,7 +1,9 @@
 <script setup lang='ts'>
 // import type { Segment } from '../typing/segment'
+import type { Segment } from '../types/segment'
 
 // const props = defineProps<{ playtime: number, segments: Segment[] }>()
+const props = defineProps<{ data: Segment | undefined }>()
 
 </script>
 

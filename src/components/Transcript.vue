@@ -1,22 +1,13 @@
 <script setup lang='ts'>
-import { shallowRef, computed, watch } from 'vue'
+import { shallowRef, watch } from 'vue'
 import type { Segment } from '../types/segment'
 
-const playtime = defineModel<number>('playtime', { type: Number, required: true });
-const props = defineProps<{ segments: Segment[] }>()
+const playtime = defineModel('playtime', { type: Number, required: true });
+const props = defineProps<{ segments: Segment[], active: number }>()
 const spans = shallowRef<HTMLSpanElement[]>([])
 
-// Sync index of active segment
-function atMoment(seg: Segment, t: number): boolean {
-  let start = seg.start > 0 ? seg.start - 0.01 : 0
-  return start < t && t < seg.end
-}
-const active = computed(() =>
-  props.segments.findIndex(seg => atMoment(seg, playtime.value))
-)
-
 // Scroll active segment into view
-watch(active, i => {
+watch(() => props.active, i => {
   let el = spans.value[i]
   if (el) {
     el.scrollIntoView({ behavior: 'smooth', block: 'center' })
@@ -49,7 +40,7 @@ watch(active, i => {
 }
 .transcript-body span {
   transition: all 0.2s ease-in-out;
-  padding: 0.25rem 0;
+  padding: 0.3rem 0;
 }
 .transcript-body span:hover {
   text-shadow: var(--shadow-color) 0 0 15px;
