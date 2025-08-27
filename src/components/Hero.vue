@@ -35,7 +35,7 @@
   grid-template-columns: 0.25fr 0.8fr 1.1fr;
 }
 h1 {
-  font-size: 5rem;
+  font-size: 4.5rem;
   font-feature-settings: 'kern' 0;
   font-variation-settings: 'wght' 600;
   cursor: crosshair;
@@ -56,7 +56,7 @@ h1 {
   gap: 1.5rem;
 }
 p {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   text-wrap: balance;
   margin: 0;
 }

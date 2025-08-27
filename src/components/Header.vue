@@ -23,19 +23,19 @@
 @use '../assets/styles/palette' as *;
 header {
   grid-template-columns: 1fr 2.5fr 1fr;
-  font-size: 1.05rem;
   line-height: 1.4;
   padding-inline: 1.2rem;
   padding-block: 0.5rem;
 }
 .logo {
   font-family: $title-font-family;
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 1;
   letter-spacing: -1px;
 }
 header a {
   color: resp($text-color);
+  font-weight: 600;
 }
 ul {
   display: contents;
@@ -45,7 +45,7 @@ li {
   display: block;
   text-align: center;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1280px) {
   header {
     grid-template-columns: 1fr 3fr 1fr;
   }
