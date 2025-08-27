@@ -1,7 +1,7 @@
 <template>
   <header class='grid'>
     <div class='logo grid-item-1'>
-      <a href='/'>Con/rad</a>
+      <a href='/counter-radicalize/'>Con/rad</a>
     </div>
     <nav id='site-nav' class='grid grid-item-2'>
       <ul>

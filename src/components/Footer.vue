@@ -25,7 +25,8 @@ footer {
   background-color: resp($text-color);
   color: resp($background-color);
   font-size: 0.9rem;
-  padding: 2rem;
+  padding-inline: 2rem;
+  padding-block: 2rem;
 }
 h3, p {
   margin: 0;
@@ -58,12 +59,16 @@ svg {
 }
 @media screen and (max-width: 768px) {
   footer {
-    padding: 3rem;
+    padding-inline: 3rem;
+    padding-block: 3rem;
   }
   .grid {
     grid-template-columns: unset;
     grid-template-areas: 'a' 'c' 'b';
     gap: 2rem;
+  }
+  .grid-item-2 {
+    padding-block-start: 1rem;
   }
   .grid-item-3 {
     justify-self: start;

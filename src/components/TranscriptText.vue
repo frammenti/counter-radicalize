@@ -64,10 +64,12 @@ span {
   transition: background-color 150ms ease;
   cursor: pointer;
 }
-span:hover {
-  background-color: resp($shadow-color);
-}
 .active {
   color: resp($link-color);
+}
+@media (any-hover: hover) {
+  span:hover {
+    background-color: resp($shadow-color);
+  }
 }
 </style>

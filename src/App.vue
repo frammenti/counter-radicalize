@@ -5,8 +5,6 @@ import About from './components/About.vue'
 import Transcript from './components/Transcript.vue'
 import LinguisticFeatures from './components/LinguisticFeatures.vue'
 import Footer from './components/Footer.vue'
-
-document.cookie = '_fontshare_key=value; SameSite=None; Secure; path=/';
 </script>
 
 <template>

@@ -32,7 +32,6 @@ body, #app {
   min-height: 100dvh; // dynamic viewport
   overflow-x: hidden;
   scroll-behavior: smooth;
-  overscroll-behavior: none;
 }
 
 body {
@@ -98,10 +97,6 @@ a {
   align-items: center;
 }
 
-a:hover {
-  background-color: resp($shadow-color);
-}
-
 svg {
   fill: currentColor;
 }
@@ -137,10 +132,6 @@ button:active {
   background-color: resp($primary-muted-color);
 }
 
-a:hover:has(button) {
-  background-color: transparent;
-}
-
 .grid {
   display: grid;
   align-items: center;
@@ -174,6 +165,18 @@ a:hover:has(button) {
   }
   .icon-solid {
     display: block;
+  }
+}
+
+@media (any-hover: hover) {
+  body, #app {
+    overscroll-behavior: none;
+  }
+  a:hover {
+    background-color: resp($shadow-color);
+  }
+  a:hover:has(button) {
+    background-color: transparent;
   }
 }
 
