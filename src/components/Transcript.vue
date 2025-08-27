@@ -49,23 +49,6 @@ const active = computed(() =>
 }
 #transcript-text {
   max-height: 50%;
-  position: relative;
-}
-#transcript-text:before,
-#transcript-text:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 15%;
-  pointer-events: none;
-  z-index: 2;
-}
-#transcript-text:before {
-  left: 0;
-}
-#transcript-text:after {
-  right: 0;
 }
 #emotion-circle {
   height: 30%;
