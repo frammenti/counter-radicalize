@@ -1,52 +1,59 @@
 <script setup lang='ts'>
-import { shallowRef, watch } from 'vue'
+import { shallowRef, computed } from 'vue'
 import type { Segment } from '../types/segment'
+import segments from '../../models/outputs/segments_emotion.json'
+import HlsPlayer from './HlsPlayer.vue'
+import TranscriptText from './TranscriptText.vue'
+import EmotionCircle from './EmotionCircle.vue'
 
-const playtime = defineModel('playtime', { type: Number, required: true });
-const props = defineProps<{ segments: Segment[], active: number }>()
-const spans = shallowRef<HTMLSpanElement[]>([])
+const playtime = shallowRef<number>(0)
 
-// Scroll active segment into view
-watch(() => props.active, i => {
-  let el = spans.value[i]
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth', block: 'center' })
-  }
-})
+// Sync index of active segment
+function atMoment(seg: Segment, t: number): boolean {
+  let start = seg.start > 0 ? seg.start - 0.01 : 0
+  return start < t && t < seg.end
+}
+
+const active = computed(() =>
+  segments.findIndex(seg => atMoment(seg, playtime.value))
+)
 </script>
 
 <template>
-  <div class='transcript-body'>
-    <span
-      v-for='(seg, i) in segments'
-      :key='i'
-      :ref='el => { if (el) spans[i] = el as HTMLSpanElement }'
-      :class='{ active: i === active }'
-      tabindex='0'
-      role='button'
-      @click='() => playtime = seg.start'
-      @keydown.enter='() => playtime = seg.start'
-    >
-      {{ seg.text }}
-    </span>
-  </div>
+  <section id='transcript' aria-label='Transcript'>
+    <HlsPlayer 
+      src='/counter-radicalize/hls/message.m3u8'
+      v-model:playtime='playtime'
+    />
+    <div id='transcript-text' aria-label='Transcript Text'>
+      <TranscriptText
+        v-model:playtime='playtime'
+        :segments='segments'
+        :active='active'
+      />
+    </div>
+    <div id='emotion-circle' aria-label='Emotion Circle'>
+      <EmotionCircle
+        :data='segments[active]'
+      />
+    </div>
+  </section>
 </template>
 
 <style scoped>
-.transcript-body {
-  line-height: 1.6;
-  max-width: 50em;
-  text-align: justify;
+#transcript {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
 }
-.transcript-body span {
-  transition: all 0.2s ease-in-out;
-  padding: 0.3rem 0;
+#transcript-text {
+  max-height: 50%;
 }
-.transcript-body span:hover {
-  text-shadow: var(--shadow-color) 0 0 15px;
-  cursor: pointer;
-}
-.active {
-  color: var(--primary-color);
+#emotion-circle {
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

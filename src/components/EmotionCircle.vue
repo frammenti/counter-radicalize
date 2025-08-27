@@ -152,10 +152,12 @@ watch(() => props.data, (d) => {
 <template>
   <canvas
     ref='canvas'
-    :style="{
+    :style='{
       height: `${(radius * 100).toFixed(0)}%`,
       filter: `brightness(${brightness.toFixed(2)})`
-    }">
+    }'
+    aria-label='Emotion Circle'
+    alt='A colorful circular gradient representing the emotional content of the current speech segment.'>
   </canvas>
 </template>
 

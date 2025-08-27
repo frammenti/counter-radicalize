@@ -1,23 +1,25 @@
 @use 'sass:color';
 @use 'sass:list';
 
-$blue: rgb(20, 96, 189);
-$light-blue: rgb(116, 157, 206);
-$black: rgb(36, 36, 36);
-$white: rgb(255, 255, 255);
-$slate: rgb(33, 53, 71);
+$text-font-family: ('Amulya', system-ui, sans-serif);
+$title-font-family: ('Chillax', system-ui, sans-serif);
 
-$theme: (
-  primary: $blue $light-blue,
-  shadow: color.change($blue, $alpha: 0.75) color.change($light-blue, $alpha: 0.75),
-  bg: $white $black,
-  text: $slate color.change($white, $alpha: 0.87)
-);
+$fuchsia: oklch(0.4668 0.19179 337.977);
+$fuchsia-dark: oklch(0.2976 0.06336 334.341);
+$lilac: oklch(0.7935 0.10034 276.98);
+$black: oklch(0.2256 0.00468 17.205);
+$white: oklch(0.9985 0.00011 360);
+$raisin: oklch(0.254 0.01336 353.411);
+$brown: oklch(0.2109 0.04514 21.633);
+$taupe: oklch(0.3791 0.01527 17.692);
 
-@mixin set-theme() {
-  @each $var, $colors in $theme {
-    $light: list.nth($colors, 1);
-    $dark: list.nth($colors, 2);
-    --#{$var}-color: light-dark(#{$light}, #{$dark});
-  }
+$primary-color: $fuchsia-dark $lilac;
+$primary-muted-color: color.scale($fuchsia-dark, $lightness: 20%) color.scale($lilac, $lightness: -10%);
+$link-color: $fuchsia $lilac;
+$shadow-color: color.change($brown, $alpha: 0.14) color.change($taupe, $alpha: 0.31);
+$background-color: $white $black;
+$text-color: $raisin color.change($white, $alpha: 0.87);
+
+@function resp($colors) {
+  @return light-dark(list.nth($colors, 1), list.nth($colors, 2));
 }
