@@ -3,7 +3,7 @@ import { shallowRef, watch } from 'vue'
 import type { Segment } from '../types/segment'
 
 const playtime = defineModel('playtime', { type: Number, required: true })
-const props = defineProps<{ segments: Segment[]; active: number }>()
+const props = defineProps<{ segments: Segment[], active: number }>()
 const spans = shallowRef<HTMLSpanElement[]>([])
 const container = shallowRef<HTMLDivElement | null>(null)
 
@@ -29,7 +29,6 @@ watch(() => props.active, i => {
         :ref='(el) => {
           if (el) spans[i] = el as HTMLSpanElement
         }'
-        tabindex='0'
         role='button'
         :class='{ active: i === active }'
         @click='() => (playtime = seg.start)'
@@ -48,19 +47,20 @@ watch(() => props.active, i => {
   height: 100%;
   overflow-y: scroll;
   scrollbar-width: thin;
-  scrollbar-gutter: stable both-edges;
   position: relative;
 }
 #transcript-body {
   line-height: 1.6;
-  max-width: 55em;
   text-align: justify;
   padding: 0 0.5rem;
 }
 span {
-  padding: 0.3rem 0.2rem;
-  margin: -0.3rem -0.2rem;
+  padding-block: 0.2rem;
+  padding-inline: 0.2rem;
+  margin-block: -0.2rem;
+  margin-inline: -0.2rem;
   border-radius: 0.5rem;
+  box-decoration-break: clone;
   transition: background-color 150ms ease;
   cursor: pointer;
 }

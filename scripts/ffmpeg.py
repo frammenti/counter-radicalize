@@ -1,9 +1,8 @@
 import os
 import subprocess
 
-json_file = os.path.join('models', 'outputs', 'segments_emotion.json')
-input_file = os.path.join('models', 'inputs', 'rec_pre.mp3')
-output_playlist = os.path.join('public', 'hls', 'message.m3u8')
+input_file = os.path.join('..', 'models', 'inputs', 'rec_pre.mp3')
+output_playlist = os.path.join('..', 'public', 'hls', 'message.m3u8')
 
 os.makedirs(os.path.dirname(output_playlist), exist_ok=True)
 
@@ -20,5 +19,4 @@ ffmpeg = [
     str(output_playlist)
 ]
 
-# Run ffmpeg
 subprocess.run(ffmpeg, check=True)

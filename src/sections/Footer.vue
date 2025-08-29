@@ -49,12 +49,14 @@ svg {
 }
 .grid-item-1 {
   grid-area: a;
+  align-self: start;
 }
 .grid-item-2 {
   grid-area: b;
 }
 .grid-item-3 {
   grid-area: c;
+  align-self: start;
   text-align: end;
 }
 @media screen and (max-width: 768px) {

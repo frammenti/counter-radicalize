@@ -24,7 +24,7 @@
     </div>
     <div class='grid-item-2'>
       <p>An experimental tool to analyze and visualize emotional content in speech.</p>
-      <a href='#about'><button>Read</button></a>
+      <a href='#about' tabindex='-1'><button>Read</button></a>
     </div>
   </section>
 </template>

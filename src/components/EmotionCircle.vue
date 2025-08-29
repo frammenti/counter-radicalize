@@ -163,6 +163,7 @@ watch(() => props.data, (d) => {
 
 <style scoped>
 canvas {
+  height: 100%;
   width: auto;
   clip-path: circle(45%);
   transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
