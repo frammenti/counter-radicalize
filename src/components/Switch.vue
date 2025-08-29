@@ -8,11 +8,11 @@ const state = defineModel<boolean>('modelValue')
 <template>
 <div class='input-container'>
   <Label
-    :for='id'
+    :for='props.id'
   >
     <slot></slot>
   </Label>
-  <SwitchRoot :defaultValue=false v-model='state' :id='id'>
+  <SwitchRoot :defaultValue=false v-model='state' :id='props.id'>
     <SwitchThumb class='thumb'/>
   </SwitchRoot>
 </div>

@@ -12,7 +12,7 @@ const show = ref<boolean>(false)
   <Switch v-model='show' id='show-features'>Show features</Switch>
   <ul v-if='show'>
   <li
-    v-for='(val, emotion) in data?.emotions'
+    v-for='(val, emotion) in props.data?.emotions'
     :class='emotion'
   >
     <span class='emotion'>{{ emotion }}</span>
