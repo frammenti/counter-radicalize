@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import { shallowRef, watch } from 'vue'
-import type { Segment } from '../types/segment'
+import type { Segment } from '@/types/segment'
 
 const playtime = defineModel('playtime', { type: Number, required: true })
 const props = defineProps<{ segments: Segment[], active: number }>()

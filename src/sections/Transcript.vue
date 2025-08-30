@@ -1,11 +1,11 @@
 <script setup lang='ts'>
 import { shallowRef, computed } from 'vue'
-import type { Segment } from '../types/segment'
-import segments from '../../models/outputs/segments_emotion.json'
-import HlsPlayer from '../components/HlsPlayer.vue'
-import SynchText from '../components/SynchText.vue'
-import EmotionCircle from '../components/EmotionCircle.vue'
-import FeaturesPanel from '../components/FeaturesPanel.vue'
+import HlsPlayer from '@/components/HlsPlayer.vue'
+import SynchText from '@/components/SynchText.vue'
+import EmotionCircle from '@/components/EmotionCircle.vue'
+import FeaturesPanel from '@/components/FeaturesPanel.vue'
+import segments from '@models/outputs/segments_emotion.json'
+import type { Segment } from '@/types/segment'
 
 const playtime = shallowRef<number>(0)
 

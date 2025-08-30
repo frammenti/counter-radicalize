@@ -12,7 +12,14 @@
     "noUncheckedSideEffectImports": true,
 
     /* Json */
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+
+    /* Paths */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@models/*": ["./models/*"]
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
 }

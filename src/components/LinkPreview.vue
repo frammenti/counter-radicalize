@@ -6,7 +6,7 @@ import {
   HoverCardTrigger,
   HoverCardArrow
 } from 'reka-ui'
-import type { Preview } from '../types/preview'
+import type { Preview } from '@/types/preview'
 
 const props = defineProps<{ href: string }>()
 const previews = inject('previews') as Record<string, Preview>

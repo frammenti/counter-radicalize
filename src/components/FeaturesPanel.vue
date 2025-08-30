@@ -1,7 +1,6 @@
 <script setup lang='ts'>
-import { ref } from 'vue'
-import Switch from './Switch.vue'
-import type { Segment } from '../types/segment'
+import Switch from '@/components/Switch.vue'
+import type { Segment } from '@/types/segment'
 
 const props = defineProps<{ data: Segment | undefined }>()
 const show = ref<boolean>(false)
