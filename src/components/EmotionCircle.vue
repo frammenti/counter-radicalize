@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import { shallowRef, onMounted, computed, watch } from 'vue'
-import type { Segment } from '../types/segment'
+import emotionColors from '@/assets/styles/emotions.module.scss'
+import type { Segment } from '@/types/segment'
 
 const props = defineProps<{ data: Segment | undefined }>()
 const canvas = shallowRef<HTMLCanvasElement | null>(null)
@@ -15,17 +16,7 @@ const brightness = computed(() => {
   return (props.data.dimensions.valence) * 1.5 + 0.5
 })
 
-const colors = [
-  [1.0, 0.0, 0.0],    // anger: red
-  [0.545, 0.27, 0.07],// contempt: brown
-  [0.0, 0.5, 0.0],    // disgust: green
-  [0.5, 0.0, 0.5],    // fear: purple
-  [1.0, 1.0, 0.0],    // happiness: yellow
-  [0.5, 0.5, 0.5],    // neutral: gray
-  [0.0, 0.0, 1.0],    // sadness: blue
-  [1.0, 0.65, 0.0],   // surprise: orange
-  [1.0, 0.75, 0.8],   // other: pink
-]
+const colors: number[] = Object.values(emotionColors).flatMap((str: string) => str.split(', ').map(val => parseFloat(val)))
 
 const keys = [
   'anger', 'contempt', 'disgust', 'fear', 'happiness',
@@ -131,7 +122,7 @@ function drawMeshGradient(w: number[]) {
   }
 
   // Set uniforms
-  gl.uniform3fv(gl.getUniformLocation(program, 'u_colors'), colors.flat())
+  gl.uniform3fv(gl.getUniformLocation(program, 'u_colors'), colors)
   gl.uniform1fv(gl.getUniformLocation(program, 'u_weights'), w)
   gl.uniform2fv(gl.getUniformLocation(program, 'u_points'), points)
 
