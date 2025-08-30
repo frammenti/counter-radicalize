@@ -20,7 +20,6 @@
 </template>
 
 <style scoped lang='scss'>
-@use '../assets/styles/palette' as *;
 footer {
   background-color: resp($text-color);
   color: resp($background-color);

@@ -62,8 +62,6 @@ onMounted(() => {
 </template>
 
 <style scoped lang='scss'>
-@use '../assets/styles/palette' as *;
-
 :deep(.popover) {
   border-radius: 6px;
   padding-block: 20px;

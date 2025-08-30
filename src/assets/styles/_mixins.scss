@@ -1,0 +1,51 @@
+@use 'sass:color';
+@use 'sass:math';
+@use '_functions' as *;
+@use '_background' as *;
+
+@mixin color-legend($map) {
+  @each $emotion, $color in $map {
+    .#{$emotion}:before {
+      background-color: shadow($color, 0.7);
+    }
+  }
+};
+
+@mixin rgb-float($map) {
+  @each $label, $color in $map {
+    $norm: color.to-gamut($color, $space: rgb, $method: local-minde);
+    $r: math.div(color.channel($norm, 'red', $space: rgb), 255);
+    $g: math.div(color.channel($norm, 'green', $space: rgb), 255);
+    $b: math.div(color.channel($norm, 'blue', $space: rgb), 255);
+    #{$label}: ($r, $g, $b)
+  }
+};
+
+@mixin set-background($selector) {
+  @each $scheme in $schemes {
+    @each $break, $min-width in $breakpoints {
+      @each $res, $suffix in $resolutions {
+        $file: 'bg-#{$break}-#{$scheme}#{$suffix}.webp';
+
+        // Base query: preferred color scheme
+        $queries: '(prefers-color-scheme: #{$scheme})';
+
+        // Append breakpoint if not on mobile
+        @if $min-width != 0 {
+          $queries: '#{$queries} and (min-width: #{$min-width})';
+        }
+
+        // Append resolution for retina screens
+        @if $res == 2x {
+          $queries: '#{$queries} and (min-resolution: 2dppx)';
+        }
+
+        @media #{$queries} {
+          #{$selector} {
+            background-image: url('@/assets/images/#{$file}');
+          }
+        }
+      }
+    }
+  }
+};

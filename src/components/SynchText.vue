@@ -41,8 +41,6 @@ watch(() => props.active, i => {
 </template>
 
 <style scoped lang='scss'>
-@use '../assets/styles/palette' as *;
-
 #transcript-container {
   height: 100%;
   overflow-y: scroll;

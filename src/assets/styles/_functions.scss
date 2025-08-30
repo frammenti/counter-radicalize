@@ -1,0 +1,10 @@
+@use 'sass:color';
+@use 'sass:list';
+
+@function resp($colors) {
+  @return light-dark(list.nth($colors, 1), list.nth($colors, 2));
+};
+
+@function shadow($color, $opacity) {
+  @return color.change($color, $alpha: $opacity)
+};

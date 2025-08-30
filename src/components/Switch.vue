@@ -19,8 +19,6 @@ const state = defineModel<boolean>('modelValue')
 </template>
 
 <style scoped lang='scss'>
-@use '../assets/styles/palette' as *;
-
 .input-container {
   display: flex;
   flex-flow: row-reverse nowrap;
@@ -46,7 +44,7 @@ button {
 }
 
 button[data-state='checked'] {
-  background-color: resp((shadow($dark-fuchsia, 0.6), $taupe));
+  background-color: resp((shadow($orchid, 0.6), $taupe));
 }
 .thumb {
   display: block;

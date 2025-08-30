@@ -11,5 +11,12 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
       '@models': path.resolve(__dirname, './models')
     }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use '@/assets/styles/main' as *;`
+      }
+    }
   }
 })

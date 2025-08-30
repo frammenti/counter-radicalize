@@ -20,7 +20,6 @@
 </template>
 
 <style scoped lang='scss'>
-@use '../assets/styles/palette' as *;
 header {
   grid-template-columns: 1fr 2.5fr 1fr;
   line-height: 1.4;
