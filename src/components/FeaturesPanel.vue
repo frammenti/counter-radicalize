@@ -1,9 +1,20 @@
 <script setup lang='ts'>
+import { computed, ref } from 'vue'
 import Switch from '@/components/Switch.vue'
 import type { Segment } from '@/types/segment'
 
 const props = defineProps<{ data: Segment | undefined }>()
 const show = ref<boolean>(false)
+const keys = [
+  'anger', 'contempt', 'disgust', 'fear', 'happiness',
+  'neutral', 'sadness', 'surprise', 'other'
+] as const
+
+const sortedData = computed(() => {
+  if (!props.data) return
+  const items = keys.map(key => [key, props.data?.emotions[key] ?? 0] as [string, number]);
+  return items.sort((first, second) => second[1] - first[1])
+})
 </script>
 
 <template>
@@ -11,19 +22,18 @@ const show = ref<boolean>(false)
   <Switch v-model='show' id='show-features'>Show features</Switch>
   <ul v-if='show'>
   <li
-    v-for='(val, emotion) in props.data?.emotions'
-    :class='emotion'
+    v-for='(tup, i) in sortedData'
+    :key='i'
+    :class='tup[0]'
   >
-    <span class='emotion'>{{ emotion }}</span>
-    <span class='value'>{{ +(val * 100).toFixed(2)  }}%</span>
+    <span class='emotion'>{{ tup[0] }}</span>
+    <span class='value'>{{ +(tup[1] * 100).toFixed(0)  }}<span class='percent'>%</span></span>
   </li>
   </ul>
 </div>
 </template>
 
 <style scoped lang='scss'>
-@use '../assets/styles/palette' as *;
-
 .panel {
   display: flex;
   flex-flow: column;
@@ -35,7 +45,10 @@ const show = ref<boolean>(false)
 }
 ul {
   list-style-type: none;
-  padding: 0;
+  padding-inline: 1em;
+  padding-block: 0.5em;
+  border-radius: 6px;
+  backdrop-filter: blur(50px);
 }
 li {
   display: flex;
@@ -58,7 +71,10 @@ li:before {
   overflow: hidden;
   text-overflow: '.';
 }
-@include emotion-classes-legend($emotions);
+.percent {
+  opacity: 0.7;
+}
+@include color-legend($emotions);
 .value {
   display: inline-block;
   font-size: 0.85em;

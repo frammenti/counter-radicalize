@@ -93,7 +93,7 @@ const active = computed(() =>
     font-size: 0.8em;
   }
   :deep(.emotion) {
-    max-width: 2.5em;
+    max-width: 2.4em;
   }
 }
 </style>
