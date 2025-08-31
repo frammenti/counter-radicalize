@@ -8,7 +8,7 @@ import type { Segment } from '@/types/segment'
 const props = defineProps<{ data: Segment | undefined }>()
 const show = shallowRef<boolean>(false)
 const more = shallowRef<boolean>(false)
-const { width, height } = useWindowSize()
+const { width , } = useWindowSize()
 
 const keys = [
   'anger', 'contempt', 'disgust', 'fear', 'happiness',
@@ -139,6 +139,7 @@ li:before {
 }
 .value {
   display: inline-block;
+
   font-size: 0.85em;
 }
 /* List transitions */
