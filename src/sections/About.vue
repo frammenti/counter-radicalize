@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import LinkPreview from '../components/LinkPreview.vue'
+import LinkPreview from '@/components/LinkPreview.vue'
 </script>
 
 <template>

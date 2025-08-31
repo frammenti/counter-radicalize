@@ -6,13 +6,19 @@ import type { Segment } from '@/types/segment'
 const props = defineProps<{ data: Segment | undefined }>()
 const canvas = shallowRef<HTMLCanvasElement | null>(null)
 
-const radius = computed(() => {
-  if (!props.data) return 0.7
+const radius = computed<number>((prev) => {
+  if (!props.data) {
+    if (!prev) return 0.7
+    return prev
+  }
   return (props.data.dimensions.arousal) * 0.8 + 0.4
 })
 
-const brightness = computed(() => {
-  if (!props.data) return 1.3
+const brightness = computed<number>((prev) => {
+  if (!props.data) {
+    if (!prev) return 1.3
+    return prev
+  }
   return (props.data.dimensions.valence) * 1.5 + 0.5
 })
 
@@ -130,7 +136,7 @@ function drawMeshGradient(w: number[]) {
 }
 
 onMounted(() => {
-  drawMeshGradient(weights)
+  animateWeights(weights)
 })
 
 watch(() => props.data, (d) => {

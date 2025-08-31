@@ -7,21 +7,21 @@ const state = defineModel<boolean>('modelValue')
 
 <template>
 <div class='input-container'>
+  <SwitchRoot :defaultValue=false v-model='state' :id='props.id'>
+    <SwitchThumb class='thumb'/>
+  </SwitchRoot>
   <Label
     :for='props.id'
   >
     <slot></slot>
   </Label>
-  <SwitchRoot :defaultValue=false v-model='state' :id='props.id'>
-    <SwitchThumb class='thumb'/>
-  </SwitchRoot>
 </div>
 </template>
 
 <style scoped lang='scss'>
 .input-container {
   display: flex;
-  flex-flow: row-reverse nowrap;
+  flex-flow: row nowrap;
   align-items: center;
   justify-content: start;
   gap: 0.5rem;
@@ -29,6 +29,7 @@ const state = defineModel<boolean>('modelValue')
 }
 label {
   flex-shrink: 2;
+  transition: all 150ms cubic-bezier(.4,0,.2,1);
 }
 button {
   display: block;

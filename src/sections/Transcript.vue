@@ -2,7 +2,6 @@
 import { shallowRef, computed } from 'vue'
 import HlsPlayer from '@/components/HlsPlayer.vue'
 import SynchText from '@/components/SynchText.vue'
-import EmotionCircle from '@/components/EmotionCircle.vue'
 import FeaturesPanel from '@/components/FeaturesPanel.vue'
 import segments from '@models/outputs/segments_emotion.json'
 import type { Segment } from '@/types/segment'
@@ -33,17 +32,10 @@ const active = computed(() =>
         :active='active'
       />
     </div>
-    <div id='emotion-circle' class='grid' aria-label='Emotion Circle'>
-      <div class='grid-item-1'>
-        <EmotionCircle
-          :data='segments[active]'
-        />
-      </div>
-      <div class='grid-item-2'>
-        <FeaturesPanel
-          :data='segments[active]'
-        />
-      </div>
+    <div id='emotion-circle' aria-label='Emotion Circle'>
+      <FeaturesPanel
+        :data='segments[active]'
+      />
     </div>
   </section>
 </template>
@@ -58,42 +50,11 @@ const active = computed(() =>
 }
 #transcript-text {
   max-height: 50%;
+  width: 100%;
 }
 #emotion-circle {
-  max-height: 30%;
-  grid-template-areas: '. circle panel';
-  grid-template-columns: 40% 20% 40%;
-  grid-template-rows: 100%;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
   position: relative;
-}
-.grid-item-1 {
-  grid-area: circle;
-  height: 100%;
-  justify-self: center;
-  align-content: center;
-}
-.grid-item-2 {
-  grid-area: panel;
-  height: 100%;
-  padding-inline-end: 0.5rem;
-  justify-self: end;
-}
-@media screen and (max-width: 768px) {
-  #emotion-circle {
-    display: flex;
-  }
-  .grid-item-2 {
-    position: absolute;
-    top: -1rem;
-    left: 0.5rem;
-    width: 100%;
-    font-size: 0.8em;
-  }
-  :deep(.emotion) {
-    max-width: 2.4em;
-  }
+  max-height: 30%;
+  width: 100%;
 }
 </style>

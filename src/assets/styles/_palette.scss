@@ -17,3 +17,4 @@ $shadow-color: color.change($brown, $alpha: 0.15), color.change($taupe, $alpha: 
 $background-color: $white $black;
 $border-color: $transparent $taupe;
 $text-color: $raisin color.change($white, $alpha: 0.87);
+$text-muted-color: color.change($raisin, $alpha: 0.5) color.change($white, $alpha: 0.5);
