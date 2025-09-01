@@ -5,7 +5,7 @@ import TranscriptText from '@/components/TranscriptText.vue'
 import TranscriptFeatures from '@/components/TranscriptFeatures.vue'
 import segments from '@models/outputs/segments_emotion.json'
 import type { Segment } from '@/types/segment'
-import usePlaybackShortcuts from '@/composables/playbackShortcuts'
+import usePlaybackShortcuts from '@/composables/usePlaybackShortcuts'
 
 const playtime = ref<number>(0)
 const playing = ref<boolean>(false)

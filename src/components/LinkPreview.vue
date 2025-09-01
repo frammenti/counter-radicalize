@@ -1,21 +1,16 @@
 <script setup lang='ts'>
-import { shallowRef, onMounted, inject } from 'vue'
 import {
   HoverCardContent,
   HoverCardRoot,
   HoverCardTrigger,
   HoverCardArrow
 } from 'reka-ui'
-import type { Preview } from '@/types/preview'
+import { usePreviews } from '@/composables/usePreviews'
 
 const props = defineProps<{ href: string }>()
-const previews = inject('previews') as Record<string, Preview>
-const metadata = previews[props.href] ?? null
-const supportsHover = shallowRef<boolean>(false)
-
-onMounted(() => {
-  supportsHover.value = window.matchMedia('(any-hover: hover)').matches
-})
+const supportsHover = window.matchMedia('(any-hover: hover)').matches
+const previews = supportsHover ? usePreviews() : {}
+const metadata = previews[props.href]
 </script>
 
 <template>
