@@ -1,18 +1,18 @@
 <script setup lang='ts'>
 import { provide } from 'vue'
-import Header from '@/sections/Header.vue'
+import AppHeader from '@/components/AppHeader.vue'
 import Hero from '@/sections/Hero.vue'
 import About from '@/sections/About.vue'
 import Transcript from '@/sections/Transcript.vue'
 import LinguisticFeatures from '@/sections/LinguisticFeatures.vue'
-import Footer from '@/sections/Footer.vue'
+import AppFooter from '@/components/AppFooter.vue'
 import previews from '@/stores/previews.json'
 
 provide('previews', previews)
 </script>
 
 <template>
-  <Header />
+  <AppHeader />
   <main>
     <div class='landing'>
       <Hero />
@@ -21,7 +21,7 @@ provide('previews', previews)
     <Transcript />
     <LinguisticFeatures />
   </main>
-  <Footer />
+  <AppFooter />
 </template>
 
 <style scoped lang='scss'>
