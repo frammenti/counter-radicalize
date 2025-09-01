@@ -8,7 +8,7 @@ import type { Segment } from '@/types/segment'
 const props = defineProps<{ data: Segment | undefined }>()
 const show = shallowRef<boolean>(false)
 const more = shallowRef<boolean>(false)
-const { width , } = useWindowSize()
+const { width } = useWindowSize()
 
 const keys = [
   'anger', 'contempt', 'disgust', 'fear', 'happiness',
@@ -46,13 +46,22 @@ const splitData = computed<{
   return { primary, secondary }
 })
 
+const dimensions = computed<{ arousal: number; valence: number; dominance: number; } | undefined>((prev) => {
+  if (!props.data) {
+    if (!prev) return
+    return prev
+  }
+  return props.data.dimensions
+})
+
 </script>
 
 <template>
 <Switch v-model='show' id='show-features'>Show features</Switch>
 <div class='grid'>
   <div class='grid-item-1'>
-    <TransitionGroup name='list' tag='ul' v-if='show' :duration='250' appear>
+    <TransitionGroup name='list' tag='ul' v-if='show && splitData.primary.length > 0' :duration='300' appear>
+      <h4 key='title'>Emotions</h4>
       <li
         v-for='item in splitData.primary'
         :key='item[0]'
@@ -63,12 +72,6 @@ const splitData = computed<{
         <span v-else class='emotion' :title='item[0]'>{{ item[2] }}</span>
         <span class='value'>{{ +(item[1] * 100).toFixed(0)  }}<span class='percent'>%</span></span>
       </li>
-      <Switch
-        id='see-more'
-        key='see-more'
-        v-model='more'
-        v-if='splitData.secondary.length > 0'
-      >…</Switch>
       <li
         v-for='item in splitData.secondary'
         :key='item[0]'
@@ -80,6 +83,12 @@ const splitData = computed<{
         <span v-else class='emotion' :title='item[0]'>{{ item[2] }}</span>
         <span class='value'>{{ +(item[1] * 100).toFixed(0)  }}<span class='percent'>%</span></span>
       </li>
+      <Switch
+        id='see-more'
+        key='see-more'
+        class='noselect'
+        v-model='more'
+      >…</Switch>
     </TransitionGroup>
   </div>
   <div class='grid-item-2'>
@@ -88,19 +97,48 @@ const splitData = computed<{
     />
   </div>
   <div class='grid-item-3'>
+    <Transition name='list' v-if='show && dimensions' appear>
+      <ul>
+        <h4>Dimensions</h4>
+        <li>
+          <span v-if='dimensions.valence < 0.25' style='filter: grayscale(1);'>🙁</span>
+          <span v-else-if='dimensions.valence < 0.5' style='filter: grayscale(0.75);'>😐</span>
+          <span v-else-if='dimensions.valence < 0.75' style='filter: grayscale(0.25);'>🙂</span>
+          <span v-else>😁</span>
+          <span v-if='width > 768' class='emotion'>valence</span>
+          <span v-else class='emotion' title='valence'>val.</span>
+          <span class='value'>{{ +(dimensions.valence * 100).toFixed(0)  }}<span class='percent'>%</span></span>
+        </li>
+        <li>
+          <span :style='{ fontSize: dimensions.arousal + 0.3 + "em" }'>🔥</span>
+          <span v-if='width > 768' class='emotion'>arousal</span>
+          <span v-else class='emotion' title='arousal'>aro.</span>
+          <span class='value'>{{ +(dimensions.arousal * 100).toFixed(0)  }}<span class='percent'>%</span></span>
+        </li>
+        <li>
+          <span v-if='dimensions.dominance < 0.25'>🐭</span>
+          <span v-else-if='dimensions.dominance < 0.5'>🐶</span>
+          <span v-else-if='dimensions.dominance < 0.75'>🐻</span>
+          <span v-else>🦁</span>
+          <span v-if='width > 768' class='emotion'>dominance</span>
+          <span v-else class='emotion' title='dominance'>dom.</span>
+          <span class='value'>{{ +(dimensions.dominance * 100).toFixed(0)  }}<span class='percent'>%</span></span>
+        </li>
+      </ul>
+    </Transition>
   </div>
 </div>
 </template>
 
 <style scoped lang='scss'>
 .grid {
-  grid-template-columns: 40% 20% 40%;
+  grid-template-columns: 35% 26% 35%;
   grid-template-rows: 100%;
-  column-gap: 0.5rem;
+  column-gap: 2%;
   width: 100%;
   height: 100%;
 }
-.grid-item-1 {
+.grid-item-1, .grid-item-3 {
   height: 100%;
   font-size: 0.9em;
 }
@@ -113,14 +151,23 @@ ul {
   padding-inline: 1em;
   padding-block: 0.5em;
   border-radius: 6px;
+  overflow: hidden;
+}
+.grid-item-1 ul {
   width: 10em;
+}
+.grid-item-3 ul {
+  width: 11.5em;
+}
+h4 {
+  margin-block: 0 0.2em;
 }
 li {
   display: flex;
   flex-flow: row;
   align-items: center;
 }
-li:before {
+.grid-item-1 li:before {
   content: '';
   display: inline-block;
   width: 0.8em;
@@ -139,15 +186,23 @@ li:before {
 }
 .value {
   display: inline-block;
-
   font-size: 0.85em;
 }
+.grid-item-3 li > span:first-child {
+  display: inline-flex;
+  width: 1.1rem;
+  align-items: center;
+  justify-content: center;
+  margin-inline-end: 0.25rem;
+  contain: size;
+}
 /* List transitions */
-.list-move,
 .list-enter-active,
 .list-leave-active {
-  transition: opacity 150ms cubic-bezier(0.645, 0.045, 0.355, 1),
-            transform 250ms cubic-bezier(0.86, 0, 0.07, 1);
+  transition: opacity 150ms cubic-bezier(0.7, 0.9, 1, 1);
+}
+.list-move {
+  transition: transform 300ms cubic-bezier(0.86, 0, 0.07, 1);
 }
 .list-enter-from,
 .list-leave-to {
@@ -160,9 +215,9 @@ li:before {
   filter: opacity(0.7);
 }
 /* Buttons */
-.input-container:has(#show-features) {
+#emotion-circle > .input-container {
   position: absolute;
-  top: -1rem;
+  top: -1.4em;
   right: 0;
   padding-inline-end: 0.6rem;
   width: fit-content;
@@ -191,24 +246,37 @@ li:before {
 }
 @media screen and (max-width: 768px) {
   ul {
-    width: 6.6rem;
     padding-inline-end: 0;
     font-size: 0.9em;
     backdrop-filter: blur(30px);
     box-shadow:
       resp((shadow($brown, 0.14), transparent)) 0px 10px 38px -10px,
       resp((shadow($brown, 0.14), transparent)) 0px 10px 20px -15px;
-    overflow: hidden;
+  }
+  .grid-item-1 ul {
+    width: 6.6rem;
+  }
+  .grid-item-3 ul {
+    width: 6.8rem;
+  }
+  .grid-item-3 li > span:first-child {
+    width: 1rem;
   }
   .grid {
     grid-template-columns: 100%;
   }
-  .grid-item-1 {
+  .grid-item-1, .grid-item-3 {
     position: absolute;
-    top: -1rem;
-    left: 0;
     font-size: 0.8em;
     z-index: 2;
+  }
+  .grid-item-1 {
+    top: 0;
+    left: 0;
+  }
+  .grid-item-3 {
+    top: 0;
+    right: 0;
   }
 }
 </style>

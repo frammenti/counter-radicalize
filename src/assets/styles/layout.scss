@@ -161,6 +161,13 @@ button:active {
   display: none;
 }
 
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
 @media (prefers-color-scheme: dark) {
   .icon-outline {
     display: none;
