@@ -5,18 +5,22 @@ import TranscriptText from '@/components/TranscriptText.vue'
 import TranscriptFeatures from '@/components/TranscriptFeatures.vue'
 import segments from '@models/outputs/segments_emotion.json'
 import type { Segment } from '@/types/segment'
+import usePlaybackShortcuts from '@/composables/playbackShortcuts'
 
 const playtime = ref<number>(0)
+const playing = ref<boolean>(false)
 
 // Sync index of active segment
 function atMoment(seg: Segment, t: number): boolean {
-  let start = seg.start > 0 ? seg.start - 0.01 : 0
+  let start = t > 0 ? seg.start - 0.1 : 0
   return start < t && t < seg.end
 }
 
 const active = computed(() =>
   segments.findIndex(seg => atMoment(seg, playtime.value))
 )
+
+usePlaybackShortcuts(playtime, playing, segments, active)
 </script>
 
 <template>
