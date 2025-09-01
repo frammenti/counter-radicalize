@@ -2,7 +2,7 @@
 import { computed, shallowRef } from 'vue'
 import { useWindowSize } from '@vueuse/core'
 import Switch from '@/components/Switch.vue'
-import EmotionCircle from '@/components/EmotionCircle.vue'
+import TranscriptFeaturesCanvas from '@/components/TranscriptFeaturesCanvas.vue'
 import type { Segment } from '@/types/segment'
 
 const props = defineProps<{ data: Segment | undefined }>()
@@ -46,7 +46,11 @@ const splitData = computed<{
   return { primary, secondary }
 })
 
-const dimensions = computed<{ arousal: number; valence: number; dominance: number; } | undefined>((prev) => {
+const dimensions = computed<{
+  arousal: number;
+  valence: number;
+  dominance: number;
+} | undefined>((prev) => {
   if (!props.data) {
     if (!prev) return
     return prev
@@ -72,27 +76,28 @@ const dimensions = computed<{ arousal: number; valence: number; dominance: numbe
         <span v-else class='emotion' :title='item[0]'>{{ item[2] }}</span>
         <span class='value'>{{ +(item[1] * 100).toFixed(0)  }}<span class='percent'>%</span></span>
       </li>
+      <template v-if='more'>
       <li
         v-for='item in splitData.secondary'
         :key='item[0]'
         :class='item[0]'
         class='secondary'
-        v-if='more'
       >
         <span v-if='width > 768' class='emotion'>{{ item[0] }}</span>
         <span v-else class='emotion' :title='item[0]'>{{ item[2] }}</span>
         <span class='value'>{{ +(item[1] * 100).toFixed(0)  }}<span class='percent'>%</span></span>
       </li>
+      </template>
       <Switch
-        id='see-more'
         key='see-more'
+        id='see-more'
         class='noselect'
         v-model='more'
       >…</Switch>
     </TransitionGroup>
   </div>
   <div class='grid-item-2'>
-    <EmotionCircle
+    <TranscriptFeaturesCanvas
       :data='data'
     />
   </div>
@@ -180,7 +185,7 @@ li {
   font-weight: 500;
   margin-inline-end: 0.4em;
 }
-@include color-legend($emotions);
+@include set-color-legend($emotions);
 .percent {
   opacity: 0.7;
 }
@@ -267,15 +272,14 @@ li {
   }
   .grid-item-1, .grid-item-3 {
     position: absolute;
+    top: 0;
     font-size: 0.8em;
     z-index: 2;
   }
   .grid-item-1 {
-    top: 0;
     left: 0;
   }
   .grid-item-3 {
-    top: 0;
     right: 0;
   }
 }

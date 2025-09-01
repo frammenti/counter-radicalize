@@ -3,7 +3,7 @@
 @use '_functions' as *;
 @use '_background' as *;
 
-@mixin color-legend($map) {
+@mixin set-color-legend($map) {
   @each $emotion, $color in $map {
     .#{$emotion}:before {
       background-color: shadow($color, 0.7);
