@@ -19,8 +19,9 @@ function atMoment(seg: Segment, t: number): boolean {
 const active = computed(() =>
   segments.findIndex(seg => atMoment(seg, playtime.value))
 )
-
-usePlaybackShortcuts(playtime, playing, segments, active)
+if (window.matchMedia('(any-pointer: fine)').matches) {
+  usePlaybackShortcuts(playtime, playing, segments, active)
+}
 </script>
 
 <template>
