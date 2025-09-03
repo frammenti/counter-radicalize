@@ -19,7 +19,7 @@ onMounted(async () => {
   if (!audio.value) return
 
   const Hls = (await import('hls.js')).default
-  
+
   if (Hls.isSupported()) {
     const hls = new Hls()
     hls.loadSource(props.src)
@@ -52,19 +52,17 @@ watch(
   }
 )
 </script>
-
 <template>
-  <audio
-    controls
-    preload='auto'
-    ref='audio'
-    id='audio-player'
-    @timeupdate='emit("update:playtime", audio ? audio.currentTime : 0)'
-    @play='emit("update:playing", true)'
-    @pause='emit("update:playing", false)'
-    aria-label='Audio Player'
-    aria-details='transcript-body'
-  >
-  </audio>
+<audio
+  controls
+  preload='auto'
+  ref='audio'
+  id='audio-player'
+  @timeupdate='emit("update:playtime", audio ? audio.currentTime : 0)'
+  @play='emit("update:playing", true)'
+  @pause='emit("update:playing", false)'
+  aria-label='Audio Player'
+  aria-details='transcript-body'
+>
+</audio>
 </template>
-

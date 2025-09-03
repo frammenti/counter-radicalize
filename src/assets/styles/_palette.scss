@@ -18,3 +18,5 @@ $background-color: $white $black;
 $border-color: $transparent $taupe;
 $text-color: $raisin color.change($white, $alpha: 0.87);
 $text-muted-color: color.change($raisin, $alpha: 0.5) color.change($white, $alpha: 0.5);
+
+$box-shadow: 0 4px 6px -1px oklch(0 0 0 / 0.102), 0 2px 4px -2px oklch(0 0 0 / 0.102);

@@ -1,9 +1,5 @@
 @use 'main' as *;
 
-$section-spacing: 4rem;
-$section-spacing-mobile: 2rem;
-$header-height: 4rem;
-
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -64,8 +60,8 @@ main, article {
   width: 100%;
   margin: 0 auto;
   padding-inline: 2rem;
-  padding-block: $section-spacing;
-  scroll-margin-block-start: calc($header-height - $section-spacing / 2);
+  padding-block: calc($section-spacing * 1.5) calc($section-spacing * 0.5);
+  scroll-margin-block-start: calc($section-spacing * 0.5);
 }
 
 h1, h2, h3 {
@@ -93,7 +89,9 @@ a {
   margin-inline: -0.2rem;
   margin-block: -0.2rem;
   border-radius: 0.5rem;
-  transition: all 150ms ease;
+  transition:
+    color 150ms ease,
+    background-color 150ms ease;
   display: inline-flex;
   gap: 0.25rem;
   align-items: center;
@@ -121,15 +119,16 @@ a svg {
   padding-block: 0.6rem;
   margin-inline: 0;
   margin-block: 0;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.102), 0 2px 4px -2px rgba(0, 0, 0, 0.102);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.102),
+    0 2px 4px -2px rgba(0, 0, 0, 0.102);
   border: 0 solid;
   cursor: pointer;
   transition: background-color 200ms ease-in-out;
 }
 
 .button:hover,
-.button:focus,
-.button:active {
+.button:focus {
   background-color: resp($primary-muted-color);
 }
 

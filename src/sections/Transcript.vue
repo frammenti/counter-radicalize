@@ -1,31 +1,45 @@
 <script setup lang='ts'>
-import { ref, computed } from 'vue'
+import { shallowRef, computed } from 'vue'
 import TranscriptPlayer from '@/components/TranscriptPlayer.vue'
 import TranscriptText from '@/components/TranscriptText.vue'
 import TranscriptFeatures from '@/components/TranscriptFeatures.vue'
+import KeyboardShortcut from '@/components/KeyboardShortcut.vue'
 import segments from '@models/outputs/segments_emotion.json'
 import type { Segment } from '@/types/segment'
 import usePlaybackShortcuts from '@/composables/usePlaybackShortcuts'
 
-const playtime = ref<number>(0)
-const playing = ref<boolean>(false)
+const playtime = shallowRef<number>(0)
+const playing = shallowRef<boolean>(false)
+const hasKeyboard: boolean = window.matchMedia('(any-pointer: fine)').matches
 
 // Sync index of active segment
 function atMoment(seg: Segment, t: number): boolean {
   let start = t > 0 ? seg.start - 0.1 : 0
   return start < t && t < seg.end
 }
-
 const active = computed(() =>
   segments.findIndex(seg => atMoment(seg, playtime.value))
 )
-if (window.matchMedia('(any-pointer: fine)').matches) {
+
+// Enable shortcuts only when a phisical keyboard is available
+if (hasKeyboard) {
   usePlaybackShortcuts(playtime, playing, segments, active)
 }
 </script>
 
 <template>
 <section id='transcript' class='paginated' aria-label='Transcript'>
+  <section id='playback-shortcuts' aria-label='Playback Shortcuts' class='grid' v-if='hasKeyboard'>
+    <KeyboardShortcut modifier='meta' :keys='["arrowLeft"]' id='shortcut-prev'>
+      previous segment
+    </KeyboardShortcut>
+    <KeyboardShortcut modifier='meta' :keys='["space"]' id='shortcut-play'>
+      play/pause
+    </KeyboardShortcut>
+    <KeyboardShortcut modifier='meta' :keys='["arrowRight"]' id='shortcut-next'>
+      next segment
+    </KeyboardShortcut>
+  </section>
   <TranscriptPlayer 
     src='/counter-radicalize/hls/message.m3u8'
     v-model:playtime='playtime'
@@ -46,13 +60,14 @@ if (window.matchMedia('(any-pointer: fine)').matches) {
 </section>
 </template>
 
-<style scoped>
+<style scoped lang='scss'>
 #transcript {
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: space-around;
   max-width: 56rem;
+  position: relative;
 }
 #transcript-text {
   max-height: 50%;
@@ -62,5 +77,36 @@ if (window.matchMedia('(any-pointer: fine)').matches) {
   position: relative;
   max-height: 30%;
   width: 100%;
+}
+#playback-shortcuts {
+  position: absolute;
+  font-size: 0.9em;
+  top: 0;
+  justify-items: center;
+  height: $section-spacing * 1.5 + 4.5rem;
+  padding-block-start: $section-spacing * 0.75;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    ' .   play   . '
+    'prev  .   next';
+  z-index: -1;
+}
+#shortcut-prev {
+  grid-area: prev;
+}
+#shortcut-next {
+  grid-area: next;
+}
+#shortcut-play {
+  grid-area: play;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  gap: 0.2em;
+}
+@media screen and (max-width: 768px) {
+  #playback-shortcuts {
+    display: none;
+  }
 }
 </style>
