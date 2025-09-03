@@ -18,16 +18,13 @@ const audio = ref<HTMLAudioElement | null>(null)
 onMounted(async () => {
   if (!audio.value) return
 
-  if (audio.value.canPlayType('application/vnd.apple.mpegurl')) {
-      audio.value.src = props.src
-    } else {
-      const Hls = (await import('hls.js')).default
-      if (Hls.isSupported()) {
-        const hls = new Hls()
-        hls.loadSource(props.src)
-        hls.attachMedia(audio.value)
-      }
-    }
+  const Hls = (await import('hls.js')).default
+  
+  if (Hls.isSupported()) {
+    const hls = new Hls()
+    hls.loadSource(props.src)
+    hls.attachMedia(audio.value)
+  }
 })
 
 // Sync player time to model
