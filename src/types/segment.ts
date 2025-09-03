@@ -13,8 +13,8 @@ export interface Segment {
     other: number
   }
   dimensions: {
-    arousal: number
     valence: number
+    arousal: number
     dominance: number
   }
   text: string

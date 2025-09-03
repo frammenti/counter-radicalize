@@ -1,12 +1,33 @@
 @use 'sass:color';
 @use 'sass:math';
+@use "sass:map";
 @use '_functions' as *;
+@use '_emotions' as *;
 @use '_background' as *;
 
 @mixin set-color-legend($map) {
   @each $emotion, $color in $map {
     .#{$emotion}:before {
       background-color: shadow($color, 0.7);
+    }
+  }
+};
+
+@mixin set-icon-legend($map) {
+  @each $dim, $icons in $dimensions {
+    @if map.get($icons, 'cutoffs') {
+      @each $cut, $icon in map.get($icons, 'cutoffs') {
+        .#{$dim}[data-value="#{$cut}"]:before {
+          content: "#{$icon}";
+        @if map.get($icons, 'filter') {
+          filter: #{map.get($icons, 'filter')}(#{1.25 - $cut});
+        }
+        }
+      }
+    } @else {
+      .#{$dim}:before {
+        content: "#{map.get($icons, 'icon')}";
+      }
     }
   }
 };
