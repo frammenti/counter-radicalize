@@ -31,6 +31,7 @@ watch(() => props.active, i => {
           if (el) spans[i] = el as HTMLSpanElement
         }'
         :class='{ active: i === active }'
+        class='segment'
         @click='() => (playtime = seg.start)'
         @keydown.enter='() => (playtime = seg.start)'
         aria-controls='audio-player'
@@ -55,10 +56,10 @@ watch(() => props.active, i => {
   padding-inline: 0.5rem;
   margin-block: 0;
 }
-span {
-  padding-block: 0.2rem;
+.segment {
+  padding-block: 0.1rem;
   padding-inline: 0.2rem;
-  margin-block: -0.2rem;
+  margin-block: -0.1rem;
   margin-inline: -0.2rem;
   border-radius: 0.5rem;
   box-decoration-break: clone;
