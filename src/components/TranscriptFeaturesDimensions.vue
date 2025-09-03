@@ -7,7 +7,7 @@ const props = defineProps<{ data: Segment['dimensions'] }>()
 
 function getCutoff(n: number) {
   for (const cut of [0.25, 0.5, 0.75, 1]) {
-    if (n <= cut) return cut
+    if (n + 0.005 <= cut) return cut
   }
   return 0
 }
