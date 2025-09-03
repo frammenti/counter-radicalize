@@ -47,7 +47,7 @@ header {
   z-index: 10;
 }
 
-main {
+main, article {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -58,7 +58,7 @@ main {
   padding-top: $header-height;
 }
 
-section {
+.paginated {
   max-height: 100lvh;
   max-width: 1200px;
   width: 100%;
@@ -108,29 +108,28 @@ a svg {
   width: 1.6rem;
 }
 
-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25rem;
+.button {
   background-color: resp($primary-color);
+  font-family: sans-serif;
   color: $white;
+  font-size: 1rem;
+  font-weight: 550;
+  line-height: 1.4;
+  text-align: center;
   border-radius: 10rem;
   padding-inline: 1.2rem;
   padding-block: 0.6rem;
-  font-weight: 600;
+  margin-inline: 0;
+  margin-block: 0;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.102), 0 2px 4px -2px rgba(0, 0, 0, 0.102);
-  margin: 0;
   border: 0 solid;
-  line-height: 1.4;
-  font-size: 1rem;
   cursor: pointer;
   transition: background-color 200ms ease-in-out;
 }
 
-button:hover,
-button:focus,
-button:active {
+.button:hover,
+.button:focus,
+.button:active {
   background-color: resp($primary-muted-color);
 }
 
@@ -181,11 +180,8 @@ button:active {
   body, #app {
     overscroll-behavior: none;
   }
-  a:hover, a[data-state='open'] {
+  a:hover, a:focus-visible, a[data-state='open'] {
     background-color: resp($shadow-color);
-  }
-  a:hover:has(button) {
-    background-color: transparent;
   }
 }
 
@@ -194,7 +190,7 @@ button:active {
     font-size: 1.2rem;
     line-height: 1.5;
   }
-  section {
+  .paginated {
     padding-inline: 1em;
     padding-block: $section-spacing-mobile;
     scroll-margin-block-start: calc($header-height - $section-spacing-mobile / 2);

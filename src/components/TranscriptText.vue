@@ -21,22 +21,24 @@ watch(() => props.active, i => {
 </script>
 
 <template>
-  <div id='transcript-container' ref='container' aria-live='polite'>
-    <div id='transcript-body'>
+  <div id='transcript-container' ref='container' :aria-activedescendant='"seg-" + active'>
+    <p id='transcript-body'>
       <span
         v-for='(seg, i) in segments'
         :key='i'
+        :id='"seg-" + i'
         :ref='(el) => {
           if (el) spans[i] = el as HTMLSpanElement
         }'
-        role='button'
         :class='{ active: i === active }'
         @click='() => (playtime = seg.start)'
         @keydown.enter='() => (playtime = seg.start)'
+        aria-controls='audio-player'
+        :aria-current='i === active ? true : false'
       >
         {{ seg.text }}
       </span>
-    </div>
+    </p>
   </div>
 </template>
 
@@ -50,7 +52,8 @@ watch(() => props.active, i => {
 #transcript-body {
   line-height: 1.6;
   text-align: justify;
-  padding: 0 0.5rem;
+  padding-inline: 0.5rem;
+  margin-block: 0;
 }
 span {
   padding-block: 0.2rem;

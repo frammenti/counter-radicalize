@@ -3,7 +3,7 @@ import LinkPreview from '@/components/LinkPreview.vue'
 </script>
 
 <template>
-<section id='about' aria-label='About'>
+<section id='about' class='paginated' aria-label='About'>
   <hgroup>
     <h2>A post–post–post–modern pipeline</h2>
     <p>From Leopardi's pessimism to terrorist attacks</p>

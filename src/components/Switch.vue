@@ -7,7 +7,7 @@ const state = defineModel<boolean>('modelValue')
 
 <template>
 <div class='input-container'>
-  <SwitchRoot :defaultValue=false v-model='state' :id='props.id'>
+  <SwitchRoot :defaultValue=false v-model='state' :id='props.id' class='button'>
     <SwitchThumb class='thumb'/>
   </SwitchRoot>
   <Label
@@ -31,7 +31,7 @@ label {
   flex-shrink: 2;
   transition: all 150ms cubic-bezier(.4,0,.2,1);
 }
-button {
+.button {
   display: block;
   padding: 0;
   width: 38px;
@@ -43,8 +43,7 @@ button {
   position: relative;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-
-button[data-state='checked'] {
+.button[data-state='checked'] {
   background-color: resp((shadow($orchid, 0.6), $taupe));
 }
 .thumb {
@@ -61,5 +60,4 @@ button[data-state='checked'] {
 .thumb[data-state='checked'] {
   transform: translateX(19px);
 }
-
 </style>

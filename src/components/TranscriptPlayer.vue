@@ -61,10 +61,12 @@ watch(
     controls
     preload='auto'
     ref='audio'
+    id='audio-player'
     @timeupdate='emit("update:playtime", audio ? audio.currentTime : 0)'
     @play='emit("update:playing", true)'
     @pause='emit("update:playing", false)'
     aria-label='Audio Player'
+    aria-details='transcript-body'
   >
   </audio>
 </template>

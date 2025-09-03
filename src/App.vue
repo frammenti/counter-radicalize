@@ -18,19 +18,20 @@ provide(previewsKey, previews)
     <div class='landing'>
       <Hero />
     </div>
-    <About />
-    <Transcript />
-    <LinguisticFeatures />
+    <article>
+      <About />
+      <Transcript />
+      <LinguisticFeatures />
+    </article>
   </main>
   <AppFooter />
 </template>
 
 <style scoped lang='scss'>
+@include set-background('.landing');
 .landing {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 100%;
 }
-
-@include set-background('.landing');
 </style>

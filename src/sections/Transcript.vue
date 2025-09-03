@@ -25,25 +25,25 @@ if (window.matchMedia('(any-pointer: fine)').matches) {
 </script>
 
 <template>
-  <section id='transcript' aria-label='Transcript'>
-    <TranscriptPlayer 
-      src='/counter-radicalize/hls/message.m3u8'
+<section id='transcript' class='paginated' aria-label='Transcript'>
+  <TranscriptPlayer 
+    src='/counter-radicalize/hls/message.m3u8'
+    v-model:playtime='playtime'
+    v-model:playing='playing'
+  />
+  <section id='transcript-text' aria-label='Transcript Text'>
+    <TranscriptText
       v-model:playtime='playtime'
-      v-model:playing='playing'
+      :segments='segments'
+      :active='active'
     />
-    <div id='transcript-text' aria-label='Transcript Text'>
-      <TranscriptText
-        v-model:playtime='playtime'
-        :segments='segments'
-        :active='active'
-      />
-    </div>
-    <div id='emotion-circle' aria-label='Emotion Circle'>
-      <TranscriptFeatures
-        :data='segments[active]'
-      />
-    </div>
   </section>
+  <section id='transcript-features' aria-label='Transcript Features'>
+    <TranscriptFeatures
+      :data='segments[active]'
+    />
+  </section>
+</section>
 </template>
 
 <style scoped>
@@ -58,7 +58,7 @@ if (window.matchMedia('(any-pointer: fine)').matches) {
   max-height: 50%;
   width: 100%;
 }
-#emotion-circle {
+#transcript-features {
   position: relative;
   max-height: 30%;
   width: 100%;

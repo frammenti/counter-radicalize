@@ -1,5 +1,9 @@
+<script setup lang="ts">
+
+</script>
+
 <template>
-  <section class='hero grid' aria-label='Hero'>
+  <section class='hero grid paginated' aria-label='Hero'>
     <div class='grid-item-1'>
       <h1>
         <span>C</span>
@@ -24,7 +28,7 @@
     </div>
     <div class='grid-item-2'>
       <p>An experimental tool to analyze and visualize emotional content in speech.</p>
-      <a href='#about' tabindex='-1'><button>Read</button></a>
+      <a class='button' href='#about'>Read</a>
     </div>
   </section>
 </template>
