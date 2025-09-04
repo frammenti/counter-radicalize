@@ -28,6 +28,7 @@ const metadata = previews[props.href]
       :align-flip=true
       :prioritize-position=true
       :side-offset=5
+      :collision-padding='{ top: 64 }'
     >
       <div class='popover-content'>
         <div class='popover-image' v-if='metadata.image' :style="{backgroundImage: 'url(' + metadata.image + ')'}"></div>
