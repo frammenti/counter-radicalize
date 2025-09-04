@@ -58,7 +58,6 @@ const metadata = previews[props.href]
 
 <style scoped lang='scss'>
 :deep(.popover) {
-  border-radius: 6px;
   width: 250px;
   animation-duration: 125ms;
   animation-timing-function: ease-in-out;

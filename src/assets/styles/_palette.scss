@@ -11,8 +11,8 @@ $taupe: oklch(60.668% 0.0184 17.465);
 $transparent: oklch(0% 0 0 / 0);
 $shadow: oklch(0 0 0 / 0.102);
 
-$primary-color: $orchid $lilac;
-$primary-muted-color: color.scale($orchid, $lightness: 20%) color.scale($lilac, $lightness: -10%);
+$primary-color: $orchid color.scale($lilac, $lightness: -15%, $chroma: 10%);
+$primary-muted-color: color.scale($orchid, $lightness: 10%, $chroma: 10%) color.scale($lilac, $lightness: -20%, $chroma: 20%);
 $link-color: $fuchsia $lilac;
 $shadow-color: color.change($brown, $alpha: 0.15), color.change($taupe, $alpha: 0.15);
 $background-color: $white $black;
@@ -23,8 +23,8 @@ $border-color: oklch(20.992% 0.03416 263.451 / 0.05) oklch(100% 0.00011 271.152 
 $modal-color: $white oklch(0.278 0.0047 17.465);
 
 $box-shadow:
-  0 4px 6px -1px resp(($shadow, $transparent)),
-  0 2px 4px -2px resp(($shadow, $transparent));
+  0 4px 6px -1px $shadow,
+  0 2px 4px -2px $shadow;
 
 $box-shadow-large:
   0px 10px 38px -10px $shadow,

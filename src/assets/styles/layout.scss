@@ -49,19 +49,24 @@ main, article {
   flex-direction: column;
 }
 
-.hero {
-  min-height: 100svh; // small viewport height
-  padding-top: $header-height;
-}
-
 .paginated {
   max-height: 100lvh;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   padding-inline: 2rem;
-  padding-block: calc($section-spacing * 1.5) calc($section-spacing * 0.5);
-  scroll-margin-block-start: calc($section-spacing * 0.5);
+  padding-block: $section-spacing;
+  scroll-margin-block-start: $header-height;
+  border-block-start: 1px solid resp($border-color);
+}
+
+.paginated:first-of-type {
+  border-block-start: none;
+}
+
+.hero {
+  min-height: 100svh; // small viewport height
+  padding-top: $header-height;
 }
 
 h1, h2, h3 {
@@ -110,13 +115,13 @@ a svg {
   background-color: resp($primary-color);
   font-family: sans-serif;
   color: $white;
-  font-size: 1rem;
-  font-weight: 550;
-  line-height: 1.4;
+  font-size: .875em;
+  font-weight: 600;
+  line-height: 1.5;
   text-align: center;
-  border-radius: 10rem;
-  padding-inline: 1.2rem;
-  padding-block: 0.6rem;
+  border-radius: 10em;
+  padding-inline: 1.2em;
+  padding-block: 0.6em;
   margin-inline: 0;
   margin-block: 0;
   box-shadow:
@@ -163,7 +168,7 @@ a svg {
   background-color: resp($modal-color);
   outline: 1px solid resp($border-color);
   outline-offset: calc(1px * -1);
-  border-radius: 1.5rem;
+  border-radius: 0.5rem;
   box-shadow: $box-shadow;
   padding: 1rem;
 }

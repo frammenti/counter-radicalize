@@ -20,6 +20,12 @@
 </template>
 
 <style scoped lang='scss'>
+header {
+  backdrop-filter: blur(0px);
+  background-color: resp((shadow($white, 0.05), shadow($black, 0.05)));
+  outline: 1px solid resp((shadow($black, 0.08), shadow($white, 0.08)));
+  z-index: 8;
+}
 #site-nav {
   display: flex;
   padding-inline: 2em;
