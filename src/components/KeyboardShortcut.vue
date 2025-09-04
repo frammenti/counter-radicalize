@@ -25,18 +25,18 @@ if (sysModifier) keyList.unshift(sysModifier)
 </script>
 
 <template>
-<aside class='shortcut-container'>
+<div class='shortcut-container'>
   <div class='shortcut-keys'>
     <template v-for='(k, i) in keyList' :key='i'>
       <kbd v-if='k in keyMap' class='kbd kbd-square'>
-        <component :is='keyMap[k as KeyName]' :stroke-width='1.5' :size='18' />
+        <component :is='keyMap[k as KeyName]' :stroke-width='1.5' :size='k == "cmd" ? 15 : 18' />
       </kbd>
       <kbd v-else class='kbd kbd-long'>{{ k }}</kbd>
       <template v-if='i < keyList.length - 1'>+</template>
     </template>
   </div>
   <p class='command'><slot></slot></p>
-</aside>
+</div>
 </template>
 
 
@@ -44,7 +44,6 @@ if (sysModifier) keyList.unshift(sysModifier)
 .shortcut-container {
   width: fit-content;
   text-align: center;
-  opacity: 0.25;
   cursor: default;
   user-select: none;
 }
@@ -57,19 +56,18 @@ if (sysModifier) keyList.unshift(sysModifier)
   font-weight: 450;
 }
 .kbd {
-  min-width: 2em;
-  height: 2em;
+  min-width: 2.3em;
+  height: 2.3em;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-family: inherit;
   margin-inline: 0.3rem;
-  border: 1px solid resp((shadow($raisin, 0.3), shadow($taupe, 0.4)));
+  border: 1px solid resp($border-color);
   border-radius: 0.4em;
 }
 .command {
-  font-size: 0.9em;
-  margin-block: 0.1em 0;
+  margin-block: 0.2em 0;
 }
 .kbd-square {
   width: 2em;

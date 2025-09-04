@@ -3,7 +3,7 @@ import { shallowRef, computed } from 'vue'
 import TranscriptPlayer from '@/components/TranscriptPlayer.vue'
 import TranscriptText from '@/components/TranscriptText.vue'
 import TranscriptFeatures from '@/components/TranscriptFeatures.vue'
-import KeyboardShortcut from '@/components/KeyboardShortcut.vue'
+import KeyboardShortcutsTip from '@/components/KeyboardShortcutsTip.vue'
 import segments from '@models/outputs/segments_emotion.json'
 import type { Segment } from '@/types/segment'
 import usePlaybackShortcuts from '@/composables/usePlaybackShortcuts'
@@ -11,6 +11,7 @@ import usePlaybackShortcuts from '@/composables/usePlaybackShortcuts'
 const playtime = shallowRef<number>(0)
 const playing = shallowRef<boolean>(false)
 const hasKeyboard: boolean = window.matchMedia('(any-pointer: fine)').matches
+const section = shallowRef<HTMLElement | null>(null)
 
 // Sync index of active segment
 function atMoment(seg: Segment, t: number): boolean {
@@ -28,18 +29,8 @@ if (hasKeyboard) {
 </script>
 
 <template>
-<section id='transcript' class='paginated' aria-label='Transcript'>
-  <section id='playback-shortcuts' aria-label='Playback Shortcuts' class='grid' v-if='hasKeyboard'>
-    <KeyboardShortcut modifier='meta' :keys='["arrowLeft"]' id='shortcut-prev'>
-      previous segment
-    </KeyboardShortcut>
-    <KeyboardShortcut modifier='meta' :keys='["space"]' id='shortcut-play'>
-      play/pause
-    </KeyboardShortcut>
-    <KeyboardShortcut modifier='meta' :keys='["arrowRight"]' id='shortcut-next'>
-      next segment
-    </KeyboardShortcut>
-  </section>
+<section id='transcript' class='paginated' aria-label='Transcript' ref='section'>
+  <KeyboardShortcutsTip v-if='hasKeyboard' :anchor='section' />
   <TranscriptPlayer 
     src='/counter-radicalize/hls/message.m3u8'
     v-model:playtime='playtime'
@@ -77,36 +68,5 @@ if (hasKeyboard) {
   position: relative;
   max-height: 30%;
   width: 100%;
-}
-#playback-shortcuts {
-  position: absolute;
-  font-size: 0.9em;
-  top: 0;
-  justify-items: center;
-  height: $section-spacing * 1.5 + 4.5rem;
-  padding-block-start: $section-spacing * 0.75;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas:
-    ' .   play   . '
-    'prev  .   next';
-  z-index: -1;
-}
-#shortcut-prev {
-  grid-area: prev;
-}
-#shortcut-next {
-  grid-area: next;
-}
-#shortcut-play {
-  grid-area: play;
-  display: flex;
-  flex-flow: row;
-  align-items: center;
-  gap: 0.2em;
-}
-@media screen and (max-width: 768px) {
-  #playback-shortcuts {
-    display: none;
-  }
 }
 </style>
