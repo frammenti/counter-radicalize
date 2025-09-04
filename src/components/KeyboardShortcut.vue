@@ -3,8 +3,8 @@ import { ChevronLeft, ChevronRight, Command } from 'lucide-vue-next'
 
 const keyMap = {
   cmd: Command,
-  arrowRight: ChevronRight,
-  arrowLeft: ChevronLeft,
+  ArrowRight: ChevronRight,
+  ArrowLeft: ChevronLeft,
 } as const
 
 type KeyMap = typeof keyMap

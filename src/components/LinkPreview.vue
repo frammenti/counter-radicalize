@@ -22,7 +22,7 @@ const metadata = previews[props.href]
       <slot>…</slot>
     </HoverCardTrigger>
     <HoverCardContent
-      class='popover'
+      class='popover card'
       align='center'
       side='top'
       :align-flip=true
@@ -59,28 +59,21 @@ const metadata = previews[props.href]
 <style scoped lang='scss'>
 :deep(.popover) {
   border-radius: 6px;
-  padding-block: 20px;
-  padding-inline: 20px;
   width: 250px;
-  background-color: resp($background-color);
   animation-duration: 125ms;
   animation-timing-function: ease-in-out;
   will-change: transform opacity;
-  outline: 0.5px solid resp($border-color);
+  outline-offset: 0;
   overflow: clip;
   z-index: 20;
 }
 :deep(.popover[data-side='top']) {
   animation-name: slide-up;
-  box-shadow:
-    resp((shadow($brown, 0.14), transparent)) 0px 10px 38px -10px,
-    resp((shadow($brown, 0.14), transparent)) 0px 10px 20px -15px;
+  box-shadow: $box-shadow-large;
 }
 :deep(.popover[data-side='bottom']) {
   animation-name: slide-down;
-  box-shadow: 
-  resp((shadow($brown, 0.14), transparent)) 0px -10px 38px -10px,
-  resp((shadow($brown, 0.14), transparent)) 0px -10px 20px -15px;
+  box-shadow: $box-shadow-large-reverse;
 }
 @keyframes slide-up {
   from {
@@ -103,7 +96,7 @@ const metadata = previews[props.href]
   }
 }
 :deep(.arrow) {
-  fill: resp($background-color);
+  fill: resp($modal-color);
   stroke: resp($border-color);
   z-index: 21;
 }
@@ -154,6 +147,6 @@ const metadata = previews[props.href]
   margin-inline-start: -3px;
 }
 .popover-content a:hover {
-  background-color: resp((shadow($brown, 0.1), shadow($taupe, 0.1)));
+  background-color: resp((shadow($brown, 0.1), shadow($taupe, 0.3)));
 }
 </style>

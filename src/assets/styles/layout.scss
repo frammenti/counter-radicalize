@@ -151,19 +151,29 @@ a svg {
   justify-self: end;
 }
 
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.card {
+  background-color: resp($modal-color);
+  outline: 1px solid resp($border-color);
+  outline-offset: calc(1px * -1);
+  border-radius: 1.5rem;
+  box-shadow: $box-shadow;
+  padding: 1rem;
+}
+
 .icon-outline {
   display: block;
 }
 
 .icon-solid {
   display: none;
-}
-
-.noselect {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
 }
 
 @media (prefers-color-scheme: dark) {
