@@ -73,7 +73,7 @@ watch(() => props.active, i => {
 } 
 
 :deep(.sound-repetition) {
-  text-emphasis: dot resp($annotation-color);
+  text-decoration: underline dashed 1px resp($annotation-color);
 }
 
 :deep(.block):before {
@@ -81,7 +81,7 @@ watch(() => props.active, i => {
   font-weight: 600;
   color: resp($annotation-color);
   font-style: normal;
-  text-emphasis: none;
+  text-decoration: none;
 }
 
 :deep(.word-repetition):after {
@@ -91,7 +91,7 @@ watch(() => props.active, i => {
   font-size: 50%;
   vertical-align: top;
   color: resp($annotation-color);
-  text-emphasis: none;
+  text-decoration: none;
 }
 
 :deep(.interjection) {
@@ -104,16 +104,19 @@ watch(() => props.active, i => {
   font-weight: 400;
   font-style: normal;
   color: resp($annotation-color);
-  text-emphasis: none;
+  text-decoration: none;
 }
 
-.active :deep(.disfluency),
-.active :deep(.disfluency):before,
-.active :deep(.disfluency):after {
-  color: resp($link-color);
-  text-emphasis-color: resp($link-color);
+.active :deep(.sound-repetition) {
+  text-decoration-color: resp-mix($link-color, $annotation-color);
 }
 
+.active :deep(.interjection),
+.active :deep(.block):before,
+.active :deep(.prolongation):after,
+.active :deep(.word-repetition):after {
+  color: resp-mix($link-color, $annotation-color);
+}
 
 @media (any-hover: hover) {
   span:hover {
