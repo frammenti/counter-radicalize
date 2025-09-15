@@ -2,6 +2,8 @@ import dotenv from 'dotenv'
 import fs from 'node:fs'
 import fg from 'fast-glob'
 
+process.stdout.write(`Fetching link previews...\n`);
+
 dotenv.config({ path: '.env.local', quiet: true })
 const API_KEY = process.env.LINK_PREVIEW_API_KEY
 if (!API_KEY) throw new Error('Missing LINK_PREVIEW_API_KEY')
@@ -20,10 +22,10 @@ for (const file of files) {
   }
 }
 
-console.info('Found URLs:', [...urls])
+process.stdout.write(`Found URLs:\n  \x1b[36m${[...urls].join('\x1b[0m,\x1b[36m\n  ')}\x1b[0m\n`);
 
 // Fetch previews
-const results = {}
+const results: { [key: string]: {} } = {}
 const skipped = new Array<string>()
 for (const url of urls) {
   const res = await fetch('https://api.linkpreview.net', {
@@ -35,15 +37,16 @@ for (const url of urls) {
     body: JSON.stringify({q: url})
   })
   if (!res.ok) {
-    skipped.push(`${url}: Error ${res.status} (${res.statusText})`)
+    skipped.push(`\x1b[33m${url}\x1b[0m: \x1b[31merror ${res.status} (${res.statusText})\x1b[0m`)
     continue
   }
   let data = await res.json()
+  if (data.url.length == 0) continue
   const domain = new URL(data.url).hostname
   data.url = domain
   results[url] = data
 }
 
-console.warn('Skipped:', [...skipped]);
+process.stdout.write(`Skipped:\n  ${[...skipped].join(',\n  ')}\n`);
 
 fs.writeFileSync('src/stores/previews.json', JSON.stringify(results, null, 2))
