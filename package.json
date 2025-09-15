@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/fetch-previews.ts",
+    "prebuild": "node scripts/build-playlist.ts && node scripts/fetch-previews.ts && node scripts/align-disfluencies.ts",
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview"
   },
@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "@csstools/postcss-light-dark-function": "^2.0.10",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@types/node": "^24.3.0",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vue/tsconfig": "^0.7.0",
