@@ -17,7 +17,7 @@ whenever(isVisible, stop, { once: true })
 </script>
 
 <template>
-  <ToastProvider :duration='15000' label='Keyboard shortcuts info'>
+  <ToastProvider :duration='30000' label='Keyboard shortcuts info'>
     <ToastViewport
       class='toast-viewport'
       :hotkey="['h']"
@@ -68,17 +68,15 @@ whenever(isVisible, stop, { once: true })
 <style scoped lang='scss'>
 $toast-margin: 1.5rem;
 
-[aria-label="Keyboard shortcuts (h)"] {
-  --page-margin: calc((100vw - 56rem) / 2);
-  position: absolute;
-  top: 0;
-  right: calc(var(--page-margin) * -1);
-  z-index: 2;
-}
 :deep(.toast-viewport) {
+  --page-margin: calc((100vw - 56rem) / 2);
+  position: fixed;
+  top: $header-height;
+  right: 0;
+  z-index: 50;
   margin-block: $toast-margin;
   margin-inline-end: $toast-margin;
-  width: 340px;
+  width: 320px;
 }
 :deep(.toast-root) {
   line-height: calc(1.25/.875);

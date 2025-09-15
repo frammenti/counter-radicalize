@@ -66,6 +66,12 @@ if (sysModifier) keyList.unshift(sysModifier)
   border: 1px solid resp($border-color);
   border-radius: 0.4em;
 }
+kbd:first-child {
+  margin-inline-start: 0;
+}
+kbd:last-child {
+  margin-inline-end: 0;
+}
 .command {
   margin-block: 0.2em 0;
 }
