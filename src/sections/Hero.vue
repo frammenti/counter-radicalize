@@ -45,6 +45,7 @@ h1 {
   cursor: crosshair;
   line-height: 1.1;
   margin: 0;
+  animation: disable 4s backwards;
 }
 .grid-item-1 {
   grid-area: t;
@@ -74,6 +75,10 @@ h1 span:has(+ span:hover) {
 }
 .breathe {
   animation: letter-breathe 3s ease 1s;
+}
+@keyframes disable {
+  from { pointer-events: none; }
+  to { pointer-events: none; }
 }
 @keyframes letter-breathe {
   from { font-variation-settings: 'wght' 600; }
