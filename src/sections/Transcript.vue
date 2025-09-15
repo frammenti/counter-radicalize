@@ -5,7 +5,7 @@ import TranscriptText from '@/components/TranscriptText.vue'
 import TranscriptFeatures from '@/components/TranscriptFeatures.vue'
 import KeyboardShortcutsTip from '@/components/KeyboardShortcutsTip.vue'
 import segments from '@models/outputs/segments_emotion.json'
-import type { Segment } from '@/types/segment'
+import type { EmotionSegment } from '@/types/emotion-segment'
 import usePlaybackShortcuts from '@/composables/usePlaybackShortcuts'
 
 const playtime = shallowRef<number>(0)
@@ -14,7 +14,7 @@ const hasKeyboard: boolean = window.matchMedia('(any-pointer: fine)').matches
 const section = shallowRef<HTMLElement | null>(null)
 
 // Sync index of active segment
-function atMoment(seg: Segment, t: number): boolean {
+function atMoment(seg: EmotionSegment, t: number): boolean {
   let start = t > 0 ? seg.start - 0.1 : 0
   return start < t && t < seg.end
 }

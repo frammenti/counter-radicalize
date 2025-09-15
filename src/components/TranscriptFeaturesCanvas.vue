@@ -1,9 +1,9 @@
 <script setup lang='ts'>
 import { shallowRef, onMounted, computed, watch } from 'vue'
 import emotionColors from '@/assets/styles/emotions.module.scss'
-import type { Segment } from '@/types/segment'
+import type { EmotionSegment } from '@/types/emotion-segment'
 
-const props = defineProps<{ data: Segment | undefined }>()
+const props = defineProps<{ data: EmotionSegment | undefined }>()
 const canvas = shallowRef<HTMLCanvasElement | null>(null)
 
 const radius = computed<number>((prev) => {

@@ -4,13 +4,13 @@ import Switch from '@/components/Switch.vue'
 import TranscriptFeaturesCanvas from '@/components/TranscriptFeaturesCanvas.vue'
 import TranscriptFeaturesEmotions from '@/components/TranscriptFeaturesEmotions.vue'
 import TranscriptFeaturesDimensions from '@/components/TranscriptFeaturesDimensions.vue'
-import type { Segment } from '@/types/segment'
+import type { EmotionSegment } from '@/types/emotion-segment'
 
-const props = defineProps<{ data: Segment | undefined }>()
+const props = defineProps<{ data: EmotionSegment | undefined }>()
 const show = shallowRef<boolean>(false)
 
 // Keep the previous data in between segments
-const permaData = computed<Segment | undefined>((prev) => {
+const permaData = computed<EmotionSegment | undefined>((prev) => {
   if (!props.data) return prev
   return props.data
 })

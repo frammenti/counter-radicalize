@@ -1,0 +1,3882 @@
+[
+  [
+    {
+      "regex": "(\\brecording\\b\\W*\\bexplaining\\b\\W*\\bwhy\\b\\W*\\bi've\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bwhy\\b\\W*\\bi've\\b\\W*\\bdecided\\b\\W*\\bto\\b\\W*\\bbomb\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bme\\b\\W*\\bhere\\b\\W*\\band\\b\\W*\\bi\\b\\W*\\bknow\\b\\W*\\bwhat\\b\\W*\\byou're\\b\\W*\\bgoing\\b\\W*\\bto\\b\\W*\\bsay\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\band\\b\\W*\\bi\\b\\W*\\bknow\\b\\W*\\bwhat\\b\\W*\\byou're\\b\\W*\\bgoing\\b\\W*\\bto\\b\\W*\\bsay\\b\\W*\\bhow\\b\\W*\\bcould\\b\\W*\\bwe\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bexactly\\b\\W*\\bthe\\b\\W*\\bpoint\\b\\W*\\bthere's\\b\\W*\\bno\\b\\W*\\bway\\b\\W*\\byou\\b\\W*\\bcan\\b\\W*\\bget\\b)",
+      "className": [
+        "Block",
+        "Sound repetition",
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bthere's\\b\\W*\\bno\\b\\W*\\bway\\b\\W*\\byou\\b\\W*\\bcan\\b\\W*\\bget\\b\\W*\\bconsent\\b\\W*\\bto\\b\\W*\\bbring\\b\\W*\\bsomeone\\b\\W*\\bhere\\b)",
+      "className": [
+        "Block",
+        "Sound repetition",
+        "Word repetition"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bum\\b\\W*\\band\\b\\W*\\bif\\b\\W*\\byou're\\b\\W*\\bgoing\\b\\W*\\bto\\b\\W*\\btry\\b\\W*\\bto\\b\\W*\\bsay\\b\\W*\\bsomething\\b\\W*\\breally\\b\\W*\\bfucking\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [],
+  [
+    {
+      "regex": "(\\bknow\\b\\W*\\bi\\b\\W*\\bcan't\\b\\W*\\bget\\b\\W*\\bher\\b\\W*\\bconsent\\b\\W*\\bto\\b\\W*\\bhave\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bto\\b\\W*\\beven\\b\\W*\\bask\\b\\W*\\bfor\\b\\W*\\bthe\\b\\W*\\bconsent\\b\\W*\\bright\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bfor\\b\\W*\\bthe\\b\\W*\\bconsent\\b\\W*\\bright\\b\\W*\\bum\\b\\W*\\bso\\b\\W*\\bi\\b\\W*\\bmean\\b\\W*\\bif\\b\\W*\\byou\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bum\\b\\W*\\bso\\b\\W*\\bi\\b\\W*\\bmean\\b\\W*\\bif\\b\\W*\\byou\\b\\W*\\bactually\\b\\W*\\bthink\\b\\W*\\bthat's\\b\\W*\\ba\\b\\W*\\bgood\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bvery\\b\\W*\\bchildish\\b\\W*\\band\\b\\W*\\bright\\b\\W*\\bum\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bright\\b\\W*\\bum\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bright\\b\\W*\\bum\\b\\W*\\band\\b\\W*\\bbefore\\b\\W*\\byou\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bjust\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bjust\\b\\W*\\bname\\b\\W*\\bcalls\\b\\W*\\band\\b\\W*\\bthat's\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bsome\\b\\W*\\bof\\b\\W*\\byou\\b\\W*\\bare\\b\\W*\\bjust\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bokay\\b\\W*\\banyways\\b\\W*\\bso\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\banyways\\b\\W*\\bso\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bso\\b\\W*\\byes\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [],
+  [
+    {
+      "regex": "(\\bi\\b\\W*\\bhave\\b\\W*\\bwritten\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bjust\\b\\W*\\bbecause\\b\\W*\\bi\\b\\W*\\bhave\\b\\W*\\ba\\b\\W*\\blot\\b\\W*\\bof\\b\\W*\\bthings\\b\\W*\\bto\\b\\W*\\bsay\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bof\\b\\W*\\bthings\\b\\W*\\bto\\b\\W*\\bsay\\b\\W*\\band\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\band\\b\\W*\\byeah\\b\\W*\\bso\\b\\W*\\bhopefully\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byeah\\b\\W*\\bso\\b\\W*\\bhopefully\\b\\W*\\bthere's\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byeah\\b\\W*\\bso\\b\\W*\\bhopefully\\b\\W*\\bthere's\\b\\W*\\bsome\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bto\\b\\W*\\bmy\\b\\W*\\blittle\\b\\W*\\brecording\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bbut\\b\\W*\\banyways\\b\\W*\\bso\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bthe\\b\\W*\\breason\\b\\W*\\bi'm\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bwanting\\b\\W*\\bto\\b\\W*\\bget\\b\\W*\\bthe\\b\\W*\\bfuck\\b\\W*\\bout\\b\\W*\\bof\\b\\W*\\bthis\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\blife\\b\\W*\\baddict\\b\\W*\\bright\\b\\W*\\bso\\b\\W*\\bi\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bright\\b\\W*\\bso\\b\\W*\\bi\\b\\W*\\breally\\b\\W*\\bnever\\b\\W*\\bwanted\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bi\\b\\W*\\breally\\b\\W*\\bnever\\b\\W*\\bwanted\\b\\W*\\bto\\b\\W*\\bdo\\b\\W*\\bthis\\b\\W*\\blife\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bum\\b\\W*\\band\\b\\W*\\bi\\b\\W*\\bremember\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\band\\b\\W*\\bi\\b\\W*\\bremember\\b\\W*\\blike\\b\\W*\\bwhen\\b\\W*\\bi\\b\\W*\\bwas\\b\\W*\\ba\\b\\W*\\bkid\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bwhen\\b\\W*\\bi\\b\\W*\\bwas\\b\\W*\\ba\\b\\W*\\bkid\\b\\W*\\bpeople\\b\\W*\\bjust\\b\\W*\\btrying\\b\\W*\\bto\\b\\W*\\bi\\b\\W*\\bmean\\b\\W*\\bmy\\b\\W*\\bwhole\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bonto\\b\\W*\\bme\\b\\W*\\blike\\b\\W*\\bhey\\b\\W*\\blet's\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bgo\\b\\W*\\bto\\b\\W*\\ba\\b\\W*\\bconcert\\b\\W*\\bor\\b\\W*\\bsome\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\band\\b\\W*\\bi'm\\b\\W*\\balways\\b\\W*\\bsaying\\b\\W*\\bno\\b\\W*\\bno\\b\\W*\\bnot\\b\\W*\\binterested\\b\\W*\\bnot\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bsaying\\b\\W*\\bno\\b\\W*\\bno\\b\\W*\\bnot\\b\\W*\\binterested\\b\\W*\\bnot\\b\\W*\\binterested\\b\\W*\\band\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\binterested\\b\\W*\\bnot\\b\\W*\\binterested\\b\\W*\\band\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bpeople\\b\\W*\\bare\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\band\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bpeople\\b\\W*\\bare\\b\\W*\\bum\\b\\W*\\bfor\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bfucking\\b\\W*\\btake\\b\\W*\\bno\\b\\W*\\bfor\\b\\W*\\ban\\b\\W*\\banswer\\b\\W*\\byou\\b\\W*\\bknow\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\breally\\b\\W*\\bisn't\\b\\W*\\bany\\b\\W*\\bdifferent\\b\\W*\\bfrom\\b\\W*\\blike\\b\\W*\\byou\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bpushing\\b\\W*\\bdrugs\\b\\W*\\bor\\b\\W*\\bsmoking\\b\\W*\\bon\\b\\W*\\bsome\\b\\W*\\bother\\b\\W*\\bkid\\b\\W*\\bor\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bany\\b\\W*\\bdifferent\\b\\W*\\bfrom\\b\\W*\\bthis\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bexcept\\b\\W*\\bin\\b\\W*\\bthis\\b\\W*\\bcase\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byou\\b\\W*\\bknow\\b\\W*\\bexcept\\b\\W*\\bin\\b\\W*\\bthis\\b\\W*\\bcase\\b\\W*\\bit's\\b\\W*\\bmore\\b\\W*\\blike\\b\\W*\\bfucking\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\byou\\b\\W*\\bknow\\b\\W*\\bit's\\b\\W*\\ba\\b\\W*\\bmuch\\b\\W*\\bworse\\b\\W*\\bdrug\\b\\W*\\bso\\b\\W*\\band\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\blife\\b\\W*\\bis\\b\\W*\\ba\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bit\\b\\W*\\breally\\b\\W*\\bis\\b\\W*\\bvery\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [],
+  [
+    {
+      "regex": "(\\babout\\b\\W*\\blife\\b\\W*\\bbut\\b\\W*\\bi\\b\\W*\\bmean\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bif\\b\\W*\\byou\\b\\W*\\bsit\\b\\W*\\baround\\b\\W*\\band\\b\\W*\\bdo\\b\\W*\\babsolutely\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [],
+  [
+    {
+      "regex": "(\\bright\\b\\W*\\band\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\band\\b\\W*\\bthis\\b\\W*\\bis\\b\\W*\\bhow\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\byeah\\b\\W*\\bthat\\b\\W*\\bincludes\\b\\W*\\bliterally\\b\\W*\\beven\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\band\\b\\W*\\bthe\\b\\W*\\bshit\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bthe\\b\\W*\\bshit\\b\\W*\\bthat\\b\\W*\\bwe're\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\breally\\b\\W*\\bis\\b\\W*\\bstupid\\b\\W*\\bthis\\b\\W*\\bwhole\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bthis\\b\\W*\\bwhole\\b\\W*\\bevolution\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bwhole\\b\\W*\\bevolution\\b\\W*\\bthing\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bdesign\\b\\W*\\bwhen\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bwhen\\b\\W*\\byou\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bwhen\\b\\W*\\byou\\b\\W*\\bsee\\b\\W*\\binnocent\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bgetting\\b\\W*\\bcompletely\\b\\W*\\bfucked\\b\\W*\\bby\\b\\W*\\blife\\b\\W*\\bi'm\\b\\W*\\bnot\\b\\W*\\bjust\\b\\W*\\btalking\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bhow\\b\\W*\\bthe\\b\\W*\\bhell\\b\\W*\\bcan\\b\\W*\\byou\\b\\W*\\bsit\\b\\W*\\bthere\\b\\W*\\band\\b\\W*\\bcall\\b\\W*\\bthat\\b\\W*\\ban\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bnot\\b\\W*\\bit\\b\\W*\\bclearly\\b\\W*\\bis\\b\\W*\\bjust\\b\\W*\\bsomething\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bit\\b\\W*\\bclearly\\b\\W*\\bis\\b\\W*\\bjust\\b\\W*\\bsomething\\b\\W*\\bthat\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bis\\b\\W*\\bjust\\b\\W*\\bsomething\\b\\W*\\bthat\\b\\W*\\bhappened\\b\\W*\\bbecause\\b\\W*\\bit\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bwere\\b\\W*\\bjust\\b\\W*\\bright\\b\\W*\\bto\\b\\W*\\bwhere\\b\\W*\\bit\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bright\\b\\W*\\bto\\b\\W*\\bwhere\\b\\W*\\bit\\b\\W*\\bcould\\b\\W*\\bhappen\\b\\W*\\band\\b\\W*\\bit\\b\\W*\\bdid\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\breally\\b\\W*\\bdoing\\b\\W*\\banything\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bit's\\b\\W*\\bjust\\b\\W*\\bhappening\\b\\W*\\bthat's\\b\\W*\\bit\\b\\W*\\bit's\\b\\W*\\bnot\\b\\W*\\bintelligent\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\band\\b\\W*\\bwhat\\b\\W*\\blife\\b\\W*\\bis\\b\\W*\\bdoing\\b\\W*\\bit's\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\breally\\b\\W*\\bdoes\\b\\W*\\bapply\\b\\W*\\bi\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bi\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bi\\b\\W*\\btend\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bto\\b\\W*\\bsay\\b\\W*\\byeah\\b\\W*\\blife\\b\\W*\\bitself\\b\\W*\\breally\\b\\W*\\bis\\b\\W*\\bjust\\b\\W*\\bit's\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bright\\b\\W*\\bit's\\b\\W*\\bjust\\b\\W*\\bchasing\\b\\W*\\babsolute\\b\\W*\\bnonsense\\b\\W*\\band\\b\\W*\\bi've\\b\\W*\\bpretty\\b\\W*\\bmuch\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [],
+  [],
+  [],
+  [
+    {
+      "regex": "(\\bi\\b\\W*\\breally\\b\\W*\\bdidn't\\b\\W*\\bwant\\b\\W*\\bmuch\\b\\W*\\byou\\b\\W*\\bknow\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bwant\\b\\W*\\bmuch\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\band\\b\\W*\\bas\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byou\\b\\W*\\bknow\\b\\W*\\band\\b\\W*\\bas\\b\\W*\\bi've\\b\\W*\\bgotten\\b\\W*\\bolder\\b\\W*\\band\\b\\W*\\bolder\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\band\\b\\W*\\bas\\b\\W*\\bi've\\b\\W*\\bgotten\\b\\W*\\bolder\\b\\W*\\band\\b\\W*\\bolder\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bmore\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bcausing\\b\\W*\\btons\\b\\W*\\band\\b\\W*\\btons\\b\\W*\\bof\\b\\W*\\bharm\\b\\W*\\bit\\b\\W*\\bis\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bof\\b\\W*\\bharm\\b\\W*\\bit\\b\\W*\\bis\\b\\W*\\ba\\b\\W*\\bzero\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bit\\b\\W*\\bis\\b\\W*\\ba\\b\\W*\\bzero\\b\\W*\\bsum\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bis\\b\\W*\\bthat\\b\\W*\\bwhat\\b\\W*\\bit's\\b\\W*\\bcalled\\b\\W*\\bzero\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bthat\\b\\W*\\bright\\b\\W*\\bhopefully\\b\\W*\\bi\\b\\W*\\bsaid\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bi\\b\\W*\\bsaid\\b\\W*\\bthat\\b\\W*\\bright\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bstate\\b\\W*\\bis\\b\\W*\\bdeprivation\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bbasically\\b\\W*\\byou're\\b\\W*\\bbeing\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bbasically\\b\\W*\\byou're\\b\\W*\\bbeing\\b\\W*\\bwhipped\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\byour\\b\\W*\\bneeds\\b\\W*\\band\\b\\W*\\byour\\b\\W*\\bdesires\\b\\W*\\bwhich\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bwhip\\b\\W*\\bbeing\\b\\W*\\btaken\\b\\W*\\baway\\b\\W*\\bright\\b\\W*\\bso\\b)",
+      "className": []
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bthe\\b\\W*\\bwhip\\b\\W*\\bokay\\b\\W*\\bit\\b\\W*\\bdoesn't\\b\\W*\\bintuitively\\b\\W*\\bmake\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bthat\\b\\W*\\bi\\b\\W*\\btotally\\b\\W*\\bdidn't\\b\\W*\\bbelieve\\b\\W*\\bit\\b\\W*\\bi\\b\\W*\\bwas\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bbelieve\\b\\W*\\bit\\b\\W*\\bi\\b\\W*\\bwas\\b\\W*\\blike\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\blike\\b\\W*\\bthere's\\b\\W*\\bcertain\\b\\W*\\bthings\\b\\W*\\bthat\\b\\W*\\bare\\b\\W*\\bjust\\b\\W*\\blike\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bbut\\b\\W*\\bas\\b\\W*\\bi\\b\\W*\\bthought\\b\\W*\\babout\\b\\W*\\byou\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bi\\b\\W*\\bthought\\b\\W*\\babout\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bover\\b\\W*\\bthe\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [],
+  [
+    {
+      "regex": "(\\breally\\b\\W*\\bis\\b\\W*\\bno\\b\\W*\\blike\\b)",
+      "className": [
+        "Block",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\breally\\b\\W*\\bis\\b\\W*\\bno\\b\\W*\\blike\\b\\W*\\bfundamental\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bit\\b\\W*\\breally\\b\\W*\\bis\\b\\W*\\ball\\b\\W*\\bmade\\b\\W*\\bof\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bknow\\b\\W*\\bit's\\b\\W*\\breally\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bit's\\b\\W*\\breally\\b\\W*\\binteresting\\b\\W*\\band\\b\\W*\\bit's\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\byou\\b\\W*\\bknow\\b\\W*\\bunfortunate\\b\\W*\\bbut\\b\\W*\\bthat's\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bbut\\b\\W*\\bthat's\\b\\W*\\bjust\\b\\W*\\bthe\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bso\\b\\W*\\byeah\\b\\W*\\bzero\\b\\W*\\bsum\\b\\W*\\bgame\\b\\W*\\bbecause\\b\\W*\\blike\\b\\W*\\bi\\b\\W*\\bsaid\\b\\W*\\byou\\b\\W*\\bthe\\b)",
+      "className": [
+        "Sound repetition",
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bgame\\b\\W*\\bbecause\\b\\W*\\blike\\b\\W*\\bi\\b\\W*\\bsaid\\b\\W*\\byou\\b\\W*\\bthe\\b\\W*\\bbest\\b\\W*\\byou\\b\\W*\\bcan\\b\\W*\\bdo\\b\\W*\\bis\\b)",
+      "className": [
+        "Sound repetition",
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bthe\\b\\W*\\bbest\\b\\W*\\byou\\b\\W*\\bcan\\b\\W*\\bdo\\b\\W*\\bis\\b\\W*\\bclean\\b\\W*\\bup\\b\\W*\\bmesses\\b)",
+      "className": [
+        "Block",
+        "Sound repetition",
+        "Word repetition"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bwe\\b\\W*\\bcan't\\b\\W*\\beven\\b\\W*\\breally\\b\\W*\\bdo\\b\\W*\\bthat\\b\\W*\\bwell\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bi\\b\\W*\\bmean\\b\\W*\\blook\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\breally\\b\\W*\\bdo\\b\\W*\\bthat\\b\\W*\\bwell\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bi\\b\\W*\\bmean\\b\\W*\\blook\\b\\W*\\baround\\b\\W*\\bwe're\\b\\W*\\bnot\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byou\\b\\W*\\bknow\\b\\W*\\bi\\b\\W*\\bmean\\b\\W*\\blook\\b\\W*\\baround\\b\\W*\\bwe're\\b\\W*\\bnot\\b\\W*\\bdoing\\b\\W*\\bthat\\b\\W*\\byou\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bso\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bwe\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byou\\b\\W*\\bknow\\b\\W*\\bwe\\b\\W*\\bagain\\b\\W*\\banother\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byou\\b\\W*\\bknow\\b\\W*\\bwe\\b\\W*\\bagain\\b\\W*\\banother\\b\\W*\\bthing\\b\\W*\\bgary\\b\\W*\\bwould\\b\\W*\\bsay\\b\\W*\\bis\\b\\W*\\blike\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\banother\\b\\W*\\bthing\\b\\W*\\bgary\\b\\W*\\bwould\\b\\W*\\bsay\\b\\W*\\bis\\b\\W*\\blike\\b\\W*\\byou\\b\\W*\\bspill\\b\\W*\\bthe\\b\\W*\\bmilk\\b\\W*\\band\\b\\W*\\bthen\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bsmall\\b\\W*\\bportion\\b\\W*\\bof\\b\\W*\\bit\\b\\W*\\band\\b\\W*\\bthen\\b\\W*\\byou\\b\\W*\\bpat\\b\\W*\\byourself\\b\\W*\\bon\\b\\W*\\bthe\\b\\W*\\bback\\b\\W*\\bit's\\b\\W*\\bit's\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bpat\\b\\W*\\byourself\\b\\W*\\bon\\b\\W*\\bthe\\b\\W*\\bback\\b\\W*\\bit's\\b\\W*\\bit's\\b\\W*\\breally\\b\\W*\\bi\\b\\W*\\bmean\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bright\\b\\W*\\band\\b\\W*\\bto\\b\\W*\\banyone\\b\\W*\\bwho's\\b\\W*\\blike\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bjust\\b\\W*\\blike\\b\\W*\\boh\\b\\W*\\bfuck\\b\\W*\\bthis\\b\\W*\\bis\\b\\W*\\breally\\b\\W*\\bbad\\b\\W*\\byou\\b\\W*\\bknow\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bthis\\b\\W*\\bis\\b\\W*\\breally\\b\\W*\\bbad\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bum\\b\\W*\\byou\\b\\W*\\bstart\\b\\W*\\bto\\b\\W*\\bsee\\b\\W*\\ball\\b\\W*\\bthe\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bnasty\\b\\W*\\banyways\\b\\W*\\bso\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\banyways\\b\\W*\\bso\\b\\W*\\bum\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bso\\b\\W*\\bum\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\band\\b\\W*\\bthen\\b\\W*\\byou\\b\\W*\\bknow\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\band\\b\\W*\\bthen\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bi\\b\\W*\\bbasically\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\band\\b\\W*\\bthen\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bi\\b\\W*\\bbasically\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bto\\b\\W*\\bdo\\b\\W*\\bmuch\\b\\W*\\babout\\b\\W*\\bit\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bum\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byou\\b\\W*\\bknow\\b\\W*\\bum\\b\\W*\\band\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bknow\\b\\W*\\bum\\b\\W*\\band\\b\\W*\\bso\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\band\\b\\W*\\bso\\b\\W*\\bbasically\\b\\W*\\byou're\\b\\W*\\bjust\\b\\W*\\bgoing\\b\\W*\\bto\\b)",
+      "className": [
+        "Prolongation"
+      ]
+    },
+    {
+      "regex": "(\\bbasically\\b\\W*\\byou're\\b\\W*\\bjust\\b\\W*\\bgoing\\b\\W*\\bto\\b\\W*\\blive\\b\\W*\\blife\\b)",
+      "className": [
+        "Prolongation"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\ba\\b\\W*\\bslave\\b\\W*\\breally\\b\\W*\\bi\\b\\W*\\bmean\\b)",
+      "className": [
+        "Block",
+        "Sound repetition",
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\ba\\b\\W*\\bslave\\b\\W*\\breally\\b\\W*\\bi\\b\\W*\\bmean\\b\\W*\\bpeople\\b\\W*\\bdon't\\b\\W*\\blike\\b\\W*\\bit\\b\\W*\\bwhen\\b\\W*\\bi\\b\\W*\\buse\\b)",
+      "className": [
+        "Block",
+        "Sound repetition",
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bdon't\\b\\W*\\blike\\b\\W*\\bit\\b\\W*\\bwhen\\b\\W*\\bi\\b\\W*\\buse\\b\\W*\\bthis\\b\\W*\\bword\\b\\W*\\bum\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bword\\b\\W*\\bum\\b\\W*\\bbut\\b\\W*\\bthat's\\b\\W*\\bjust\\b\\W*\\bthe\\b\\W*\\bway\\b\\W*\\bi\\b\\W*\\bsee\\b\\W*\\bit\\b\\W*\\bi\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bknow\\b\\W*\\bwhat\\b\\W*\\bto\\b\\W*\\bsay\\b\\W*\\blike\\b\\W*\\bi\\b\\W*\\breally\\b\\W*\\bi\\b\\W*\\breally\\b\\W*\\bdo\\b\\W*\\bjust\\b\\W*\\bsee\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bthat's\\b\\W*\\breally\\b\\W*\\ball\\b\\W*\\bit\\b\\W*\\bis\\b\\W*\\band\\b\\W*\\bum\\b\\W*\\bso\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\band\\b\\W*\\bum\\b\\W*\\bso\\b\\W*\\bi'm\\b\\W*\\bjust\\b\\W*\\bsaying\\b\\W*\\bit's\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bare\\b\\W*\\bokay\\b\\W*\\band\\b\\W*\\byou\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\band\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bit's\\b\\W*\\bit's\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bsuffering\\b\\W*\\bthere\\b\\W*\\bthere\\b\\W*\\bthere's\\b\\W*\\bso\\b\\W*\\bmany\\b\\W*\\bpeople\\b\\W*\\bthere's\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bthere\\b\\W*\\bthere\\b\\W*\\bthere's\\b\\W*\\bso\\b\\W*\\bmany\\b\\W*\\bpeople\\b\\W*\\bthere's\\b\\W*\\bso\\b\\W*\\bmany\\b\\W*\\bcreatures\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bnot\\b\\W*\\bjust\\b\\W*\\bhumans\\b\\W*\\bthat\\b\\W*\\bare\\b\\W*\\bimportant\\b\\W*\\bit's\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\ball\\b\\W*\\bthe\\b\\W*\\bother\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bare\\b\\W*\\bimportant\\b\\W*\\bit's\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\ball\\b\\W*\\bthe\\b\\W*\\bother\\b\\W*\\bsentient\\b\\W*\\bbeings\\b\\W*\\bon\\b\\W*\\bthis\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bare\\b\\W*\\balso\\b\\W*\\bjust\\b\\W*\\bas\\b\\W*\\bimportant\\b\\W*\\bokay\\b\\W*\\bum\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bimportant\\b\\W*\\bokay\\b\\W*\\bum\\b\\W*\\bso\\b\\W*\\bmuch\\b\\W*\\bwasted\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bum\\b\\W*\\bso\\b\\W*\\bmuch\\b\\W*\\bwasted\\b\\W*\\bsuffering\\b\\W*\\bright\\b\\W*\\bso\\b\\W*\\bmuch\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\band\\b\\W*\\bfor\\b\\W*\\bno\\b\\W*\\byou\\b\\W*\\bknow\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bno\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bbenefit\\b\\W*\\byou\\b\\W*\\bknow\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byou\\b\\W*\\bknow\\b\\W*\\bbenefit\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bit's\\b\\W*\\bjust\\b\\W*\\ba\\b\\W*\\bcomplete\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byou\\b\\W*\\bknow\\b\\W*\\bit's\\b\\W*\\bjust\\b\\W*\\ba\\b\\W*\\bcomplete\\b\\W*\\bwaste\\b\\W*\\band\\b\\W*\\bit's\\b\\W*\\bit's\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\byou\\b\\W*\\bknow\\b\\W*\\bum\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bum\\b\\W*\\bso\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bso\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byeah\\b)",
+      "className": [
+        "Prolongation"
+      ]
+    },
+    {
+      "regex": "(\\bso\\b\\W*\\bjust\\b\\W*\\bi'm\\b\\W*\\bdoing\\b\\W*\\bi'm\\b\\W*\\bdoing\\b\\W*\\ball\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bfor\\b\\W*\\bthe\\b\\W*\\bpeople\\b\\W*\\bwho\\b\\W*\\bdon't\\b\\W*\\bget\\b\\W*\\bthis\\b\\W*\\bshit\\b\\W*\\blike\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bdon't\\b\\W*\\bget\\b\\W*\\bthis\\b\\W*\\bshit\\b\\W*\\blike\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bthis\\b\\W*\\bis\\b\\W*\\ball\\b\\W*\\breally\\b\\W*\\bimportant\\b\\W*\\bshit\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bum\\b\\W*\\bokay\\b\\W*\\bwhat\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bsaid\\b\\W*\\bthis\\b\\W*\\bbut\\b\\W*\\bum\\b\\W*\\bi\\b\\W*\\bdidn't\\b\\W*\\bsay\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bum\\b\\W*\\bi\\b\\W*\\bdidn't\\b\\W*\\bsay\\b\\W*\\bthe\\b\\W*\\bsuicide\\b\\W*\\bprevention\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bdidn't\\b\\W*\\bsay\\b\\W*\\bthe\\b\\W*\\bsuicide\\b\\W*\\bprevention\\b\\W*\\bpart\\b\\W*\\bbut\\b\\W*\\byeah\\b\\W*\\bsuicide\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bum\\b\\W*\\bso\\b\\W*\\bpeople\\b\\W*\\btrying\\b\\W*\\bto\\b\\W*\\bprevent\\b\\W*\\bothers\\b\\W*\\bfrom\\b\\W*\\bkilling\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\ba\\b\\W*\\bpeaceful\\b\\W*\\bway\\b\\W*\\bof\\b\\W*\\bdoing\\b\\W*\\bit\\b\\W*\\bright\\b\\W*\\bum\\b\\W*\\band\\b\\W*\\byou\\b\\W*\\btry\\b\\W*\\bto\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bright\\b\\W*\\bum\\b\\W*\\band\\b\\W*\\byou\\b\\W*\\btry\\b\\W*\\bto\\b\\W*\\bprevent\\b\\W*\\bthem\\b\\W*\\bfrom\\b\\W*\\bdoing\\b\\W*\\bit\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\band\\b\\W*\\byou\\b\\W*\\btry\\b\\W*\\bto\\b\\W*\\bprevent\\b\\W*\\bthem\\b\\W*\\bfrom\\b\\W*\\bdoing\\b\\W*\\bit\\b\\W*\\bum\\b\\W*\\byou're\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\babsolute\\b\\W*\\bnonsense\\b\\W*\\bum\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bnonsense\\b\\W*\\bum\\b\\W*\\banother\\b\\W*\\blittle\\b\\W*\\bthing\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bit's\\b\\W*\\bin\\b\\W*\\bregards\\b\\W*\\bto\\b\\W*\\bmass\\b\\W*\\bshooters\\b\\W*\\band\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bthere's\\b\\W*\\ban\\b\\W*\\borganization\\b\\W*\\bcalled\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\borganization\\b\\W*\\bcalled\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bviolence\\b\\W*\\bproject\\b\\W*\\bi\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\binteresting\\b\\W*\\bthey\\b\\W*\\bfound\\b\\W*\\breally\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\ba\\b\\W*\\bmass\\b\\W*\\bshooter\\b\\W*\\bbefore\\b\\W*\\bthey\\b\\W*\\bstart\\b\\W*\\bthinking\\b\\W*\\babout\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bum\\b\\W*\\band\\b\\W*\\bi\\b\\W*\\bwas\\b\\W*\\bthinking\\b\\W*\\bto\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bum\\b\\W*\\band\\b\\W*\\bi\\b\\W*\\bwas\\b\\W*\\bthinking\\b\\W*\\bto\\b\\W*\\bmyself\\b\\W*\\byou\\b\\W*\\bknow\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\band\\b\\W*\\bi\\b\\W*\\bwas\\b\\W*\\bthinking\\b\\W*\\bto\\b\\W*\\bmyself\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\buh\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byou\\b\\W*\\bknow\\b\\W*\\buh\\b\\W*\\byou\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\buh\\b\\W*\\byou\\b\\W*\\breally\\b\\W*\\bprobably\\b\\W*\\bwould\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [],
+  [],
+  [
+    {
+      "regex": "(\\band\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\band\\b\\W*\\bpeople\\b\\W*\\bthat\\b\\W*\\bdo\\b\\W*\\bget\\b\\W*\\bit\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bpeople\\b\\W*\\bthat\\b\\W*\\bdo\\b\\W*\\bget\\b\\W*\\bit\\b\\W*\\bobviously\\b\\W*\\bthey\\b\\W*\\bhave\\b\\W*\\bto\\b\\W*\\bbe\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bbullshit\\b\\W*\\bit's\\b\\W*\\bnot\\b\\W*\\ba\\b\\W*\\bright\\b\\W*\\bit's\\b\\W*\\bnonsense\\b\\W*\\bright\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bright\\b\\W*\\bthey've\\b\\W*\\bpassed\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bthey've\\b\\W*\\bpassed\\b\\W*\\bit\\b\\W*\\bin\\b\\W*\\ba\\b\\W*\\bvery\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [
+    {
+      "regex": "(\\bcall\\b\\W*\\bit\\b\\W*\\byou\\b\\W*\\bprobably\\b\\W*\\bwould\\b\\W*\\bprevent\\b\\W*\\ba\\b\\W*\\bgood\\b\\W*\\bchunk\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bor\\b\\W*\\bidea\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bvery\\b\\W*\\blikely\\b\\W*\\btrue\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\blikely\\b\\W*\\btrue\\b\\W*\\bthough\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bthough\\b\\W*\\bokay\\b\\W*\\bback\\b\\W*\\bto\\b\\W*\\bthe\\b\\W*\\bright\\b\\W*\\bto\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bokay\\b\\W*\\bback\\b\\W*\\bto\\b\\W*\\bthe\\b\\W*\\bright\\b\\W*\\bto\\b\\W*\\bdie\\b\\W*\\bthing\\b\\W*\\bbecause\\b\\W*\\bthat's\\b\\W*\\ba\\b\\W*\\breally\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\babsolute\\b\\W*\\bnonsense\\b\\W*\\bum\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bum\\b\\W*\\bthere's\\b\\W*\\bthe\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bthere's\\b\\W*\\bthe\\b\\W*\\bslippery\\b\\W*\\bslope\\b\\W*\\bargument\\b\\W*\\bwhere\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\beveryone\\b\\W*\\bthe\\b\\W*\\bright\\b\\W*\\bto\\b\\W*\\ba\\b\\W*\\bgraceful\\b\\W*\\bexit\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bgraceful\\b\\W*\\bexit\\b\\W*\\bum\\b\\W*\\byou\\b\\W*\\bknow\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bum\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bwhat\\b\\W*\\babout\\b\\W*\\bthe\\b\\W*\\bpeople\\b\\W*\\bwhat\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\binto\\b\\W*\\bit\\b\\W*\\bor\\b\\W*\\bwhatever\\b\\W*\\band\\b\\W*\\bit's\\b\\W*\\blike\\b\\W*\\blook\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\blike\\b\\W*\\blook\\b\\W*\\bi\\b\\W*\\bcould\\b\\W*\\bapply\\b\\W*\\bthis\\b\\W*\\bshit\\b\\W*\\bto\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\blook\\b\\W*\\bi\\b\\W*\\bcould\\b\\W*\\bapply\\b\\W*\\bthis\\b\\W*\\bshit\\b\\W*\\bto\\b\\W*\\blike\\b\\W*\\bfree\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bjust\\b\\W*\\bsaying\\b\\W*\\byou\\b\\W*\\bcould\\b\\W*\\bapply\\b\\W*\\bthe\\b\\W*\\bslippery\\b\\W*\\bslope\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\byou\\b\\W*\\bcould\\b\\W*\\bapply\\b\\W*\\bthe\\b\\W*\\bslippery\\b\\W*\\bslope\\b\\W*\\bargument\\b\\W*\\bto\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bargument\\b\\W*\\bto\\b\\W*\\bother\\b\\W*\\btypes\\b\\W*\\bof\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bto\\b\\W*\\bother\\b\\W*\\btypes\\b\\W*\\bof\\b\\W*\\bhuman\\b\\W*\\brights\\b\\W*\\band\\b\\W*\\byou\\b\\W*\\bcan\\b\\W*\\bkind\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\brights\\b\\W*\\band\\b\\W*\\byou\\b\\W*\\bcan\\b\\W*\\bkind\\b\\W*\\bof\\b\\W*\\bquickly\\b\\W*\\bunderstand\\b\\W*\\bthat\\b\\W*\\byeah\\b\\W*\\bthe\\b\\W*\\bprice\\b\\W*\\bis\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bquickly\\b\\W*\\bunderstand\\b\\W*\\bthat\\b\\W*\\byeah\\b\\W*\\bthe\\b\\W*\\bprice\\b\\W*\\bis\\b\\W*\\bkind\\b\\W*\\bof\\b\\W*\\bworth\\b\\W*\\bit\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [],
+  [],
+  [
+    {
+      "regex": "(\\bthat's\\b\\W*\\bthe\\b\\W*\\bbig\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [],
+  [],
+  [],
+  [
+    {
+      "regex": "(\\bbut\\b\\W*\\bat\\b\\W*\\bleast\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\byou're\\b\\W*\\bbeing\\b\\W*\\bway\\b\\W*\\btoo\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\babsurdly\\b\\W*\\bnothing\\b\\W*\\bnothing\\b\\W*\\bin\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bso\\b\\W*\\byou're\\b\\W*\\bbasically\\b\\W*\\byou're\\b\\W*\\bbasically\\b\\W*\\bsaying\\b\\W*\\bwe\\b\\W*\\bcan't\\b\\W*\\bhave\\b\\W*\\bthe\\b\\W*\\bright\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bit's\\b\\W*\\bliterally\\b\\W*\\bperfect\\b\\W*\\bwhich\\b\\W*\\bis\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bliterally\\b\\W*\\bperfect\\b\\W*\\bwhich\\b\\W*\\bis\\b\\W*\\bnot\\b\\W*\\bpragmatic\\b\\W*\\bat\\b\\W*\\ball\\b\\W*\\byou're\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bwhich\\b\\W*\\bis\\b\\W*\\bnot\\b\\W*\\bpragmatic\\b\\W*\\bat\\b\\W*\\ball\\b\\W*\\byou're\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\ban\\b\\W*\\babsolute\\b\\W*\\bfucking\\b\\W*\\bnon\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\babsolute\\b\\W*\\bfucking\\b\\W*\\bnon\\b\\W*\\bargument\\b\\W*\\bso\\b\\W*\\bcomplete\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bthat\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bthat\\b\\W*\\bwe\\b\\W*\\bdon't\\b\\W*\\bhave\\b\\W*\\ba\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [],
+  [
+    {
+      "regex": "(\\bis\\b\\W*\\bgive\\b\\W*\\bpeople\\b\\W*\\ba\\b\\W*\\bright\\b\\W*\\bto\\b\\W*\\ba\\b\\W*\\bgraceful\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\ba\\b\\W*\\bright\\b\\W*\\bto\\b\\W*\\ba\\b\\W*\\bgraceful\\b\\W*\\bway\\b\\W*\\bout\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bnot\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bgraceful\\b\\W*\\bway\\b\\W*\\bout\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bnot\\b\\W*\\bforce\\b\\W*\\bthem\\b\\W*\\bto\\b\\W*\\bjump\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bhead\\b\\W*\\bor\\b\\W*\\bstrangle\\b\\W*\\bthemselves\\b\\W*\\byou\\b\\W*\\bknow\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bstrangle\\b\\W*\\bthemselves\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bpretty\\b\\W*\\bcommon\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byou\\b\\W*\\bknow\\b\\W*\\bpretty\\b\\W*\\bcommon\\b\\W*\\bmethod\\b\\W*\\bwhatever\\b\\W*\\bthe\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [],
+  [],
+  [],
+  [
+    {
+      "regex": "(\\band\\b\\W*\\bthe\\b\\W*\\bsodium\\b\\W*\\bnitrite\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\band\\b\\W*\\bthe\\b\\W*\\bsodium\\b\\W*\\bnitrite\\b\\W*\\bthing\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bthat's\\b\\W*\\ba\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bnitrite\\b\\W*\\bthing\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bthat's\\b\\W*\\ba\\b\\W*\\bthat's\\b\\W*\\bbecome\\b\\W*\\ba\\b\\W*\\bpopular\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byou\\b\\W*\\bknow\\b\\W*\\bthat's\\b\\W*\\ba\\b\\W*\\bthat's\\b\\W*\\bbecome\\b\\W*\\ba\\b\\W*\\bpopular\\b\\W*\\bmethod\\b\\W*\\bobviously\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\band\\b\\W*\\bum\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bi'm\\b\\W*\\bjust\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\band\\b\\W*\\bum\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bi'm\\b\\W*\\bjust\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bi'm\\b\\W*\\bjust\\b\\W*\\bsaying\\b\\W*\\bit\\b\\W*\\bcauses\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byou\\b\\W*\\bknow\\b\\W*\\bi'm\\b\\W*\\bjust\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bi'm\\b\\W*\\bjust\\b\\W*\\bsaying\\b\\W*\\bit\\b\\W*\\bcauses\\b\\W*\\bsome\\b\\W*\\bpretty\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bkind\\b\\W*\\bof\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bum\\b\\W*\\bso\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bheard\\b\\W*\\bpeople\\b\\W*\\bsay\\b\\W*\\bshit\\b\\W*\\blike\\b\\W*\\bthis\\b\\W*\\bis\\b\\W*\\bsuch\\b\\W*\\ba\\b\\W*\\bmyopic\\b)",
+      "className": []
+    }
+  ],
+  [
+    {
+      "regex": "(\\bum\\b\\W*\\bso\\b\\W*\\binsensitive\\b\\W*\\bfuck\\b\\W*\\byou\\b\\W*\\bfuck\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\binsensitive\\b\\W*\\bfuck\\b\\W*\\byou\\b\\W*\\bfuck\\b\\W*\\byou\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byou\\b\\W*\\bfuck\\b\\W*\\byou\\b\\W*\\bum\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bum\\b\\W*\\boh\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\boh\\b\\W*\\bgod\\b\\W*\\bokay\\b\\W*\\bwhat\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\boh\\b\\W*\\bgod\\b\\W*\\bokay\\b\\W*\\bwhat\\b\\W*\\belse\\b\\W*\\bum\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bokay\\b\\W*\\bwhat\\b\\W*\\belse\\b\\W*\\bum\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bum\\b\\W*\\byeah\\b\\W*\\bso\\b\\W*\\bi\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bobviously\\b\\W*\\bi'm\\b\\W*\\bvery\\b\\W*\\bagainst\\b\\W*\\bit\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bvery\\b\\W*\\bagainst\\b\\W*\\bit\\b\\W*\\bum\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bit\\b\\W*\\bum\\b\\W*\\bit's\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bit's\\b\\W*\\bextremely\\b\\W*\\bwrong\\b\\W*\\bi\\b\\W*\\bmean\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bthey've\\b\\W*\\bsat\\b\\W*\\bthere\\b\\W*\\band\\b\\W*\\bthought\\b\\W*\\babout\\b\\W*\\bit\\b\\W*\\bum\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\babout\\b\\W*\\bit\\b\\W*\\bum\\b\\W*\\bhow\\b\\W*\\bmuch\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bdon't\\b\\W*\\bknow\\b\\W*\\bum\\b\\W*\\bi\\b\\W*\\bguess\\b\\W*\\byou\\b\\W*\\bcan\\b\\W*\\bmake\\b\\W*\\bthe\\b\\W*\\bargument\\b\\W*\\blike\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [],
+  [
+    {
+      "regex": "(\\bnot\\b\\W*\\bgetting\\b\\W*\\baround\\b\\W*\\bthat\\b\\W*\\bargument\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bnot\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bi'm\\b\\W*\\banti\\b\\W*\\blife\\b\\W*\\bright\\b\\W*\\band\\b)",
+      "className": [
+        "Prolongation",
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\blife\\b\\W*\\bright\\b\\W*\\band\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\band\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\byeah\\b\\W*\\bfuck\\b\\W*\\bfuck\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bfuck\\b\\W*\\bclinics\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bclinics\\b\\W*\\band\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bclinics\\b\\W*\\band\\b\\W*\\bfuck\\b\\W*\\bthe\\b\\W*\\bpeople\\b\\W*\\bthat\\b\\W*\\bwork\\b\\W*\\bfor\\b)",
+      "className": [
+        "Prolongation"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bnot\\b\\W*\\breally\\b\\W*\\ban\\b\\W*\\bexcuse\\b\\W*\\bi\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bi\\b\\W*\\bknow\\b\\W*\\bbecause\\b\\W*\\bi\\b\\W*\\bknow\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bthey\\b\\W*\\bhaven't\\b\\W*\\beven\\b\\W*\\bthought\\b\\W*\\babout\\b\\W*\\bwhat\\b\\W*\\bthey're\\b\\W*\\bdoing\\b\\W*\\bor\\b\\W*\\bwhatever\\b\\W*\\band\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bagain\\b\\W*\\bif\\b\\W*\\ba\\b\\W*\\bguy\\b\\W*\\bis\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bif\\b\\W*\\ba\\b\\W*\\bguy\\b\\W*\\bis\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bguy\\b\\W*\\bis\\b)",
+      "className": [
+        "Block",
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [],
+  [],
+  [
+    {
+      "regex": "(\\bunfortunately\\b\\W*\\bintent\\b\\W*\\blike\\b\\W*\\bi\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bintent\\b\\W*\\blike\\b\\W*\\bi\\b\\W*\\bdo\\b\\W*\\bcare\\b\\W*\\babout\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\blike\\b\\W*\\bi\\b\\W*\\bdo\\b\\W*\\bcare\\b\\W*\\babout\\b\\W*\\bintent\\b\\W*\\bbut\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\blot\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bum\\b\\W*\\bi\\b\\W*\\bwant\\b\\W*\\bit\\b\\W*\\bto\\b\\W*\\bmean\\b\\W*\\ba\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bum\\b\\W*\\bi\\b\\W*\\bwant\\b\\W*\\bit\\b\\W*\\bto\\b\\W*\\bmean\\b\\W*\\ba\\b\\W*\\blot\\b\\W*\\bi\\b\\W*\\bused\\b\\W*\\bto\\b\\W*\\bbelieve\\b\\W*\\bit\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bso\\b\\W*\\blittle\\b\\W*\\band\\b\\W*\\bso\\b\\W*\\bum\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\band\\b\\W*\\bso\\b\\W*\\bum\\b\\W*\\beven\\b\\W*\\bif\\b\\W*\\byou're\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\beven\\b\\W*\\bif\\b\\W*\\byou're\\b\\W*\\bcausing\\b\\W*\\bharm\\b\\W*\\band\\b\\W*\\byou\\b\\W*\\bdon't\\b\\W*\\bget\\b\\W*\\bthat\\b\\W*\\byou're\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bunfortunate\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\breality\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byou\\b\\W*\\bknow\\b\\W*\\breality\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\banyways\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\banyways\\b\\W*\\buh\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\buh\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\blet's\\b\\W*\\bsee\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bdown\\b\\W*\\bum\\b\\W*\\byeah\\b\\W*\\bi\\b\\W*\\bwrote\\b\\W*\\bdown\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byeah\\b\\W*\\bi\\b\\W*\\bwrote\\b\\W*\\bdown\\b\\W*\\blike\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bthese\\b\\W*\\bpeople\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bi\\b\\W*\\bwrote\\b\\W*\\bdown\\b\\W*\\blike\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bthese\\b\\W*\\bpeople\\b\\W*\\blike\\b\\W*\\bwhen\\b\\W*\\bthey\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\byou\\b\\W*\\bknow\\b\\W*\\bwhen\\b\\W*\\bthey\\b\\W*\\bstart\\b\\W*\\bpushing\\b\\W*\\blife\\b\\W*\\bon\\b\\W*\\byou\\b\\W*\\bit's\\b\\W*\\blike\\b\\W*\\bthe\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bbe\\b\\W*\\ba\\b\\W*\\bfucking\\b\\W*\\bconsumer\\b\\W*\\bright\\b\\W*\\bpay\\b\\W*\\bfor\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bconsumer\\b\\W*\\bright\\b\\W*\\bpay\\b\\W*\\bfor\\b\\W*\\bthe\\b\\W*\\bfactory\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bpay\\b\\W*\\bfor\\b\\W*\\bthe\\b\\W*\\bfactory\\b\\W*\\bfarms\\b\\W*\\bto\\b\\W*\\brape\\b\\W*\\bthe\\b\\W*\\bfucking\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bthese\\b\\W*\\bare\\b\\W*\\bthe\\b\\W*\\bfucking\\b\\W*\\bgames\\b\\W*\\bwe're\\b\\W*\\bplaying\\b\\W*\\bas\\b\\W*\\bhumans\\b\\W*\\bit's\\b\\W*\\bsickening\\b\\W*\\bfuck\\b\\W*\\bfuck\\b\\W*\\bthese\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bas\\b\\W*\\bhumans\\b\\W*\\bit's\\b\\W*\\bsickening\\b\\W*\\bfuck\\b\\W*\\bfuck\\b\\W*\\bthese\\b\\W*\\bgames\\b\\W*\\bwhy\\b\\W*\\bthe\\b\\W*\\bfuck\\b\\W*\\bdo\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bfuck\\b\\W*\\bfuck\\b\\W*\\bthese\\b\\W*\\bgames\\b\\W*\\bwhy\\b\\W*\\bthe\\b\\W*\\bfuck\\b\\W*\\bdo\\b\\W*\\bi\\b\\W*\\bwant\\b\\W*\\bto\\b\\W*\\bplay\\b\\W*\\bthese\\b\\W*\\bfucking\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bto\\b\\W*\\bplay\\b\\W*\\bthese\\b\\W*\\bstupid\\b\\W*\\bfucking\\b\\W*\\bgames\\b\\W*\\bi\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bgames\\b\\W*\\bi\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bi\\b\\W*\\bfeel\\b\\W*\\blike\\b\\W*\\bi'm\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bfeel\\b\\W*\\blike\\b\\W*\\bi'm\\b\\W*\\bsurrounded\\b\\W*\\bby\\b\\W*\\bfucking\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\blike\\b\\W*\\bi'm\\b\\W*\\bsurrounded\\b\\W*\\bby\\b\\W*\\bfucking\\b\\W*\\bghouls\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bokay\\b\\W*\\bwhat\\b\\W*\\belse\\b\\W*\\bi\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bwhat\\b\\W*\\belse\\b\\W*\\bi\\b\\W*\\bwrote\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bwhat\\b\\W*\\belse\\b\\W*\\bi\\b\\W*\\bwrote\\b\\W*\\bdown\\b\\W*\\bi\\b\\W*\\bmean\\b\\W*\\bi\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bdown\\b\\W*\\bi\\b\\W*\\bmean\\b\\W*\\bi\\b\\W*\\balready\\b\\W*\\bsaid\\b\\W*\\bthis\\b\\W*\\bbut\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bi\\b\\W*\\bkind\\b\\W*\\bof\\b\\W*\\bwrote\\b\\W*\\bit\\b\\W*\\bin\\b\\W*\\ba\\b\\W*\\bkind\\b\\W*\\bof\\b\\W*\\ba\\b\\W*\\bnice\\b\\W*\\bway\\b\\W*\\bso\\b\\W*\\bi'm\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [],
+  [
+    {
+      "regex": "(\\bof\\b\\W*\\brape\\b\\W*\\bnow\\b\\W*\\bin\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bnow\\b\\W*\\bin\\b\\W*\\bmy\\b\\W*\\bmind\\b\\W*\\bi\\b\\W*\\breally\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [],
+  [
+    {
+      "regex": "(\\bso\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bso\\b\\W*\\blet's\\b)",
+      "className": [
+        "Prolongation"
+      ]
+    },
+    {
+      "regex": "(\\buh\\b\\W*\\bi\\b\\W*\\bwrote\\b\\W*\\bdown\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\buh\\b\\W*\\bi\\b\\W*\\bwrote\\b\\W*\\bdown\\b\\W*\\bthese\\b\\W*\\btopics\\b\\W*\\bare\\b\\W*\\btoo\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [],
+  [
+    {
+      "regex": "(\\band\\b\\W*\\bthen\\b\\W*\\bof\\b\\W*\\bcourse\\b\\W*\\balso\\b\\W*\\ball\\b\\W*\\bthe\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\ball\\b\\W*\\bthe\\b\\W*\\bthat\\b\\W*\\bare\\b\\W*\\bin\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bnow\\b\\W*\\bthat\\b\\W*\\bare\\b\\W*\\bused\\b\\W*\\bto\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bthat\\b\\W*\\bare\\b\\W*\\bused\\b\\W*\\bto\\b\\W*\\bmanipulate\\b\\W*\\bwhat\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bof\\b\\W*\\bwhat\\b\\W*\\bthey\\b\\W*\\bthink\\b\\W*\\bi\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bi\\b\\W*\\bdon't\\b\\W*\\bthink\\b\\W*\\bpeople\\b\\W*\\bare\\b\\W*\\bcompletely\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bthink\\b\\W*\\bpeople\\b\\W*\\bare\\b\\W*\\bcompletely\\b\\W*\\band\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bmanipulated\\b\\W*\\band\\b\\W*\\bfucked\\b\\W*\\bwith\\b\\W*\\bpeople\\b\\W*\\bkind\\b\\W*\\bof\\b\\W*\\bhave\\b\\W*\\ban\\b\\W*\\bidea\\b\\W*\\bof\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bthey\\b\\W*\\bkind\\b\\W*\\bof\\b\\W*\\bresist\\b\\W*\\bit\\b\\W*\\bbut\\b\\W*\\bi'm\\b\\W*\\bjust\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bbut\\b\\W*\\bi'm\\b\\W*\\bjust\\b\\W*\\bsaying\\b\\W*\\bclearly\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bjust\\b\\W*\\bsaying\\b\\W*\\bclearly\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bdoes\\b\\W*\\bwork\\b\\W*\\bto\\b\\W*\\bsome\\b\\W*\\bextent\\b\\W*\\bthere's\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bdoes\\b\\W*\\bwork\\b\\W*\\bto\\b\\W*\\bsome\\b\\W*\\bextent\\b\\W*\\bthere's\\b\\W*\\bclearly\\b\\W*\\ba\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bsome\\b\\W*\\bextent\\b\\W*\\bthere's\\b\\W*\\bclearly\\b\\W*\\ba\\b\\W*\\blot\\b\\W*\\bof\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\ba\\b\\W*\\blot\\b\\W*\\bof\\b\\W*\\bcoercion\\b\\W*\\bgoing\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bget\\b\\W*\\bpeople\\b\\W*\\bto\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bget\\b\\W*\\bpeople\\b\\W*\\bto\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bof\\b\\W*\\bpeople\\b\\W*\\bare\\b\\W*\\btheir\\b\\W*\\bbrains\\b\\W*\\bdo\\b\\W*\\bit\\b\\W*\\bworks\\b\\W*\\bfor\\b\\W*\\bthem\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bit\\b\\W*\\bworks\\b\\W*\\bfor\\b\\W*\\bthem\\b\\W*\\bbasically\\b\\W*\\bit\\b\\W*\\bworks\\b\\W*\\bon\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bpeople\\b\\W*\\bi\\b\\W*\\bthink\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bare\\b\\W*\\bsaying\\b\\W*\\blike\\b\\W*\\bnah\\b\\W*\\bno\\b\\W*\\bfuck\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bare\\b\\W*\\bsaying\\b\\W*\\blike\\b\\W*\\bnah\\b\\W*\\bno\\b\\W*\\bfuck\\b\\W*\\bthis\\b\\W*\\bi'm\\b\\W*\\bnot\\b\\W*\\bhaving\\b\\W*\\bkids\\b\\W*\\bthis\\b\\W*\\bis\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bi'm\\b\\W*\\bnot\\b\\W*\\bhaving\\b\\W*\\bkids\\b\\W*\\bthis\\b\\W*\\bis\\b\\W*\\bstupid\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\beven\\b\\W*\\bwith\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byou\\b\\W*\\bknow\\b\\W*\\beven\\b\\W*\\bwith\\b\\W*\\beven\\b\\W*\\bwith\\b\\W*\\byou\\b\\W*\\bknow\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bthis\\b\\W*\\bmanipulation\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bmanipulation\\b\\W*\\bgoing\\b\\W*\\bon\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bso\\b\\W*\\bfucking\\b\\W*\\bextreme\\b\\W*\\bi\\b\\W*\\bmean\\b\\W*\\blike\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bin\\b\\W*\\bline\\b\\W*\\bwith\\b\\W*\\btheir\\b\\W*\\bnarrative\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bit\\b\\W*\\bjust\\b\\W*\\bgets\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bnarrative\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bit\\b\\W*\\bjust\\b\\W*\\bgets\\b\\W*\\bthey\\b\\W*\\baren't\\b\\W*\\beven\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bup\\b\\W*\\bfucking\\b\\W*\\bremove\\b\\W*\\bcomments\\b\\W*\\blike\\b\\W*\\bit's\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\blike\\b\\W*\\bit's\\b\\W*\\bso\\b\\W*\\bwild\\b\\W*\\bi\\b\\W*\\bmean\\b\\W*\\bthey\\b\\W*\\bdo\\b)",
+      "className": [
+        "Block",
+        "Sound repetition",
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bum\\b\\W*\\bthey\\b\\W*\\balso\\b\\W*\\boften\\b\\W*\\bjust\\b\\W*\\bstraight\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\blike\\b\\W*\\bit's\\b\\W*\\bwild\\b\\W*\\buh\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\buh\\b\\W*\\banyways\\b\\W*\\bso\\b\\W*\\bthe\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\buh\\b\\W*\\banyways\\b\\W*\\bso\\b\\W*\\bthe\\b\\W*\\bcensorship\\b\\W*\\ball\\b\\W*\\bthis\\b\\W*\\bstuff\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bi\\b\\W*\\breally\\b\\W*\\bmust\\b\\W*\\bsay\\b\\W*\\bthat\\b\\W*\\bhow\\b\\W*\\bthe\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bhow\\b\\W*\\bthe\\b\\W*\\bhow\\b\\W*\\bbadly\\b\\W*\\bthey\\b)",
+      "className": [
+        "Block",
+        "Sound repetition",
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bhow\\b\\W*\\bbadly\\b\\W*\\bthey\\b\\W*\\bfucked\\b\\W*\\bthe\\b\\W*\\binternet\\b)",
+      "className": [
+        "Block",
+        "Prolongation"
+      ]
+    },
+    {
+      "regex": "(\\bhow\\b\\W*\\bbadly\\b\\W*\\bthey\\b\\W*\\bfucked\\b\\W*\\bthe\\b\\W*\\binternet\\b\\W*\\bis\\b\\W*\\bit's\\b\\W*\\breally\\b)",
+      "className": [
+        "Prolongation"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bget\\b\\W*\\btogether\\b\\W*\\bform\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bform\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bobviously\\b\\W*\\bare\\b\\W*\\bgoing\\b\\W*\\bto\\b\\W*\\buse\\b\\W*\\bthe\\b\\W*\\binternet\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bobviously\\b\\W*\\bare\\b\\W*\\bgoing\\b\\W*\\bto\\b\\W*\\buse\\b\\W*\\bthe\\b\\W*\\binternet\\b\\W*\\bto\\b\\W*\\btry\\b\\W*\\bto\\b\\W*\\bcome\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bi\\b\\W*\\bknow\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bthe\\b\\W*\\binternet\\b\\W*\\bis\\b\\W*\\breally\\b\\W*\\bimportant\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bimportant\\b\\W*\\bquit\\b\\W*\\bpretending\\b\\W*\\bit's\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bquit\\b\\W*\\bpretending\\b\\W*\\bit's\\b\\W*\\bnothing\\b\\W*\\bit's\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\blet's\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bokay\\b)",
+      "className": [
+        "Block",
+        "Sound repetition",
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bokay\\b\\W*\\bthat's\\b\\W*\\babout\\b\\W*\\ball\\b\\W*\\bi\\b\\W*\\bwrote\\b)",
+      "className": [
+        "Block",
+        "Sound repetition",
+        "Word repetition"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bso\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bfuck\\b\\W*\\bpro\\b\\W*\\blifers\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bthere's\\b\\W*\\babsolutely\\b\\W*\\bno\\b\\W*\\brational\\b\\W*\\breason\\b\\W*\\bto\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bit's\\b\\W*\\ba\\b\\W*\\bzero\\b\\W*\\bsum\\b\\W*\\bgame\\b\\W*\\bit\\b\\W*\\bonly\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bcapable\\b\\W*\\bof\\b\\W*\\bproducing\\b\\W*\\bis\\b\\W*\\bharm\\b\\W*\\bit\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bis\\b\\W*\\bharm\\b\\W*\\bit\\b\\W*\\bcan't\\b\\W*\\bproduce\\b\\W*\\banything\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bit's\\b\\W*\\bnever\\b\\W*\\bgoing\\b\\W*\\bto\\b\\W*\\bdo\\b\\W*\\bthat\\b\\W*\\bfuck\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bto\\b\\W*\\bdo\\b\\W*\\bthat\\b\\W*\\bfuck\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bfuck\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bshit\\b\\W*\\babsolute\\b\\W*\\bnonsense\\b\\W*\\band\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bnonsense\\b\\W*\\band\\b\\W*\\byeah\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byeah\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bi\\b\\W*\\bguess\\b\\W*\\bi\\b\\W*\\bwould\\b\\W*\\bbe\\b\\W*\\bconsidered\\b\\W*\\ba\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bi\\b\\W*\\bdon't\\b\\W*\\blike\\b\\W*\\bthe\\b\\W*\\bway\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bi\\b\\W*\\bdon't\\b\\W*\\blike\\b\\W*\\bthat\\b\\W*\\bword\\b\\W*\\bthat\\b\\W*\\bname\\b\\W*\\bi\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bdon't\\b\\W*\\blike\\b\\W*\\bthat\\b\\W*\\bword\\b\\W*\\bthat\\b\\W*\\bname\\b\\W*\\bi\\b\\W*\\bguess\\b)",
+      "className": [
+        "Block",
+        "Prolongation"
+      ]
+    },
+    {
+      "regex": "(\\bthat\\b\\W*\\bword\\b\\W*\\bthat\\b\\W*\\bname\\b\\W*\\bi\\b\\W*\\bguess\\b)",
+      "className": [
+        "Block",
+        "Prolongation"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bbecause\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bbecause\\b\\W*\\bfor\\b\\W*\\bpeople\\b\\W*\\bthat\\b\\W*\\bdon't\\b\\W*\\bthink\\b\\W*\\btoo\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [],
+  [],
+  [
+    {
+      "regex": "(\\bso\\b\\W*\\bthat's\\b\\W*\\bpretty\\b\\W*\\bnegative\\b\\W*\\band\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bthat's\\b\\W*\\bpretty\\b\\W*\\bnegative\\b\\W*\\band\\b\\W*\\bobviously\\b\\W*\\bi'm\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [],
+  [],
+  [],
+  [],
+  [
+    {
+      "regex": "(\\bi\\b\\W*\\bknow\\b\\W*\\byou're\\b\\W*\\bgoing\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bknow\\b\\W*\\byou're\\b\\W*\\bgoing\\b\\W*\\bto\\b\\W*\\bthink\\b\\W*\\bhow\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bi'm\\b\\W*\\bonly\\b\\W*\\bdoing\\b\\W*\\bthis\\b\\W*\\bbecause\\b\\W*\\bi\\b\\W*\\bfeel\\b\\W*\\blike\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bthis\\b\\W*\\bseriously\\b\\W*\\bfuck\\b\\W*\\byou\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bbecause\\b\\W*\\bi\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byou\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bbecause\\b\\W*\\bi\\b\\W*\\bcan't\\b\\W*\\bgo\\b\\W*\\bon\\b\\W*\\bthe\\b\\W*\\binternet\\b\\W*\\band\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\binternet\\b\\W*\\bbecause\\b\\W*\\bthey\\b\\W*\\bcompletely\\b\\W*\\bgoddamn\\b\\W*\\bcensored\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bit\\b\\W*\\bso\\b\\W*\\bi\\b\\W*\\breally\\b\\W*\\bfeel\\b\\W*\\blike\\b\\W*\\bi'm\\b\\W*\\bbeing\\b\\W*\\bseverely\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bfucking\\b\\W*\\bways\\b\\W*\\bby\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [],
+  [],
+  [
+    {
+      "regex": "(\\bcensor\\b\\W*\\bpeople\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bpeople\\b\\W*\\bright\\b\\W*\\bso\\b\\W*\\blike\\b\\W*\\bnow\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bpeople\\b\\W*\\bright\\b\\W*\\bso\\b\\W*\\blike\\b\\W*\\bnow\\b\\W*\\byou\\b\\W*\\bcan't\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bmake\\b\\W*\\bcomments\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bcontext\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bso\\b\\W*\\blike\\b\\W*\\bit's\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byou\\b\\W*\\bknow\\b\\W*\\bso\\b\\W*\\blike\\b\\W*\\bit's\\b\\W*\\bit's\\b\\W*\\breally\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bit's\\b\\W*\\bit's\\b\\W*\\breally\\b\\W*\\bfucking\\b\\W*\\bbad\\b\\W*\\bnow\\b\\W*\\bthe\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\blast\\b\\W*\\bfew\\b\\W*\\byears\\b\\W*\\bso\\b\\W*\\bit's\\b\\W*\\bvery\\b\\W*\\bvery\\b\\W*\\bupsetting\\b\\W*\\bto\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bvery\\b\\W*\\bvery\\b\\W*\\bupsetting\\b\\W*\\bto\\b\\W*\\bme\\b\\W*\\bum\\b\\W*\\bit\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bwith\\b\\W*\\bme\\b\\W*\\bit's\\b\\W*\\bi\\b\\W*\\bhate\\b\\W*\\bit\\b\\W*\\bso\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bi\\b\\W*\\bhate\\b\\W*\\bit\\b\\W*\\bso\\b\\W*\\bum\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bso\\b\\W*\\bum\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bi\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byou\\b\\W*\\bknow\\b\\W*\\bi\\b\\W*\\bthink\\b\\W*\\beven\\b\\W*\\blike\\b\\W*\\bi\\b\\W*\\bthink\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byou\\b\\W*\\bknow\\b\\W*\\bi\\b\\W*\\bthink\\b\\W*\\beven\\b\\W*\\blike\\b\\W*\\bi\\b\\W*\\bthink\\b\\W*\\belon\\b\\W*\\bmusk\\b\\W*\\bbanned\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\btwitter\\b\\W*\\band\\b\\W*\\bwhat\\b\\W*\\belse\\b\\W*\\buh\\b\\W*\\bwell\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bum\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bum\\b\\W*\\bso\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bso\\b\\W*\\byeah\\b\\W*\\bfuck\\b\\W*\\bi\\b\\W*\\bmean\\b\\W*\\bfuck\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bso\\b\\W*\\byeah\\b\\W*\\bfuck\\b\\W*\\bi\\b\\W*\\bmean\\b\\W*\\bfuck\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bfuck\\b\\W*\\btwitter\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bfuck\\b\\W*\\bi\\b\\W*\\bmean\\b\\W*\\bfuck\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bfuck\\b\\W*\\btwitter\\b\\W*\\bit's\\b\\W*\\ba\\b\\W*\\bnow\\b\\W*\\bi\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byou\\b\\W*\\bknow\\b\\W*\\bfuck\\b\\W*\\btwitter\\b\\W*\\bit's\\b\\W*\\ba\\b\\W*\\bnow\\b\\W*\\bi\\b\\W*\\bguess\\b\\W*\\bbut\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bum\\b\\W*\\bi\\b\\W*\\bnever\\b\\W*\\breally\\b\\W*\\bused\\b\\W*\\bit\\b\\W*\\bin\\b\\W*\\bthe\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\byeah\\b\\W*\\bso\\b\\W*\\bthat\\b\\W*\\bthat's\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\byeah\\b\\W*\\bso\\b\\W*\\bthat\\b\\W*\\bthat's\\b\\W*\\bbasically\\b\\W*\\bit\\b\\W*\\bi\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bso\\b\\W*\\bthat\\b\\W*\\bthat's\\b\\W*\\bbasically\\b\\W*\\bit\\b\\W*\\bi\\b\\W*\\bgenuinely\\b\\W*\\bfeel\\b\\W*\\blike\\b\\W*\\bit\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\buh\\b\\W*\\bbasically\\b\\W*\\bthese\\b\\W*\\bthese\\b\\W*\\btopics\\b\\W*\\bare\\b\\W*\\bjust\\b\\W*\\bthey're\\b\\W*\\bway\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bthese\\b\\W*\\bthese\\b\\W*\\btopics\\b\\W*\\bare\\b\\W*\\bjust\\b\\W*\\bthey're\\b\\W*\\bway\\b\\W*\\btoo\\b\\W*\\bfucking\\b\\W*\\bimportant\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bthey're\\b\\W*\\bway\\b\\W*\\btoo\\b\\W*\\bfucking\\b\\W*\\bimportant\\b\\W*\\bum\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bfucking\\b\\W*\\bimportant\\b\\W*\\bum\\b\\W*\\bfor\\b\\W*\\bit\\b\\W*\\bto\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\blike\\b\\W*\\bthey\\b\\W*\\bneed\\b\\W*\\bto\\b\\W*\\bbe\\b\\W*\\bput\\b\\W*\\bon\\b\\W*\\bblast\\b\\W*\\blike\\b\\W*\\bpeople\\b\\W*\\bneed\\b\\W*\\bto\\b\\W*\\bbe\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bissues\\b\\W*\\band\\b\\W*\\bum\\b\\W*\\bbefore\\b\\W*\\byou\\b\\W*\\bsay\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\band\\b\\W*\\bum\\b\\W*\\bbefore\\b\\W*\\byou\\b\\W*\\bsay\\b\\W*\\boh\\b\\W*\\bit's\\b\\W*\\bjust\\b\\W*\\byour\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bum\\b\\W*\\bthat's\\b\\W*\\bwhy\\b\\W*\\byou\\b\\W*\\bcare\\b\\W*\\bso\\b\\W*\\bmuch\\b\\W*\\bum\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bthat's\\b\\W*\\bwhy\\b\\W*\\byou\\b\\W*\\bcare\\b\\W*\\bso\\b\\W*\\bmuch\\b\\W*\\bum\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bum\\b\\W*\\bno\\b\\W*\\bi've\\b\\W*\\bjust\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bno\\b\\W*\\bi've\\b\\W*\\bjust\\b\\W*\\bspent\\b\\W*\\bthis\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bno\\b\\W*\\bi've\\b\\W*\\bjust\\b\\W*\\bspent\\b\\W*\\bthis\\b\\W*\\bentire\\b\\W*\\brecording\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bto\\b\\W*\\byou\\b\\W*\\blike\\b\\W*\\bobjectively\\b\\W*\\bwhy\\b\\W*\\blife\\b\\W*\\bis\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bobjectively\\b\\W*\\bwhy\\b\\W*\\blife\\b\\W*\\bis\\b\\W*\\bbad\\b\\W*\\bum\\b\\W*\\band\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\blife\\b\\W*\\bis\\b\\W*\\bbad\\b\\W*\\bum\\b\\W*\\band\\b\\W*\\bit's\\b\\W*\\bcausing\\b\\W*\\bharm\\b\\W*\\band\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bum\\b\\W*\\band\\b\\W*\\bit's\\b\\W*\\bcausing\\b\\W*\\bharm\\b\\W*\\band\\b\\W*\\bso\\b\\W*\\bit's\\b\\W*\\bnot\\b\\W*\\bjust\\b\\W*\\babout\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bit's\\b\\W*\\bpretty\\b\\W*\\bclear\\b\\W*\\bthat\\b\\W*\\bi\\b\\W*\\bcare\\b\\W*\\babout\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bthat\\b\\W*\\bi\\b\\W*\\bcare\\b\\W*\\babout\\b\\W*\\ball\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\ball\\b\\W*\\bsentient\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\ball\\b\\W*\\bthe\\b\\W*\\bfeelings\\b\\W*\\bgoing\\b\\W*\\bon\\b\\W*\\bon\\b\\W*\\bearth\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bthe\\b\\W*\\bfeelings\\b\\W*\\bgoing\\b\\W*\\bon\\b\\W*\\bon\\b\\W*\\bearth\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bon\\b\\W*\\bon\\b\\W*\\bearth\\b\\W*\\bso\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bso\\b\\W*\\byeah\\b\\W*\\bjust\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\breason\\b\\W*\\bwhy\\b\\W*\\bi\\b\\W*\\bfeel\\b\\W*\\blike\\b\\W*\\bshit\\b\\W*\\ball\\b\\W*\\bthe\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [],
+  [
+    {
+      "regex": "(\\bnature\\b\\W*\\bisn't\\b\\W*\\bnice\\b\\W*\\bwhat\\b\\W*\\bit's\\b\\W*\\bdoing\\b\\W*\\bisn't\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bobviously\\b\\W*\\band\\b\\W*\\buh\\b\\W*\\band\\b\\W*\\bobviously\\b\\W*\\band\\b\\W*\\balso\\b\\W*\\bi'll\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\buh\\b\\W*\\band\\b\\W*\\bobviously\\b\\W*\\band\\b\\W*\\balso\\b\\W*\\bi'll\\b\\W*\\bmake\\b\\W*\\bthis\\b\\W*\\bclear\\b\\W*\\blike\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bobviously\\b\\W*\\band\\b\\W*\\balso\\b\\W*\\bi'll\\b\\W*\\bmake\\b\\W*\\bthis\\b\\W*\\bclear\\b\\W*\\blike\\b\\W*\\byes\\b\\W*\\bi'm\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bbeing\\b\\W*\\bcaused\\b\\W*\\bby\\b\\W*\\bnature\\b\\W*\\bis\\b\\W*\\bway\\b\\W*\\bway\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bis\\b\\W*\\bway\\b\\W*\\bway\\b\\W*\\blarger\\b\\W*\\bthan\\b\\W*\\banything\\b)",
+      "className": [
+        "Prolongation",
+        "Word repetition"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bi\\b\\W*\\bjust\\b\\W*\\bi'm\\b\\W*\\bupset\\b\\W*\\babout\\b\\W*\\bthe\\b\\W*\\bthe\\b\\W*\\bfactory\\b\\W*\\bfarm\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bupset\\b\\W*\\babout\\b\\W*\\bthe\\b\\W*\\bthe\\b\\W*\\bfactory\\b\\W*\\bfarm\\b\\W*\\bshit\\b\\W*\\bjust\\b\\W*\\bbecause\\b\\W*\\bi\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bit\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\band\\b\\W*\\band\\b\\W*\\bthen\\b\\W*\\bwe\\b\\W*\\bconsume\\b\\W*\\bit\\b\\W*\\bin\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bways\\b\\W*\\bi\\b\\W*\\bmean\\b\\W*\\bit's\\b\\W*\\bjust\\b\\W*\\bso\\b\\W*\\byou\\b\\W*\\bknow\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bso\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bit's\\b\\W*\\bjust\\b\\W*\\bso\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byou\\b\\W*\\bknow\\b\\W*\\bit's\\b\\W*\\bjust\\b\\W*\\bso\\b\\W*\\bsickening\\b\\W*\\bin\\b\\W*\\bevery\\b)",
+      "className": [
+        "Sound repetition",
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\beverything\\b\\W*\\babout\\b\\W*\\bmeat\\b\\W*\\beating\\b\\W*\\band\\b\\W*\\byou\\b\\W*\\bknow\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bmeat\\b\\W*\\beating\\b\\W*\\band\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bnot\\b\\W*\\bjust\\b\\W*\\bmeat\\b\\W*\\bbut\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\ball\\b\\W*\\bthe\\b\\W*\\banimal\\b\\W*\\bproducts\\b\\W*\\btoo\\b\\W*\\byou\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\btoo\\b\\W*\\byou\\b\\W*\\bknow\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bknow\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bwas\\b\\W*\\bi\\b\\W*\\bsaying\\b\\W*\\bokay\\b\\W*\\bso\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bwas\\b\\W*\\bi\\b\\W*\\bsaying\\b\\W*\\bokay\\b\\W*\\bso\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bokay\\b\\W*\\bso\\b\\W*\\bokay\\b\\W*\\bi\\b\\W*\\bthink\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bhas\\b\\W*\\ba\\b\\W*\\bpretty\\b\\W*\\bgood\\b\\W*\\bidea\\b\\W*\\bnow\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bwon't\\b\\W*\\beven\\b\\W*\\bbe\\b\\W*\\balive\\b\\W*\\bto\\b\\W*\\bwitness\\b\\W*\\bit\\b\\W*\\bso\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bwitness\\b\\W*\\bit\\b\\W*\\bso\\b\\W*\\bthis\\b\\W*\\bisn't\\b\\W*\\blike\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\byou\\b\\W*\\bcan't\\b\\W*\\bsit\\b\\W*\\bthere\\b\\W*\\band\\b\\W*\\bbe\\b\\W*\\blike\\b\\W*\\boh\\b\\W*\\bhe's\\b\\W*\\bgetting\\b\\W*\\boff\\b\\W*\\bon\\b\\W*\\bthis\\b\\W*\\bhe\\b\\W*\\bwants\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bfucking\\b\\W*\\bcauses\\b\\W*\\bokay\\b\\W*\\bso\\b\\W*\\bi\\b\\W*\\bthink\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bso\\b\\W*\\bi\\b\\W*\\bthink\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bthink\\b\\W*\\bit'll\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bit'll\\b\\W*\\bbe\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bbe\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bbe\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\blistening\\b\\W*\\bthat\\b\\W*\\blike\\b\\W*\\bum\\b\\W*\\bi'm\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bum\\b\\W*\\bi'm\\b\\W*\\bdoing\\b\\W*\\bthis\\b\\W*\\bbecause\\b\\W*\\bi\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bi\\b\\W*\\bcan\\b\\W*\\bsee\\b\\W*\\bhow\\b\\W*\\bimportant\\b\\W*\\bthese\\b\\W*\\bissues\\b\\W*\\bare\\b\\W*\\band\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bthese\\b\\W*\\bissues\\b\\W*\\bare\\b\\W*\\band\\b\\W*\\band\\b\\W*\\bthe\\b\\W*\\bfact\\b\\W*\\bthat\\b\\W*\\bthey're\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bby\\b\\W*\\bthis\\b\\W*\\buh\\b\\W*\\bghoulish\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [
+    {
+      "regex": "(\\bliterally\\b\\W*\\bwhat\\b\\W*\\bit\\b\\W*\\bhas\\b\\W*\\bto\\b\\W*\\bdo\\b\\W*\\bto\\b\\W*\\bcontinue\\b\\W*\\bexisting\\b\\W*\\bright\\b)",
+      "className": [
+        "Sound repetition",
+        "Word repetition"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bokay\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bi'm\\b\\W*\\bsorry\\b\\W*\\bi'm\\b\\W*\\bjust\\b\\W*\\bi\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bi'm\\b\\W*\\bjust\\b\\W*\\bi\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bit\\b\\W*\\bis\\b\\W*\\bwhat\\b\\W*\\bit\\b\\W*\\bis\\b\\W*\\bi\\b\\W*\\bthink\\b\\W*\\bit's\\b\\W*\\ba\\b\\W*\\bdecent\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bit's\\b\\W*\\ball\\b\\W*\\bvery\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bone\\b\\W*\\bmore\\b\\W*\\bthing\\b\\W*\\bi\\b\\W*\\bwant\\b\\W*\\bto\\b\\W*\\badd\\b\\W*\\bbecause\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\badd\\b\\W*\\bbecause\\b\\W*\\bi\\b\\W*\\bknow\\b\\W*\\bthere's\\b\\W*\\bgoing\\b\\W*\\bto\\b\\W*\\bbe\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bi\\b\\W*\\bknow\\b\\W*\\bthere's\\b\\W*\\bgoing\\b\\W*\\bto\\b\\W*\\bbe\\b\\W*\\bthese\\b\\W*\\bassholes\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\babout\\b\\W*\\bthese\\b\\W*\\bthings\\b\\W*\\byes\\b\\W*\\bum\\b\\W*\\bjust\\b\\W*\\bbecause\\b\\W*\\bsomeone\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bum\\b\\W*\\bjust\\b\\W*\\bbecause\\b\\W*\\bsomeone\\b\\W*\\bhas\\b\\W*\\bfeelings\\b\\W*\\babout\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bdoes\\b\\W*\\bnot\\b\\W*\\bmake\\b\\W*\\bit\\b\\W*\\birrational\\b\\W*\\bright\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bright\\b\\W*\\bum\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bum\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bobviously\\b\\W*\\bthe\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bobviously\\b\\W*\\bthe\\b\\W*\\bthe\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bthe\\b\\W*\\bthe\\b\\W*\\bfeelings\\b\\W*\\bare\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [],
+  [],
+  [
+    {
+      "regex": "(\\bnow\\b\\W*\\bthen\\b\\W*\\byes\\b\\W*\\bobviously\\b\\W*\\bit's\\b\\W*\\balso\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bthat\\b\\W*\\bit\\b\\W*\\bmakes\\b\\W*\\bsense\\b\\W*\\bright\\b\\W*\\band\\b\\W*\\bi've\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bright\\b\\W*\\band\\b\\W*\\bi've\\b\\W*\\bclearly\\b\\W*\\bdone\\b\\W*\\bthat\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\band\\b\\W*\\bum\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bum\\b\\W*\\bso\\b\\W*\\byou\\b\\W*\\breally\\b\\W*\\bcan't\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bsay\\b\\W*\\blike\\b\\W*\\boh\\b\\W*\\bwell\\b\\W*\\bhe\\b\\W*\\byou\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\blike\\b\\W*\\boh\\b\\W*\\bwell\\b\\W*\\bhe\\b\\W*\\byou\\b\\W*\\bknow\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\boh\\b\\W*\\bwell\\b\\W*\\bhe\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bhey\\b\\W*\\bi'm\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\blike\\b\\W*\\bthey\\b\\W*\\bdon't\\b\\W*\\bi\\b\\W*\\bguess\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bthey\\b\\W*\\bdon't\\b\\W*\\bi\\b\\W*\\bguess\\b\\W*\\bpeople\\b\\W*\\bdon't\\b\\W*\\bsay\\b\\W*\\bthis\\b\\W*\\bbut\\b\\W*\\bi\\b\\W*\\bcan\\b)",
+      "className": [
+        "Block",
+        "Sound repetition"
+      ]
+    },
+    {
+      "regex": "(\\bdon't\\b\\W*\\bi\\b\\W*\\bguess\\b\\W*\\bpeople\\b\\W*\\bdon't\\b\\W*\\bsay\\b\\W*\\bthis\\b\\W*\\bbut\\b\\W*\\bi\\b\\W*\\bcan\\b\\W*\\btell\\b\\W*\\blike\\b\\W*\\ba\\b\\W*\\blot\\b\\W*\\bof\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bthink\\b\\W*\\bthis\\b\\W*\\bway\\b\\W*\\blike\\b\\W*\\bthey\\b\\W*\\bdon't\\b\\W*\\blike\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bthis\\b\\W*\\bway\\b\\W*\\blike\\b\\W*\\bthey\\b\\W*\\bdon't\\b\\W*\\blike\\b\\W*\\bpeople\\b\\W*\\bwho\\b\\W*\\bwho\\b\\W*\\bfeel\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bthey\\b\\W*\\bdon't\\b\\W*\\blike\\b\\W*\\bpeople\\b\\W*\\bwho\\b\\W*\\bwho\\b\\W*\\bfeel\\b\\W*\\bstrongly\\b\\W*\\babout\\b\\W*\\bthings\\b\\W*\\band\\b\\W*\\bit's\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bwho\\b\\W*\\bfeel\\b\\W*\\bstrongly\\b\\W*\\babout\\b\\W*\\bthings\\b\\W*\\band\\b\\W*\\bit's\\b\\W*\\bjust\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bfuck\\b\\W*\\byou\\b\\W*\\bfuck\\b\\W*\\byou\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byou\\b\\W*\\bfuck\\b\\W*\\byou\\b\\W*\\bum\\b\\W*\\bsuch\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byou\\b\\W*\\bum\\b\\W*\\bsuch\\b\\W*\\bbullshit\\b\\W*\\byou\\b\\W*\\bknow\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bsuch\\b\\W*\\bbullshit\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bum\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bknow\\b\\W*\\bum\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byeah\\b\\W*\\bokay\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bi\\b\\W*\\bthink\\b\\W*\\bthat's\\b\\W*\\bgood\\b\\W*\\bi\\b\\W*\\bthink\\b\\W*\\bthat's\\b\\W*\\bthat's\\b\\W*\\benough\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bi\\b\\W*\\bthink\\b\\W*\\bthat's\\b\\W*\\bthat's\\b\\W*\\benough\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\ba\\b\\W*\\blittle\\b\\W*\\badd\\b\\W*\\bon\\b\\W*\\bbit\\b\\W*\\bhere\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bjust\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bsomething\\b\\W*\\bi\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bjust\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bsomething\\b\\W*\\bi\\b\\W*\\bthink\\b\\W*\\bis\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\byou\\b\\W*\\bknow\\b\\W*\\bsomething\\b\\W*\\bi\\b\\W*\\bthink\\b\\W*\\bis\\b\\W*\\ba\\b\\W*\\breally\\b\\W*\\bimportant\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [
+    {
+      "regex": "(\\bis\\b\\W*\\bthat\\b\\W*\\bwe're\\b)",
+      "className": [
+        "Word repetition",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bthat\\b\\W*\\bwe're\\b\\W*\\bnot\\b\\W*\\bthe\\b\\W*\\bones\\b\\W*\\bmaking\\b\\W*\\bdeath\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  [],
+  [
+    {
+      "regex": "(\\bbut\\b\\W*\\brecognize\\b\\W*\\bthat\\b\\W*\\byou\\b\\W*\\bknow\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\brecognize\\b\\W*\\bthat\\b\\W*\\byou\\b\\W*\\bknow\\b\\W*\\bonce\\b\\W*\\byou\\b\\W*\\bexist\\b\\W*\\bdeath\\b\\W*\\bis\\b\\W*\\ba\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bso\\b\\W*\\bthe\\b\\W*\\bisn't\\b\\W*\\bmaking\\b\\W*\\ba\\b\\W*\\bdeath\\b\\W*\\bhappen\\b\\W*\\bthat's\\b\\W*\\ba\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    },
+    {
+      "regex": "(\\bmaking\\b\\W*\\ba\\b\\W*\\bdeath\\b\\W*\\bhappen\\b\\W*\\bthat's\\b\\W*\\ba\\b\\W*\\bbullshit\\b\\W*\\bway\\b\\W*\\bto\\b\\W*\\bthink\\b\\W*\\babout\\b\\W*\\bit\\b)",
+      "className": [
+        "Word repetition"
+      ]
+    }
+  ],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [],
+  [
+    {
+      "regex": "(\\bless\\b\\W*\\bof\\b\\W*\\bthis\\b\\W*\\bsilly\\b\\W*\\bfucking\\b\\W*\\bzero\\b\\W*\\bsum\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bright\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bright\\b\\W*\\bso\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bso\\b)",
+      "className": [
+        "Prolongation"
+      ]
+    },
+    {
+      "regex": "(\\byeah\\b)",
+      "className": [
+        "Prolongation",
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\byou\\b\\W*\\bknow\\b\\W*\\bto\\b\\W*\\bmake\\b\\W*\\bto\\b\\W*\\bpeople\\b\\W*\\bwho\\b\\W*\\bagain\\b\\W*\\btry\\b\\W*\\bto\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\bwho\\b\\W*\\bagain\\b\\W*\\btry\\b\\W*\\bto\\b\\W*\\bmake\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [
+    {
+      "regex": "(\\bout\\b\\W*\\bto\\b\\W*\\bbe\\b\\W*\\bevil\\b\\W*\\bor\\b\\W*\\bsome\\b\\W*\\bbullshit\\b\\W*\\blike\\b\\W*\\bthat\\b\\W*\\bit's\\b)",
+      "className": [
+        "Interjection"
+      ]
+    },
+    {
+      "regex": "(\\blike\\b\\W*\\bthat\\b\\W*\\bit's\\b\\W*\\bthese\\b\\W*\\bpeople\\b\\W*\\bare\\b)",
+      "className": [
+        "Interjection"
+      ]
+    }
+  ],
+  [],
+  []
+]

@@ -1,9 +1,11 @@
 <script setup lang='ts'>
 import { shallowRef, watch } from 'vue'
-import type { Segment } from '@/types/segment'
+import patterns from '@/stores/disfluency_patterns.json'
+import useDisfluencyPattern from '@/composables/useDisfluencyPattern'
+import type { EmotionSegment } from '@/types/emotion-segment'
 
 const playtime = defineModel('playtime', { type: Number, required: true })
-const props = defineProps<{ segments: Segment[], active: number }>()
+const props = defineProps<{ segments: EmotionSegment[], active: number }>()
 const spans = shallowRef<HTMLSpanElement[]>([])
 const container = shallowRef<HTMLDivElement | null>(null)
 
@@ -36,8 +38,8 @@ watch(() => props.active, i => {
         @keydown.enter='() => (playtime = seg.start)'
         aria-controls='audio-player'
         :aria-current='i === active ? true : false'
+        v-html="useDisfluencyPattern(seg.text, patterns[i]) + ' '"
       >
-        {{ seg.text }}
       </span>
     </p>
   </div>
@@ -68,7 +70,51 @@ watch(() => props.active, i => {
 }
 .active {
   color: resp($link-color);
+} 
+
+:deep(.sound-repetition) {
+  text-emphasis: dot resp($annotation-color);
 }
+
+:deep(.block):before {
+  content: " ‖ ";
+  font-weight: 600;
+  color: resp($annotation-color);
+  font-style: normal;
+  text-emphasis: none;
+}
+
+:deep(.word-repetition):after {
+  content: " x2";
+  font-weight: 600;
+  font-variant: small-caps;
+  font-size: 50%;
+  vertical-align: top;
+  color: resp($annotation-color);
+  text-emphasis: none;
+}
+
+:deep(.interjection) {
+  font-style: italic;
+  color: resp($annotation-color);
+}
+
+:deep(.prolongation):after {
+  content: ":::";
+  font-weight: 400;
+  font-style: normal;
+  color: resp($annotation-color);
+  text-emphasis: none;
+}
+
+.active :deep(.disfluency),
+.active :deep(.disfluency):before,
+.active :deep(.disfluency):after {
+  color: resp($link-color);
+  text-emphasis-color: resp($link-color);
+}
+
+
 @media (any-hover: hover) {
   span:hover {
     background-color: resp($shadow-color);

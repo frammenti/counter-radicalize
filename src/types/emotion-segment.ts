@@ -1,4 +1,4 @@
-export interface Segment {
+export interface EmotionSegment {
   start: number
   end: number
   emotions: {
