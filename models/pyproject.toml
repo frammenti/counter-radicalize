@@ -9,23 +9,23 @@ license = 'GPL-3.0'
 license-files = ['LICENSE']
 readme = 'README.md'
 requires-python = '>=3.12,<3.14'
-dependencies = [
-]
 
 [tool.poetry]
-packages = [{ include = 'models/vox_profile_release' }]
+packages = [{ include = 'vox_profile_release' }]
 
-[tool.poetry.group.dev.dependencies]
+[tool.poetry.dependencies]
 torch = {extras = ['audio'], version = '^2.8.0'}
-torchinfo = "^1.8.0"
-transformers = "^4.55.0"
-datasets = "^4.0.0"
-ipykernel = "^6.30.1"
-matplotlib = "^3.10.5"
-ipywidgets = "^8.1.7"
-loralib = "^0.1.2"
-torchcodec = "^0.6.0"
+torchcodec = '^0.6.0'
+torchinfo = '^1.8.0'
+accelerate = '^1.10.1'
+transformers = '4.46.3'
+datasets = '^4.0.0'
+loralib = '^0.1.2'
+jupyter = '^1.1.1'
+ipykernel = '^6.30.1'
+ipywidgets = '^8.1.7'
+matplotlib = '^3.10.5'
 
-[build-system]
-requires = ['poetry-core>=2.0.0,<3.0.0']
-build-backend = 'poetry.core.masonry.api'
+[tool.poetry.requires-plugins]
+poetry-plugin-export = '>=1.8'
+
