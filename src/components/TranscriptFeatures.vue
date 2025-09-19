@@ -7,6 +7,7 @@ import TranscriptFeaturesDimensions from '@/components/TranscriptFeaturesDimensi
 import type { EmotionSegment } from '@/types/emotion-segment'
 
 const props = defineProps<{ data: EmotionSegment | undefined }>()
+const annotated = defineModel('annotated', { type: Boolean, required: true })
 const show = shallowRef<boolean>(false)
 
 // Keep the previous data in between segments
@@ -17,7 +18,10 @@ const permaData = computed<EmotionSegment | undefined>((prev) => {
 </script>
 
 <template>
-<Switch v-model='show' id='show-features'>Show features</Switch>
+<div class='switch-group'>
+  <Switch v-model='show' id='show-features'>Features</Switch>
+  <Switch v-model='annotated' id='show-disfluencies'>Disfluencies</Switch>
+</div>
 <div class='grid'>
   <aside class='feature-card grid-item-1' aria-labelledby='emotions'>
     <template v-if='show && permaData'>
@@ -88,13 +92,15 @@ const permaData = computed<EmotionSegment | undefined>((prev) => {
 }
 
 /* Switch */
-#transcript-features > .input-container {
+.switch-group {
   position: absolute;
-  top: -1.4em;
+  top: -1rem;
   right: 0;
-  padding-inline-end: 0.6rem;
+  padding-inline: 0.6rem;
   width: fit-content;
   z-index: 2;
+  display: flex;
+  gap: 1rem;
 }
 
 @media screen and (max-width: 768px) {

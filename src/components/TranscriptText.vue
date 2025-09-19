@@ -1,13 +1,14 @@
 <script setup lang='ts'>
-import { shallowRef, watch } from 'vue'
-import patterns from '@/stores/disfluency_patterns.json'
-import useDisfluencyPattern from '@/composables/useDisfluencyPattern'
+import { shallowRef, watch, defineAsyncComponent } from 'vue'
+import parsePlaceholders from '@/composables/parsePlaceholders'
 import type { EmotionSegment } from '@/types/emotion-segment'
 
+const Tooltip = defineAsyncComponent(() => import('@/components/Tooltip.vue'))
+
 const playtime = defineModel('playtime', { type: Number, required: true })
-const props = defineProps<{ segments: EmotionSegment[], active: number }>()
+const props = defineProps<{ segments: EmotionSegment[], active: number, annotated: boolean }>()
 const spans = shallowRef<HTMLSpanElement[]>([])
-const container = shallowRef<HTMLDivElement | null>(null)
+const container = shallowRef<HTMLDivElement>()
 
 // Scroll to center the active item into the container
 watch(() => props.active, i => {
@@ -23,26 +24,41 @@ watch(() => props.active, i => {
 </script>
 
 <template>
-  <div id='transcript-container' ref='container' :aria-activedescendant='"seg-" + active'>
-    <p id='transcript-body'>
-      <span
-        v-for='(seg, i) in segments'
-        :key='i'
-        :id='"seg-" + i'
-        :ref='(el) => {
-          if (el) spans[i] = el as HTMLSpanElement
-        }'
-        :class='{ active: i === active }'
-        class='segment'
-        @click='() => (playtime = seg.start)'
-        @keydown.enter='() => (playtime = seg.start)'
-        aria-controls='audio-player'
-        :aria-current='i === active ? true : false'
-        v-html="useDisfluencyPattern(seg.text, patterns[i]) + ' '"
-      >
-      </span>
-    </p>
-  </div>
+<div id='transcript-container' ref='container' :aria-activedescendant='"seg-" + active'>
+  <p id='transcript-body' :annotated>
+    <span
+      v-for='(seg, i) in segments'
+      :key='i'
+      :id='"seg-" + i'
+      :ref='(el) => {
+        if (el) spans[i] = el as HTMLSpanElement
+      }'
+      :class='{ active: i === active }'
+      class='segment'
+      @click='() => (playtime = seg.start)'
+      @keydown.enter='() => (playtime = seg.start)'
+      aria-controls='audio-player'
+      :aria-current='i === active ? true : false'
+    >
+      <template v-for='(token, j) in parsePlaceholders(seg.text)' :key='j'>
+        <template v-if='typeof token === "string"'>
+          {{ token }}
+        </template>
+        <Tooltip v-else :parent='container' :disabled='!annotated'>
+          <span
+            class='disfluency'
+            :class='token.class'
+          >
+            {{ token.content.join("") }}
+          </span>
+          <template #content>
+            <p v-for='d in token.desc'>{{ d }}</p>
+          </template>
+        </Tooltip>
+      </template>
+    </span>
+  </p>
+</div>
 </template>
 
 <style scoped lang='scss'>
@@ -70,22 +86,25 @@ watch(() => props.active, i => {
 }
 .active {
   color: resp($link-color);
-} 
-
-:deep(.sound-repetition) {
+}
+@media (any-hover: hover) {
+  #transcript-body > span:hover {
+    background-color: resp($shadow-color);
+  }
+}
+/* Disfluency annotated */
+[annotated="true"] :deep(.sound-repetition) {
   text-decoration: underline dashed 1px resp($annotation-color);
 }
-
-:deep(.block):before {
+[annotated="true"] :deep(.block):before {
   content: " ‖ ";
   font-weight: 600;
   color: resp($annotation-color);
   font-style: normal;
   text-decoration: none;
 }
-
-:deep(.word-repetition):after {
-  content: " x2";
+[annotated="true"] :deep(.word-repetition):after {
+  content: " x2";
   font-weight: 600;
   font-variant: small-caps;
   font-size: 50%;
@@ -93,34 +112,29 @@ watch(() => props.active, i => {
   color: resp($annotation-color);
   text-decoration: none;
 }
-
-:deep(.interjection) {
+[annotated="true"] :deep(.word-repetition):has(+ .word-repetition):after,
+[annotated="true"] :deep(.word-repetition):has(+ div + .word-repetition):after
+ {
+  content: ""
+}
+[annotated="true"] :deep(.interjection) {
   font-style: italic;
   color: resp($annotation-color);
 }
-
-:deep(.prolongation):after {
+[annotated="true"] :deep(.prolongation):after {
   content: ":::";
   font-weight: 400;
   font-style: normal;
   color: resp($annotation-color);
   text-decoration: none;
 }
-
-.active :deep(.sound-repetition) {
+[annotated="true"] .active :deep(.sound-repetition) {
   text-decoration-color: resp-mix($link-color, $annotation-color);
 }
-
-.active :deep(.interjection),
-.active :deep(.block):before,
-.active :deep(.prolongation):after,
-.active :deep(.word-repetition):after {
+[annotated="true"] .active :deep(.interjection),
+[annotated="true"] .active :deep(.block):before,
+[annotated="true"] .active :deep(.prolongation):after,
+[annotated="true"] .active :deep(.word-repetition):after {
   color: resp-mix($link-color, $annotation-color);
-}
-
-@media (any-hover: hover) {
-  span:hover {
-    background-color: resp($shadow-color);
-  }
 }
 </style>

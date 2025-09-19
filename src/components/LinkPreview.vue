@@ -65,7 +65,7 @@ const metadata = previews[props.href]
   will-change: transform opacity;
   outline-offset: 0;
   overflow: clip;
-  z-index: 20;
+  z-index: 2;
 }
 :deep(.popover[data-side='top']) {
   animation-name: slide-up;
@@ -98,7 +98,7 @@ const metadata = previews[props.href]
 :deep(.arrow) {
   fill: resp($modal-color);
   stroke: resp($border-color);
-  z-index: 21;
+  z-index: 3;
 }
 .popover-content {
   width: 100%;

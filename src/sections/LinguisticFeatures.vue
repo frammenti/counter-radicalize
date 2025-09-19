@@ -7,3 +7,11 @@
   <div class='grid cards'></div>
 </section>
 </template>
+
+<style scoped lang="scss">
+.cards {
+  height: 30rem;
+  outline: 1px solid resp($border-color);
+  border-radius: 5rem;
+}
+</style>

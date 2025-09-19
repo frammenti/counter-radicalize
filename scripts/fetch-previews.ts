@@ -2,7 +2,7 @@ import dotenv from 'dotenv'
 import fs from 'node:fs'
 import fg from 'fast-glob'
 
-process.stdout.write(`Fetching link previews...\n`);
+process.stdout.write(`Fetching link previews...\n`)
 
 dotenv.config({ path: '.env.local', quiet: true })
 const API_KEY = process.env.LINK_PREVIEW_API_KEY
@@ -22,7 +22,7 @@ for (const file of files) {
   }
 }
 
-process.stdout.write(`Found URLs:\n  \x1b[36m${[...urls].join('\x1b[0m,\x1b[36m\n  ')}\x1b[0m\n`);
+process.stdout.write(`Found URLs:\n  \x1b[36m${[...urls].join('\x1b[0m,\x1b[36m\n  ')}\x1b[0m\n`)
 
 // Fetch previews
 const results: { [key: string]: {} } = {}
@@ -47,6 +47,6 @@ for (const url of urls) {
   results[url] = data
 }
 
-process.stdout.write(`Skipped:\n  ${[...skipped].join(',\n  ')}\n`);
+process.stdout.write(`Skipped:\n  ${[...skipped].join(',\n  ')}\n`)
 
 fs.writeFileSync('src/stores/previews.json', JSON.stringify(results, null, 2))

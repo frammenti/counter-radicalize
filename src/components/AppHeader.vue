@@ -6,8 +6,8 @@
       </div>
       <ul class='pages'>
         <li><a href='#about'>About<span class='optional'> the project</span></a></li>
-        <li><a href='#transcript'>Read/Listen/See</a></li>
-        <li><a href='#linguistic-features'>Linguistic features</a></li>
+        <li><a href='#transcript'>Close reading</a></li>
+        <li><a href='#linguistic-features'>Distant reading</a></li>
       </ul>
       <div class='github'>
         <a href='https://github.com/frammenti/counter-radicalize' target='_blank'>

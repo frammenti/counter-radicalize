@@ -4,7 +4,7 @@ import TranscriptPlayer from '@/components/TranscriptPlayer.vue'
 import TranscriptText from '@/components/TranscriptText.vue'
 import TranscriptFeatures from '@/components/TranscriptFeatures.vue'
 import KeyboardShortcutsTip from '@/components/KeyboardShortcutsTip.vue'
-import segments from '@models/outputs/segments_emotion.json'
+import segments from '@/stores/segments.json'
 import type { EmotionSegment } from '@/types/emotion-segment'
 import usePlaybackShortcuts from '@/composables/usePlaybackShortcuts'
 
@@ -12,6 +12,7 @@ const playtime = shallowRef<number>(0)
 const playing = shallowRef<boolean>(false)
 const hasKeyboard: boolean = window.matchMedia('(any-pointer: fine)').matches
 const section = shallowRef<HTMLElement | null>(null)
+const annotated = shallowRef<boolean>(false)
 
 // Sync index of active segment
 function atMoment(seg: EmotionSegment, t: number): boolean {
@@ -41,11 +42,13 @@ if (hasKeyboard) {
       v-model:playtime='playtime'
       :segments='segments'
       :active='active'
+      :annotated='annotated'
     />
   </section>
   <section id='transcript-features' aria-label='Transcript Features'>
     <TranscriptFeatures
       :data='segments[active]'
+      v-model:annotated='annotated'
     />
   </section>
 </section>
