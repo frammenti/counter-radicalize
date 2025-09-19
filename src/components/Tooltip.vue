@@ -1,13 +1,19 @@
 <script setup lang='ts'>
+import { shallowRef } from 'vue'
 import { TooltipProvider, TooltipArrow, TooltipContent, TooltipRoot, TooltipTrigger } from 'reka-ui'
 
-defineProps<{ parent?: HTMLElement, disabled?: boolean }>()
+const props = defineProps<{ parent?: HTMLElement, disabled?: boolean }>()
+const open = shallowRef<boolean>(false)
+
+function toggle() {
+  if (!open.value && !props.disabled) open.value = true
+}
 </script>
 
 <template>
 <TooltipProvider :delay-duration='100' :disabled='disabled' disable-closing-trigger>
-  <TooltipRoot>
-    <TooltipTrigger as-child>
+  <TooltipRoot v-model:open='open'>
+    <TooltipTrigger as-child @click='toggle'>
       <slot>…</slot>
     </TooltipTrigger>
     <TooltipContent
