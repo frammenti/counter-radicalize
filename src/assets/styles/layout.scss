@@ -200,10 +200,6 @@ a svg {
 }
 
 @media screen and (max-width: 768px) {
-  main {
-    font-size: 1.2rem;
-    line-height: 1.5;
-  }
   .paginated {
     padding-inline: 1em;
     padding-block: $section-spacing-mobile;

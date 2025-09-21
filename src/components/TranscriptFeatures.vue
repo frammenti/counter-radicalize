@@ -18,11 +18,11 @@ const permaData = computed<EmotionSegment | undefined>((prev) => {
 </script>
 
 <template>
-<div class='switch-group'>
-  <Switch v-model='show' id='show-features'>Features</Switch>
-  <Switch v-model='annotated' id='show-disfluencies'>Disfluencies</Switch>
-</div>
 <div class='grid'>
+  <div class='switch-group'>
+    <Switch v-model='show' id='show-features'>Features</Switch>
+    <Switch v-model='annotated' id='show-disfluencies'>Disfluencies</Switch>
+  </div>
   <aside class='feature-card grid-item-1' aria-labelledby='emotions'>
     <template v-if='show && permaData'>
     <h3 id='emotions'>Emotions</h3>
@@ -48,6 +48,15 @@ const permaData = computed<EmotionSegment | undefined>((prev) => {
   column-gap: 2%;
   width: 100%;
   height: 100%;
+}
+.switch-group {
+  position: absolute;
+  top: -1.5rem;
+  padding-inline: 0.6rem;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
 }
 .grid-item-2 {
   height: 100%;
@@ -91,25 +100,17 @@ const permaData = computed<EmotionSegment | undefined>((prev) => {
   position: absolute;
 }
 
-/* Switch */
-.switch-group {
-  position: absolute;
-  top: -1rem;
-  right: 0;
-  padding-inline: 0.6rem;
-  width: fit-content;
-  z-index: 2;
-  display: flex;
-  gap: 1rem;
-}
-
 @media screen and (max-width: 768px) {
   .grid {
     grid-template-columns: 100%;
   }
+  .switch-group {
+    top: -1rem;
+    justify-content: space-between;
+  }
   .feature-card {
     position: absolute;
-    top: 0;
+    top: 1rem;
     font-size: 0.72em;
     z-index: 2;
     padding-inline-end: 0;
@@ -119,11 +120,11 @@ const permaData = computed<EmotionSegment | undefined>((prev) => {
       resp((shadow($brown, 0.14), transparent)) 0px 10px 20px -15px;
   }
   .grid-item-1 {
-    width: 6.6rem;
+    width: 5.6rem;
     left: 0;
   }
   .grid-item-3 {
-    width: 6.8rem;
+    width: 5.9rem;
     right: 0;
   }
   .feature-list {

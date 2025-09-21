@@ -21,7 +21,7 @@ const state = defineModel<boolean>('modelValue')
 <style scoped lang='scss'>
 .input-container {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row-reverse nowrap;
   align-items: center;
   justify-content: start;
   gap: 0.5rem;
@@ -34,8 +34,8 @@ label {
 .button {
   display: block;
   padding: 0;
-  width: 38px;
-  height: 21px;
+  width: 2.25rem;
+  height: 1.25rem;
   background-color: resp((shadow($brown, 0.2), $black));
   border: 0.5px solid resp($border-color);
   transition: all 150ms cubic-bezier(.4,0,.2,1);
@@ -48,16 +48,18 @@ label {
 }
 .thumb {
   display: block;
-  width: 16px;
-  height: 16px;
+  width: 1rem;
+  height: 1rem;
   background-color: $white;
   border-radius: 9999px;
   box-shadow: 0 2px 2px resp($shadow-color);
   transition: transform 100ms;
-  transform: translateX(2px);
+  position: absolute;
+  top: 0.1rem;
+  inset-inline-start: 0.1rem;
   will-change: transform;
 }
 .thumb[data-state='checked'] {
-  transform: translateX(19px);
+  transform: translateX(100%);
 }
 </style>
