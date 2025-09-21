@@ -2,6 +2,7 @@
 @use 'sass:math';
 @use 'main' as *;
 
+
 :export {
-  @include rgb-float($emotions)
+  @include rgb-float($emotions);
 }

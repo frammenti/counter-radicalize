@@ -36,14 +36,16 @@ export default function processSegments(
   const groupedWindows = groupWindows(alignedWindows, wordIndex)
   const flatWindows = flattenWindows(groupedWindows, alignedWords)
 
+  let total = 0
   let counter = 0
 
   const result: EmotionSegment[] = segments.map(
     ({ start, end, emotions, dimensions, text }) => {
       const segWindows = flatWindows.filter(
         win =>
-          win.words[0][0] >= start &&
-          win.words[win.words.length - 1][1] <= end
+          // Include any window that starts or ends in the segment
+          win.words[win.words.length - 1][0] >= start &&
+          win.words[0][1] <= end
       )
 
       const segPatterns: DisfluencyPattern[] = segWindows.map(win => {
@@ -74,6 +76,7 @@ export default function processSegments(
 
       // Sort patterns by number of words
       segPatterns.sort((a, b) => b.regex.source.length - a.regex.source.length)
+      total += segPatterns.length
 
       const [placeholderText, missed] = insertPlaceholder(text, segPatterns)
       counter += missed
@@ -89,7 +92,7 @@ export default function processSegments(
   )
 
   process.stdout.write(
-    `Missed \x1b[33m${counter}\x1b[0m of ${flatWindows.length} disfluency patterns.\n\n`
+    `Missed \x1b[33m${counter}\x1b[0m of ${total} disfluency patterns.\n\n`
   )
   return result
 }

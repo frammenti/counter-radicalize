@@ -30,7 +30,7 @@ if (hasKeyboard) {
 </script>
 
 <template>
-<section id='transcript' class='paginated' aria-label='Transcript' ref='section'>
+<section id='close-reading' class='paginated' aria-label='Transcript' ref='section'>
   <KeyboardShortcutsTip v-if='hasKeyboard' :anchor='section' />
   <TranscriptPlayer 
     src='/counter-radicalize/hls/message.m3u8'
@@ -55,7 +55,7 @@ if (hasKeyboard) {
 </template>
 
 <style scoped lang='scss'>
-#transcript {
+#close-reading {
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -71,5 +71,10 @@ if (hasKeyboard) {
   position: relative;
   max-height: 30%;
   width: 100%;
+}
+@media screen and (max-width: 768px) {
+  #close-reading {
+    padding-block-start: 6rem;
+  }
 }
 </style>

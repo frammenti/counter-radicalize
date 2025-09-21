@@ -1,0 +1,41 @@
+@use 'sass:color';
+@use 'sass:map';
+@use 'main' as *;
+
+
+$light: (
+  anger: oklch(0.7363 0.1526 28.03),
+  contempt: oklch(0.5954 0.0589 50.65),
+  disgust: oklch(0.8455 0.1529 126.22),
+  fear: oklch(74.847% 0.10969 315.271),
+  happiness: oklch(0.9826 0.0955 108.04),
+  neutral: oklch(0.8853 0 0),
+  sadness: oklch(0.7381 0.0717 239.25),
+  surprise: oklch(0.8232 0.1301 67.43),
+  other: oklch(0.8958 0.0611 346.27)
+);
+
+$dark: (
+  anger: oklch(0.585 0.2286 27.94),
+  contempt: oklch(48.053% 0.1046 48.397),
+  disgust: oklch(0.6727 0.1672 142.94),
+  fear: oklch(0.5469 0.1491 322.3),
+  happiness: oklch(0.9691 0.2005 109.62),
+  neutral: oklch(0.683 0 0),
+  sadness: oklch(0.5748 0.1143 246.31),
+  surprise: oklch(0.7304 0.1864 52.57),
+  other: oklch(0.9465 0.10768 5.193)
+);
+
+$schemes: (
+  light: $light,
+  dark: $dark
+);
+
+:export {
+  @each $scheme, $colors in $schemes {
+    @each $label, $color in $colors {
+      #{$scheme + '-' + $label}: #{$color};
+    }
+  }
+}
