@@ -1,50 +1,80 @@
 <script setup lang='ts'>
-import { onMounted, shallowRef, watch } from 'vue'
+import { onMounted, shallowRef, watch, watchEffect } from 'vue'
 import { useElementSize } from '@vueuse/core'
-import * as Plot from '@observablehq/plot'
+import type { PlotOptions, Data, PointerOptions } from '@observablehq/plot'
+import type { AsyncPlotOptions, MarkKey, TransformKey, MarkConstructor, TransformConstructor, Options, AsyncTransform } from '@/types/plot'
 
 const props = defineProps<{
-  options: any,
-  axisOptions?: any,
-  pointerOptions?: any
+  options: AsyncPlotOptions,
+  axisOptions?: AsyncPlotOptions,
+  pointerOptions?: AsyncPlotOptions
 }>()
 
 const container = shallowRef<HTMLDivElement | null>(null)
 const axisContainer = shallowRef<HTMLDivElement | null>(null)
 const pointerContainer = shallowRef<HTMLDivElement | null>(null)
+let Plot: typeof import('@observablehq/plot')
 let plotInstance: Node | null = null
 const { width } = useElementSize(axisContainer)
 
-function renderAxis() {
+
+function mark<K extends MarkKey>(type: K, data?: Data, options?: Options[K] | AsyncTransform<K>): ReturnType<typeof Plot[K]> {
+  return (Plot[type] as MarkConstructor<K>)(data, options)
+}
+
+function transform<K extends MarkKey, T extends TransformKey>(_: K, type: T, options: Options[K] & PointerOptions): ReturnType<typeof Plot[T]> {
+  return (Plot[type] as TransformConstructor<T>)(options)
+}
+
+function appendMarks(options: AsyncPlotOptions): PlotOptions {
+  options.marks = (options.marks ?? []).map((m) => {
+    if ('type' in m) {
+      if ('type' in m.options) {
+        return mark(m.type, m.data, transform(m.type, m.options.type, m.options.options))
+      } else {
+        return mark(m.type, m.data, m.options)
+      }
+    } else {
+      return m
+    }
+  })
+  return options as PlotOptions
+}
+
+function renderAxis(plotWidth: number) {
   if (props.axisOptions && axisContainer.value) {
-    props.axisOptions.width = width.value
+    props.axisOptions.width = plotWidth
     if (plotInstance) axisContainer.value.innerHTML = ''
-    axisContainer.value.appendChild(Plot.plot(props.axisOptions))
+    axisContainer.value.appendChild(Plot.plot(appendMarks(props.axisOptions)))
   }
 }
 
 function renderPointer() {
   if (props.pointerOptions && pointerContainer.value) {
-    props.axisOptions.width = width.value
     if (plotInstance) pointerContainer.value.innerHTML = ''
-    pointerContainer.value.appendChild(Plot.plot(props.pointerOptions))
+    pointerContainer.value.appendChild(Plot.plot(appendMarks(props.pointerOptions)))
   }
 }
 
 function renderPlot() {
   if (!props.options) return
-  renderAxis()
-  renderPointer()
+  renderAxis(width.value)
   if (container.value) {
     if (plotInstance) container.value.innerHTML = ''
-    plotInstance = Plot.plot(props.options)
+    plotInstance = Plot.plot(appendMarks(props.options))
     container.value.appendChild(plotInstance)
   }
+  renderPointer()
 }
 
-onMounted(renderPlot)
-watch(() => props.options, renderPlot, { deep: true })
-watch(width, renderAxis)
+onMounted(async () => {
+  if (!Plot) {
+    Plot = await import('@observablehq/plot')
+  }
+  renderPlot()
+  watch(() => props.options, renderPlot, { deep: true })
+  watchEffect(() => renderAxis(width.value))
+})
 </script>
 
 <template>
@@ -57,7 +87,7 @@ watch(width, renderAxis)
 </figure>
 </template>
 
-<style scoped lang="scss">
+<style scoped lang='scss'>
 .plot {
   margin: 0;
   position: relative;
@@ -88,8 +118,6 @@ watch(width, renderAxis)
   width: 25px;
 }
 .plot-scroll {
-  overflow-x: scroll;
-  -webkit-overflow-scrolling: touch;
   position: relative;
 }
 .plot-pointer {
@@ -99,5 +127,12 @@ watch(width, renderAxis)
 }
 :deep(svg) {
   max-width: none;
+}
+@media screen and (max-width: 1200px) {
+  .plot-scroll {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
 }
 </style>

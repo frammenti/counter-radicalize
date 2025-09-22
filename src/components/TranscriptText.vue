@@ -65,6 +65,7 @@ watch(() => props.active, i => {
 #transcript-container {
   height: 100%;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   position: relative;
 }

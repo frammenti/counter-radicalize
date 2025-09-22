@@ -51,7 +51,7 @@ const permaData = computed<EmotionSegment | undefined>((prev) => {
 }
 .switch-group {
   position: absolute;
-  top: -1.5rem;
+  top: -0.5rem;
   padding-inline: 0.6rem;
   width: 100%;
   display: flex;
@@ -105,7 +105,6 @@ const permaData = computed<EmotionSegment | undefined>((prev) => {
     grid-template-columns: 100%;
   }
   .switch-group {
-    top: -1rem;
     justify-content: space-between;
   }
   .feature-card {
