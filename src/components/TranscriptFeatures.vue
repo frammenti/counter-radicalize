@@ -23,7 +23,7 @@ const permaData = computed<EmotionSegment | undefined>((prev) => {
     <Switch v-model='show' id='show-features'>Features</Switch>
     <Switch v-model='annotated' id='show-disfluencies'>Disfluencies</Switch>
   </div>
-  <aside class='feature-card grid-item-1' aria-labelledby='emotions'>
+  <aside class='feature-card grid-item-1' aria-labelledby='emotions' :style='{ visibility: show && permaData ? "visible" : "hidden" }'>
     <template v-if='show && permaData'>
     <h3 id='emotions'>Emotions</h3>
     <TranscriptFeaturesEmotions :data='permaData.emotions' />
@@ -32,7 +32,7 @@ const permaData = computed<EmotionSegment | undefined>((prev) => {
   <section class='grid-item-2' aria-label='Emotion Circle'>
     <TranscriptFeaturesCanvas :data='permaData' />
   </section>
-  <aside class='feature-card grid-item-3' aria-labelledby='dimensions'>
+  <aside class='feature-card grid-item-3' aria-labelledby='dimensions' :style='{ visibility: show && permaData ? "visible" : "hidden" }'>
     <template v-if='show && permaData'>
     <h3 id='dimensions'>Dimensions</h3>
     <TranscriptFeaturesDimensions :data='permaData.dimensions' />
@@ -51,7 +51,7 @@ const permaData = computed<EmotionSegment | undefined>((prev) => {
 }
 .switch-group {
   position: absolute;
-  top: -0.5rem;
+  top: -1svh;
   padding-inline: 0.6rem;
   width: 100%;
   display: flex;
