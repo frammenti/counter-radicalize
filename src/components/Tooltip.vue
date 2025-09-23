@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import { shallowRef } from 'vue'
-import { TooltipProvider, TooltipArrow, TooltipContent, TooltipRoot, TooltipTrigger } from 'reka-ui'
+import { TooltipArrow, TooltipContent, TooltipRoot, TooltipTrigger } from 'reka-ui'
 
 const props = defineProps<{ parent?: HTMLElement, disabled?: boolean }>()
 const open = shallowRef<boolean>(false)
@@ -11,29 +11,27 @@ function toggle() {
 </script>
 
 <template>
-<TooltipProvider :delay-duration='100' :disabled='disabled' disable-closing-trigger>
-  <TooltipRoot v-model:open='open'>
-    <TooltipTrigger as-child @click='toggle'>
-      <slot>…</slot>
-    </TooltipTrigger>
-    <TooltipContent
-      side='top'
-      align='center'
-      :collision-boundary='parent'
-      :avoid-collisions='false'
-      :collision-padding='{ top: 20 }'
-      hide-when-detached
-      class='tooltip card'
-    >
-      <slot name='content'></slot>
-      <TooltipArrow
-        :width='11'
-        :height='5'
-        class='arrow'
-      />
-    </TooltipContent>
-  </TooltipRoot>
-</TooltipProvider>
+<TooltipRoot v-model:open='open' :disabled='disabled'>
+  <TooltipTrigger as-child @click='toggle'>
+    <slot>…</slot>
+  </TooltipTrigger>
+  <TooltipContent
+    side='top'
+    align='center'
+    :collision-boundary='parent'
+    :avoid-collisions='false'
+    :collision-padding='{ top: 20 }'
+    hide-when-detached
+    class='tooltip card'
+  >
+    <slot name='content'>…</slot>
+    <TooltipArrow
+      :width='11'
+      :height='5'
+      class='arrow'
+    />
+  </TooltipContent>
+</TooltipRoot>
 </template>
 
 <style scoped lang='scss'>

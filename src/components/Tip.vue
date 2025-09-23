@@ -25,7 +25,7 @@ whenever(isVisible, stop, { once: true })
 >
   <ToastTitle as='p' class='toast-title' v-if='title'>{{ title }}</ToastTitle>
   <ToastDescription as='div' class='toast-desc'>
-    <slot>...</slot>
+    <slot>…</slot>
   </ToastDescription>
   <ToastClose class='toast-close button'>Ok</ToastClose>
 </ToastRoot>

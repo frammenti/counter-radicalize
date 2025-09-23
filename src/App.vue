@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import { provide } from 'vue'
-import { ToastProvider, ToastViewport } from 'reka-ui'
+import { TooltipProvider, ToastProvider, ToastViewport } from 'reka-ui'
 import AppHeader from '@/components/AppHeader.vue'
 import AppFooter from '@/components/AppFooter.vue'
 import Hero from '@/sections/Hero.vue'
@@ -15,22 +15,24 @@ provide(previewsKey, previews)
 
 <template>
 <ToastProvider label='Info'>
-  <ToastViewport
-    as='aside'
-    :hotkey="['i']"
-    :label='((hotkey: string) => `Info (${hotkey})`)'
-    class='toast-viewport'
-  />
   <AppHeader />
   <main>
+    <ToastViewport
+      as='aside'
+      :hotkey="['i']"
+      :label='((hotkey: string) => `Info (${hotkey})`)'
+      class='toast-viewport'
+    />
     <div class='landing'>
       <Hero />
     </div>
-    <article>
-      <About />
-      <CloseReading />
-      <DistantReading />
-    </article>
+    <TooltipProvider :delay-duration='100' disable-closing-trigger>
+      <article>
+        <About />
+        <CloseReading />
+        <DistantReading />
+      </article>
+    </TooltipProvider>
   </main>
   <AppFooter />
 </ToastProvider>
