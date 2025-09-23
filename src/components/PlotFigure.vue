@@ -3,6 +3,7 @@ import { onMounted, shallowRef, watch, watchEffect } from 'vue'
 import { useElementSize } from '@vueuse/core'
 import type { PlotOptions, Data, PointerOptions } from '@observablehq/plot'
 import type { AsyncPlotOptions, MarkKey, TransformKey, MarkConstructor, TransformConstructor, Options, AsyncTransform } from '@/types/plot'
+import { playtime } from '@/stores/playtime'
 
 const props = defineProps<{
   options: AsyncPlotOptions,

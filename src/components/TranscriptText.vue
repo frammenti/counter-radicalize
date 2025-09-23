@@ -1,11 +1,11 @@
 <script setup lang='ts'>
 import { shallowRef, watch, defineAsyncComponent } from 'vue'
+import { playtime } from '@/stores/playtime'
 import parsePlaceholders from '@/composables/parsePlaceholders'
 import type { EmotionSegment } from '@/types/emotion-segment'
 
 const Tooltip = defineAsyncComponent(() => import('@/components/Tooltip.vue'))
 
-const playtime = defineModel('playtime', { type: Number, required: true })
 const props = defineProps<{ segments: EmotionSegment[], active: number, annotated: boolean }>()
 const spans = shallowRef<HTMLSpanElement[]>([])
 const container = shallowRef<HTMLDivElement>()

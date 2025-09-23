@@ -1,14 +1,13 @@
 <script setup lang='ts'>
 import { ref, onMounted, watch } from 'vue'
+import { playtime } from '@/stores/playtime'
 
 const props = defineProps<{
   src: string
-  playtime: number
   playing: boolean
 }>()
 
 const emit = defineEmits<{
-  'update:playtime': [value: number]
   'update:playing': [value: boolean]
 }>()
 
@@ -28,7 +27,7 @@ onMounted(async () => {
 })
 
 // Sync player time to model
-watch(() => props.playtime, t => {
+watch(playtime, t => {
   if (audio.value && Math.abs(audio.value.currentTime - t) > 0.25) {
     audio.value.currentTime = t
   }
@@ -58,7 +57,7 @@ watch(
   preload='auto'
   ref='audio'
   id='audio-player'
-  @timeupdate='emit("update:playtime", audio ? audio.currentTime : 0)'
+  @timeupdate='playtime = audio ? audio.currentTime : 0'
   @play='emit("update:playing", true)'
   @pause='emit("update:playing", false)'
   aria-label='Audio Player'
