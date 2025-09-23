@@ -1,19 +1,24 @@
 <script setup lang='ts'>
 import { onMounted, shallowRef, watch, watchEffect } from 'vue'
 import { useElementSize } from '@vueuse/core'
-import type { PlotOptions, Data, PointerOptions } from '@observablehq/plot'
-import type { AsyncPlotOptions, MarkKey, TransformKey, MarkConstructor, TransformConstructor, Options, AsyncTransform } from '@/types/plot'
+import type { Plot, PlotOptions, Data, PointerOptions } from '@observablehq/plot'
+import * as htl from 'htl'
 import { playtime } from '@/stores/playtime'
+import type { AsyncPlotOptions, MarkKey, TransformKey, MarkConstructor, TransformConstructor, Options, AsyncMark, AsyncTransform, Gradient } from '@/types/plot'
 
 const props = defineProps<{
   options: AsyncPlotOptions,
   axisOptions?: AsyncPlotOptions,
-  pointerOptions?: AsyncPlotOptions
+  pointerOptions?: AsyncPlotOptions,
+  timeMarkerOptions?: AsyncPlotOptions,
+  gradients?: Gradient[]
 }>()
 
 const container = shallowRef<HTMLDivElement | null>(null)
 const axisContainer = shallowRef<HTMLDivElement | null>(null)
 const pointerContainer = shallowRef<HTMLDivElement | null>(null)
+const timeMarkerContainer = shallowRef<HTMLDivElement | null>(null)
+const pointer = shallowRef<(HTMLElement | SVGSVGElement) & Plot | null>(null)
 let Plot: typeof import('@observablehq/plot')
 let plotInstance: Node | null = null
 const { width } = useElementSize(axisContainer)
@@ -53,7 +58,42 @@ function renderAxis(plotWidth: number) {
 function renderPointer() {
   if (props.pointerOptions && pointerContainer.value) {
     if (plotInstance) pointerContainer.value.innerHTML = ''
-    pointerContainer.value.appendChild(Plot.plot(appendMarks(props.pointerOptions)))
+    pointer.value = Plot.plot(appendMarks(props.pointerOptions))
+    pointerContainer.value.appendChild(pointer.value)
+  }
+}
+
+function renderTimeMarker(time: number) {
+  if (props.timeMarkerOptions && timeMarkerContainer.value) {
+    if (plotInstance) timeMarkerContainer.value.innerHTML = ''
+    const options = {...props.timeMarkerOptions}
+    const marks = options.marks as AsyncMark[]
+    for (const m of marks) {
+      m.data = [new Date(time * 1000)]
+    }
+    timeMarkerContainer.value.appendChild(Plot.plot(appendMarks(options)))
+  }
+}
+
+function appendGradients(svg: HTMLElement | SVGSVGElement, gradients: Gradient[]) {
+  let defs = svg.querySelector('defs')
+  if (!defs) {
+    defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs')
+    svg.insertBefore(defs, svg.firstChild)
+  }
+
+  for (const g of gradients) {
+    if (svg.querySelector(`#${g.id}`)) continue
+
+    const grad = htl.svg`<linearGradient id=${g.id}
+        x1=0 x2=0
+        y1=${g.max}
+        y2=${g.min}>
+      <stop offset='0%' stop-color=${g.low}></stop>
+      <stop offset='100%' stop-color=${g.high}></stop>
+    </linearGradient>`
+
+    defs.appendChild(grad)
   }
 }
 
@@ -62,7 +102,9 @@ function renderPlot() {
   renderAxis(width.value)
   if (container.value) {
     if (plotInstance) container.value.innerHTML = ''
-    plotInstance = Plot.plot(appendMarks(props.options))
+    const svg = Plot.plot(appendMarks(props.options))
+    if (props.gradients) appendGradients(svg, props.gradients)
+    plotInstance = svg
     container.value.appendChild(plotInstance)
   }
   renderPointer()
@@ -74,8 +116,16 @@ onMounted(async () => {
   }
   renderPlot()
   watch(() => props.options, renderPlot, { deep: true })
+  if (props.timeMarkerOptions) {
+    watchEffect(() => renderTimeMarker(playtime.value))
+  }
   watchEffect(() => renderAxis(width.value))
 })
+
+function setPlaytime() {
+  if (!pointer.value?.value) return
+  playtime.value = pointer.value?.value.time.getTime() / 1000
+}
 </script>
 
 <template>
@@ -83,7 +133,8 @@ onMounted(async () => {
   <div ref='axisContainer' class='plot-axis'></div>
   <div class='plot-scroll'>
     <div ref='container' class='plot-content'></div>
-    <div ref='pointerContainer' class='plot-pointer'></div>
+    <div ref='timeMarkerContainer' class='plot-pointer'></div>
+    <div ref='pointerContainer' class='plot-pointer' @mousedown='setPlaytime'></div>
   </div>
 </figure>
 </template>
@@ -92,6 +143,9 @@ onMounted(async () => {
 .plot {
   margin: 0;
   position: relative;
+}
+.plot-scroll {
+  padding-block-end: 0.5rem;
 }
 .plot-axis {
   position: absolute;
@@ -116,7 +170,7 @@ onMounted(async () => {
 }
 .plot-axis:after {
   right: -5px;
-  width: 25px;
+  width: 20px;
 }
 .plot-scroll {
   position: relative;
@@ -125,6 +179,7 @@ onMounted(async () => {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 2;
 }
 :deep(svg) {
   max-width: none;
@@ -134,6 +189,9 @@ onMounted(async () => {
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
+  }
+  .plot-pointer {
+    z-index: unset;
   }
 }
 </style>

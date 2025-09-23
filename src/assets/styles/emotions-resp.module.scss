@@ -35,7 +35,7 @@ $schemes: (
 :export {
   @each $scheme, $colors in $schemes {
     @each $label, $color in $colors {
-      #{$scheme + '-' + $label}: #{$color};
+      #{$scheme + '_' + $label}: #{$color};
     }
   }
 }
