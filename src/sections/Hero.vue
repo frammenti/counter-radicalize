@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
   <section class='hero grid paginated' aria-label='Hero'>
     <div class='grid-item-1'>

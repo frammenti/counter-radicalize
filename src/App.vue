@@ -4,8 +4,8 @@ import AppHeader from '@/components/AppHeader.vue'
 import AppFooter from '@/components/AppFooter.vue'
 import Hero from '@/sections/Hero.vue'
 import About from '@/sections/About.vue'
-import Transcript from '@/sections/Transcript.vue'
-import LinguisticFeatures from '@/sections/LinguisticFeatures.vue'
+import CloseReading from '@/sections/CloseReading.vue'
+import DistantReading from '@/sections/DistantReading.vue'
 import previews from '@/stores/previews.json'
 import { previewsKey } from '@/composables/usePreviews'
 
@@ -20,8 +20,8 @@ provide(previewsKey, previews)
     </div>
     <article>
       <About />
-      <Transcript />
-      <LinguisticFeatures />
+      <CloseReading />
+      <DistantReading />
     </article>
   </main>
   <AppFooter />
