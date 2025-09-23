@@ -45,7 +45,7 @@ function toggle() {
   overflow: clip;
   z-index: 2;
   animation-name: slide-up;
-  box-shadow: $box-shadow-large;
+  box-shadow: $box-shadow;
   color: resp($text-color);
   font-style: normal;
   font-size: 0.9em;
