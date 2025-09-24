@@ -11,7 +11,7 @@ import type { EmotionSegment } from '@/types/emotion-segment'
 import usePlaybackShortcuts from '@/composables/usePlaybackShortcuts'
 
 const playing = shallowRef<boolean>(false)
-const hasKeyboard: boolean = window.matchMedia('(any-pointer: fine)').matches
+const hasKeyboard: boolean = window.matchMedia('(pointer: fine)').matches
 const section = useTemplateRef('section')
 const annotated = shallowRef<boolean>(false)
 
@@ -32,7 +32,7 @@ if (hasKeyboard) {
 
 <template>
 <section id='close-reading' class='paginated' aria-label='Close reading' ref='section'>
-  <Tip :anchor='section' title='Keyboard shortcuts'>
+  <Tip :v-if='hasKeyboard' :anchor='section' title='Keyboard shortcuts'>
     <KeyboardShortcut
       modifier='meta'
       :keys='["ArrowLeft"]'
@@ -87,9 +87,9 @@ if (hasKeyboard) {
   max-height: 35%;
   width: 100%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (width < $mobile) {
   #close-reading {
-    padding-block-start: 6rem;
+    padding-block-start: 4rem;
   }
 }
 </style>

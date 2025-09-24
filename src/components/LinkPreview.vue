@@ -8,7 +8,7 @@ import {
 import { usePreviews } from '@/composables/usePreviews'
 
 const props = defineProps<{ href: string }>()
-const supportsHover = window.matchMedia('(any-hover: hover)').matches
+const supportsHover = window.matchMedia('(hover: hover)').matches
 const previews = supportsHover ? usePreviews() : {}
 const metadata = previews[props.href]
 </script>

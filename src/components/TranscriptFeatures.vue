@@ -100,7 +100,7 @@ const permaData = computed<EmotionSegment | undefined>((prev) => {
   position: absolute;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (width < $mobile) {
   .grid {
     grid-template-columns: 100%;
   }

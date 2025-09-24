@@ -113,7 +113,6 @@ a svg {
 
 .button {
   background-color: resp($primary-color);
-  font-family: sans-serif;
   color: $white;
   font-size: .875em;
   font-weight: 600;
@@ -190,7 +189,7 @@ a svg {
   }
 }
 
-@media (any-hover: hover) {
+@media (hover: hover) {
   body, #app {
     overscroll-behavior: none;
   }
@@ -199,7 +198,7 @@ a svg {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (width < $mobile) {
   .paginated {
     padding-inline: 1em;
     padding-block: $section-spacing-mobile;

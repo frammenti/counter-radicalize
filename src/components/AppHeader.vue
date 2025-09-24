@@ -1,5 +1,9 @@
+<script setup lang='ts'>
+defineProps<{ opaque?: boolean }>()
+</script>
+
 <template>
-  <header>
+  <header :class='opaque ? "opaque" : ""'>
     <nav id='site-nav'>
       <div class='logo'>
         <a href='/counter-radicalize/'>Con/rad</a>
@@ -25,6 +29,11 @@ header {
   background-color: resp((shadow($white, 0.05), shadow($black, 0.05)));
   outline: 1px solid resp((shadow($black, 0.08), shadow($white, 0.08)));
   z-index: 8;
+  will-change: background-color;
+}
+header.opaque {
+  backdrop-filter: none;
+  background-color: resp($background-color);
 }
 #site-nav {
   display: flex;
@@ -60,7 +69,7 @@ header a {
 .github {
   justify-content: flex-end;
 }
-@media screen and (max-width: 1280px) {
+@media screen and (width < $tablet) {
   #site-nav { column-gap: 3rem }
   .logo, .github { flex: auto }
   .pages { display: contents }
@@ -70,7 +79,7 @@ header a {
     width: 2rem;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (width < $mobile) {
   #site-nav {
     padding-inline: 1rem;
     height: 4rem;

@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import { defineAsyncComponent, computed, useTemplateRef } from 'vue'
-import { useDark } from '@vueuse/core'
+import { usePreferredDark } from '@vueuse/core'
 import Tip from '@/components/Tip.vue'
 import emotionColors from '@/assets/styles/emotions-resp.module.scss'
 import segments from '@/stores/segments.json'
@@ -30,14 +30,20 @@ for (const key in emotionColors) {
   schemes[scheme][label] = emotionColors[key]
 }
 
-const isDark = useDark()
-const scheme = computed(() => (isDark.value ? schemes.dark : schemes.light))
+const dark = usePreferredDark()
+const scheme = computed(() => (dark.value ? schemes.dark : schemes.light))
+const hasMouse = window.matchMedia('(pointer: fine)').matches
 </script>
 
 <template>
 <section id='distant-reading' class='paginated' aria-label='Distant reading' ref='section'>
-  <Tip :anchor='section' title='Iteractive plot'>
-    Click once to set the playtime. Click again to release.
+  <Tip :anchor='section' title='How to navigate'>
+    <template v-if='hasMouse'>
+      Click once to set playback position. Click again to clear.
+    </template>
+    <template v-else>
+      Drag to pan the graph. Tap to set playback position.
+    </template>
   </Tip>
   <hgroup>
     <h2>Linguistic features</h2>
@@ -145,7 +151,7 @@ const scheme = computed(() => (isDark.value ? schemes.dark : schemes.light))
           type: 'pointerX',
           options: {
             x: 'time',
-            stroke: isDark
+            stroke: dark
             ? 'oklch(0.7935 0.10034 276.98)'
             : 'oklch(0.4668 0.19179 337.977)',
             strokeWidth: 2
@@ -159,10 +165,10 @@ const scheme = computed(() => (isDark.value ? schemes.dark : schemes.light))
           type: 'pointerX',
           options: {
             x: 'time',
-            fill: isDark
+            fill: dark
             ? 'oklch(0.7935 0.10034 276.98)'
             : 'oklch(0.4668 0.19179 337.977)',
-            stroke: isDark
+            stroke: dark
             ? 'oklch(0.2256 0.00468 17.205)'
             : 'oklch(0.9985 0.00011 360)',
             strokeWidth: 10,
@@ -191,7 +197,7 @@ const scheme = computed(() => (isDark.value ? schemes.dark : schemes.light))
       {
         type: 'ruleX',
         options: {
-          stroke: isDark
+          stroke: dark
           ? 'oklch(0.7935 0.10034 96.98)'
           : 'oklch(0.4668 0.19179 137.977)',
           strokeWidth: 1,
@@ -201,10 +207,10 @@ const scheme = computed(() => (isDark.value ? schemes.dark : schemes.light))
       {
         type: 'textX',
         options: {
-          fill: isDark
+          fill: dark
           ? 'oklch(0.7935 0.10034 96.98)'
           : 'oklch(0.4668 0.19179 137.977)',
-          stroke: isDark
+          stroke: dark
           ? 'oklch(0.2256 0.00468 17.205)'
           : 'oklch(0.9985 0.00011 360)',
           strokeWidth: 10,
@@ -222,7 +228,7 @@ const scheme = computed(() => (isDark.value ? schemes.dark : schemes.light))
       min: 0,
       max: 1,
       low: emotionColors.dark_neutral,
-      high: isDark
+      high: dark
       ? emotionColors.dark_anger
       : emotionColors.light_anger
     },
@@ -230,10 +236,10 @@ const scheme = computed(() => (isDark.value ? schemes.dark : schemes.light))
       id: 'valence',
       min: 0,
       max: 1,
-      low: isDark
+      low: dark
       ? emotionColors.dark_sadness
       : emotionColors.light_sadness,
-      high: isDark
+      high: dark
       ? emotionColors.dark_happiness
       : 'oklch(0.8813 0.2005 99.88)'
     }
@@ -243,7 +249,7 @@ const scheme = computed(() => (isDark.value ? schemes.dark : schemes.light))
 
 <style scoped lang='scss'>
 #distant-reading {
-  max-height: unset;
   height: 100dvh;
+  max-height: unset;
 }
 </style>

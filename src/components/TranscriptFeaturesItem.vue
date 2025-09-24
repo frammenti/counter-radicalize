@@ -24,7 +24,7 @@ defineProps<{ label: string, value: number, short: string }>()
 .percent {
   opacity: 0.7;
 }
-@media screen and (max-width: 768px) {
+@media screen and (width < $mobile) {
   .full-label {
     display: none;
   }

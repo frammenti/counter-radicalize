@@ -1,5 +1,6 @@
 <script setup lang='ts'>
-import { provide } from 'vue'
+import { useTemplateRef, provide, shallowRef } from 'vue'
+import { useIntersectionObserver } from '@vueuse/core'
 import { TooltipProvider, ToastProvider, ToastViewport } from 'reka-ui'
 import AppHeader from '@/components/AppHeader.vue'
 import AppFooter from '@/components/AppFooter.vue'
@@ -11,11 +12,16 @@ import previews from '@/stores/previews.json'
 import { previewsKey } from '@/composables/usePreviews'
 
 provide(previewsKey, previews)
+const landing = useTemplateRef('landing')
+const heroVisible = shallowRef(true)
+useIntersectionObserver(landing, ([entry], _) => {
+  heroVisible.value = entry?.isIntersecting || false
+})
 </script>
 
 <template>
 <ToastProvider label='Info'>
-  <AppHeader />
+  <AppHeader :opaque='!heroVisible' />
   <main>
     <ToastViewport
       as='aside'
@@ -23,7 +29,7 @@ provide(previewsKey, previews)
       :label='((hotkey: string) => `Info (${hotkey})`)'
       class='toast-viewport'
     />
-    <div class='landing'>
+    <div class='landing' ref='landing'>
       <Hero />
     </div>
     <TooltipProvider :delay-duration='100' disable-closing-trigger>
@@ -50,8 +56,8 @@ provide(previewsKey, previews)
   top: $header-height;
   right: 0;
   z-index: 50;
-  margin: 1.5rem;
-  width: 320px;
+  padding: 1.5rem;
+  width: 371px;
   display: flex;
   flex-flow: column;
   gap: 1.5rem;
@@ -61,7 +67,7 @@ provide(previewsKey, previews)
   font-size: 0.875rem;
 }
 :deep(.toast-root)[data-state='open'] {
-  animation: show 300ms cubic-bezier(0.39, 0.575, 0.565, 1) 3s backwards;
+  animation: show 300ms cubic-bezier(0.39, 0.575, 0.565, 1) backwards;
 }
 :deep(.toast-root)[data-state='closed'] {
   animation: hide 150ms cubic-bezier(0.47, 0, 0.745, 0.715);
@@ -82,6 +88,24 @@ provide(previewsKey, previews)
   to {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+@media screen and (width < $tablet) {
+  :deep(.toast-viewport) {
+    top: unset;
+    bottom: 0;
+    flex-flow: column-reverse;
+  }
+  :deep(.toast-root) {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (width < $mobile) {
+  :deep(.toast-viewport) {
+    width: 100%;
+  }
+  :deep(.toast-root) {
+    text-align: end;
   }
 }
 </style>

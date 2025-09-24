@@ -184,7 +184,10 @@ function setPlaytime() {
 :deep(svg) {
   max-width: none;
 }
-@media screen and (max-width: 1200px) {
+@media screen and (width < $tablet) {
+  .plot {
+    margin-inline-end: 0.5rem;
+  }
   .plot-scroll {
     overflow-x: scroll;
     -webkit-overflow-scrolling: touch;

@@ -3,7 +3,7 @@
 @use "sass:map";
 @use '_functions' as *;
 @use '_emotions' as *;
-@use '_background' as *;
+@use '_layout' as *;
 
 @mixin set-color-legend($map) {
   @each $emotion, $color in $map {
@@ -53,12 +53,12 @@
 
         // Append breakpoint if not on mobile
         @if $min-width != 0 {
-          $queries: '#{$queries} and (min-width: #{$min-width})';
+          $queries: '#{$queries} and (width >= #{$min-width})';
         }
 
         // Append resolution for retina screens
         @if $res == 2x {
-          $queries: '#{$queries} and (min-resolution: 2dppx)';
+          $queries: '#{$queries} and (resolution >= 2dppx)';
         }
 
         @media #{$queries} {

@@ -1,7 +1,7 @@
 <template>
   <section class='hero grid paginated' aria-label='Hero'>
     <div class='grid-item-1'>
-      <h1>
+      <h1 class='title'>
         <span>C</span>
         <span>o</span>
         <span class='breathe'>u</span>
@@ -23,18 +23,18 @@
       </h1>
     </div>
     <div class='grid-item-2'>
-      <p>An experimental tool to analyze and visualize emotional content in speech.</p>
-      <a class='button' href='#about'>Dig deeper</a>
+      <p class='subtitle'>An experimental tool to analyze and visualize emotional content in speech.</p>
+      <a class='button hero-button' href='#about'>Dig deeper</a>
     </div>
   </section>
 </template>
 
-<style scoped>
+<style scoped lang='scss'>
 .hero {
   grid-template-areas: '. t s';
   grid-template-columns: 0.25fr 0.8fr 1.1fr;
 }
-h1 {
+.title {
   font-size: 4.5rem;
   font-feature-settings: 'kern' 0;
   font-variation-settings: 'wght' 600;
@@ -48,25 +48,39 @@ h1 {
 }
 .grid-item-2 {
   grid-area: s;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
   text-align: center;
-  padding: 2rem;
-  gap: 1.5rem;
+  margin: 2rem;
 }
-p {
+.subtitle {
   font-size: 1.2rem;
   text-wrap: balance;
-  margin: 0;
+  margin-block: 0 1.5rem;
 }
-h1 span {
+@property --gradSize {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+.hero-button {
+  color: resp($text-color);
+  background-color: unset;
+  outline: 2px solid resp($text-color);
+  background: radial-gradient(circle var(--gradSize) at 50% 110%, resp($text-color) 49%, transparent 51%);
+  transition: 
+    --gradSize ease-in-out 370ms,
+    color ease-in-out 150ms 100ms;
+}
+.hero-button:hover, .hero-button:active {
+  --gradSize: 200px;
+  color: resp($background-color);
+
+}
+.title span {
   transition: font-variation-settings 1s ease;
 }
-h1 span:hover,
-h1 span:hover + span,
-h1 span:has(+ span:hover) {
+.title span:hover,
+.title span:hover + span,
+.title span:has(+ span:hover) {
   font-variation-settings: 'wght' 300;
 }
 .breathe {
@@ -82,24 +96,42 @@ h1 span:has(+ span:hover) {
   60% { font-variation-settings: 'wght' 200; }
   to { font-variation-settings: 'wght' 600; }
 }
-@media screen and (max-width: 1024px) {
+@media screen and (width < $tablet) {
   .hero {
-    grid-template-areas:
-    't'
-    's';
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
   }
-  h1 {
-    font-size: 3.7rem;
+  .title {
+    font-size: 5.5rem;
+    line-height: 1;
     text-align: center;
+    margin-block: 0 2rem;
   }
-  .grid-item-1 {
-    justify-self: center;
-    align-self: end;
+  .subtitle {
+    font-size: 1.5rem;
+    margin-block: 0 2.5rem;
+    margin-inline: 3.5rem;
+  }
+  .hero-button {
+    font-size: 1.1rem;
+    line-height: 1.6;
   }
   .grid-item-2 {
-    align-self: start;
-    gap: 3rem;
+    margin: 0;
+  }
+}
+@media screen and (width < $mobile) {
+  .title {
+    font-size: 3.1rem;
+  }
+  .subtitle {
+    font-size: 0.95rem;
+  }
+  .hero-button {
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 }
 </style>

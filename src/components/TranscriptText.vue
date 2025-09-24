@@ -88,7 +88,7 @@ watch(() => props.active, i => {
 .active {
   color: resp($link-color);
 }
-@media (any-hover: hover) {
+@media (hover: hover) {
   #transcript-body > span:hover {
     background-color: resp($shadow-color);
   }

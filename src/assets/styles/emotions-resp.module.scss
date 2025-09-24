@@ -1,8 +1,3 @@
-@use 'sass:color';
-@use 'sass:map';
-@use 'main' as *;
-
-
 $light: (
   anger: oklch(0.7363 0.1526 28.03),
   contempt: oklch(0.5954 0.0589 50.65),

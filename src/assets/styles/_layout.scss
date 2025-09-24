@@ -1,3 +1,19 @@
 $section-spacing: 4rem;
 $section-spacing-mobile: 2rem;
 $header-height: 4rem;
+
+$mobile: 768px;
+$tablet: 1200px;
+
+$schemes: (light, dark);
+
+$breakpoints: (
+  mobile: 0,
+  tablet: $mobile,
+  desktop: $tablet
+);
+
+$resolutions: (
+  1x: '',
+  2x: '@2x'
+);
