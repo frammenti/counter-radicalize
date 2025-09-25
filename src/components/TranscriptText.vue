@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { shallowRef, watch, defineAsyncComponent } from 'vue'
+import { shallowRef, watch, defineAsyncComponent, onMounted } from 'vue'
 import { playtime } from '@/stores/playtime'
 import parsePlaceholders from '@/composables/parsePlaceholders'
 import type { EmotionSegment } from '@/types/emotion-segment'
@@ -9,6 +9,15 @@ const Tooltip = defineAsyncComponent(() => import('@/components/Tooltip.vue'))
 const props = defineProps<{ segments: EmotionSegment[], active: number, annotated: boolean }>()
 const spans = shallowRef<HTMLSpanElement[]>([])
 const container = shallowRef<HTMLDivElement>()
+const hoverable = window.matchMedia('(hover: hover)').matches
+let left: number = 0
+let right: number = 0
+
+onMounted(() => {
+  const dims = container.value!.getBoundingClientRect()
+  left = dims.left
+  right = dims.right
+})
 
 // Scroll to center the active item into the container
 watch(() => props.active, i => {
@@ -17,7 +26,6 @@ watch(() => props.active, i => {
   if (el && parent) {
     const offset =
       el.offsetTop - parent.clientHeight / 2 + el.getBoundingClientRect().height / 2
-
     parent.scrollTo({ top: offset, behavior: 'smooth' })
   }
 })
@@ -38,13 +46,13 @@ watch(() => props.active, i => {
       @click='() => (playtime = seg.start)'
       @keydown.enter='() => (playtime = seg.start)'
       aria-controls='audio-player'
-      :aria-current='i === active ? true : false'
+      :aria-current='i == active'
     >
       <template v-for='(token, j) in parsePlaceholders(seg.text)' :key='j'>
         <template v-if='typeof token === "string"'>
           {{ token }}
         </template>
-        <Tooltip v-else :parent='container' :disabled='!annotated'>
+        <Tooltip v-else :parent='container' :disabled='!annotated' :parent-size='hoverable ? [left, right] : undefined'>
           <span
             class='disfluency'
             :class='token.class'

@@ -90,7 +90,7 @@ useIntersectionObserver(landing, ([entry], _) => {
     opacity: 1;
   }
 }
-@media screen and (width < $tablet) {
+@media screen and (width < $laptop) {
   :deep(.toast-viewport) {
     top: unset;
     bottom: 0;
@@ -100,7 +100,7 @@ useIntersectionObserver(landing, ([entry], _) => {
     font-size: 0.9rem;
   }
 }
-@media screen and (width < $mobile) {
+@media screen and (width < $tablet) {
   :deep(.toast-viewport) {
     width: 100%;
   }

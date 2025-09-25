@@ -66,7 +66,7 @@ svg {
   margin:0;
   padding-inline-start: 0;
 }
-@media screen and (width < $mobile) {
+@media screen and (width < $tablet) {
   footer {
     padding-inline: 3rem;
     padding-block: 3rem;

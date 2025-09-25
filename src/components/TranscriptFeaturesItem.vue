@@ -10,7 +10,7 @@ defineProps<{ label: string, value: number, short: string }>()
 </span>
 </template>
 
-<style scoped>
+<style scoped lang='scss'>
 .label {
   font-weight: 500;
   margin-inline-end: 0.4em;
@@ -24,7 +24,7 @@ defineProps<{ label: string, value: number, short: string }>()
 .percent {
   opacity: 0.7;
 }
-@media screen and (width < $mobile) {
+@media screen and (width < $tablet) {
   .full-label {
     display: none;
   }

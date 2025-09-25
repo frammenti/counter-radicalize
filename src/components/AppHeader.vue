@@ -69,17 +69,17 @@ header a {
 .github {
   justify-content: flex-end;
 }
-@media screen and (width < $tablet) {
+@media screen and (width < $laptop) {
   #site-nav { column-gap: 3rem }
   .logo, .github { flex: auto }
   .pages { display: contents }
   .optional { display: none }
   .github svg {
-    height: 2rem;
-    width: 2rem;
+    height: 2.286em;
+    width: 2.286em;
   }
 }
-@media screen and (width < $mobile) {
+@media screen and (width < $tablet) {
   #site-nav {
     padding-inline: 1rem;
     height: 4rem;

@@ -198,7 +198,7 @@ a svg {
   }
 }
 
-@media screen and (width < $mobile) {
+@media screen and (width < $tablet) {
   .paginated {
     padding-inline: 1em;
     padding-block: $section-spacing-mobile;

@@ -96,7 +96,7 @@
   60% { font-variation-settings: 'wght' 200; }
   to { font-variation-settings: 'wght' 600; }
 }
-@media screen and (width < $tablet) {
+@media screen and (width < $laptop) {
   .hero {
     display: flex;
     flex-flow: column;
@@ -122,7 +122,7 @@
     margin: 0;
   }
 }
-@media screen and (width < $mobile) {
+@media screen and (width < $tablet) {
   .title {
     font-size: 3.1rem;
   }

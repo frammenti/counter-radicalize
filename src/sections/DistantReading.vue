@@ -252,4 +252,9 @@ const hasMouse = window.matchMedia('(pointer: fine)').matches
   height: 100dvh;
   max-height: unset;
 }
+@media screen and (width < $laptop) {
+  :deep(.plot) {
+    margin-inline-end: 4rem;
+  }
+}
 </style>

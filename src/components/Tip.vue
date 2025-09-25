@@ -66,7 +66,7 @@ const { stop } = useIntersectionObserver(
   border-radius: .375rem;
   text-align: start;
 }
-@media screen and (width < $tablet) {
+@media screen and (width < $laptop) {
   .toast-close {
     padding-inline: 1.25em;
   }

@@ -2,15 +2,15 @@ $section-spacing: 4rem;
 $section-spacing-mobile: 2rem;
 $header-height: 4rem;
 
-$mobile: 768px;
-$tablet: 1200px;
+$tablet: 768px;
+$laptop: 1200px;
 
 $schemes: (light, dark);
 
 $breakpoints: (
   mobile: 0,
-  tablet: $mobile,
-  desktop: $tablet
+  tablet: $tablet,
+  desktop: $laptop
 );
 
 $resolutions: (
