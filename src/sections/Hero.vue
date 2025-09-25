@@ -86,16 +86,6 @@
 .breathe {
   animation: letter-breathe 3s ease 1s;
 }
-@keyframes disable {
-  from { pointer-events: none; }
-  to { pointer-events: none; }
-}
-@keyframes letter-breathe {
-  from { font-variation-settings: 'wght' 600; }
-  45% { font-variation-settings: 'wght' 200; }
-  60% { font-variation-settings: 'wght' 200; }
-  to { font-variation-settings: 'wght' 600; }
-}
 @media screen and (width < $laptop) {
   .hero {
     display: flex;

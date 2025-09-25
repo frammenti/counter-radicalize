@@ -8,13 +8,13 @@ import {
 import { usePreviews } from '@/composables/usePreviews'
 
 const props = defineProps<{ href: string }>()
-const supportsHover = window.matchMedia('(hover: hover)').matches
-const previews = supportsHover ? usePreviews() : {}
+const hoverable = window.matchMedia('(hover: hover)').matches
+const previews = hoverable ? usePreviews() : {}
 const metadata = previews[props.href]
 </script>
 
 <template>
-  <HoverCardRoot v-if='supportsHover && metadata' :open-delay='100' :close-delay='150'>
+  <HoverCardRoot v-if='hoverable && metadata' :open-delay='100' :close-delay='150'>
     <HoverCardTrigger
       :href=props.href
       target='_blank'
@@ -68,32 +68,12 @@ const metadata = previews[props.href]
   z-index: 2;
 }
 :deep(.popover[data-side='top']) {
-  animation-name: slide-up;
+  animation-name: fade-in-slide-up;
   box-shadow: $box-shadow-large;
 }
 :deep(.popover[data-side='bottom']) {
-  animation-name: slide-down;
+  animation-name: fade-in-slide-down;
   box-shadow: $box-shadow-large-reverse;
-}
-@keyframes slide-up {
-  from {
-    opacity: 0;
-    transform: translateY(2px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes slide-down {
-  from {
-    opacity: 0;
-    transform: translateY(-2px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 :deep(.arrow) {
   fill: resp($modal-color);

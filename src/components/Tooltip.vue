@@ -50,15 +50,14 @@ function toggle() {
   padding-block: 0.3rem;
   padding-inline: 0.6rem;
 }
-@keyframes slide-up {
-  from {
-    opacity: 0;
-    transform: translateY(2px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+:deep(.tooltip)[data-side='top'] {
+  animation-name: fade-in-slide-up;
+}
+:deep(.tooltip)[data-side='left'] {
+  animation-name: fade-in-slide-left;
+}
+:deep(.tooltip)[data-side='right'] {
+  animation-name: fade-in-slide-right;
 }
 :deep(.arrow) {
   fill: resp($modal-color);
