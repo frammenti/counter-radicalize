@@ -15,7 +15,7 @@ $primary-color: $orchid color.scale($lilac, $lightness: -15%, $chroma: 10%);
 $primary-muted-color: color.scale($orchid, $lightness: 10%, $chroma: 10%) color.scale($lilac, $lightness: -20%, $chroma: 20%);
 $link-color: $fuchsia $lilac;
 $annotation-color: color.adjust($fuchsia, $hue: 160deg) color.adjust($lilac, $hue: 180deg);
-$shadow-color: color.change($brown, $alpha: 0.15), color.change($taupe, $alpha: 0.15);
+$shadow-color: color.change($brown, $alpha: 0.05), color.change($taupe, $alpha: 0.15);
 $background-color: $white $black;
 
 $text-color: $raisin color.change($white, $alpha: 0.87);

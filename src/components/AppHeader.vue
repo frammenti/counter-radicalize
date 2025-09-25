@@ -25,15 +25,12 @@ defineProps<{ opaque?: boolean }>()
 
 <style scoped lang='scss'>
 header {
-  backdrop-filter: blur(0px);
-  background-color: resp((shadow($white, 0.05), shadow($black, 0.05)));
-  outline: 1px solid resp((shadow($black, 0.08), shadow($white, 0.08)));
-  z-index: 8;
+  background-color: transparent;
   will-change: background-color;
 }
 header.opaque {
-  backdrop-filter: none;
   background-color: resp($background-color);
+  box-shadow: 0 0 20px 10px resp($background-color);
 }
 #site-nav {
   display: flex;
@@ -80,9 +77,16 @@ header a {
   }
 }
 @media screen and (width < $tablet) {
+  header {
+    outline: 1px solid resp($shadow-color);
+  }
+  header.opaque {
+    box-shadow: none;
+  }
   #site-nav {
-    padding-inline: 1rem;
-    height: 4rem;
+    padding-inline: 0.9rem;
+    height: $header-height-mobile;
+    font-size: 0.75rem;
   }
   .pages { display: none }
 }

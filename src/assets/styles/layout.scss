@@ -202,6 +202,9 @@ a svg {
   .paginated {
     padding-inline: 1em;
     padding-block: $section-spacing-mobile;
-    scroll-margin-block-start: calc($header-height - $section-spacing-mobile / 2);
+    scroll-margin-block-start: $header-height-mobile;
+  }
+  header {
+    height: $header-height-mobile;
   }
 }

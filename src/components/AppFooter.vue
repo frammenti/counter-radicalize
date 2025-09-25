@@ -22,6 +22,7 @@
 </template>
 
 <style scoped lang='scss'>
+@use 'sass:color';
 footer {
   background-color: resp($text-color);
   color: resp($background-color);
@@ -33,7 +34,7 @@ h3, p {
   margin: 0;
 }
 a {
-  color: resp($primary-muted-color);
+  color: resp((color.scale($orchid, $lightness: 30%, $chroma: 20%) color.scale($lilac, $lightness: -20%, $chroma: 20%)));
 }
 a:hover {
   background-color: unset;

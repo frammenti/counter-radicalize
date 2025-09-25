@@ -1,6 +1,7 @@
 $section-spacing: 4rem;
 $section-spacing-mobile: 2rem;
-$header-height: 4rem;
+$header-height: $section-spacing;
+$header-height-mobile: 3rem;
 
 $tablet: 768px;
 $laptop: 1200px;
