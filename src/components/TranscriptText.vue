@@ -14,6 +14,7 @@ let left: number = 0
 let right: number = 0
 
 onMounted(() => {
+  if (!hoverable) return
   const dims = container.value!.getBoundingClientRect()
   left = dims.left
   right = dims.right

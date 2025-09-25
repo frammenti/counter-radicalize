@@ -42,7 +42,7 @@ function updateSide([parentLeft, parentRight]: number[]) {
   return functionRef
 }
 
-const trigger = updateSide(props.parentSize!)
+const trigger = props.parentSize ? updateSide(props.parentSize) : undefined
 </script>
 
 <template>

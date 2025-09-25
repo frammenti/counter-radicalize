@@ -249,7 +249,6 @@ const hasMouse = window.matchMedia('(pointer: fine)').matches
 
 <style scoped lang='scss'>
 #distant-reading {
-  height: 100dvh;
   max-height: unset;
 }
 @media screen and (width < $laptop) {
