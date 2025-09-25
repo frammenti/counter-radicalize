@@ -1,23 +1,61 @@
 <script setup lang='ts'>
-import { shallowRef } from 'vue'
-import { TooltipArrow, TooltipContent, TooltipRoot, TooltipTrigger } from 'reka-ui'
+import { shallowRef, watch, nextTick } from 'vue'
+import { TooltipArrow, TooltipContent, TooltipRoot, TooltipTrigger, type TooltipContentProps } from 'reka-ui'
 
-const props = defineProps<{ parent?: HTMLElement, disabled?: boolean }>()
+const props = defineProps<{
+  parent?: HTMLElement,
+  disabled?: boolean,
+  parentSize?: [left: number, right: number]
+}>()
 const open = shallowRef<boolean>(false)
 
 function toggle() {
   if (!open.value && !props.disabled) open.value = true
 }
+
+// Placement outside of parent box
+const side = shallowRef<TooltipContentProps['side']>('top')
+const padding = 4
+const offset = shallowRef<number>(0)
+
+function updateSide([parentLeft, parentRight]: number[]) {
+  const trigger = shallowRef()
+  const functionRef = (el: any) => { trigger.value = el }
+  
+  watch(() => !props.disabled, async (enabled) => {
+    if (enabled) {
+      if (!(props.parent && trigger.value)) return
+      await nextTick()
+      const { left, right } = trigger.value.getBoundingClientRect()
+      const distLeft = left - parentLeft
+      const distRight = parentRight - right
+      if (distLeft < distRight) {
+        side.value = 'left'
+        offset.value = distLeft + padding
+      } else {
+        side.value = 'right'
+        offset.value = distRight + padding
+      }
+    }
+  }, { once: true })
+
+  return functionRef
+}
+
+const trigger = updateSide(props.parentSize!)
 </script>
 
 <template>
 <TooltipRoot v-model:open='open' :disabled='disabled'>
   <TooltipTrigger as-child @click='toggle'>
-    <slot>…</slot>
+    <span :ref='trigger'>
+      <slot>…</slot>
+    </span>
   </TooltipTrigger>
   <TooltipContent
-    side='top'
-    align='center'
+    :side='side'
+    :align='parentSize ? "end" : "center"'
+    :side-offset='offset'
     :collision-boundary='parent'
     :avoid-collisions='false'
     :collision-padding='{ top: 20 }'
@@ -42,7 +80,6 @@ function toggle() {
   outline-offset: 0;
   overflow: clip;
   z-index: 2;
-  animation-name: slide-up;
   box-shadow: $box-shadow;
   color: resp($text-color);
   font-style: normal;
