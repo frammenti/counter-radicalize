@@ -10,21 +10,21 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@observablehq/plot": "^0.6.17",
+    "hls.js": "^1.6.10",
+    "htl": "^0.3.1",
+    "lucide-vue-next": "^0.542.0",
     "reka-ui": "^2.5.0",
     "vue": "^3.5.18"
   },
   "devDependencies": {
     "@csstools/postcss-light-dark-function": "^2.0.10",
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
-    "@observablehq/plot": "^0.6.17",
-    "hls.js": "^1.6.10",
     "@types/node": "^24.3.0",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vue/tsconfig": "^0.7.0",
     "dotenv": "^17.2.1",
     "fast-glob": "^3.3.3",
-    "htl": "^0.3.1",
-    "lucide-vue-next": "^0.542.0",
     "postcss": "^8.5.6",
     "sass-embedded": "^1.90.0",
     "typescript": "~5.8.3",
