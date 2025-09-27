@@ -1,27 +1,20 @@
 <script setup lang='ts'>
-import { shallowRef, computed, useTemplateRef } from 'vue'
+import { shallowRef, useTemplateRef } from 'vue'
 import TranscriptPlayer from '@/components/TranscriptPlayer.vue'
 import TranscriptText from '@/components/TranscriptText.vue'
 import TranscriptFeatures from '@/components/TranscriptFeatures.vue'
 import KeyboardShortcut from '@/components/KeyboardShortcut.vue'
 import Tip from '@/components/Tip.vue'
-import { playtime } from '@/stores/playtime'
 import segments from '@/stores/segments.json'
+import useActiveSegment from '@/composables/useActiveSegment'
 import usePlaybackShortcuts from '@/composables/usePlaybackShortcuts'
 
-const playing = shallowRef<boolean>(false)
 const hasKeyboard = window.matchMedia('(pointer: fine)').matches
 const section = useTemplateRef('section')
 const annotated = shallowRef<boolean>(false)
 
 // Sync index of active segment
-function atMoment(seg: EmotionSegment, t: number): boolean {
-  let start = t > 0 ? seg.start - 0.1 : 0
-  return start < t && t < seg.end
-}
-const active = computed(() =>
-  segments.findIndex(seg => atMoment(seg, playtime.value))
-)
+const active = useActiveSegment(segments)
 
 // Enable shortcuts only when a physical keyboard is available
 if (hasKeyboard) {
@@ -53,8 +46,8 @@ if (hasKeyboard) {
   />
   <section id='transcript-text' aria-label='Transcript Text'>
     <TranscriptText
+      v-model:active='active'
       :segments='segments'
-      :active='active'
       :annotated='annotated'
     />
   </section>
