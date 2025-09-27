@@ -104,7 +104,7 @@ const splitData = computed(() => {
   padding-block: 2px 14px;
   margin-inline-start: -3px;
   margin-block-start: 2px;
-  box-shadow: none;
+  box-shadow: $box-shadow-small;
 }
 #see-more:hover,
 #see-more[data-state='checked'] {

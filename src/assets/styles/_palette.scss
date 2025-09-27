@@ -23,9 +23,14 @@ $text-muted-color: color.change($raisin, $alpha: 0.5) color.change($white, $alph
 $border-color: oklch(20.992% 0.03416 263.451 / 0.05) oklch(100% 0.00011 271.152 / 0.1);
 $modal-color: $white oklch(0.278 0.0047 17.465);
 
+$button-off-color: color.change($brown, $alpha: 0.2) color.change($taupe, $alpha: 0.15);
+$button-on-color: color.change($orchid, $alpha: 0.6) $taupe;
+
 $box-shadow:
   0 4px 6px -1px $shadow,
   0 2px 4px -2px $shadow;
+
+$box-shadow-small: 0 1px 2px 0 $shadow;
 
 $box-shadow-large:
   0px 10px 38px -10px $shadow,

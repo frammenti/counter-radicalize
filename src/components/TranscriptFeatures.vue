@@ -61,7 +61,8 @@ const permaData = computed<EmotionSegment | undefined>((prev) => {
 }
 .grid-item-2 {
   height: 100%;
-  align-content: center;
+  display: flex;
+  align-items: center;
 }
 .feature-card {
   align-self: start;

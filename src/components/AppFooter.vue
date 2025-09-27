@@ -40,8 +40,8 @@ a:hover {
   background-color: unset;
 }
 svg {
-  width: 6rem;
-  height: 6rem;
+  width: 5rem;
+  height: 5rem;
 }
 .grid {
   grid-template-areas: 'a b c';

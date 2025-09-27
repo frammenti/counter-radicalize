@@ -21,14 +21,19 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+body, #app, main, article {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 
 body, #app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100dvh; // dynamic viewport
-  overflow-x: hidden;
-  scroll-behavior: smooth;
+  min-height: 100dvh;
 }
 
 body {
@@ -42,12 +47,6 @@ header {
   width: 100%;
   height: $header-height;
   z-index: 10;
-}
-
-main, article {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
 }
 
 .paginated {
@@ -129,7 +128,9 @@ a svg {
     0 2px 4px -2px rgba(0, 0, 0, 0.102);
   border: 0 solid;
   cursor: pointer;
-  transition: background-color 200ms ease-in-out;
+  will-change: background-color;
+  transition: background-color 150ms ease;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .button:hover,
@@ -191,7 +192,7 @@ a svg {
 }
 
 @media (hover: hover) {
-  body, #app {
+  html {
     overscroll-behavior: none;
   }
   a:hover, a:focus-visible, a[data-state='open'] {
@@ -204,6 +205,7 @@ a svg {
     padding-inline: 1em;
     padding-block: $section-spacing-mobile;
     scroll-margin-block-start: $header-height-mobile;
+    max-height: calc(100lvh - $section-spacing-mobile);
   }
   header {
     height: $header-height-mobile;

@@ -250,6 +250,7 @@ const hasMouse = window.matchMedia('(pointer: fine)').matches
 <style scoped lang='scss'>
 #distant-reading {
   max-height: unset;
+  min-height: 100lvh;
 }
 @media screen and (width < $laptop) {
   :deep(.plot) {

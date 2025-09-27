@@ -41,7 +41,7 @@
   cursor: crosshair;
   line-height: 1.1;
   margin: 0;
-  animation: disable 4s backwards;
+  animation: disable 4.5s backwards;
 }
 .grid-item-1 {
   grid-area: t;
@@ -84,7 +84,7 @@
   font-variation-settings: 'wght' 300;
 }
 .breathe {
-  animation: letter-breathe 3s ease 1s;
+  animation: letter-breathe 3s ease 1.5s;
 }
 @media screen and (width < $laptop) {
   .hero {
