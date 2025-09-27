@@ -11,6 +11,7 @@ import usePlaybackShortcuts from '@/composables/usePlaybackShortcuts'
 
 const hasKeyboard = window.matchMedia('(pointer: fine)').matches
 const section = useTemplateRef('section')
+const locked = shallowRef<boolean>(true)
 const annotated = shallowRef<boolean>(false)
 
 // Sync index of active segment
@@ -48,6 +49,7 @@ if (hasKeyboard) {
     <TranscriptText
       v-model:active='active'
       :segments='segments'
+      :locked='locked'
       :annotated='annotated'
     />
   </section>
@@ -55,6 +57,7 @@ if (hasKeyboard) {
     <TranscriptFeatures
       :data='segments[active]'
       v-model:annotated='annotated'
+      v-model:locked='locked'
     />
   </section>
 </section>

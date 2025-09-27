@@ -1,13 +1,15 @@
 <script setup lang='ts'>
 import { computed, shallowRef } from 'vue'
 import Switch from '@/components/Switch.vue'
+import Toggle from '@/components/Toggle.vue'
 import TranscriptFeaturesCanvas from '@/components/TranscriptFeaturesCanvas.vue'
 import TranscriptFeaturesEmotions from '@/components/TranscriptFeaturesEmotions.vue'
 import TranscriptFeaturesDimensions from '@/components/TranscriptFeaturesDimensions.vue'
 import type { EmotionSegment } from '@/types/segment'
 
 const props = defineProps<{ data: EmotionSegment | undefined }>()
-const annotated = defineModel('annotated', { type: Boolean, required: true })
+const annotated = defineModel('annotated', { type: Boolean, required: false })
+const locked = defineModel('locked', { type: Boolean, required: true })
 const show = shallowRef<boolean>(false)
 
 // Keep the previous data in between segments
@@ -21,6 +23,7 @@ const permaData = computed<EmotionSegment | undefined>((prev) => {
 <div class='switch-group'>
   <Switch v-model='show' id='show-features'>Features</Switch>
   <Switch v-model='annotated' id='show-disfluencies'>Disfluencies</Switch>
+  <Toggle v-model='locked' title='Lock Scroll' />
 </div>
 <div class='grid'>
   <aside class='feature-card grid-item-1' aria-labelledby='emotions' :style='{ visibility: show && permaData ? "visible" : "hidden" }'>
@@ -51,11 +54,11 @@ const permaData = computed<EmotionSegment | undefined>((prev) => {
 }
 .switch-group {
   position: absolute;
-  top: -1.5rem;
+  top: -1.8rem;
   right: 0;
   padding-inline: 0.6rem;
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: start;
   gap: 1rem;
 }
@@ -107,10 +110,13 @@ const permaData = computed<EmotionSegment | undefined>((prev) => {
     grid-template-columns: 100%;
   }
   .switch-group {
-    top: -2rem;
+    top: -2.2rem;
     left: 0;
     flex-flow: row;
     font-size: 0.9em;
+  }
+  .switch-group > button {
+    margin-inline-start: auto;
   }
   .feature-card {
     position: absolute;

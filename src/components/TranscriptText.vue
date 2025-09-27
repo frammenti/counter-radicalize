@@ -7,11 +7,12 @@ import type { EmotionSegment } from '@/types/segment'
 
 const Tooltip = defineAsyncComponent(() => import('@/components/Tooltip.vue'))
 
-const props = defineProps<{ segments: EmotionSegment[], active: number, annotated: boolean }>()
+const props = defineProps<{ segments: EmotionSegment[], annotated: boolean, locked: boolean }>()
 const active = defineModel('active', { type: Number, required: true })
 
 const spans = shallowRef<HTMLSpanElement[]>([])
 const container = shallowRef<HTMLDivElement>()
+const scrolling = shallowRef<boolean>(false)
 const hoverable = window.matchMedia('(hover: hover)').matches
 let left: number = 0
 let right: number = 0
@@ -65,6 +66,8 @@ function updatePlaytime(segment: EmotionSegment, index: number) {
 <div
   id='transcript-container'
   ref='container'
+  :class='{ locked: locked }'
+  :style='{ overflowY: locked ? (scrolling ? "auto" : "hidden") : "auto" }'
   :aria-activedescendant='active > 0 ? `seg-${active}` : undefined'
 >
   <p id='transcript-body' :annotated>
@@ -113,6 +116,9 @@ function updatePlaytime(segment: EmotionSegment, index: number) {
   scrollbar-gutter: stable;
   will-change: scroll-position;
 }
+#transcript-container.locked {
+  scrollbar-color: transparent transparent;
+  overflow-y: hidden;
 }
 #transcript-body {
   line-height: 1.6;
