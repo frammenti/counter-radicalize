@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import { computed } from 'vue'
 import TranscriptFeaturesItem from '@/components/TranscriptFeaturesItem.vue'
-import type { EmotionSegment } from '@/types/emotion-segment'
+import type { EmotionSegment } from '@/types/segment'
 
 const props = defineProps<{ data: EmotionSegment['dimensions'] }>()
 

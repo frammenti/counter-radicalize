@@ -4,7 +4,7 @@ import { usePreferredDark } from '@vueuse/core'
 import Tip from '@/components/Tip.vue'
 import emotionColors from '@/assets/styles/emotions-resp.module.scss'
 import segments from '@/stores/segments.json'
-import type { EmotionSegment } from '@/types/emotion-segment'
+import type { EmotionSegment } from '@/types/segment'
 
 const section = useTemplateRef('section')
 const PlotFigure = defineAsyncComponent(() => import('@/components/PlotFigure.vue'))

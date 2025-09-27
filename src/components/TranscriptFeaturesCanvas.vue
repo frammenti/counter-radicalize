@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import { shallowRef, onMounted, computed, watch } from 'vue'
 import emotionColors from '@/assets/styles/emotions-dec.module.scss'
-import type { EmotionSegment } from '@/types/emotion-segment'
+import type { EmotionSegment } from '@/types/segment'
 
 const props = defineProps<{ data: EmotionSegment | undefined }>()
 const canvas = shallowRef<HTMLCanvasElement | null>(null)

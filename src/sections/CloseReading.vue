@@ -7,7 +7,6 @@ import KeyboardShortcut from '@/components/KeyboardShortcut.vue'
 import Tip from '@/components/Tip.vue'
 import { playtime } from '@/stores/playtime'
 import segments from '@/stores/segments.json'
-import type { EmotionSegment } from '@/types/emotion-segment'
 import usePlaybackShortcuts from '@/composables/usePlaybackShortcuts'
 
 const playing = shallowRef<boolean>(false)

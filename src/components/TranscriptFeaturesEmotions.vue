@@ -2,7 +2,7 @@
 import { shallowRef, computed } from 'vue'
 import { SwitchRoot } from 'reka-ui'
 import TranscriptFeaturesItem from '@/components/TranscriptFeaturesItem.vue'
-import type { EmotionSegment } from '@/types/emotion-segment'
+import type { EmotionSegment } from '@/types/segment'
 
 const props = defineProps<{ data: EmotionSegment['emotions'] }>()
 const more = shallowRef<boolean>(false)

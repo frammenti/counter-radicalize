@@ -2,7 +2,7 @@
 import { shallowRef, watch, defineAsyncComponent, onMounted } from 'vue'
 import { playtime } from '@/stores/playtime'
 import parsePlaceholders from '@/composables/parsePlaceholders'
-import type { EmotionSegment } from '@/types/emotion-segment'
+import type { EmotionSegment } from '@/types/segment'
 
 const Tooltip = defineAsyncComponent(() => import('@/components/Tooltip.vue'))
 

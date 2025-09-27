@@ -1,4 +1,4 @@
-import { DisfluencyType, type Disfluency } from '@/types/fluency-segment'
+import { DisfluencyType, type Disfluency } from '@/types/segment'
 
 export type Token =
   | string

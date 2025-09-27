@@ -4,7 +4,7 @@ import Switch from '@/components/Switch.vue'
 import TranscriptFeaturesCanvas from '@/components/TranscriptFeaturesCanvas.vue'
 import TranscriptFeaturesEmotions from '@/components/TranscriptFeaturesEmotions.vue'
 import TranscriptFeaturesDimensions from '@/components/TranscriptFeaturesDimensions.vue'
-import type { EmotionSegment } from '@/types/emotion-segment'
+import type { EmotionSegment } from '@/types/segment'
 
 const props = defineProps<{ data: EmotionSegment | undefined }>()
 const annotated = defineModel('annotated', { type: Boolean, required: true })

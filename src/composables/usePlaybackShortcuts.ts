@@ -1,6 +1,7 @@
 import type { Ref, ComputedRef } from 'vue'
 import { onKeyStroke, useMagicKeys } from '@vueuse/core'
 import type { EmotionSegment } from '@/types/emotion-segment'
+import type { EmotionSegment } from '@/types/segment'
 
 
 export default function usePlaybackShortcuts(

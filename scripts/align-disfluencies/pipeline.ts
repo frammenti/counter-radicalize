@@ -1,6 +1,6 @@
 import { wordsInWindow, groupWindows, flattenWindows, insertPlaceholder } from './utils.ts'
-import type { EmotionSegment } from '../../src/types/emotion-segment.ts'
-import { type FluencySegment, toIndex } from '../../src/types/fluency-segment.ts'
+import type { EmotionSegment, FluencySegment } from '../../src/types/segment.ts'
+import { toIndex } from '../../src/types/segment.ts'
 import type { Alignment, AlignedWord } from '../../src/types/alignment.ts'
 import type { AlignedWindow, DisfluencyPattern } from '../../src/types/disfluency.ts'
 

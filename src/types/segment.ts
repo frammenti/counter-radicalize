@@ -1,3 +1,28 @@
+export interface Segment {
+  start: number
+  end: number
+}
+
+export interface EmotionSegment extends Segment {
+  emotions: {
+    anger: number
+    contempt: number
+    disgust: number
+    fear: number
+    happiness: number
+    neutral: number
+    sadness: number
+    surprise: number
+    other: number
+  }
+  dimensions: {
+    valence: number
+    arousal: number
+    dominance: number
+  }
+  text: string
+}
+
 export const DisfluencyType = [
   'Block',
   'Prolongation',
@@ -8,9 +33,7 @@ export const DisfluencyType = [
 
 export type Disfluency = typeof DisfluencyType[number]
 
-export interface FluencySegment {
-  start: number
-  end: number
+export interface FluencySegment extends Segment {
   fluency: number
   disfluency_type: Disfluency[]
 }
