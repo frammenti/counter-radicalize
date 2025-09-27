@@ -21,26 +21,26 @@ useIntersectionObserver(landing, ([entry], _) => {
 
 <template>
 <ToastProvider label='Info'>
-  <AppHeader :opaque='!heroVisible' />
-  <main>
+  <TooltipProvider :delay-duration='100' disable-closing-trigger>
     <ToastViewport
       as='aside'
       :hotkey="['i']"
       :label='((hotkey: string) => `Info (${hotkey})`)'
       class='toast-viewport'
     />
-    <div class='landing' ref='landing'>
-      <Hero />
-    </div>
-    <TooltipProvider :delay-duration='100' disable-closing-trigger>
+    <AppHeader :opaque='!heroVisible' />
+    <main>
+      <div class='landing' ref='landing'>
+        <Hero />
+      </div>
       <article>
         <About />
         <CloseReading />
         <DistantReading />
       </article>
-    </TooltipProvider>
-  </main>
-  <AppFooter />
+    </main>
+    <AppFooter />
+  </TooltipProvider>
 </ToastProvider>
 </template>
 
