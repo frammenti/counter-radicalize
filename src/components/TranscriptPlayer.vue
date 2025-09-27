@@ -1,16 +1,9 @@
 <script setup lang='ts'>
 import { ref, onMounted, watch } from 'vue'
-import { playtime } from '@/stores/playtime'
+import { useDebounceFn } from '@vueuse/core'
+import { playtime, playing } from '@/stores/state'
 
-const props = defineProps<{
-  src: string
-  playing: boolean
-}>()
-
-const emit = defineEmits<{
-  'update:playing': [value: boolean]
-}>()
-
+const props = defineProps<{ src: string }>()
 const audio = ref<HTMLAudioElement | null>(null)
 
 // Dynamic import of hls.js
@@ -26,24 +19,35 @@ onMounted(async () => {
   }
 })
 
+// Sync model to player time
+const updatePlaytime = useDebounceFn(() => {
+  if (!audio.value) return
+  playtime.value = audio.value.currentTime
+}, 200)
+
 // Sync player time to model
 watch(playtime, t => {
-  if (audio.value && Math.abs(audio.value.currentTime - t) > 0.25) {
+  if (audio.value && Math.abs(audio.value.currentTime - t) > 0.3) {
     audio.value.currentTime = t
   }
 })
 
+// Sync model to player state
+function updateState() {
+  if (!audio.value) return
+  playing.value = !audio.value.paused
+}
+
 // Sync player state to model
-watch(
-  () => props.playing,
+watch(playing,
   async (shouldPlay) => {
     if (!audio.value) return
     if (shouldPlay && audio.value.paused) {
       try {
         await audio.value.play()
       } catch (e) {
-        console.warn('Autoplay blocked:', e)
-        emit('update:playing', false) // fall back
+        console.warn(e)
+        playing.value = false // fall back
       }
     } else if (!shouldPlay && !audio.value.paused) {
       audio.value.pause()
@@ -57,9 +61,9 @@ watch(
   preload='auto'
   ref='audio'
   id='audio-player'
-  @timeupdate='playtime = audio ? audio.currentTime : 0'
-  @play='emit("update:playing", true)'
-  @pause='emit("update:playing", false)'
+  @timeupdate='updatePlaytime'
+  @play='updateState'
+  @pause='updateState'
   aria-label='Audio Player'
   aria-details='transcript-body'
 >

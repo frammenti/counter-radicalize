@@ -1,21 +1,19 @@
-import type { Ref, ComputedRef } from 'vue'
-import { onKeyStroke, useMagicKeys } from '@vueuse/core'
-import type { EmotionSegment } from '@/types/emotion-segment'
+import { type Ref } from 'vue'
+import { onKeyStroke, useMagicKeys, useThrottleFn } from '@vueuse/core'
+import { playtime, playing, rapid } from '@/stores/state'
 import type { EmotionSegment } from '@/types/segment'
 
 
 export default function usePlaybackShortcuts(
-  playtime: Ref<number>,
-  playing: Ref<boolean>,
   segments: EmotionSegment[],
-  active: ComputedRef<number>
+  active: Ref<number>
 ) {
   const { control, meta } = useMagicKeys()
 
-  function seekTo(index: number) {
-    if (index == 0) playtime.value = 0.01
-    else playtime.value = segments[index].start
-  }
+  const seekTo = useThrottleFn((idx: number) => {
+    if (idx === 0 && active.value < 0) active.value = 0
+    playtime.value = segments[idx].start
+  }, 150)
 
   function isTyping(target: EventTarget | null) {
     if (!(target instanceof HTMLElement)) return false
@@ -39,6 +37,7 @@ export default function usePlaybackShortcuts(
     if (isTyping(e.target)) return
     if (!control.value && !meta.value) return
     e.preventDefault()
+    rapid.value = e.repeat
     if (
       active.value >= 0 &&
       active.value < segments.length - 1
@@ -51,8 +50,16 @@ export default function usePlaybackShortcuts(
     if (isTyping(e.target)) return
     if (!control.value && !meta.value) return
     e.preventDefault()
+    rapid.value = e.repeat
     if (active.value > 0) seekTo(active.value - 1)
-    else if (active.value == 0) seekTo(segments.length - 1)
+    else if (active.value === 0) seekTo(segments.length - 1)
     else seekTo(0)
   })
+
+  // Reset rapid state
+  onKeyStroke(['Control', 'Meta', 'ArrowRight', 'ArrowLeft'], (e) => {
+    if (isTyping(e.target)) return
+    e.preventDefault()
+    rapid.value = false
+  }, {eventName: 'keyup'})
 }

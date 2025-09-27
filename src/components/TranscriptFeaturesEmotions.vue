@@ -2,6 +2,7 @@
 import { shallowRef, computed } from 'vue'
 import { SwitchRoot } from 'reka-ui'
 import TranscriptFeaturesItem from '@/components/TranscriptFeaturesItem.vue'
+import { rapid } from '@/stores/state'
 import type { EmotionSegment } from '@/types/segment'
 
 const props = defineProps<{ data: EmotionSegment['emotions'] }>()
@@ -37,7 +38,7 @@ const splitData = computed(() => {
 
 <template>
 <TransitionGroup
-  name='list'
+  :name='rapid ? "" : "list"'
   tag='ul'
   class='feature-list'
   :duration='300'

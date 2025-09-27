@@ -23,9 +23,9 @@ const active = computed(() =>
   segments.findIndex(seg => atMoment(seg, playtime.value))
 )
 
-// Enable shortcuts only when a phisical keyboard is available
+// Enable shortcuts only when a physical keyboard is available
 if (hasKeyboard) {
-  usePlaybackShortcuts(playtime, playing, segments, active)
+  usePlaybackShortcuts(segments, active)
 }
 </script>
 
@@ -50,7 +50,6 @@ if (hasKeyboard) {
   </Tip>
   <TranscriptPlayer 
     src='/counter-radicalize/hls/message.m3u8'
-    v-model:playing='playing'
   />
   <section id='transcript-text' aria-label='Transcript Text'>
     <TranscriptText

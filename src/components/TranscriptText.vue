@@ -1,12 +1,15 @@
 <script setup lang='ts'>
-import { shallowRef, watch, defineAsyncComponent, onMounted } from 'vue'
-import { playtime } from '@/stores/playtime'
+import { shallowRef, watch, defineAsyncComponent, onMounted, nextTick } from 'vue'
+import { useThrottleFn } from '@vueuse/core'
+import { playtime } from '@/stores/state'
 import parsePlaceholders from '@/composables/parsePlaceholders'
 import type { EmotionSegment } from '@/types/segment'
 
 const Tooltip = defineAsyncComponent(() => import('@/components/Tooltip.vue'))
 
 const props = defineProps<{ segments: EmotionSegment[], active: number, annotated: boolean }>()
+const active = defineModel('active', { type: Number, required: true })
+
 const spans = shallowRef<HTMLSpanElement[]>([])
 const container = shallowRef<HTMLDivElement>()
 const hoverable = window.matchMedia('(hover: hover)').matches
@@ -20,20 +23,50 @@ onMounted(() => {
   right = dims.right
 })
 
-// Scroll to center the active item into the container
-watch(() => props.active, i => {
+watch(active, i => {
   const el = spans.value[i]
-  const parent = container.value
-  if (el && parent) {
-    const offset =
-      el.offsetTop - parent.clientHeight / 2 + el.getBoundingClientRect().height / 2
-    parent.scrollTo({ top: offset, behavior: 'smooth' })
-  }
+  if (!el || !container.value) return
+
+  const offset =
+    el.offsetTop - container.value.clientHeight / 2 + el.getBoundingClientRect().height / 2
+
+  doThrottledScroll(offset)
 })
+
+const doThrottledScroll = useThrottleFn((offset: number) => doScroll(offset), 300)
+
+function doScroll(offset: number) {
+  const parent = container.value!
+  const maxScrollTop = parent.scrollHeight - parent.clientHeight - 2
+  const atTop = parent.scrollTop <= 0 && offset <= 0
+  const atBottom = parent.scrollTop >= maxScrollTop && offset >= maxScrollTop
+
+  if (props.locked && (atTop || atBottom)) return
+
+  if (props.locked) {
+    scrolling.value = true
+    parent.addEventListener(
+      'scrollend',
+      () => nextTick(() => (scrolling.value = false)),
+      { once: true }
+    )
+  }
+  requestAnimationFrame (() =>  parent.scroll({ top: offset, behavior: 'smooth' }))
+}
+
+function updatePlaytime(segment: EmotionSegment, index: number) {
+  active.value = index
+  playtime.value = segment.start
+}
+
 </script>
 
 <template>
-<div id='transcript-container' ref='container' :aria-activedescendant='"seg-" + active'>
+<div
+  id='transcript-container'
+  ref='container'
+  :aria-activedescendant='active > 0 ? `seg-${active}` : undefined'
+>
   <p id='transcript-body' :annotated>
     <span
       v-for='(seg, i) in segments'
@@ -44,8 +77,8 @@ watch(() => props.active, i => {
       }'
       :class='{ active: i === active }'
       class='segment'
-      @click='() => (playtime = seg.start)'
-      @keydown.enter='() => (playtime = seg.start)'
+      @click='updatePlaytime(seg, i)'
+      @keydown.enter='updatePlaytime(seg, i)'
       aria-controls='audio-player'
       :aria-current='i == active'
     >
@@ -73,10 +106,13 @@ watch(() => props.active, i => {
 <style scoped lang='scss'>
 #transcript-container {
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   position: relative;
+  scrollbar-gutter: stable;
+  will-change: scroll-position;
+}
 }
 #transcript-body {
   line-height: 1.6;
