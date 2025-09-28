@@ -1,10 +1,10 @@
 <script setup lang='ts'>
-import { shallowRef, computed } from 'vue'
+import { ref, computed } from 'vue'
 import { useIntersectionObserver, useTimeoutFn } from '@vueuse/core'
 import { ToastRoot, ToastTitle, ToastDescription, ToastClose } from 'reka-ui'
 
 const props = defineProps<{ anchor: HTMLElement | null, title?: string }>()
-const isVisible = shallowRef<boolean>(false)
+const isVisible = ref<boolean>(false)
 const target = computed(() => props.anchor)
 
 const DELAY = 3000 // ms

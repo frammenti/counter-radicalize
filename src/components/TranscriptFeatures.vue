@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { computed, shallowRef } from 'vue'
+import { computed, ref } from 'vue'
 import Switch from '@/components/Switch.vue'
 import Toggle from '@/components/Toggle.vue'
 import TranscriptFeaturesCanvas from '@/components/TranscriptFeaturesCanvas.vue'
@@ -10,7 +10,7 @@ import type { EmotionSegment } from '@/types/segment'
 const props = defineProps<{ data: EmotionSegment | undefined }>()
 const annotated = defineModel('annotated', { type: Boolean, required: false })
 const locked = defineModel('locked', { type: Boolean, required: true })
-const show = shallowRef<boolean>(false)
+const show = ref<boolean>(false)
 
 // Keep the previous data in between segments
 const permaData = computed<EmotionSegment | undefined>((prev) => {

@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { useTemplateRef, provide, shallowRef } from 'vue'
+import { useTemplateRef, provide, ref } from 'vue'
 import { useIntersectionObserver } from '@vueuse/core'
 import { TooltipProvider, ToastProvider, ToastViewport } from 'reka-ui'
 import AppHeader from '@/components/AppHeader.vue'
@@ -8,12 +8,13 @@ import Hero from '@/sections/Hero.vue'
 import About from '@/sections/About.vue'
 import CloseReading from '@/sections/CloseReading.vue'
 import DistantReading from '@/sections/DistantReading.vue'
+import LinguisticFeatures from './sections/LinguisticFeatures.vue'
 import previews from '@/stores/previews.json'
 import { previewsKey } from '@/composables/usePreviews'
 
 provide(previewsKey, previews)
 const landing = useTemplateRef('landing')
-const heroVisible = shallowRef(true)
+const heroVisible = ref(true)
 useIntersectionObserver(landing, ([entry], _) => {
   heroVisible.value = entry?.isIntersecting || false
 })

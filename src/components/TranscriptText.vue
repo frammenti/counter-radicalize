@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { shallowRef, watch, defineAsyncComponent, onMounted, nextTick } from 'vue'
+import { ref, useTemplateRef, watch, defineAsyncComponent, onMounted, nextTick } from 'vue'
 import { useThrottleFn } from '@vueuse/core'
 import { playtime } from '@/stores/state'
 import parsePlaceholders from '@/composables/parsePlaceholders'
@@ -10,9 +10,9 @@ const Tooltip = defineAsyncComponent(() => import('@/components/Tooltip.vue'))
 const props = defineProps<{ segments: EmotionSegment[], annotated: boolean, locked: boolean }>()
 const active = defineModel('active', { type: Number, required: true })
 
-const spans = shallowRef<HTMLSpanElement[]>([])
-const container = shallowRef<HTMLDivElement>()
-const scrolling = shallowRef<boolean>(false)
+const container = useTemplateRef('container')
+const spans = ref<HTMLSpanElement[]>([])
+const scrolling = ref<boolean>(false)
 const hoverable = window.matchMedia('(hover: hover)').matches
 let lastInteraction: number = Date.now()
 let left: number = 0

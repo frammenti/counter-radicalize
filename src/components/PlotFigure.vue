@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { onMounted, shallowRef, watch, watchEffect } from 'vue'
+import { useTemplateRef, onMounted, watch, watchEffect } from 'vue'
 import { useElementSize } from '@vueuse/core'
 import type { Plot, PlotOptions, Data, PointerOptions } from '@observablehq/plot'
 import * as htl from 'htl'
@@ -14,11 +14,11 @@ const props = defineProps<{
   gradients?: Gradient[]
 }>()
 
-const container = shallowRef<HTMLDivElement | null>(null)
-const axisContainer = shallowRef<HTMLDivElement | null>(null)
-const pointerContainer = shallowRef<HTMLDivElement | null>(null)
-const timeMarkerContainer = shallowRef<HTMLDivElement | null>(null)
-const pointer = shallowRef<(HTMLElement | SVGSVGElement) & Plot | null>(null)
+const container = useTemplateRef('container')
+const axisContainer = useTemplateRef('axisContainer')
+const pointerContainer = useTemplateRef('pointerContainer')
+const timeMarkerContainer = useTemplateRef('timeMarkerContainer')
+let pointer: (HTMLElement | SVGSVGElement) & Plot
 let Plot: typeof import('@observablehq/plot')
 let plotInstance: Node | null = null
 const { width } = useElementSize(axisContainer)
@@ -58,8 +58,8 @@ function renderAxis(plotWidth: number) {
 function renderPointer() {
   if (props.pointerOptions && pointerContainer.value) {
     if (plotInstance) pointerContainer.value.innerHTML = ''
-    pointer.value = Plot.plot(appendMarks(props.pointerOptions))
-    pointerContainer.value.appendChild(pointer.value)
+    pointer = Plot.plot(appendMarks(props.pointerOptions))
+    pointerContainer.value.appendChild(pointer)
   }
 }
 
@@ -123,8 +123,8 @@ onMounted(async () => {
 })
 
 function setPlaytime() {
-  if (!pointer.value?.value) return
-  playtime.value = pointer.value?.value.time.getTime() / 1000
+  if (!pointer.value) return
+  playtime.value = pointer.value.time.getTime() / 1000
 }
 </script>
 

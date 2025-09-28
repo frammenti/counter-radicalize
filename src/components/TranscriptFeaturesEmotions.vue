@@ -1,12 +1,12 @@
 <script setup lang='ts'>
-import { shallowRef, computed } from 'vue'
+import { ref, computed } from 'vue'
 import { SwitchRoot } from 'reka-ui'
 import TranscriptFeaturesItem from '@/components/TranscriptFeaturesItem.vue'
 import { rapid } from '@/stores/state'
 import type { EmotionSegment } from '@/types/segment'
 
 const props = defineProps<{ data: EmotionSegment['emotions'] }>()
-const more = shallowRef<boolean>(false)
+const more = ref<boolean>(false)
 
 const THRESHOLD: number = 0.095
 const keys = [

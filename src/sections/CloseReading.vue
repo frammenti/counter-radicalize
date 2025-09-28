@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { shallowRef, useTemplateRef } from 'vue'
+import { ref, useTemplateRef } from 'vue'
 import TranscriptPlayer from '@/components/TranscriptPlayer.vue'
 import TranscriptText from '@/components/TranscriptText.vue'
 import TranscriptFeatures from '@/components/TranscriptFeatures.vue'
@@ -11,8 +11,8 @@ import usePlaybackShortcuts from '@/composables/usePlaybackShortcuts'
 
 const hasKeyboard = window.matchMedia('(pointer: fine)').matches
 const section = useTemplateRef('section')
-const locked = shallowRef<boolean>(true)
-const annotated = shallowRef<boolean>(false)
+const locked = ref<boolean>(true)
+const annotated = ref<boolean>(false)
 
 // Sync index of active segment
 const active = useActiveSegment(segments)

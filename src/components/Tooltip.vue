@@ -1,25 +1,25 @@
 <script setup lang='ts'>
-import { shallowRef, watch, nextTick } from 'vue'
+import { ref, watch, nextTick } from 'vue'
 import { TooltipArrow, TooltipContent, TooltipRoot, TooltipTrigger, type TooltipContentProps } from 'reka-ui'
 
 const props = defineProps<{
-  parent?: HTMLElement,
+  parent?: HTMLElement | null,
   disabled?: boolean,
   parentSize?: [left: number, right: number]
 }>()
-const open = shallowRef<boolean>(false)
+const open = ref<boolean>(false)
 
 function toggle() {
   if (!open.value && !props.disabled) open.value = true
 }
 
 // Placement outside of parent box
-const side = shallowRef<TooltipContentProps['side']>('top')
+const side = ref<TooltipContentProps['side']>('top')
 const padding = 4
-const offset = shallowRef<number>(0)
+const offset = ref<number>(0)
 
 function updateSide([parentLeft, parentRight]: number[]) {
-  const trigger = shallowRef()
+  const trigger = ref()
   const functionRef = (el: any) => { trigger.value = el }
   
   watch(() => !props.disabled, async (enabled) => {
