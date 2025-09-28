@@ -65,7 +65,7 @@ if (sysModifier) keyList.unshift(sysModifier)
   font-family: inherit;
   margin-inline: 0.3rem;
   border: 1px solid resp($border-color);
-  border-radius: 0.4em;
+  border-radius: $small-radius;
 }
 kbd:first-child {
   margin-inline-start: 0;

@@ -26,6 +26,11 @@ $modal-color: $white oklch(0.278 0.0047 17.465);
 $button-off-color: color.change($brown, $alpha: 0.2) color.change($taupe, $alpha: 0.15);
 $button-on-color: color.change($orchid, $alpha: 0.6) $taupe;
 
+$small-radius: 4.5px;
+$medium-radius: 6px;
+$large-radius: 8px;
+$max-radius: 9999px;
+
 $box-shadow:
   0 4px 6px -1px $shadow,
   0 2px 4px -2px $shadow;

@@ -88,7 +88,7 @@ const splitData = computed(() => {
   display: inline-block;
   width: 0.8em;
   height: 0.8em;
-  border-radius: 5em;
+  border-radius: $max-radius;
   margin-inline-end: 0.4em;
   vertical-align: middle;
 }

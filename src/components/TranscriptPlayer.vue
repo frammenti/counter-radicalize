@@ -69,3 +69,9 @@ watch(playing,
 >
 </audio>
 </template>
+
+<style scoped lang='scss'>
+  #audio-player {
+    margin-block-start: 5%;
+  }
+</style>

@@ -33,7 +33,7 @@ body, #app, main, article {
 }
 
 body, #app {
-  min-height: 100dvh;
+  min-height: 100lvh;
 }
 
 body {
@@ -50,7 +50,7 @@ header {
 }
 
 .paginated {
-  max-height: calc(100lvh - $section-spacing);
+  height: calc(100lvh - $section-spacing);
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
@@ -93,7 +93,7 @@ a {
   padding-block: 0.2rem;
   margin-inline: -0.2rem;
   margin-block: -0.2rem;
-  border-radius: 0.5rem;
+  border-radius: $large-radius;
   transition:
     color 150ms ease,
     background-color 150ms ease;
@@ -118,7 +118,7 @@ a svg {
   font-weight: 600;
   line-height: 1.5;
   text-align: center;
-  border-radius: 10em;
+  border-radius: $max-radius;
   padding-inline: 1.2em;
   padding-block: 0.6em;
   margin-inline: 0;
@@ -169,7 +169,7 @@ a svg {
   background-color: resp($modal-color);
   outline: 1px solid resp($border-color);
   outline-offset: calc(1px * -1);
-  border-radius: 0.5rem;
+  border-radius: $large-radius;
   box-shadow: $box-shadow;
   padding: 1rem;
 }

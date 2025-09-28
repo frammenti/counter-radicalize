@@ -63,7 +63,7 @@ const { stop } = useIntersectionObserver(
   font-size: .75em;
   padding-block: .375em;
   padding-inline: .75em;
-  border-radius: .375rem;
+  border-radius: $medium-radius;
   text-align: start;
 }
 @media screen and (width < $laptop) {

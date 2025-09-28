@@ -16,7 +16,7 @@ const state = defineModel('modelValue', { type: Boolean, required: true })
   >
     <component
       :is='state ? LockKeyhole : LockKeyholeOpen'
-      :size='15'
+      :size='16'
       :stroke-width='1.5'
     />
   </Toggle>
@@ -24,14 +24,14 @@ const state = defineModel('modelValue', { type: Boolean, required: true })
 
 <style scoped lang='scss'>
 .button {
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 2rem;
+  height: 2rem;
   padding: 0;
   font-size: 1rem;
   line-height: 1rem;
   color: resp($text-color);
-  border: 0.5px solid resp($border-color);
-  border-radius: 0.4rem;
+  border: 1px solid resp($border-color);
+  border-radius: $large-radius;
   box-shadow: $box-shadow-small;
   display: flex;
   align-items: center;
@@ -39,7 +39,7 @@ const state = defineModel('modelValue', { type: Boolean, required: true })
   padding-bottom: 0.1rem;
 
   &[data-state='on'] {
-    background-color: resp($button-off-color);
+    background-color: resp((shadow($brown, 0.2), shadow($taupe, 0.4)));
   }
 
   &[data-state='off'] {

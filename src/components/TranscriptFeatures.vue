@@ -72,7 +72,7 @@ const permaData = computed<EmotionSegment | undefined>((prev) => {
   margin-block: 1em;
   padding-inline: 1em;
   padding-block: 0.5em;
-  border-radius: 6px;
+  border-radius: $medium-radius;
   height: fit-content;
   font-size: 0.9em;
 }
@@ -110,10 +110,9 @@ const permaData = computed<EmotionSegment | undefined>((prev) => {
     grid-template-columns: 100%;
   }
   .switch-group {
-    top: -2.2rem;
+    top: -2.3rem;
     left: 0;
     flex-flow: row;
-    font-size: 0.9em;
   }
   .switch-group > button {
     margin-inline-start: auto;

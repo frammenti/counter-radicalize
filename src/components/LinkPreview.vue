@@ -116,7 +116,7 @@ const metadata = previews[props.href]
 }
 .popover-content a {
   font-size: 0.7rem;
-  border-radius: 5rem;
+  border-radius: $max-radius;
   background-color: resp($shadow-color);
   width: fit-content;
   padding-inline: 6px;

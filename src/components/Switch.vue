@@ -35,7 +35,7 @@ label {
   width: 2.25em;
   height: 1.25em;
   background-color: resp($button-off-color);
-  border: 0.5px solid resp($border-color);
+  border: 1px solid resp($border-color);
   position: relative;
   box-shadow: $box-shadow-small;
 }
@@ -49,7 +49,7 @@ label {
   width: 1em;
   height: 1em;
   background-color: $white;
-  border-radius: 9999px;
+  border-radius: $max-radius;
   box-shadow: 0 2px 2px resp($shadow-color);
   transition: transform 100ms;
   will-change: transform;

@@ -131,7 +131,7 @@ function updatePlaytime(segment: EmotionSegment, index: number) {
   padding-inline: 0.2rem;
   margin-block: -0.1rem;
   margin-inline: -0.2rem;
-  border-radius: 0.5rem;
+  border-radius: $large-radius;
   box-decoration-break: clone;
   transition: background-color 150ms ease;
   cursor: pointer;
