@@ -14,6 +14,7 @@ const spans = shallowRef<HTMLSpanElement[]>([])
 const container = shallowRef<HTMLDivElement>()
 const scrolling = shallowRef<boolean>(false)
 const hoverable = window.matchMedia('(hover: hover)').matches
+let lastInteraction: number = Date.now()
 let left: number = 0
 let right: number = 0
 
@@ -27,6 +28,7 @@ onMounted(() => {
 watch(active, i => {
   const el = spans.value[i]
   if (!el || !container.value) return
+  if (Date.now() - lastInteraction < 3000 && !props.locked) return
 
   const offset =
     el.offsetTop - container.value.clientHeight / 2 + el.getBoundingClientRect().height / 2
@@ -55,17 +57,22 @@ function doScroll(offset: number) {
   requestAnimationFrame (() =>  parent.scroll({ top: offset, behavior: 'smooth' }))
 }
 
+function recordInteraction() {
+  if (!props.locked) lastInteraction = Date.now()
+}
+
 function updatePlaytime(segment: EmotionSegment, index: number) {
   active.value = index
   playtime.value = segment.start
 }
-
 </script>
 
 <template>
 <div
   id='transcript-container'
   ref='container'
+  @wheel='recordInteraction'
+  @touchmove='recordInteraction'
   :class='{ locked: locked }'
   :style='{ overflowY: locked ? (scrolling ? "auto" : "hidden") : "auto" }'
   :aria-activedescendant='active > 0 ? `seg-${active}` : undefined'
