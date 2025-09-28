@@ -38,6 +38,7 @@ useIntersectionObserver(landing, ([entry], _) => {
         <About />
         <CloseReading />
         <DistantReading />
+        <LinguisticFeatures />
       </article>
     </main>
     <AppFooter />
