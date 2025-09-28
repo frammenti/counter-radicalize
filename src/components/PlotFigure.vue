@@ -90,6 +90,8 @@ function appendGradients(svg: HTMLElement | SVGSVGElement, gradients: Gradient[]
         y1=${g.max}
         y2=${g.min}>
       <stop offset='0%' stop-color=${g.low}></stop>
+      <stop offset='50%' stop-color=${g.low}></stop>
+      <stop offset='50%' stop-color=${g.high}></stop>
       <stop offset='100%' stop-color=${g.high}></stop>
     </linearGradient>`
 

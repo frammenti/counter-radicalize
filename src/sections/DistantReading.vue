@@ -46,9 +46,8 @@ const hasMouse = window.matchMedia('(pointer: fine)').matches
     </template>
   </Tip>
   <hgroup>
-    <h2>Linguistic features</h2>
+    <h2>Distant reading</h2>
   </hgroup>
-  <p>Valence, arousal etc.</p>
   <PlotFigure
   :axis-options="{
     height: 500,
@@ -226,7 +225,7 @@ const hasMouse = window.matchMedia('(pointer: fine)').matches
     {
       id: 'arousal',
       min: 0,
-      max: 1,
+      max: 0.8,
       low: emotionColors.dark_neutral,
       high: dark
       ? emotionColors.dark_anger
@@ -235,7 +234,7 @@ const hasMouse = window.matchMedia('(pointer: fine)').matches
     {
       id: 'valence',
       min: 0,
-      max: 1,
+      max: 0.8,
       low: dark
       ? emotionColors.dark_sadness
       : emotionColors.light_sadness,
@@ -248,13 +247,9 @@ const hasMouse = window.matchMedia('(pointer: fine)').matches
 </template>
 
 <style scoped lang='scss'>
-#distant-reading {
-  max-height: unset;
-  min-height: 100lvh;
-}
 @media screen and (width < $laptop) {
   :deep(.plot) {
-    margin-inline-end: 4rem;
+    margin-right: 0.3rem !important;
   }
 }
 </style>
