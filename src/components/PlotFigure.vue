@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import { useTemplateRef, onMounted, watch, watchEffect } from 'vue'
 import { useElementSize } from '@vueuse/core'
-import type { Plot, PlotOptions, Data, PointerOptions } from '@observablehq/plot'
+import type { Plot, PlotOptions, Data, PointerOptions, LegendScales } from '@observablehq/plot'
 import * as htl from 'htl'
 import { playtime } from '@/stores/state'
 import type { AsyncPlotOptions, MarkKey, TransformKey, MarkConstructor, TransformConstructor, Options, AsyncMark, AsyncTransform, Gradient } from '@/types/plot'
@@ -11,11 +11,13 @@ const props = defineProps<{
   axisOptions?: AsyncPlotOptions,
   pointerOptions?: AsyncPlotOptions,
   timeMarkerOptions?: AsyncPlotOptions,
-  gradients?: Gradient[]
+  gradients?: Gradient[],
+  legends?: LegendScales[]
 }>()
 
 const container = useTemplateRef('container')
 const axisContainer = useTemplateRef('axisContainer')
+const legendContainer = useTemplateRef('legendContainer')
 const pointerContainer = useTemplateRef('pointerContainer')
 const timeMarkerContainer = useTemplateRef('timeMarkerContainer')
 let pointer: (HTMLElement | SVGSVGElement) & Plot
@@ -52,6 +54,23 @@ function renderAxis(plotWidth: number) {
     props.axisOptions.width = plotWidth
     if (plotInstance) axisContainer.value.innerHTML = ''
     axisContainer.value.appendChild(Plot.plot(appendMarks(props.axisOptions)))
+  }
+}
+
+function renderLegends() {
+  if (props.legends && legendContainer.value) {
+    if (plotInstance) legendContainer.value.innerHTML = ''
+    for (const legend of props.legends) {
+      const el = Plot.legend(legend)
+      el.querySelectorAll('rect').forEach(rect => {
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle')
+        circle.setAttribute('cx', '50%')
+        circle.setAttribute('cy', '50%')
+        circle.setAttribute('r', '40%')
+        rect.replaceWith(circle)
+      })
+      legendContainer.value.appendChild(el)
+    }
   }
 }
 
@@ -109,6 +128,7 @@ function renderPlot() {
     plotInstance = svg
     container.value.appendChild(plotInstance)
   }
+  renderLegends()
   renderPointer()
 }
 
@@ -135,6 +155,7 @@ function setPlaytime() {
   <div ref='axisContainer' class='plot-axis'></div>
   <div class='plot-scroll'>
     <div ref='container' class='plot-content'></div>
+    <div ref='legendContainer' class='plot-legend'></div>
     <div ref='timeMarkerContainer' class='plot-pointer'></div>
     <div ref='pointerContainer' class='plot-pointer' @mousedown='setPlaytime'></div>
   </div>
@@ -147,6 +168,8 @@ function setPlaytime() {
   position: relative;
 }
 .plot-scroll {
+  position: relative;
+  overflow-y: visible;
   padding-block-end: 0.5rem;
 }
 .plot-axis {
@@ -174,8 +197,25 @@ function setPlaytime() {
   right: -5px;
   width: 20px;
 }
-.plot-scroll {
-  position: relative;
+.plot-legend {
+  position: absolute;
+  top: 5px;
+  left: 40px;
+  bottom: 30px;
+  width: 1094px;
+  display: flex;
+  flex-flow: column;
+  justify-content: stretch;
+  overflow-y: visible;
+}
+.plot-legend :deep(div) {
+  flex: 1;
+  align-items: start;
+  justify-content: start;
+  margin-block-start: 0.7rem;
+}
+.plot-legend :deep(div):first-child {
+  margin-block: 3px 32px;
 }
 .plot-pointer {
   position: absolute;
@@ -185,6 +225,15 @@ function setPlaytime() {
 }
 :deep(svg) {
   max-width: none;
+}
+:deep(svg), :deep([class*="-swatches"]) {
+  font-family: $text-font-family;
+}
+:deep(svg) [font-variant="tabular-nums"] {
+  font-size: 0.5rem !important;
+}
+.plot-pointer :deep(svg) {
+  font-size: 0.55rem !important;
 }
 @media screen and (width < $laptop) {
   .plot-scroll {

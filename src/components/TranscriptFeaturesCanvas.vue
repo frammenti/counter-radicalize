@@ -2,9 +2,9 @@
 import { useTemplateRef, onMounted, watch, computed } from 'vue'
 import { rapid } from '@/stores/state'
 import emotionColors from '@/assets/styles/emotions-dec.module.scss'
-import type { EmotionSegment } from '@/types/segment'
+import type { AlignedSegment } from '@/types/segment'
 
-const props = defineProps<{ data: EmotionSegment | undefined }>()
+const props = defineProps<{ data: AlignedSegment | undefined }>()
 const canvas = useTemplateRef('canvas')
 
 const colors: number[] = Object.values(emotionColors).flatMap((str: string) =>
@@ -24,21 +24,21 @@ const radius = computed<number>((prev) => {
   return props.data.dimensions.arousal * 0.8 + 0.4
 })
 
-function weights(d?: EmotionSegment): number[] {
+function weights(d?: AlignedSegment): number[] {
   return keys.map(k => d?.emotions[k] ?? 1 / keys.length)
 }
 
-function spread(d?: EmotionSegment): number {
+function spread(d?: AlignedSegment): number {
   if (!d) return 5.0
   return d.dimensions.dominance * 10
 }
 
-function brightness(d?: EmotionSegment): number {
+function brightness(d?: AlignedSegment): number {
   if (!d) return 1.3
   return d.dimensions.valence * 1.6 + 0.5
 }
 
-function unpack(d?: EmotionSegment) {
+function unpack(d?: AlignedSegment) {
   return { w: weights(d), s: spread(d), b: brightness(d) }
 }
 
@@ -142,7 +142,7 @@ function initGL(el: HTMLCanvasElement) {
   return gl
 }
 
-function animateWeights(target: EmotionSegment | undefined, duration = 600) {
+function animateWeights(target: AlignedSegment | undefined, duration = 600) {
   const tar = unpack(target)
 
   if (rapid.value) {

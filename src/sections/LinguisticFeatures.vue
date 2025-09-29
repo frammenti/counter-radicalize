@@ -1,5 +1,7 @@
 <script setup lang='ts'>
+import type { AlignedSegment } from '@/types/segment'
 
+defineProps<{ segments: AlignedSegment[] }>()
 </script>
 
 <template>

@@ -3,9 +3,9 @@ import { ref, computed } from 'vue'
 import { SwitchRoot } from 'reka-ui'
 import TranscriptFeaturesItem from '@/components/TranscriptFeaturesItem.vue'
 import { rapid } from '@/stores/state'
-import type { EmotionSegment } from '@/types/segment'
+import type { AlignedSegment } from '@/types/segment'
 
-const props = defineProps<{ data: EmotionSegment['emotions'] }>()
+const props = defineProps<{ data: AlignedSegment['emotions'] }>()
 const more = ref<boolean>(false)
 
 const THRESHOLD: number = 0.095

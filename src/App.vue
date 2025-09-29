@@ -9,6 +9,7 @@ import About from '@/sections/About.vue'
 import CloseReading from '@/sections/CloseReading.vue'
 import DistantReading from '@/sections/DistantReading.vue'
 import LinguisticFeatures from './sections/LinguisticFeatures.vue'
+import segments from '@/stores/segments.json'
 import previews from '@/stores/previews.json'
 import { previewsKey } from '@/composables/usePreviews'
 
@@ -36,9 +37,9 @@ useIntersectionObserver(landing, ([entry], _) => {
       </div>
       <article>
         <About />
-        <CloseReading />
-        <DistantReading />
-        <LinguisticFeatures />
+        <CloseReading :segments='segments' />
+        <DistantReading :segments='segments' />
+        <LinguisticFeatures :segments='segments' />
       </article>
     </main>
     <AppFooter />

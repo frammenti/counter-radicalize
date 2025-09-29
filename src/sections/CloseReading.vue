@@ -5,21 +5,22 @@ import TranscriptText from '@/components/TranscriptText.vue'
 import TranscriptFeatures from '@/components/TranscriptFeatures.vue'
 import KeyboardShortcut from '@/components/KeyboardShortcut.vue'
 import Tip from '@/components/Tip.vue'
-import segments from '@/stores/segments.json'
 import useActiveSegment from '@/composables/useActiveSegment'
 import usePlaybackShortcuts from '@/composables/usePlaybackShortcuts'
+import type { AlignedSegment } from '@/types/segment'
 
+const props = defineProps<{ segments: AlignedSegment[] }>()
 const hasKeyboard = window.matchMedia('(pointer: fine)').matches
 const section = useTemplateRef('section')
 const locked = ref<boolean>(true)
 const annotated = ref<boolean>(false)
 
 // Sync index of active segment
-const active = useActiveSegment(segments)
+const active = useActiveSegment(props.segments)
 
 // Enable shortcuts only when a physical keyboard is available
 if (hasKeyboard) {
-  usePlaybackShortcuts(segments, active)
+  usePlaybackShortcuts(props.segments, active)
 }
 </script>
 

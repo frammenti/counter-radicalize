@@ -3,13 +3,14 @@ import { defineAsyncComponent, computed, useTemplateRef } from 'vue'
 import { usePreferredDark } from '@vueuse/core'
 import Tip from '@/components/Tip.vue'
 import emotionColors from '@/assets/styles/emotions-resp.module.scss'
-import segments from '@/stores/segments.json'
-import type { EmotionSegment } from '@/types/segment'
+import fluency from '@/stores/fluency.json'
+import type { AlignedSegment } from '@/types/segment'
 
+const props = defineProps<{ segments: AlignedSegment[] }>()
 const section = useTemplateRef('section')
 const PlotFigure = defineAsyncComponent(() => import('@/components/PlotFigure.vue'))
 
-const data = segments.flatMap(({ start, emotions, dimensions }) =>
+const data = props.segments.flatMap(({ start, emotions, dimensions }) =>
   Object.entries(emotions).map(([type, value]) => ({
     time: new Date(start * 1000),
     type,
@@ -20,14 +21,44 @@ const data = segments.flatMap(({ start, emotions, dimensions }) =>
 )
 
 type Scheme = 'light' | 'dark'
-type Emotion = keyof EmotionSegment['emotions']
-type Schemes = Record<Scheme, Record<Emotion, string>>
+type Emotion = keyof AlignedSegment['emotions']
 
-const schemes: Schemes = { light: {} as Record<Emotion, string>, dark: {} as Record<Emotion, string> }
+const schemes = {
+  light: {
+    emotions: {} as Record<Emotion, string>,
+    valence: [
+      emotionColors.light_sadness,
+      'oklch(0.8813 0.2005 99.88)'
+    ],
+    arousal: [
+      emotionColors.dark_neutral,
+      emotionColors.light_anger
+    ],
+    fluency: [
+      emotionColors.light_fear,
+      emotionColors.light_disgust
+    ]
+  },
+  dark: {
+    emotions: {} as Record<Emotion, string>,
+    valence: [
+      emotionColors.dark_sadness,
+      emotionColors.dark_happiness
+    ],
+    arousal: [
+      emotionColors.dark_neutral,
+      emotionColors.dark_anger
+    ],
+    fluency: [
+      emotionColors.dark_fear,
+      emotionColors.dark_disgust
+    ]
+  }
+}
 
 for (const key in emotionColors) {
   const [scheme, label] = key.split('_') as [Scheme, Emotion]
-  schemes[scheme][label] = emotionColors[key]
+  schemes[scheme]['emotions'][label] = emotionColors[key]
 }
 
 const dark = usePreferredDark()
@@ -50,8 +81,9 @@ const hasMouse = window.matchMedia('(pointer: fine)').matches
   </hgroup>
   <PlotFigure
   :axis-options="{
-    height: 500,
+    height: 610,
     marginLeft: 37,
+    marginTop: 30,
     marginRight: 20,
     x: { type: 'utc', label: 'mins', ticks: 0, line: true },
     y: {
@@ -61,24 +93,25 @@ const hasMouse = window.matchMedia('(pointer: fine)').matches
       domain: [0, 100],
       labelArrow: 'none'
     },
-    facet: { data: [0, 1, 2], y: (d: number) => d, label: null },
+    facet: { data: [0, 1, 2, 3], y: (d: number) => d, label: null },
     fy: {
-      tickFormat: (d: number) => ['Emotions', 'Arousal', 'Valence'][d],
+      tickFormat: (d: number) => ['Emotions', 'Arousal', 'Valence', 'Fluency'][d],
       tickRotate: 90,
       tickPadding: 20
     }
   }"
   :options="{
     width: 1136,
-    height: 500,
+    height: 610,
+    marginTop: 30,
     marginRight: 20,
     x: { type: 'utc', label: null },
     y: { percent: true, label: null, ticks: 0 },
     fy: { tickFormat: null },
     color: {
       type: 'categorical',
-      range: Object.values(scheme),
-      domain: Object.keys(scheme)
+      range: Object.values(scheme.emotions),
+      domain: Object.keys(scheme.emotions)
     },
     marks: [
       {
@@ -127,13 +160,29 @@ const hasMouse = window.matchMedia('(pointer: fine)').matches
           curve: 'monotone-x',
           fy: 2
         }
+      },
+      {
+        type: 'lineY',
+        data: fluency,
+        options: {
+          type: 'windowY',
+          options: {
+            k: 20,
+            x: d => d.time * 1000,
+            y: 'fluency',
+            z: null,
+            stroke: 'url(#fluency)',
+            curve: 'basis',
+            fy: 3
+          }
+        }
       }
     ]
   }"
   :pointer-options="{
     width: 1136,
-    height: 500,
-    marginTop: 20,
+    height: 610,
+    marginTop: 30,
     marginRight: 20,
     marginLeft: 40,
     x: {
@@ -173,7 +222,7 @@ const hasMouse = window.matchMedia('(pointer: fine)').matches
             strokeWidth: 10,
             frameAnchor: 'bottom',
             lineAnchor: 'top',
-            lineHeight: 4,
+            lineHeight: 4.5,
             text: d => `${d.time.getMinutes()}:${String(d.time.getSeconds()).padStart(2,'0')}`
           }
         }
@@ -182,8 +231,8 @@ const hasMouse = window.matchMedia('(pointer: fine)').matches
   }"
   :time-marker-options="{
     width: 1136,
-    height: 500,
-    marginTop: 20,
+    height: 610,
+    marginTop: 30,
     marginRight: 20,
     marginLeft: 40,
     x: {
@@ -215,7 +264,7 @@ const hasMouse = window.matchMedia('(pointer: fine)').matches
           strokeWidth: 10,
           frameAnchor: 'bottom',
           lineAnchor: 'top',
-          lineHeight: 4,
+          lineHeight: 4.5,
           text: d => `${d.getMinutes()}:${String(d.getSeconds()).padStart(2,'0')}`
         }
       }
@@ -226,22 +275,57 @@ const hasMouse = window.matchMedia('(pointer: fine)').matches
       id: 'arousal',
       min: 0,
       max: 0.8,
-      low: emotionColors.dark_neutral,
-      high: dark
-      ? emotionColors.dark_anger
-      : emotionColors.light_anger
+      low: scheme.arousal[0],
+      high: scheme.arousal[1]
     },
     {
       id: 'valence',
       min: 0,
       max: 0.8,
-      low: dark
-      ? emotionColors.dark_sadness
-      : emotionColors.light_sadness,
-      high: dark
-      ? emotionColors.dark_happiness
-      : 'oklch(0.8813 0.2005 99.88)'
+      low: scheme.valence[0],
+      high: scheme.valence[1]
+    },
+    {
+      id: 'fluency',
+      min: 0.15,
+      max: 1,
+      low: scheme.fluency[0],
+      high: scheme.fluency[1]
     }
+  ]"
+  :legends="[
+    {
+      color: {
+        type: 'categorical',
+        range: Object.values(scheme.emotions),
+        domain: Object.keys(scheme.emotions)
+      },
+      className: 'emotions'
+    },
+    {
+      color: {
+        type: 'categorical',
+        range: scheme.arousal,
+        domain: ['calm', 'excited']
+      },
+      className: 'arousal'
+    },
+    {
+      color: {
+        type: 'categorical',
+        range: scheme.valence,
+        domain: ['negative', 'positive']
+      },
+      className: 'valence'
+    },
+    {
+      color: {
+        type: 'categorical',
+        range: scheme.fluency,
+        domain: ['disfluent', 'fluent']
+      },
+      className: 'fluency'
+    },
   ]" />
 </section>
 </template>

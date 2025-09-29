@@ -47,3 +47,8 @@ export function toIndex(list: Iterable<Disfluency>): number[] {
     .map(d => indexMap[d])
     .sort((a, b) => a - b)
 }
+
+export interface AlignedSegment extends EmotionSegment {
+  fluency: number
+  disfluencyText: string
+}

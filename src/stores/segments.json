@@ -18,7 +18,9 @@
       "arousal": 0.36951154470443726,
       "dominance": 0.4808966815471649
     },
-    "text": "Okay, so I figured I would just make a recording explaining $4why$ I've decided to bomb an IVF building or clinic. "
+    "fluency": 0.6623125,
+    "text": "Okay, so I figured I would just make a recording explaining why I've decided to bomb an IVF building or clinic.",
+    "disfluencyText": "Okay, so I figured I would just make a recording explaining $4why$ I've decided to bomb an IVF building or clinic. "
   },
   {
     "start": 10.06,
@@ -39,7 +41,9 @@
       "arousal": 0.1785099059343338,
       "dominance": 0.34128889441490173
     },
-    "text": "Basically, it just comes $4down to$ I'm angry that I exist. "
+    "fluency": 0.585,
+    "text": "Basically, it just comes down to I'm angry that I exist.",
+    "disfluencyText": "Basically, it just comes $4down to$ I'm angry that I exist. "
   },
   {
     "start": 15.2,
@@ -60,7 +64,9 @@
       "arousal": 0.23075513541698456,
       "dominance": 0.34955647587776184
     },
-    "text": "And that's, you know, nobody got my consent to bring me here. "
+    "fluency": 0.5235454545454545,
+    "text": "And that's, you know, nobody got my consent to bring me here.",
+    "disfluencyText": "And that's, you know, nobody got my consent to bring me here. "
   },
   {
     "start": 18.96,
@@ -81,7 +87,9 @@
       "arousal": 0.4408184587955475,
       "dominance": 0.5621170997619629
     },
-    "text": "And I know what you're going to say. How could we have got your consent because you didn't exist, $3blah, blah$, blah. "
+    "fluency": 0.7216428571428573,
+    "text": "And I know what you're going to say. How could we have got your consent because you didn't exist, blah, blah, blah.",
+    "disfluencyText": "And I know what you're going to say. How could we have got your consent because you didn't exist, $3blah, blah$, blah. "
   },
   {
     "start": 24.42,
@@ -102,7 +110,9 @@
       "arousal": 0.7237836718559265,
       "dominance": 0.7432945370674133
     },
-    "text": "$4Exactly the point$. $3There's$ $2no way you can get$ consent to bring someone here. So don't fucking do it. "
+    "fluency": 0.45292857142857146,
+    "text": "Exactly the point. There's no way you can get consent to bring someone here. So don't fucking do it.",
+    "disfluencyText": "$4Exactly the point$. $3There's$ $2no way you can get$ consent to bring someone here. So don't fucking do it. "
   },
   {
     "start": 29.12,
@@ -123,7 +133,9 @@
       "arousal": 0.400508850812912,
       "dominance": 0.5287172198295593
     },
-    "text": "Right. $4um and if$ you're going to try to say something really fucking retarded like "
+    "fluency": 0.5105,
+    "text": "Right. um and if you're going to try to say something really fucking retarded like",
+    "disfluencyText": "Right. $4um and if$ you're going to try to say something really fucking retarded like "
   },
   {
     "start": 33.38,
@@ -144,7 +156,9 @@
       "arousal": 0.4104789197444916,
       "dominance": 0.5190839767456055
     },
-    "text": "well since you don't exist you don't have a consent status and therefore we don't have to "
+    "fluency": 0.7688333333333333,
+    "text": "well since you don't exist you don't have a consent status and therefore we don't have to",
+    "disfluencyText": "well since you don't exist you don't have a consent status and therefore we don't have to "
   },
   {
     "start": 37.38,
@@ -165,7 +179,9 @@
       "arousal": 0.4190833866596222,
       "dominance": 0.4976006746292114
     },
-    "text": "get consent this really isn't any different from saying oh well the girl's unconscious so I can't "
+    "fluency": 0.6993529411764704,
+    "text": "get consent this really isn't any different from saying oh well the girl's unconscious so I can't",
+    "disfluencyText": "get consent this really isn't any different from saying oh well the girl's unconscious so I can't "
   },
   {
     "start": 43.62,
@@ -186,7 +202,9 @@
       "arousal": 0.3936295211315155,
       "dominance": 0.517227292060852
     },
-    "text": "get $3you know I$ can't get her consent to have sex with her so therefore it's okay because I can't "
+    "fluency": 0.618875,
+    "text": "get you know I can't get her consent to have sex with her so therefore it's okay because I can't",
+    "disfluencyText": "get $3you know I$ can't get her consent to have sex with her so therefore it's okay because I can't "
   },
   {
     "start": 49.6,
@@ -207,7 +225,9 @@
       "arousal": 0.42459285259246826,
       "dominance": 0.5054863095283508
     },
-    "text": "there's no way to even ask for the consent $4right um so I mean if you$ actually think that's a good "
+    "fluency": 0.703,
+    "text": "there's no way to even ask for the consent right um so I mean if you actually think that's a good",
+    "disfluencyText": "there's no way to even ask for the consent $4right um so I mean if you$ actually think that's a good "
   },
   {
     "start": 54.86,
@@ -228,7 +248,9 @@
       "arousal": 0.5237656831741333,
       "dominance": 0.5261000394821167
     },
-    "text": "argument against what I've said right you're absolutely retarded your brain you're it's "
+    "fluency": 0.6337857142857143,
+    "text": "argument against what I've said right you're absolutely retarded your brain you're it's",
+    "disfluencyText": "argument against what I've said right you're absolutely retarded your brain you're it's "
   },
   {
     "start": 59.86,
@@ -249,7 +271,9 @@
       "arousal": 0.5137143731117249,
       "dominance": 0.6014879941940308
     },
-    "text": "very childish and retarded right $4um$ and before you say oh that's ad hominem I said the word retard "
+    "fluency": 0.6026315789473684,
+    "text": "very childish and retarded right um and before you say oh that's ad hominem I said the word retard",
+    "disfluencyText": "very childish and retarded right $4um$ and before you say oh that's ad hominem I said the word retard "
   },
   {
     "start": 67.38,
@@ -270,7 +294,9 @@
       "arousal": 0.685371994972229,
       "dominance": 0.7071436643600464
     },
-    "text": "no I made an argument and then I called you a retard fucker so it's not ad hominem ad hominem "
+    "fluency": 0.7868823529411764,
+    "text": "no I made an argument and then I called you a retard fucker so it's not ad hominem ad hominem",
+    "disfluencyText": "no I made an argument and then I called you a retard fucker so it's not ad hominem ad hominem "
   },
   {
     "start": 73.7,
@@ -291,7 +317,9 @@
       "arousal": 0.6176290512084961,
       "dominance": 0.6947928667068481
     },
-    "text": "is when someone $34just you know$ just name calls and that's it that's what ad hominem is fuckhead "
+    "fluency": 0.5997142857142858,
+    "text": "is when someone just you know just name calls and that's it that's what ad hominem is fuckhead",
+    "disfluencyText": "is when someone $34just you know$ just name calls and that's it that's what ad hominem is fuckhead "
   },
   {
     "start": 78.66,
@@ -312,7 +340,9 @@
       "arousal": 0.6890307664871216,
       "dominance": 0.629279375076294
     },
-    "text": "$4some of$ you motherfuckers are just too fucking stupid "
+    "fluency": 0.6809230769230769,
+    "text": "some of you motherfuckers are just too fucking stupid",
+    "disfluencyText": "$4some of$ you motherfuckers are just too fucking stupid "
   },
   {
     "start": 83.04,
@@ -333,7 +363,9 @@
       "arousal": 0.3392601013183594,
       "dominance": 0.3982239365577698
     },
-    "text": "okay anyways $4so$ yes the point is "
+    "fluency": 0.5996250000000001,
+    "text": "okay anyways so yes the point is",
+    "disfluencyText": "okay anyways $4so$ yes the point is "
   },
   {
     "start": 89.46,
@@ -354,7 +386,9 @@
       "arousal": 0.6510944962501526,
       "dominance": 0.7482325434684753
     },
-    "text": "obviously you can't get people's consent to bring them here so don't do it it's that fucking simple "
+    "fluency": 0.8279285714285715,
+    "text": "obviously you can't get people's consent to bring them here so don't do it it's that fucking simple",
+    "disfluencyText": "obviously you can't get people's consent to bring them here so don't do it it's that fucking simple "
   },
   {
     "start": 94.42,
@@ -375,7 +409,9 @@
       "arousal": 0.4322274923324585,
       "dominance": 0.5685558915138245
     },
-    "text": "this is not complicated logic this is not complicated ethics "
+    "fluency": 0.7791818181818182,
+    "text": "this is not complicated logic this is not complicated ethics",
+    "disfluencyText": "this is not complicated logic this is not complicated ethics "
   },
   {
     "start": 97.78,
@@ -396,7 +432,9 @@
       "arousal": 0.28389814496040344,
       "dominance": 0.35272008180618286
     },
-    "text": "so anyways "
+    "fluency": 0.5127272727272727,
+    "text": "so anyways",
+    "disfluencyText": "so anyways "
   },
   {
     "start": 101.3,
@@ -417,7 +455,9 @@
       "arousal": 0.28323793411254883,
       "dominance": 0.3885996639728546
     },
-    "text": "I have written some things down here I tried to order them in a way that makes sense "
+    "fluency": 0.7337499999999999,
+    "text": "I have written some things down here I tried to order them in a way that makes sense",
+    "disfluencyText": "I have written some things down here I tried to order them in a way that makes sense "
   },
   {
     "start": 107.04,
@@ -438,7 +478,9 @@
       "arousal": 0.3038040101528168,
       "dominance": 0.36893752217292786
     },
-    "text": "just because I have a lot of things to $4say. And$ $3yeah, so hopefully$ there's some order "
+    "fluency": 0.5247777777777778,
+    "text": "just because I have a lot of things to say. And yeah, so hopefully there's some order",
+    "disfluencyText": "just because I have a lot of things to $4say. And$ $3yeah, so hopefully$ there's some order "
   },
   {
     "start": 114.04,
@@ -459,7 +501,9 @@
       "arousal": 0.24526716768741608,
       "dominance": 0.3331269323825836
     },
-    "text": "$4to my little recording$ here. $4But anyways$, $14so$ yeah. "
+    "fluency": 0.5016470588235293,
+    "text": "to my little recording here. But anyways, so yeah.",
+    "disfluencyText": "$4to my little recording$ here. $4But anyways$, $14so$ yeah. "
   },
   {
     "start": 120.62,
@@ -480,7 +524,9 @@
       "arousal": 0.4901849627494812,
       "dominance": 0.5844230651855469
     },
-    "text": "So the reason $4I'm, you know, wanting to$ get the fuck out of this whole life game "
+    "fluency": 0.535,
+    "text": "So the reason I'm, you know, wanting to get the fuck out of this whole life game",
+    "disfluencyText": "So the reason $4I'm, you know, wanting to$ get the fuck out of this whole life game "
   },
   {
     "start": 124.76,
@@ -501,7 +547,9 @@
       "arousal": 0.3665772080421448,
       "dominance": 0.4219995439052582
     },
-    "text": "$4is$ basically, I guess it comes down to, "
+    "fluency": 0.6433000000000001,
+    "text": "is basically, I guess it comes down to,",
+    "disfluencyText": "$4is$ basically, I guess it comes down to, "
   },
   {
     "start": 127.86,
@@ -522,7 +570,9 @@
       "arousal": 0.3312690854072571,
       "dominance": 0.44837450981140137
     },
-    "text": "I'm not interested in being a life addict, $4right$? So $4I really$ never wanted to do this life drug. "
+    "fluency": 0.6311764705882353,
+    "text": "I'm not interested in being a life addict, right? So I really never wanted to do this life drug.",
+    "disfluencyText": "I'm not interested in being a life addict, $4right$? So $4I really$ never wanted to do this life drug. "
   },
   {
     "start": 134.14,
@@ -543,7 +593,9 @@
       "arousal": 0.2517140805721283,
       "dominance": 0.3189597725868225
     },
-    "text": "$34um$ $4and I remember$ like when I was a kid people just trying $4to I$ mean my whole life really people "
+    "fluency": 0.5552941176470589,
+    "text": "um and I remember like when I was a kid people just trying to I mean my whole life really people",
+    "disfluencyText": "$34um$ $4and I remember$ like when I was a kid people just trying $4to I$ mean my whole life really people "
   },
   {
     "start": 140.54,
@@ -564,7 +616,9 @@
       "arousal": 0.3193589150905609,
       "dominance": 0.4258353114128113
     },
-    "text": "have always been trying to push this life drug onto $4me you know$ they've been people try to push "
+    "fluency": 0.7269166666666668,
+    "text": "have always been trying to push this life drug onto me you know they've been people try to push",
+    "disfluencyText": "have always been trying to push this life drug onto $4me you know$ they've been people try to push "
   },
   {
     "start": 144.9,
@@ -585,7 +639,9 @@
       "arousal": 0.5226722359657288,
       "dominance": 0.593512237071991
     },
-    "text": "experiences onto me $4like hey let's you know$ go to a concert or some bullshit it's always something "
+    "fluency": 0.60325,
+    "text": "experiences onto me like hey let's you know go to a concert or some bullshit it's always something",
+    "disfluencyText": "experiences onto me $4like hey let's you know$ go to a concert or some bullshit it's always something "
   },
   {
     "start": 148.82,
@@ -606,7 +662,9 @@
       "arousal": 0.4375588893890381,
       "dominance": 0.4550001323223114
     },
-    "text": "you know and I'm always saying no $3no not interested not$ interested and you $4know$ people are um for some "
+    "fluency": 0.44699999999999995,
+    "text": "you know and I'm always saying no no not interested not interested and you know people are um for some",
+    "disfluencyText": "you know and I'm always saying no $3no not interested not$ interested and you $4know$ people are um for some "
   },
   {
     "start": 155.22,
@@ -627,7 +685,9 @@
       "arousal": 0.51227867603302,
       "dominance": 0.6062671542167664
     },
-    "text": "reason like people just can't fucking take no for an answer you know um when it comes to this shit "
+    "fluency": 0.5606153846153847,
+    "text": "reason like people just can't fucking take no for an answer you know um when it comes to this shit",
+    "disfluencyText": "reason like people just can't fucking take no for an answer you know um when it comes to this shit "
   },
   {
     "start": 159.86,
@@ -648,7 +708,9 @@
       "arousal": 0.30592817068099976,
       "dominance": 0.3636462688446045
     },
-    "text": "it really isn't any different $4from like$ you know "
+    "fluency": 0.3731818181818182,
+    "text": "it really isn't any different from like you know",
+    "disfluencyText": "it really isn't any different $4from like$ you know "
   },
   {
     "start": 163.36,
@@ -669,7 +731,9 @@
       "arousal": 0.2903706133365631,
       "dominance": 0.40756353735923767
     },
-    "text": "kids $3pushing$ drugs or smoking on some other kid or whatever it's "
+    "fluency": 0.31575,
+    "text": "kids pushing drugs or smoking on some other kid or whatever it's",
+    "disfluencyText": "kids $3pushing$ drugs or smoking on some other kid or whatever it's "
   },
   {
     "start": 167.48,
@@ -690,7 +754,9 @@
       "arousal": 0.5112111568450928,
       "dominance": 0.5932913422584534
     },
-    "text": "not really any different from this $4you know except in this case it's more like$ fucking heroin "
+    "fluency": 0.43950000000000006,
+    "text": "not really any different from this you know except in this case it's more like fucking heroin",
+    "disfluencyText": "not really any different from this $4you know except in this case it's more like$ fucking heroin "
   },
   {
     "start": 172.02,
@@ -711,7 +777,9 @@
       "arousal": 0.26017242670059204,
       "dominance": 0.35760676860809326
     },
-    "text": "you know it's a much worse drug so "
+    "fluency": 0.3890909090909091,
+    "text": "you know it's a much worse drug so",
+    "disfluencyText": "you know it's a much worse drug so "
   },
   {
     "start": 175.76,
@@ -732,7 +800,9 @@
       "arousal": 0.1494036465883255,
       "dominance": 0.25502049922943115
     },
-    "text": "and "
+    "fluency": 0.3419,
+    "text": "and",
+    "disfluencyText": "and "
   },
   {
     "start": 178.94,
@@ -753,7 +823,9 @@
       "arousal": 0.2600570619106293,
       "dominance": 0.2975277900695801
     },
-    "text": "also yes "
+    "fluency": 0.5039,
+    "text": "also yes",
+    "disfluencyText": "also yes "
   },
   {
     "start": 181.98,
@@ -774,7 +846,9 @@
       "arousal": 0.27920347452163696,
       "dominance": 0.40427711606025696
     },
-    "text": "life is a drug it really is very analogous to a drug I know "
+    "fluency": 0.7162499999999999,
+    "text": "life is a drug it really is very analogous to a drug I know",
+    "disfluencyText": "life is a drug it really is very analogous to a drug I know "
   },
   {
     "start": 185.9,
@@ -795,7 +869,9 @@
       "arousal": 0.450787216424942,
       "dominance": 0.5627419948577881
     },
-    "text": "some of you assholes are gonna get all triggered at me saying that being negative you know "
+    "fluency": 0.7287500000000001,
+    "text": "some of you assholes are gonna get all triggered at me saying that being negative you know",
+    "disfluencyText": "some of you assholes are gonna get all triggered at me saying that being negative you know "
   },
   {
     "start": 189.76,
@@ -816,7 +892,9 @@
       "arousal": 0.2219724804162979,
       "dominance": 0.32431209087371826
     },
-    "text": "about life. $4But$, I mean, think $4about$ this. "
+    "fluency": 0.32975000000000004,
+    "text": "about life. But, I mean, think about this.",
+    "disfluencyText": "about life. $4But$, I mean, think $4about$ this. "
   },
   {
     "start": 194.24,
@@ -837,7 +915,9 @@
       "arousal": 0.38249531388282776,
       "dominance": 0.4893774688243866
     },
-    "text": "$34You know, if you sit$ around and do absolutely nothing, like literally nothing, right, "
+    "fluency": 0.5243333333333334,
+    "text": "You know, if you sit around and do absolutely nothing, like literally nothing, right,",
+    "disfluencyText": "$34You know, if you sit$ around and do absolutely nothing, like literally nothing, right, "
   },
   {
     "start": 198.34,
@@ -858,7 +938,9 @@
       "arousal": 0.30042535066604614,
       "dominance": 0.40500134229660034
     },
-    "text": "you're going to become very miserable pretty quickly, right? "
+    "fluency": 0.8260000000000001,
+    "text": "you're going to become very miserable pretty quickly, right?",
+    "disfluencyText": "you're going to become very miserable pretty quickly, right? "
   },
   {
     "start": 202.2,
@@ -879,7 +961,9 @@
       "arousal": 0.2575485408306122,
       "dominance": 0.3760624825954437
     },
-    "text": "And the reason for this is that the default state for you "
+    "fluency": 0.827,
+    "text": "And the reason for this is that the default state for you",
+    "disfluencyText": "And the reason for this is that the default state for you "
   },
   {
     "start": 205.48,
@@ -900,7 +984,9 @@
       "arousal": 0.2442292422056198,
       "dominance": 0.3631785213947296
     },
-    "text": "is deprivation, $4right? And$ this is how life gets you to chase things, right? "
+    "fluency": 0.6481176470588236,
+    "text": "is deprivation, right? And this is how life gets you to chase things, right?",
+    "disfluencyText": "is deprivation, $4right? And$ this is how life gets you to chase things, right? "
   },
   {
     "start": 213.72,
@@ -921,7 +1007,9 @@
       "arousal": 0.29119744896888733,
       "dominance": 0.40891095995903015
     },
-    "text": "And, yeah, that includes literally even drinking water, what we would call basic needs, right? "
+    "fluency": 0.6103076923076923,
+    "text": "And, yeah, that includes literally even drinking water, what we would call basic needs, right?",
+    "disfluencyText": "And, yeah, that includes literally even drinking water, what we would call basic needs, right? "
   },
   {
     "start": 218.26,
@@ -942,7 +1030,9 @@
       "arousal": 0.37493452429771423,
       "dominance": 0.45648908615112305
     },
-    "text": "$4your$ brain gets you to chase things that's really what's going on "
+    "fluency": 0.5972727272727273,
+    "text": "your brain gets you to chase things that's really what's going on",
+    "disfluencyText": "$4your$ brain gets you to chase things that's really what's going on "
   },
   {
     "start": 221.7,
@@ -963,7 +1053,9 @@
       "arousal": 0.21548724174499512,
       "dominance": 0.34692713618278503
     },
-    "text": "and the $4shit that we're$ chasing "
+    "fluency": 0.50775,
+    "text": "and the shit that we're chasing",
+    "disfluencyText": "and the $4shit that we're$ chasing "
   },
   {
     "start": 225.98,
@@ -984,7 +1076,9 @@
       "arousal": 0.27860400080680847,
       "dominance": 0.4258546233177185
     },
-    "text": "really is stupid $4this$ whole $4evolution$ thing, life thing "
+    "fluency": 0.6044999999999998,
+    "text": "really is stupid this whole evolution thing, life thing",
+    "disfluencyText": "really is stupid $4this$ whole $4evolution$ thing, life thing "
   },
   {
     "start": 231.64,
@@ -1005,7 +1099,9 @@
       "arousal": 0.40048453211784363,
       "dominance": 0.4894101917743683
     },
-    "text": "is not an intelligent $4design when$ you see innocent creatures "
+    "fluency": 0.4714285714285714,
+    "text": "is not an intelligent design when you see innocent creatures",
+    "disfluencyText": "is not an intelligent $4design when$ you see innocent creatures "
   },
   {
     "start": 236.88,
@@ -1026,7 +1122,9 @@
       "arousal": 0.47586753964424133,
       "dominance": 0.5631367564201355
     },
-    "text": "getting completely fucked by life I'm not just talking humans but even animals "
+    "fluency": 0.5623076923076924,
+    "text": "getting completely fucked by life I'm not just talking humans but even animals",
+    "disfluencyText": "getting completely fucked by life I'm not just talking humans but even animals "
   },
   {
     "start": 241.06,
@@ -1047,7 +1145,9 @@
       "arousal": 0.5652689337730408,
       "dominance": 0.6000626087188721
     },
-    "text": "$4how$ the hell can you sit there and call that an intelligent design "
+    "fluency": 0.7216363636363636,
+    "text": "how the hell can you sit there and call that an intelligent design",
+    "disfluencyText": "$4how$ the hell can you sit there and call that an intelligent design "
   },
   {
     "start": 244.76,
@@ -1068,7 +1168,9 @@
       "arousal": 0.4089348316192627,
       "dominance": 0.5170294046401978
     },
-    "text": "it clearly isn't It's a completely absurd thing to call life an intelligent design. "
+    "fluency": 0.8771538461538463,
+    "text": "it clearly isn't It's a completely absurd thing to call life an intelligent design.",
+    "disfluencyText": "it clearly isn't It's a completely absurd thing to call life an intelligent design. "
   },
   {
     "start": 249.54,
@@ -1089,7 +1191,9 @@
       "arousal": 0.3443150520324707,
       "dominance": 0.43827545642852783
     },
-    "text": "It's clearly not. $4It clearly is just something$ $34that$ happened because it could. "
+    "fluency": 0.5716666666666668,
+    "text": "It's clearly not. It clearly is just something that happened because it could.",
+    "disfluencyText": "It's clearly not. $4It clearly is just something$ $34that$ happened because it could. "
   },
   {
     "start": 255.32,
@@ -1110,7 +1214,9 @@
       "arousal": 0.30825406312942505,
       "dominance": 0.40541166067123413
     },
-    "text": "The circumstances were just right $4to$ where it could happen and $4it did$ happen. "
+    "fluency": 0.6050000000000001,
+    "text": "The circumstances were just right to where it could happen and it did happen.",
+    "disfluencyText": "The circumstances were just right $4to$ where it could happen and $4it did$ happen. "
   },
   {
     "start": 261.9,
@@ -1131,7 +1237,9 @@
       "arousal": 0.3006433844566345,
       "dominance": 0.4083405137062073
     },
-    "text": "Evolution isn't really $4doing anything$ on purpose. "
+    "fluency": 0.5010833333333332,
+    "text": "Evolution isn't really doing anything on purpose.",
+    "disfluencyText": "Evolution isn't really $4doing anything$ on purpose. "
   },
   {
     "start": 266.88,
@@ -1152,7 +1260,9 @@
       "arousal": 0.39812028408050537,
       "dominance": 0.47705328464508057
     },
-    "text": "$4It's just evolving. It's just$ happening. That's it. "
+    "fluency": 0.4789999999999999,
+    "text": "It's just evolving. It's just happening. That's it.",
+    "disfluencyText": "$4It's just evolving. It's just$ happening. That's it. "
   },
   {
     "start": 271.18,
@@ -1173,7 +1283,9 @@
       "arousal": 0.38006240129470825,
       "dominance": 0.5086504220962524
     },
-    "text": "It's not intelligent. That's why I use the word stupid a lot. in reference to the shit people are chasing, "
+    "fluency": 0.837875,
+    "text": "It's not intelligent. That's why I use the word stupid a lot. in reference to the shit people are chasing,",
+    "disfluencyText": "It's not intelligent. That's why I use the word stupid a lot. in reference to the shit people are chasing, "
   },
   {
     "start": 277.24,
@@ -1194,7 +1306,9 @@
       "arousal": 0.43947651982307434,
       "dominance": 0.5528048276901245
     },
-    "text": "the shit people are doing, and what $4life is doing$. It's stupid. "
+    "fluency": 0.6473333333333334,
+    "text": "the shit people are doing, and what life is doing. It's stupid.",
+    "disfluencyText": "the shit people are doing, and what $4life is doing$. It's stupid. "
   },
   {
     "start": 281.62,
@@ -1215,7 +1329,9 @@
       "arousal": 0.6417413353919983,
       "dominance": 0.6973100900650024
     },
-    "text": "I'm not saying that just because I'm upset about it. I'm saying that because I've thought about it, "
+    "fluency": 0.8144545454545454,
+    "text": "I'm not saying that just because I'm upset about it. I'm saying that because I've thought about it,",
+    "disfluencyText": "I'm not saying that just because I'm upset about it. I'm saying that because I've thought about it, "
   },
   {
     "start": 285.62,
@@ -1236,7 +1352,9 @@
       "arousal": 0.3983781933784485,
       "dominance": 0.49569225311279297
     },
-    "text": "and I think the word stupid really does apply. $4I$ tend not to use language too loosely. "
+    "fluency": 0.6934285714285714,
+    "text": "and I think the word stupid really does apply. I tend not to use language too loosely.",
+    "disfluencyText": "and I think the word stupid really does apply. $4I$ tend not to use language too loosely. "
   },
   {
     "start": 296.02,
@@ -1257,7 +1375,9 @@
       "arousal": 0.4157153069972992,
       "dominance": 0.4512689709663391
     },
-    "text": "Okay, so all this just to say, "
+    "fluency": 0.3912,
+    "text": "Okay, so all this just to say,",
+    "disfluencyText": "Okay, so all this just to say, "
   },
   {
     "start": 299.18,
@@ -1278,7 +1398,9 @@
       "arousal": 0.3208194375038147,
       "dominance": 0.41811496019363403
     },
-    "text": "yeah, life itself really is just, it's a big drug addiction, right? "
+    "fluency": 0.3950833333333333,
+    "text": "yeah, life itself really is just, it's a big drug addiction, right?",
+    "disfluencyText": "yeah, life itself really is just, it's a big drug addiction, right? "
   },
   {
     "start": 303.3,
@@ -1299,7 +1421,9 @@
       "arousal": 0.3286263346672058,
       "dominance": 0.462607741355896
     },
-    "text": "It's just chasing absolute nonsense. And I've pretty much seen this since I was a kid. "
+    "fluency": 0.6826875,
+    "text": "It's just chasing absolute nonsense. And I've pretty much seen this since I was a kid.",
+    "disfluencyText": "It's just chasing absolute nonsense. And I've pretty much seen this since I was a kid. "
   },
   {
     "start": 309.16,
@@ -1320,7 +1444,9 @@
       "arousal": 0.3795754909515381,
       "dominance": 0.44352802634239197
     },
-    "text": "I've pretty much known it since I was a kid. As a kid, I wasn't able to put words to it, "
+    "fluency": 0.8955454545454546,
+    "text": "I've pretty much known it since I was a kid. As a kid, I wasn't able to put words to it,",
+    "disfluencyText": "I've pretty much known it since I was a kid. As a kid, I wasn't able to put words to it, "
   },
   {
     "start": 313.04,
@@ -1341,7 +1467,9 @@
       "arousal": 0.33372682332992554,
       "dominance": 0.4433937966823578
     },
-    "text": "but some part of my brain kind of understood it, right? Because I really wasn't very interested in anything. "
+    "fluency": 0.7989166666666668,
+    "text": "but some part of my brain kind of understood it, right? Because I really wasn't very interested in anything.",
+    "disfluencyText": "but some part of my brain kind of understood it, right? Because I really wasn't very interested in anything. "
   },
   {
     "start": 317.54,
@@ -1362,7 +1490,9 @@
       "arousal": 0.5592679977416992,
       "dominance": 0.5318909287452698
     },
-    "text": "I really didn't $4want$ much, you know? $3And$ $34as$ $3I've$ $34gotten older and older, you know, more$ aware, "
+    "fluency": 0.42739999999999995,
+    "text": "I really didn't want much, you know? And as I've gotten older and older, you know, more aware,",
+    "disfluencyText": "I really didn't $4want$ much, you know? $3And$ $34as$ $3I've$ $34gotten older and older, you know, more$ aware, "
   },
   {
     "start": 323.54,
@@ -1383,7 +1513,9 @@
       "arousal": 0.5718220472335815,
       "dominance": 0.6371729969978333
     },
-    "text": "I started to realize like, oh, this is a really nasty game. This life on earth game is really nasty. "
+    "fluency": 0.6364285714285716,
+    "text": "I started to realize like, oh, this is a really nasty game. This life on earth game is really nasty.",
+    "disfluencyText": "I started to realize like, oh, this is a really nasty game. This life on earth game is really nasty. "
   },
   {
     "start": 328.82,
@@ -1404,7 +1536,9 @@
       "arousal": 0.3268519639968872,
       "dominance": 0.40980786085128784
     },
-    "text": "You know, it's causing tons and tons $3of$ harm. $4it$ is $3a$ $4zero$ sum game "
+    "fluency": 0.25606666666666666,
+    "text": "You know, it's causing tons and tons of harm. it is a zero sum game",
+    "disfluencyText": "You know, it's causing tons and tons $3of$ harm. $4it$ is $3a$ $4zero$ sum game "
   },
   {
     "start": 334.04,
@@ -1425,7 +1559,9 @@
       "arousal": 0.42524391412734985,
       "dominance": 0.4331105351448059
     },
-    "text": "is that $4what$ it's called? Zero sum game? "
+    "fluency": 0.5045000000000001,
+    "text": "is that what it's called? Zero sum game?",
+    "disfluencyText": "is that $4what$ it's called? Zero sum game? "
   },
   {
     "start": 337.82,
@@ -1446,7 +1582,9 @@
       "arousal": 0.5357027649879456,
       "dominance": 0.4957493245601654
     },
-    "text": "did I say that right? Hopefully $34I said$ $4that$ $34right$ basically what I'm trying to say is "
+    "fluency": 0.48742857142857127,
+    "text": "did I say that right? Hopefully I said that right basically what I'm trying to say is",
+    "disfluencyText": "did I say that right? Hopefully $34I said$ $4that$ $34right$ basically what I'm trying to say is "
   },
   {
     "start": 342.92,
@@ -1467,7 +1605,9 @@
       "arousal": 0.35974130034446716,
       "dominance": 0.4392699897289276
     },
-    "text": "since the default state $4is deprivation basically$ you're being whipped constantly "
+    "fluency": 0.631875,
+    "text": "since the default state is deprivation basically you're being whipped constantly",
+    "disfluencyText": "since the default state $4is deprivation basically$ you're being whipped constantly "
   },
   {
     "start": 348.72,
@@ -1488,7 +1628,9 @@
       "arousal": 0.44329360127449036,
       "dominance": 0.49442994594573975
     },
-    "text": "and the best you can achieve is not being whipped "
+    "fluency": 0.7436666666666668,
+    "text": "and the best you can achieve is not being whipped",
+    "disfluencyText": "and the best you can achieve is not being whipped "
   },
   {
     "start": 352.52,
@@ -1509,7 +1651,9 @@
       "arousal": 0.27927538752555847,
       "dominance": 0.3831685483455658
     },
-    "text": "$4satisfying$ your $4needs$ and your desires "
+    "fluency": 0.43583333333333346,
+    "text": "satisfying your needs and your desires",
+    "disfluencyText": "$4satisfying$ your $4needs$ and your desires "
   },
   {
     "start": 356.88,
@@ -1530,7 +1674,9 @@
       "arousal": 0.2609673738479614,
       "dominance": 0.2997988760471344
     },
-    "text": "which again really is just the whip being taken away, right? "
+    "fluency": 0.5705333333333332,
+    "text": "which again really is just the whip being taken away, right?",
+    "disfluencyText": "which again really is just the whip being taken away, right? "
   },
   {
     "start": 362.22,
@@ -1551,7 +1697,9 @@
       "arousal": 0.24475792050361633,
       "dominance": 0.3316059410572052
     },
-    "text": "So as Inmendham, Gary would say, "
+    "fluency": 0.5617000000000001,
+    "text": "So as Inmendham, Gary would say,",
+    "disfluencyText": "So as Inmendham, Gary would say, "
   },
   {
     "start": 365.82,
@@ -1572,7 +1720,9 @@
       "arousal": 0.3043336570262909,
       "dominance": 0.40527796745300293
     },
-    "text": "there is no carrot, there's only the whip, okay? "
+    "fluency": 0.5172727272727274,
+    "text": "there is no carrot, there's only the whip, okay?",
+    "disfluencyText": "there is no carrot, there's only the whip, okay? "
   },
   {
     "start": 369.7,
@@ -1593,7 +1743,9 @@
       "arousal": 0.40115612745285034,
       "dominance": 0.4467909038066864
     },
-    "text": "It doesn't intuitively make sense when you think about it. "
+    "fluency": 0.6463636363636364,
+    "text": "It doesn't intuitively make sense when you think about it.",
+    "disfluencyText": "It doesn't intuitively make sense when you think about it. "
   },
   {
     "start": 373.06,
@@ -1614,7 +1766,9 @@
       "arousal": 0.4343382716178894,
       "dominance": 0.5220146775245667
     },
-    "text": "Like when I first heard him say shit like that, I totally didn't believe it. "
+    "fluency": 0.5104615384615385,
+    "text": "Like when I first heard him say shit like that, I totally didn't believe it.",
+    "disfluencyText": "Like when I first heard him say shit like that, I totally didn't believe it. "
   },
   {
     "start": 377.64,
@@ -1635,7 +1789,9 @@
       "arousal": 0.37311986088752747,
       "dominance": 0.4485671818256378
     },
-    "text": "I was like, no, $3no, no$. $34Like there's$ $3certain things that$ are $4just like$ pleasurable on their own. "
+    "fluency": 0.5276923076923077,
+    "text": "I was like, no, no, no. Like there's certain things that are just like pleasurable on their own.",
+    "disfluencyText": "I was like, no, $3no, no$. $34Like there's$ $3certain things that$ are $4just like$ pleasurable on their own. "
   },
   {
     "start": 382.82,
@@ -1656,7 +1812,9 @@
       "arousal": 0.33063942193984985,
       "dominance": 0.38222023844718933
     },
-    "text": "And, $34but$ $3as I$ thought about, $4you$ know, over $3the$ week after, "
+    "fluency": 0.28638461538461535,
+    "text": "And, but as I thought about, you know, over the week after,",
+    "disfluencyText": "And, $34but$ $3as I$ thought about, $4you$ know, over $3the$ week after, "
   },
   {
     "start": 387.24,
@@ -1677,7 +1835,9 @@
       "arousal": 0.45479586720466614,
       "dominance": 0.4938437044620514
     },
-    "text": "the week after I heard him say that I just started thinking about things and I started to realize "
+    "fluency": 0.5220769230769231,
+    "text": "the week after I heard him say that I just started thinking about things and I started to realize",
+    "disfluencyText": "the week after I heard him say that I just started thinking about things and I started to realize "
   },
   {
     "start": 391.64,
@@ -1698,7 +1858,9 @@
       "arousal": 0.33877962827682495,
       "dominance": 0.3814944624900818
     },
-    "text": "like no $4it's it really$ "
+    "fluency": 0.3000999999999999,
+    "text": "like no it's it really",
+    "disfluencyText": "like no $4it's it really$ "
   },
   {
     "start": 394.78,
@@ -1719,7 +1881,9 @@
       "arousal": 0.5193794965744019,
       "dominance": 0.49957191944122314
     },
-    "text": "$3there really$ is $4no$ like $4fundamental$ like good "
+    "fluency": 0.2210769230769231,
+    "text": "there really is no like fundamental like good",
+    "disfluencyText": "$3there really$ is $4no$ like $4fundamental$ like good "
   },
   {
     "start": 399.38,
@@ -1740,7 +1904,9 @@
       "arousal": 0.389702707529068,
       "dominance": 0.4318588972091675
     },
-    "text": "$4you$ know $4it really is$ all made of fixing "
+    "fluency": 0.5452499999999999,
+    "text": "you know it really is all made of fixing",
+    "disfluencyText": "$4you$ know $4it really is$ all made of fixing "
   },
   {
     "start": 403.3,
@@ -1761,7 +1927,9 @@
       "arousal": 0.3821103572845459,
       "dominance": 0.49359896779060364
     },
-    "text": "bad things fixing deprived states and what not $4you$ know "
+    "fluency": 0.6848181818181817,
+    "text": "bad things fixing deprived states and what not you know",
+    "disfluencyText": "bad things fixing deprived states and what not $4you$ know "
   },
   {
     "start": 406.88,
@@ -1782,7 +1950,9 @@
       "arousal": 0.32954806089401245,
       "dominance": 0.3932112753391266
     },
-    "text": "$4it's$ $3really$ $4interesting$ and it's really "
+    "fluency": 0.3183846153846154,
+    "text": "it's really interesting and it's really",
+    "disfluencyText": "$4it's$ $3really$ $4interesting$ and it's really "
   },
   {
     "start": 411.12,
@@ -1803,7 +1973,9 @@
       "arousal": 0.38977915048599243,
       "dominance": 0.39175984263420105
     },
-    "text": "$4you know$ unfortunate but $3that's just the$ way it is "
+    "fluency": 0.49533333333333335,
+    "text": "you know unfortunate but that's just the way it is",
+    "disfluencyText": "$4you know$ unfortunate but $3that's just the$ way it is "
   },
   {
     "start": 415.46,
@@ -1824,7 +1996,9 @@
       "arousal": 0.4591326117515564,
       "dominance": 0.49951601028442383
     },
-    "text": "so anyway so yeah zero sum game because $3like I said you$ $23the best you can do is$ $3clean up$ messes and "
+    "fluency": 0.5343684210526316,
+    "text": "so anyway so yeah zero sum game because like I said you the best you can do is clean up messes and",
+    "disfluencyText": "so anyway so yeah zero sum game because $3like I said you$ $23the best you can do is$ $3clean up$ messes and "
   },
   {
     "start": 422.94,
@@ -1845,7 +2019,9 @@
       "arousal": 0.4981163442134857,
       "dominance": 0.5092073678970337
     },
-    "text": "we can't even really do that well $34you know I mean look$ $3around we're not$ doing $4that you know um$ "
+    "fluency": 0.5136875,
+    "text": "we can't even really do that well you know I mean look around we're not doing that you know um",
+    "disfluencyText": "we can't even really do that well $34you know I mean look$ $3around we're not$ doing $4that you know um$ "
   },
   {
     "start": 428.54,
@@ -1866,7 +2042,9 @@
       "arousal": 0.43066826462745667,
       "dominance": 0.4505663812160492
     },
-    "text": "so $34you know$ $3we again another$ thing gary would say is like you spill the milk and then you clean up "
+    "fluency": 0.46311764705882347,
+    "text": "so you know we again another thing gary would say is like you spill the milk and then you clean up",
+    "disfluencyText": "so $34you know$ $3we again another$ thing gary would say is like you spill the milk and then you clean up "
   },
   {
     "start": 435.44,
@@ -1887,7 +2065,9 @@
       "arousal": 0.37489739060401917,
       "dominance": 0.4722905158996582
     },
-    "text": "a small portion of it and then you pat yourself on the back $34it's it's$ $4really I mean$ life really "
+    "fluency": 0.6850714285714286,
+    "text": "a small portion of it and then you pat yourself on the back it's it's really I mean life really",
+    "disfluencyText": "a small portion of it and then you pat yourself on the back $34it's it's$ $4really I mean$ life really "
   },
   {
     "start": 440.32,
@@ -1908,7 +2088,9 @@
       "arousal": 0.34339118003845215,
       "dominance": 0.45424944162368774
     },
-    "text": "truly is completely fucking absurd right and to anyone who's $4like$ aware of these facts you know "
+    "fluency": 0.6396874999999999,
+    "text": "truly is completely fucking absurd right and to anyone who's like aware of these facts you know",
+    "disfluencyText": "truly is completely fucking absurd right and to anyone who's $4like$ aware of these facts you know "
   },
   {
     "start": 446.4,
@@ -1929,7 +2111,9 @@
       "arousal": 0.46707919239997864,
       "dominance": 0.49247416853904724
     },
-    "text": "intelligent whatever $3it's the more and more you$ become aware of this shit the more miserable life "
+    "fluency": 0.6539999999999999,
+    "text": "intelligent whatever it's the more and more you become aware of this shit the more miserable life",
+    "disfluencyText": "intelligent whatever $3it's the more and more you$ become aware of this shit the more miserable life "
   },
   {
     "start": 451.86,
@@ -1950,7 +2134,9 @@
       "arousal": 0.4206639528274536,
       "dominance": 0.49232128262519836
     },
-    "text": "becomes just $4like oh fuck this$ is really bad you know $4um you start$ to see all the harm and it's just "
+    "fluency": 0.5469285714285715,
+    "text": "becomes just like oh fuck this is really bad you know um you start to see all the harm and it's just",
+    "disfluencyText": "becomes just $4like oh fuck this$ is really bad you know $4um you start$ to see all the harm and it's just "
   },
   {
     "start": 456.72,
@@ -1971,7 +2157,9 @@
       "arousal": 0.35719093680381775,
       "dominance": 0.42527782917022705
     },
-    "text": "it's so nasty anyways $4so$ $14um$ and then you $4know$ I basically most people just really aren't in any "
+    "fluency": 0.54856,
+    "text": "it's so nasty anyways so um and then you know I basically most people just really aren't in any",
+    "disfluencyText": "it's so nasty anyways $4so$ $14um$ and then you $4know$ I basically most people just really aren't in any "
   },
   {
     "start": 467.14,
@@ -1992,7 +2180,9 @@
       "arousal": 0.3002350628376007,
       "dominance": 0.3955698311328888
     },
-    "text": "position in life to do much about it you $4know$ um $14and$ so $1basically you're just going to$ live life as "
+    "fluency": 0.4955999999999999,
+    "text": "position in life to do much about it you know um and so basically you're just going to live life as",
+    "disfluencyText": "position in life to do much about it you $4know$ um $14and$ so $1basically you're just going to$ live life as "
   },
   {
     "start": 475.2,
@@ -2013,7 +2203,9 @@
       "arousal": 0.4979808032512665,
       "dominance": 0.5340051651000977
     },
-    "text": "$34a$ $4slave$ really I mean people don't like it when I use this word $4um$ but that's just the way I see it "
+    "fluency": 0.40894117647058814,
+    "text": "a slave really I mean people don't like it when I use this word um but that's just the way I see it",
+    "disfluencyText": "$34a$ $4slave$ really I mean people don't like it when I use this word $4um$ but that's just the way I see it "
   },
   {
     "start": 481.94,
@@ -2034,7 +2226,9 @@
       "arousal": 0.33347877860069275,
       "dominance": 0.452801913022995
     },
-    "text": "I don't know what to say $4like I really$ $34I$ $4really do$ just see existence as a kind of slavery to "
+    "fluency": 0.6005333333333334,
+    "text": "I don't know what to say like I really I really do just see existence as a kind of slavery to",
+    "disfluencyText": "I don't know what to say $4like I really$ $34I$ $4really do$ just see existence as a kind of slavery to "
   },
   {
     "start": 487.3,
@@ -2055,7 +2249,9 @@
       "arousal": 0.34920501708984375,
       "dominance": 0.4138055443763733
     },
-    "text": "a dna molecule basically that's really all it is $34and$ um so I'm $34just saying$ $3it's$ you know "
+    "fluency": 0.5135,
+    "text": "a dna molecule basically that's really all it is and um so I'm just saying it's you know",
+    "disfluencyText": "a dna molecule basically that's really all it is $34and$ um so I'm $34just saying$ $3it's$ you know "
   },
   {
     "start": 493.24,
@@ -2076,7 +2272,9 @@
       "arousal": 0.37389230728149414,
       "dominance": 0.47664403915405273
     },
-    "text": "maybe you're not miserable okay fine whatever but a lot of people are okay and $4you$ know it's $3it's$ "
+    "fluency": 0.44125000000000003,
+    "text": "maybe you're not miserable okay fine whatever but a lot of people are okay and you know it's it's",
+    "disfluencyText": "maybe you're not miserable okay fine whatever but a lot of people are okay and $4you$ know it's $3it's$ "
   },
   {
     "start": 501,
@@ -2097,7 +2295,9 @@
       "arousal": 0.3871975243091583,
       "dominance": 0.4870777130126953
     },
-    "text": "wasted suffering $3there there there's so many people there's so many$ creatures really I should say "
+    "fluency": 0.4095714285714286,
+    "text": "wasted suffering there there there's so many people there's so many creatures really I should say",
+    "disfluencyText": "wasted suffering $3there there there's so many people there's so many$ creatures really I should say "
   },
   {
     "start": 505.56,
@@ -2118,7 +2318,9 @@
       "arousal": 0.49447861313819885,
       "dominance": 0.5433703064918518
     },
-    "text": "because not just humans that are important it's $4you$ know all the other sentient beings on this "
+    "fluency": 0.7171666666666666,
+    "text": "because not just humans that are important it's you know all the other sentient beings on this",
+    "disfluencyText": "because not just humans that are important it's $4you$ know all the other sentient beings on this "
   },
   {
     "start": 509.84,
@@ -2139,7 +2341,9 @@
       "arousal": 0.4110293388366699,
       "dominance": 0.49650928378105164
     },
-    "text": "planet are also just as important okay $4um so much wasted suffering right$ so much suffering that "
+    "fluency": 0.6804,
+    "text": "planet are also just as important okay um so much wasted suffering right so much suffering that",
+    "disfluencyText": "planet are also just as important okay $4um so much wasted suffering right$ so much suffering that "
   },
   {
     "start": 515.24,
@@ -2160,7 +2364,9 @@
       "arousal": 0.3760423958301544,
       "dominance": 0.4574803113937378
     },
-    "text": "occurs $1and for no$ you $4know$ benefit you $4know it's just a complete waste$ $34and it's$ $3it's$ sickening it "
+    "fluency": 0.5033333333333334,
+    "text": "occurs and for no you know benefit you know it's just a complete waste and it's it's sickening it",
+    "disfluencyText": "occurs $1and for no$ you $4know$ benefit you $4know it's just a complete waste$ $34and it's$ $3it's$ sickening it "
   },
   {
     "start": 522.18,
@@ -2181,7 +2387,9 @@
       "arousal": 0.4113859236240387,
       "dominance": 0.43581312894821167
     },
-    "text": "really is sickening $4you know um$ $1so$ yeah okay so just $3I'm doing I'm doing all$ this explaining just "
+    "fluency": 0.3777199999999999,
+    "text": "really is sickening you know um so yeah okay so just I'm doing I'm doing all this explaining just",
+    "disfluencyText": "really is sickening $4you know um$ $1so$ yeah okay so just $3I'm doing I'm doing all$ this explaining just "
   },
   {
     "start": 532.78,
@@ -2202,7 +2410,9 @@
       "arousal": 0.3121867775917053,
       "dominance": 0.43858104944229126
     },
-    "text": "you know for the people who don't $4get this shit like$ this is all really important shit "
+    "fluency": 0.550875,
+    "text": "you know for the people who don't get this shit like this is all really important shit",
+    "disfluencyText": "you know for the people who don't $4get this shit like$ this is all really important shit "
   },
   {
     "start": 538.56,
@@ -2223,7 +2433,9 @@
       "arousal": 0.3947944641113281,
       "dominance": 0.45354050397872925
     },
-    "text": "um okay what else did I have written down here I wrote down suicide prevention is people trying "
+    "fluency": 0.7422777777777777,
+    "text": "um okay what else did I have written down here I wrote down suicide prevention is people trying",
+    "disfluencyText": "um okay what else did I have written down here I wrote down suicide prevention is people trying "
   },
   {
     "start": 545.54,
@@ -2244,7 +2456,9 @@
       "arousal": 0.31760838627815247,
       "dominance": 0.42376595735549927
     },
-    "text": "to push life on you and is analogous to peers pressuring you to try drugs okay I kind of "
+    "fluency": 0.8528749999999999,
+    "text": "to push life on you and is analogous to peers pressuring you to try drugs okay I kind of",
+    "disfluencyText": "to push life on you and is analogous to peers pressuring you to try drugs okay I kind of "
   },
   {
     "start": 551.86,
@@ -2265,7 +2479,9 @@
       "arousal": 0.25801655650138855,
       "dominance": 0.36166855692863464
     },
-    "text": "already said this but $4um$ $34I$ $4didn't say the suicide$ prevention part but yeah suicide prevention really "
+    "fluency": 0.5683333333333332,
+    "text": "already said this but um I didn't say the suicide prevention part but yeah suicide prevention really",
+    "disfluencyText": "already said this but $4um$ $34I$ $4didn't say the suicide$ prevention part but yeah suicide prevention really "
   },
   {
     "start": 557.34,
@@ -2286,7 +2502,9 @@
       "arousal": 0.35986292362213135,
       "dominance": 0.45138171315193176
     },
-    "text": "is just that $4um so$ people trying to prevent others from killing themselves $4um$ especially if the person "
+    "fluency": 0.6599333333333334,
+    "text": "is just that um so people trying to prevent others from killing themselves um especially if the person",
+    "disfluencyText": "is just that $4um so$ people trying to prevent others from killing themselves $4um$ especially if the person "
   },
   {
     "start": 562.84,
@@ -2307,7 +2525,9 @@
       "arousal": 0.36672183871269226,
       "dominance": 0.4582839012145996
     },
-    "text": "has like a peaceful way of doing it right $4um$ and you try to prevent them from doing it um you're "
+    "fluency": 0.5307999999999999,
+    "text": "has like a peaceful way of doing it right um and you try to prevent them from doing it um you're",
+    "disfluencyText": "has like a peaceful way of doing it right $4um$ and you try to prevent them from doing it um you're "
   },
   {
     "start": 568,
@@ -2328,7 +2548,9 @@
       "arousal": 0.45893973112106323,
       "dominance": 0.5931565165519714
     },
-    "text": "just pushing life on them which again is a drug so you're just pushing drugs on people so fuck that "
+    "fluency": 0.7560714285714285,
+    "text": "just pushing life on them which again is a drug so you're just pushing drugs on people so fuck that",
+    "disfluencyText": "just pushing life on them which again is a drug so you're just pushing drugs on people so fuck that "
   },
   {
     "start": 572.92,
@@ -2349,7 +2571,9 @@
       "arousal": 0.36741533875465393,
       "dominance": 0.43714532256126404
     },
-    "text": "absolute $4nonsense um another little thing$ I wrote down really interesting point that I've not heard "
+    "fluency": 0.6956470588235294,
+    "text": "absolute nonsense um another little thing I wrote down really interesting point that I've not heard",
+    "disfluencyText": "absolute $4nonsense um another little thing$ I wrote down really interesting point that I've not heard "
   },
   {
     "start": 579.1,
@@ -2370,7 +2594,9 @@
       "arousal": 0.37611234188079834,
       "dominance": 0.4669983386993408
     },
-    "text": "anyone else make. $4It's in regards to mass$ shooters and mass killings $4and$ "
+    "fluency": 0.513375,
+    "text": "anyone else make. It's in regards to mass shooters and mass killings and",
+    "disfluencyText": "anyone else make. $4It's in regards to mass$ shooters and mass killings $4and$ "
   },
   {
     "start": 585.22,
@@ -2391,7 +2617,9 @@
       "arousal": 0.3242332339286804,
       "dominance": 0.36279210448265076
     },
-    "text": "whatnot. I was thinking to myself, there's "
+    "fluency": 0.34976923076923083,
+    "text": "whatnot. I was thinking to myself, there's",
+    "disfluencyText": "whatnot. I was thinking to myself, there's "
   },
   {
     "start": 589.98,
@@ -2412,7 +2640,9 @@
       "arousal": 0.31068164110183716,
       "dominance": 0.3634776771068573
     },
-    "text": "an organization called the "
+    "fluency": 0.5487272727272727,
+    "text": "an organization called the",
+    "disfluencyText": "an organization called the "
   },
   {
     "start": 593.04,
@@ -2433,7 +2663,9 @@
       "arousal": 0.43252071738243103,
       "dominance": 0.5286839008331299
     },
-    "text": "Violence Project, I believe that's what they're called. They have a lot of interesting data on mass shooters. "
+    "fluency": 0.8233333333333334,
+    "text": "Violence Project, I believe that's what they're called. They have a lot of interesting data on mass shooters.",
+    "disfluencyText": "Violence Project, I believe that's what they're called. They have a lot of interesting data on mass shooters. "
   },
   {
     "start": 598.16,
@@ -2454,7 +2686,9 @@
       "arousal": 0.3835662603378296,
       "dominance": 0.4295150637626648
     },
-    "text": "Something interesting they found really common "
+    "fluency": 0.7226,
+    "text": "Something interesting they found really common",
+    "disfluencyText": "Something interesting they found really common "
   },
   {
     "start": 601.2,
@@ -2475,7 +2709,9 @@
       "arousal": 0.3915017247200012,
       "dominance": 0.5119989514350891
     },
-    "text": "in mass shooters is that they have a suicidal crisis before they become "
+    "fluency": 0.7217272727272728,
+    "text": "in mass shooters is that they have a suicidal crisis before they become",
+    "disfluencyText": "in mass shooters is that they have a suicidal crisis before they become "
   },
   {
     "start": 604.52,
@@ -2496,7 +2732,9 @@
       "arousal": 0.39563924074172974,
       "dominance": 0.48664265871047974
     },
-    "text": "$34a$ $3mass$ shooter, before they start thinking about killing people. "
+    "fluency": 0.5995833333333332,
+    "text": "a mass shooter, before they start thinking about killing people.",
+    "disfluencyText": "$34a$ $3mass$ shooter, before they start thinking about killing people. "
   },
   {
     "start": 608.58,
@@ -2517,7 +2755,9 @@
       "arousal": 0.2616586685180664,
       "dominance": 0.39042457938194275
     },
-    "text": "right they have some kind of suicidal crisis this is fairly common right not all of them but "
+    "fluency": 0.7777857142857144,
+    "text": "right they have some kind of suicidal crisis this is fairly common right not all of them but",
+    "disfluencyText": "right they have some kind of suicidal crisis this is fairly common right not all of them but "
   },
   {
     "start": 613.62,
@@ -2538,7 +2778,9 @@
       "arousal": 0.3043416440486908,
       "dominance": 0.3745444715023041
     },
-    "text": "$4pretty common um$ and I was thinking to myself $4you know uh you really probably$ would solve you "
+    "fluency": 0.4013000000000001,
+    "text": "pretty common um and I was thinking to myself you know uh you really probably would solve you",
+    "disfluencyText": "$4pretty common um$ and I was thinking to myself $4you know uh you really probably$ would solve you "
   },
   {
     "start": 621.6,
@@ -2559,7 +2801,9 @@
       "arousal": 0.3555365204811096,
       "dominance": 0.4500191807746887
     },
-    "text": "you really would prevent a lot of mass shootings if you gave them the right to a graceful exit the "
+    "fluency": 0.6848823529411766,
+    "text": "you really would prevent a lot of mass shootings if you gave them the right to a graceful exit the",
+    "disfluencyText": "you really would prevent a lot of mass shootings if you gave them the right to a graceful exit the "
   },
   {
     "start": 628.48,
@@ -2580,7 +2824,9 @@
       "arousal": 0.3366866707801819,
       "dominance": 0.4723615348339081
     },
-    "text": "right to die right and I'm not talking about the fake right to die that we have now okay "
+    "fluency": 0.7530666666666666,
+    "text": "right to die right and I'm not talking about the fake right to die that we have now okay",
+    "disfluencyText": "right to die right and I'm not talking about the fake right to die that we have now okay "
   },
   {
     "start": 633.5,
@@ -2601,7 +2847,9 @@
       "arousal": 0.4680628776550293,
       "dominance": 0.5268688797950745
     },
-    "text": "$4which$ isn't even really a right because other people have to decide for you so it's not even "
+    "fluency": 0.7236153846153848,
+    "text": "which isn't even really a right because other people have to decide for you so it's not even",
+    "disfluencyText": "$4which$ isn't even really a right because other people have to decide for you so it's not even "
   },
   {
     "start": 637.62,
@@ -2622,7 +2870,9 @@
       "arousal": 0.34196552634239197,
       "dominance": 0.4159969985485077
     },
-    "text": "$4really a right. And$ $3people$ that do get it, obviously they have to be very terminally ill "
+    "fluency": 0.48131250000000003,
+    "text": "really a right. And people that do get it, obviously they have to be very terminally ill",
+    "disfluencyText": "$4really a right. And$ $3people$ that do get it, obviously they have to be very terminally ill "
   },
   {
     "start": 643.78,
@@ -2643,7 +2893,9 @@
       "arousal": 0.6125005483627319,
       "dominance": 0.6971299052238464
     },
-    "text": "and all this bullshit. $3It's$ not a right. It's nonsense, right? $3They've passed$ it in a very, very, "
+    "fluency": 0.3527647058823529,
+    "text": "and all this bullshit. It's not a right. It's nonsense, right? They've passed it in a very, very,",
+    "disfluencyText": "and all this bullshit. $3It's$ not a right. It's nonsense, right? $3They've passed$ it in a very, very, "
   },
   {
     "start": 650.08,
@@ -2664,7 +2916,9 @@
       "arousal": 0.5346851944923401,
       "dominance": 0.5683987140655518
     },
-    "text": "very restricted and minimal way so that they can bullshit people and say, "
+    "fluency": 0.6569166666666667,
+    "text": "very restricted and minimal way so that they can bullshit people and say,",
+    "disfluencyText": "very restricted and minimal way so that they can bullshit people and say, "
   },
   {
     "start": 654.16,
@@ -2685,7 +2939,9 @@
       "arousal": 0.5285152792930603,
       "dominance": 0.647674024105072
     },
-    "text": "oh, look, we have the right to die, when no, we absolutely fucking don't. Okay. "
+    "fluency": 0.7353,
+    "text": "oh, look, we have the right to die, when no, we absolutely fucking don't. Okay.",
+    "disfluencyText": "oh, look, we have the right to die, when no, we absolutely fucking don't. Okay. "
   },
   {
     "start": 659.58,
@@ -2706,7 +2962,9 @@
       "arousal": 0.3679417371749878,
       "dominance": 0.44303616881370544
     },
-    "text": "And I could get into this whole topic, but I will in a minute. "
+    "fluency": 0.5060000000000001,
+    "text": "And I could get into this whole topic, but I will in a minute.",
+    "disfluencyText": "And I could get into this whole topic, but I will in a minute. "
   },
   {
     "start": 663.68,
@@ -2727,7 +2985,9 @@
       "arousal": 0.4097454249858856,
       "dominance": 0.4714571535587311
     },
-    "text": "But the main point, back to the mass shooter thing, right? I really do think if people had an, if we had an actual right to die in the US, right, "
+    "fluency": 0.6669999999999999,
+    "text": "But the main point, back to the mass shooter thing, right? I really do think if people had an, if we had an actual right to die in the US, right,",
+    "disfluencyText": "But the main point, back to the mass shooter thing, right? I really do think if people had an, if we had an actual right to die in the US, right, "
   },
   {
     "start": 673.48,
@@ -2748,7 +3008,9 @@
       "arousal": 0.5592371225357056,
       "dominance": 0.6253929734230042
     },
-    "text": "right $4to a$ graceful exit, whatever the fuck you want to call it, "
+    "fluency": 0.4926363636363636,
+    "text": "right to a graceful exit, whatever the fuck you want to call it,",
+    "disfluencyText": "right $4to a$ graceful exit, whatever the fuck you want to call it, "
   },
   {
     "start": 677.14,
@@ -2769,7 +3031,9 @@
       "arousal": 0.4682715833187103,
       "dominance": 0.5581156611442566
     },
-    "text": "you probably would prevent a good chunk of mass shooters. "
+    "fluency": 0.5493636363636364,
+    "text": "you probably would prevent a good chunk of mass shooters.",
+    "disfluencyText": "you probably would prevent a good chunk of mass shooters. "
   },
   {
     "start": 681.66,
@@ -2790,7 +3054,9 @@
       "arousal": 0.5710232853889465,
       "dominance": 0.5954504013061523
     },
-    "text": "So yeah, interesting little fact, $4or$ idea, theory, I should say, whatever. "
+    "fluency": 0.46686666666666665,
+    "text": "So yeah, interesting little fact, or idea, theory, I should say, whatever.",
+    "disfluencyText": "So yeah, interesting little fact, $4or$ idea, theory, I should say, whatever. "
   },
   {
     "start": 688.72,
@@ -2811,7 +3077,9 @@
       "arousal": 0.35382452607154846,
       "dominance": 0.4213578701019287
     },
-    "text": "Very likely true, $14though$. $4Okay$, $34back to the right to$ $3die thing, because$ that's $4a really important topic$. "
+    "fluency": 0.4574375,
+    "text": "Very likely true, though. Okay, back to the right to die thing, because that's a really important topic.",
+    "disfluencyText": "Very likely true, $14though$. $4Okay$, $34back to the right to$ $3die thing, because$ that's $4a really important topic$. "
   },
   {
     "start": 697.62,
@@ -2832,7 +3100,9 @@
       "arousal": 0.31427133083343506,
       "dominance": 0.4230729639530182
     },
-    "text": "yeah so what we have now is a fake right to die it's not at all some kind of human right to die "
+    "fluency": 0.8340000000000001,
+    "text": "yeah so what we have now is a fake right to die it's not at all some kind of human right to die",
+    "disfluencyText": "yeah so what we have now is a fake right to die it's not at all some kind of human right to die "
   },
   {
     "start": 702.16,
@@ -2853,7 +3123,9 @@
       "arousal": 0.36653590202331543,
       "dominance": 0.463904470205307
     },
-    "text": "absolute nonsense $4um there's the$ slippery slope argument where people say like oh if we gave "
+    "fluency": 0.6878749999999999,
+    "text": "absolute nonsense um there's the slippery slope argument where people say like oh if we gave",
+    "disfluencyText": "absolute nonsense $4um there's the$ slippery slope argument where people say like oh if we gave "
   },
   {
     "start": 708.22,
@@ -2874,7 +3146,9 @@
       "arousal": 0.3948061168193817,
       "dominance": 0.4612968862056732
     },
-    "text": "everyone the right to a $4graceful exit um$ you know what $34about the$ $3people what$ about like people "
+    "fluency": 0.4805714285714286,
+    "text": "everyone the right to a graceful exit um you know what about the people what about like people",
+    "disfluencyText": "everyone the right to a $4graceful exit um$ you know what $34about the$ $3people what$ about like people "
   },
   {
     "start": 713.4,
@@ -2895,7 +3169,9 @@
       "arousal": 0.508118212223053,
       "dominance": 0.5810614824295044
     },
-    "text": "getting coerced into it or whatever and it's like $4look$ I could apply this shit to like $4free$ speech "
+    "fluency": 0.46381249999999996,
+    "text": "getting coerced into it or whatever and it's like look I could apply this shit to like free speech",
+    "disfluencyText": "getting coerced into it or whatever and it's like $4look$ I could apply this shit to like $4free$ speech "
   },
   {
     "start": 719.1,
@@ -2916,7 +3192,9 @@
       "arousal": 0.39894869923591614,
       "dominance": 0.49240121245384216
     },
-    "text": "too I could say like what if people say things that hurt my feelings or say bad things or whatever "
+    "fluency": 0.7468333333333333,
+    "text": "too I could say like what if people say things that hurt my feelings or say bad things or whatever",
+    "disfluencyText": "too I could say like what if people say things that hurt my feelings or say bad things or whatever "
   },
   {
     "start": 723.3,
@@ -2937,7 +3215,9 @@
       "arousal": 0.5076838135719299,
       "dominance": 0.5767278671264648
     },
-    "text": "I'm just saying you could apply $3the slippery slope argument$ $34to$ other $4types of human rights$, and you can kind of quickly understand that, yeah, $3the$ price is kind of worth it, right? "
+    "fluency": 0.5142083333333334,
+    "text": "I'm just saying you could apply the slippery slope argument to other types of human rights, and you can kind of quickly understand that, yeah, the price is kind of worth it, right?",
+    "disfluencyText": "I'm just saying you could apply $3the slippery slope argument$ $34to$ other $4types of human rights$, and you can kind of quickly understand that, yeah, $3the$ price is kind of worth it, right? "
   },
   {
     "start": 734.04,
@@ -2958,7 +3238,9 @@
       "arousal": 0.5011846423149109,
       "dominance": 0.544887125492096
     },
-    "text": "And then you think about, well, what is the price, right? In the case of right to die, what is the price being paid in these instances where it's abused and misused, right? "
+    "fluency": 0.86215,
+    "text": "And then you think about, well, what is the price, right? In the case of right to die, what is the price being paid in these instances where it's abused and misused, right?",
+    "disfluencyText": "And then you think about, well, what is the price, right? In the case of right to die, what is the price being paid in these instances where it's abused and misused, right? "
   },
   {
     "start": 742.48,
@@ -2979,7 +3261,9 @@
       "arousal": 0.537815272808075,
       "dominance": 0.5143560171127319
     },
-    "text": "The price, think about it, is somebody who maybe didn't want to die falls asleep and doesn't wake up, right? "
+    "fluency": 0.7671500000000001,
+    "text": "The price, think about it, is somebody who maybe didn't want to die falls asleep and doesn't wake up, right?",
+    "disfluencyText": "The price, think about it, is somebody who maybe didn't want to die falls asleep and doesn't wake up, right? "
   },
   {
     "start": 750.04,
@@ -3000,7 +3284,9 @@
       "arousal": 0.3402945399284363,
       "dominance": 0.4115358293056488
     },
-    "text": "$3that's the$ big price "
+    "fluency": 0.5592,
+    "text": "that's the big price",
+    "disfluencyText": "$3that's the$ big price "
   },
   {
     "start": 753.08,
@@ -3021,7 +3307,9 @@
       "arousal": 0.5312657356262207,
       "dominance": 0.6269829273223877
     },
-    "text": "quote unquote price being paid right bullshit I mean "
+    "fluency": 0.5710000000000001,
+    "text": "quote unquote price being paid right bullshit I mean",
+    "disfluencyText": "quote unquote price being paid right bullshit I mean "
   },
   {
     "start": 756.7,
@@ -3042,7 +3330,9 @@
       "arousal": 0.6349811553955078,
       "dominance": 0.6150158047676086
     },
-    "text": "such nonsense right so $23we're not there's so$ "
+    "fluency": 0.3091818181818181,
+    "text": "such nonsense right so we're not there's so",
+    "disfluencyText": "such nonsense right so $23we're not there's so$ "
   },
   {
     "start": 760.48,
@@ -3063,7 +3353,9 @@
       "arousal": 0.5928459167480469,
       "dominance": 0.6029590964317322
     },
-    "text": "$3it's not$ even really a harm right I mean even if you think it's a harm fine "
+    "fluency": 0.467923076923077,
+    "text": "it's not even really a harm right I mean even if you think it's a harm fine",
+    "disfluencyText": "$3it's not$ even really a harm right I mean even if you think it's a harm fine "
   },
   {
     "start": 764.74,
@@ -3084,7 +3376,9 @@
       "arousal": 0.397083580493927,
       "dominance": 0.46177375316619873
     },
-    "text": "okay $4but at least$ understand "
+    "fluency": 0.4323636363636364,
+    "text": "okay but at least understand",
+    "disfluencyText": "okay $4but at least$ understand "
   },
   {
     "start": 768.18,
@@ -3105,7 +3399,9 @@
       "arousal": 0.3460196852684021,
       "dominance": 0.41526997089385986
     },
-    "text": "you're $4being$ way too perfectionistic right you're being "
+    "fluency": 0.49307142857142855,
+    "text": "you're being way too perfectionistic right you're being",
+    "disfluencyText": "you're $4being$ way too perfectionistic right you're being "
   },
   {
     "start": 773,
@@ -3126,7 +3422,9 @@
       "arousal": 0.49726808071136475,
       "dominance": 0.5418721437454224
     },
-    "text": "absurdly perfectionistic $3nothing nothing in this$ world is perfect "
+    "fluency": 0.4178333333333333,
+    "text": "absurdly perfectionistic nothing nothing in this world is perfect",
+    "disfluencyText": "absurdly perfectionistic $3nothing nothing in this$ world is perfect "
   },
   {
     "start": 776.58,
@@ -3147,7 +3445,9 @@
       "arousal": 0.3239637017250061,
       "dominance": 0.40169599652290344
     },
-    "text": "right so you're basically $3you're$ basically saying we can't have the right to die until "
+    "fluency": 0.5090769230769231,
+    "text": "right so you're basically you're basically saying we can't have the right to die until",
+    "disfluencyText": "right so you're basically $3you're$ basically saying we can't have the right to die until "
   },
   {
     "start": 781.12,
@@ -3168,7 +3468,9 @@
       "arousal": 0.4360824227333069,
       "dominance": 0.4901687502861023
     },
-    "text": "it's literally perfect which is "
+    "fluency": 0.46075,
+    "text": "it's literally perfect which is",
+    "disfluencyText": "it's literally perfect which is "
   },
   {
     "start": 785.08,
@@ -3189,7 +3491,9 @@
       "arousal": 0.34386998414993286,
       "dominance": 0.4318946301937103
     },
-    "text": "not pragmatic at all you're not being pragmatic at all "
+    "fluency": 0.643,
+    "text": "not pragmatic at all you're not being pragmatic at all",
+    "disfluencyText": "not pragmatic at all you're not being pragmatic at all "
   },
   {
     "start": 788.88,
@@ -3210,7 +3514,9 @@
       "arousal": 0.6225075125694275,
       "dominance": 0.6407482028007507
     },
-    "text": "it's a non-argument, $4it's an$ $34absolute fucking$ non-argument "
+    "fluency": 0.44978571428571434,
+    "text": "it's a non-argument, it's an absolute fucking non-argument",
+    "disfluencyText": "it's a non-argument, $4it's an$ $34absolute fucking$ non-argument "
   },
   {
     "start": 793.54,
@@ -3231,7 +3537,9 @@
       "arousal": 0.4517008066177368,
       "dominance": 0.5352944135665894
     },
-    "text": "so $4complete bullshit that$ we don't have a right to die "
+    "fluency": 0.6939090909090908,
+    "text": "so complete bullshit that we don't have a right to die",
+    "disfluencyText": "so $4complete bullshit that$ we don't have a right to die "
   },
   {
     "start": 797.46,
@@ -3252,7 +3560,9 @@
       "arousal": 0.471736341714859,
       "dominance": 0.5353487133979797
     },
-    "text": "especially considering the fact that you're brought here without your consent in the first "
+    "fluency": 0.8904166666666667,
+    "text": "especially considering the fact that you're brought here without your consent in the first",
+    "disfluencyText": "especially considering the fact that you're brought here without your consent in the first "
   },
   {
     "start": 801.08,
@@ -3273,7 +3583,9 @@
       "arousal": 0.692716658115387,
       "dominance": 0.7423490881919861
     },
-    "text": "fucking place, the least this fucking goddamn society could do "
+    "fluency": 0.7884545454545454,
+    "text": "fucking place, the least this fucking goddamn society could do",
+    "disfluencyText": "fucking place, the least this fucking goddamn society could do "
   },
   {
     "start": 804.92,
@@ -3294,7 +3606,9 @@
       "arousal": 0.589767336845398,
       "dominance": 0.6722290515899658
     },
-    "text": "is $4give people a$ $34right to a$ $3graceful way$ $34out, you$ $3know, not$ force them to jump off a goddamn building or shoot themselves "
+    "fluency": 0.6228888888888888,
+    "text": "is give people a right to a graceful way out, you know, not force them to jump off a goddamn building or shoot themselves",
+    "disfluencyText": "is $4give people a$ $34right to a$ $3graceful way$ $34out, you$ $3know, not$ force them to jump off a goddamn building or shoot themselves "
   },
   {
     "start": 811.5,
@@ -3315,7 +3629,9 @@
       "arousal": 0.4898644983768463,
       "dominance": 0.5959449410438538
     },
-    "text": "in the fucking head $4or$ strangle themselves, $4you know$, pretty common method, $4whatever the$ fuck, "
+    "fluency": 0.6173124999999999,
+    "text": "in the fucking head or strangle themselves, you know, pretty common method, whatever the fuck,",
+    "disfluencyText": "in the fucking head $4or$ strangle themselves, $4you know$, pretty common method, $4whatever the$ fuck, "
   },
   {
     "start": 817.38,
@@ -3336,7 +3652,9 @@
       "arousal": 0.3813796937465668,
       "dominance": 0.46103382110595703
     },
-    "text": "drink sodium nitrite, $4you know, I know people$ think getting shot in the head and drinking "
+    "fluency": 0.6913846153846154,
+    "text": "drink sodium nitrite, you know, I know people think getting shot in the head and drinking",
+    "disfluencyText": "drink sodium nitrite, $4you know, I know people$ think getting shot in the head and drinking "
   },
   {
     "start": 821.5,
@@ -3357,7 +3675,9 @@
       "arousal": 0.46025076508522034,
       "dominance": 0.5009622573852539
     },
-    "text": "sodium nitrite, these methods are considered $4like$, nice or better methods or whatever. But "
+    "fluency": 0.7295714285714283,
+    "text": "sodium nitrite, these methods are considered like, nice or better methods or whatever. But",
+    "disfluencyText": "sodium nitrite, these methods are considered $4like$, nice or better methods or whatever. But "
   },
   {
     "start": 826.14,
@@ -3378,7 +3698,9 @@
       "arousal": 0.5617014765739441,
       "dominance": 0.5589457750320435
     },
-    "text": "they're really not. I mean, getting shot in the head pretty messy. $4Also, like$, yes, it's easy to "
+    "fluency": 0.6671333333333332,
+    "text": "they're really not. I mean, getting shot in the head pretty messy. Also, like, yes, it's easy to",
+    "disfluencyText": "they're really not. I mean, getting shot in the head pretty messy. $4Also, like$, yes, it's easy to "
   },
   {
     "start": 831.64,
@@ -3399,7 +3721,9 @@
       "arousal": 0.5720757842063904,
       "dominance": 0.6046748161315918
     },
-    "text": "put the gun to your head, but like actually pulling the trigger, little scary, I must say. "
+    "fluency": 0.5879090909090909,
+    "text": "put the gun to your head, but like actually pulling the trigger, little scary, I must say.",
+    "disfluencyText": "put the gun to your head, but like actually pulling the trigger, little scary, I must say. "
   },
   {
     "start": 836.84,
@@ -3420,7 +3744,9 @@
       "arousal": 0.2363189458847046,
       "dominance": 0.3423694372177124
     },
-    "text": "$4um and the$ sodium nitrite thing $4you know$ $34that's a$ $3that's become$ a popular method obviously $4um$ it's "
+    "fluency": 0.376375,
+    "text": "um and the sodium nitrite thing you know that's a that's become a popular method obviously um it's",
+    "disfluencyText": "$4um and the$ sodium nitrite thing $4you know$ $34that's a$ $3that's become$ a popular method obviously $4um$ it's "
   },
   {
     "start": 842.72,
@@ -3441,7 +3767,9 @@
       "arousal": 0.43374788761138916,
       "dominance": 0.510671079158783
     },
-    "text": "not like totally it's not completely peaceful it does make your stomach feel pretty shitty and "
+    "fluency": 0.58675,
+    "text": "not like totally it's not completely peaceful it does make your stomach feel pretty shitty and",
+    "disfluencyText": "not like totally it's not completely peaceful it does make your stomach feel pretty shitty and "
   },
   {
     "start": 846.8,
@@ -3462,7 +3790,9 @@
       "arousal": 0.4081800580024719,
       "dominance": 0.5047206282615662
     },
-    "text": "um you know $3I'm just$ you $4know I'm just$ saying it causes some pretty you $4know kind of gross$ symptoms "
+    "fluency": 0.29800000000000004,
+    "text": "um you know I'm just you know I'm just saying it causes some pretty you know kind of gross symptoms",
+    "disfluencyText": "um you know $3I'm just$ you $4know I'm just$ saying it causes some pretty you $4know kind of gross$ symptoms "
   },
   {
     "start": 851.58,
@@ -3483,7 +3813,9 @@
       "arousal": 0.49522557854652405,
       "dominance": 0.5969393849372864
     },
-    "text": "$4um so$ yeah fuck these assholes that would say like oh you can just shoot yourself you do have "
+    "fluency": 0.5335294117647059,
+    "text": "um so yeah fuck these assholes that would say like oh you can just shoot yourself you do have",
+    "disfluencyText": "$4um so$ yeah fuck these assholes that would say like oh you can just shoot yourself you do have "
   },
   {
     "start": 858.32,
@@ -3504,7 +3836,9 @@
       "arousal": 0.5100164413452148,
       "dominance": 0.6014347672462463
     },
-    "text": "a right $3to die I've heard$ people say shit like $4this is such a myopic$ fucking view it's so shitty "
+    "fluency": 0.5093076923076922,
+    "text": "a right to die I've heard people say shit like this is such a myopic fucking view it's so shitty",
+    "disfluencyText": "a right $3to die I've heard$ people say shit like $4this is such a myopic$ fucking view it's so shitty "
   },
   {
     "start": 862.94,
@@ -3525,7 +3859,9 @@
       "arousal": 0.5940940380096436,
       "dominance": 0.5605449676513672
     },
-    "text": "$4um$ so insensitive fuck $3you fuck$ $4you um oh$ god okay $4what else um yeah so I$ guess maybe I should "
+    "fluency": 0.40438461538461545,
+    "text": "um so insensitive fuck you fuck you um oh god okay what else um yeah so I guess maybe I should",
+    "disfluencyText": "$4um$ so insensitive fuck $3you fuck$ $4you um oh$ god okay $4what else um yeah so I$ guess maybe I should "
   },
   {
     "start": 873.54,
@@ -3546,7 +3882,9 @@
       "arousal": 0.5604607462882996,
       "dominance": 0.5713106393814087
     },
-    "text": "talk a bit about IVF I mean obviously I'm very against $4it um it's$ extremely wrong I mean these "
+    "fluency": 0.5682105263157894,
+    "text": "talk a bit about IVF I mean obviously I'm very against it um it's extremely wrong I mean these",
+    "disfluencyText": "talk a bit about IVF I mean obviously I'm very against $4it um it's$ extremely wrong I mean these "
   },
   {
     "start": 881.12,
@@ -3567,7 +3905,9 @@
       "arousal": 0.46419966220855713,
       "dominance": 0.5457521080970764
     },
-    "text": "are people who are having kids after they've sat there and thought about $4it um how much$ more stupid "
+    "fluency": 0.6920555555555556,
+    "text": "are people who are having kids after they've sat there and thought about it um how much more stupid",
+    "disfluencyText": "are people who are having kids after they've sat there and thought about $4it um how much$ more stupid "
   },
   {
     "start": 888.36,
@@ -3588,7 +3928,9 @@
       "arousal": 0.3516278862953186,
       "dominance": 0.41134509444236755
     },
-    "text": "can it get I $4don't know$ um $4I guess you can make$ the argument like well at least they're thinking "
+    "fluency": 0.673,
+    "text": "can it get I don't know um I guess you can make the argument like well at least they're thinking",
+    "disfluencyText": "can it get I $4don't know$ um $4I guess you can make$ the argument like well at least they're thinking "
   },
   {
     "start": 892.74,
@@ -3609,7 +3951,9 @@
       "arousal": 0.3519188165664673,
       "dominance": 0.4348186254501343
     },
-    "text": "and at least they're planning it and all that. It's like, yeah, that is something, I guess. "
+    "fluency": 0.6528571428571428,
+    "text": "and at least they're planning it and all that. It's like, yeah, that is something, I guess.",
+    "disfluencyText": "and at least they're planning it and all that. It's like, yeah, that is something, I guess. "
   },
   {
     "start": 897.8,
@@ -3630,7 +3974,9 @@
       "arousal": 0.4506567120552063,
       "dominance": 0.6026832461357117
     },
-    "text": "$4But at the same time, again, you$ still can't get their goddamn consent. "
+    "fluency": 0.5380909090909092,
+    "text": "But at the same time, again, you still can't get their goddamn consent.",
+    "disfluencyText": "$4But at the same time, again, you$ still can't get their goddamn consent. "
   },
   {
     "start": 901.38,
@@ -3651,7 +3997,9 @@
       "arousal": 0.4273046851158142,
       "dominance": 0.44949331879615784
     },
-    "text": "So $3you're$ $4not getting around that argument, you know$, not rationally. "
+    "fluency": 0.41266666666666674,
+    "text": "So you're not getting around that argument, you know, not rationally.",
+    "disfluencyText": "So $3you're$ $4not getting around that argument, you know$, not rationally. "
   },
   {
     "start": 907.94,
@@ -3672,7 +4020,9 @@
       "arousal": 0.27630966901779175,
       "dominance": 0.3765179216861725
     },
-    "text": "So basically $1I'm anti$-life, right? "
+    "fluency": 0.33825,
+    "text": "So basically I'm anti-life, right?",
+    "disfluencyText": "So basically $1I'm anti$-life, right? "
   },
   {
     "start": 912.52,
@@ -3693,7 +4043,9 @@
       "arousal": 0.31680843234062195,
       "dominance": 0.4388448894023895
     },
-    "text": "And IVF is like kind of the epitome of pro-life ideology, right? "
+    "fluency": 0.6956153846153847,
+    "text": "And IVF is like kind of the epitome of pro-life ideology, right?",
+    "disfluencyText": "And IVF is like kind of the epitome of pro-life ideology, right? "
   },
   {
     "start": 917.42,
@@ -3714,7 +4066,9 @@
       "arousal": 0.4151155948638916,
       "dominance": 0.5266959071159363
     },
-    "text": "So yeah, fuck IVF, fuck IVF clinics. $1and$ fuck the people that work for them, quite frankly. "
+    "fluency": 0.43742105263157893,
+    "text": "So yeah, fuck IVF, fuck IVF clinics. and fuck the people that work for them, quite frankly.",
+    "disfluencyText": "So yeah, fuck IVF, fuck IVF clinics. $1and$ fuck the people that work for them, quite frankly. "
   },
   {
     "start": 926.5,
@@ -3735,7 +4089,9 @@
       "arousal": 0.34937670826911926,
       "dominance": 0.44606903195381165
     },
-    "text": "Ignorance is $4not really an$ excuse. $4I$ know because I know people $34are going$ to say like, "
+    "fluency": 0.34973333333333334,
+    "text": "Ignorance is not really an excuse. I know because I know people are going to say like,",
+    "disfluencyText": "Ignorance is $4not really an$ excuse. $4I$ know because I know people $34are going$ to say like, "
   },
   {
     "start": 931.98,
@@ -3756,7 +4112,9 @@
       "arousal": 0.37339818477630615,
       "dominance": 0.41900694370269775
     },
-    "text": "oh, $34they haven't$ even thought about what they're doing or whatever. And it's $4like$, yes, that's sad and all. "
+    "fluency": 0.37418749999999995,
+    "text": "oh, they haven't even thought about what they're doing or whatever. And it's like, yes, that's sad and all.",
+    "disfluencyText": "oh, $34they haven't$ even thought about what they're doing or whatever. And it's $4like$, yes, that's sad and all. "
   },
   {
     "start": 937.72,
@@ -3777,7 +4135,9 @@
       "arousal": 0.3649366796016693,
       "dominance": 0.4924565851688385
     },
-    "text": "But again, $34if a guy is$ going around raping people "
+    "fluency": 0.456,
+    "text": "But again, if a guy is going around raping people",
+    "disfluencyText": "But again, $34if a guy is$ going around raping people "
   },
   {
     "start": 943.96,
@@ -3798,7 +4158,9 @@
       "arousal": 0.4471816420555115,
       "dominance": 0.5150628685951233
     },
-    "text": "and $4is$ actually retarded and doesn't understand what he's doing, "
+    "fluency": 0.7320000000000001,
+    "text": "and is actually retarded and doesn't understand what he's doing,",
+    "disfluencyText": "and $4is$ actually retarded and doesn't understand what he's doing, "
   },
   {
     "start": 947.92,
@@ -3819,7 +4181,9 @@
       "arousal": 0.35655340552330017,
       "dominance": 0.44569143652915955
     },
-    "text": "right does that mean you don't punish him still you don't like lock him up still or something no "
+    "fluency": 0.7875714285714286,
+    "text": "right does that mean you don't punish him still you don't like lock him up still or something no",
+    "disfluencyText": "right does that mean you don't punish him still you don't like lock him up still or something no "
   },
   {
     "start": 952.64,
@@ -3840,7 +4204,9 @@
       "arousal": 0.5484035611152649,
       "dominance": 0.5402668118476868
     },
-    "text": "it doesn't $3mean that you still you start$ to take action you start to do something about it so it's "
+    "fluency": 0.7568571428571429,
+    "text": "it doesn't mean that you still you start to take action you start to do something about it so it's",
+    "disfluencyText": "it doesn't $3mean that you still you start$ to take action you start to do something about it so it's "
   },
   {
     "start": 957.54,
@@ -3861,7 +4227,9 @@
       "arousal": 0.334712415933609,
       "dominance": 0.4474875032901764
     },
-    "text": "just unfortunately $3intent$ $34like I$ do care about intent but unfortunately in reality it doesn't "
+    "fluency": 0.7183888888888889,
+    "text": "just unfortunately intent like I do care about intent but unfortunately in reality it doesn't",
+    "disfluencyText": "just unfortunately $3intent$ $34like I$ do care about intent but unfortunately in reality it doesn't "
   },
   {
     "start": 964.5,
@@ -3882,7 +4250,9 @@
       "arousal": 0.3618279695510864,
       "dominance": 0.43879762291908264
     },
-    "text": "mean a whole lot you $4know$ um $4I want it to mean a$ lot I used to believe it was everything but um "
+    "fluency": 0.5381176470588235,
+    "text": "mean a whole lot you know um I want it to mean a lot I used to believe it was everything but um",
+    "disfluencyText": "mean a whole lot you $4know$ um $4I want it to mean a$ lot I used to believe it was everything but um "
   },
   {
     "start": 970.8,
@@ -3903,7 +4273,9 @@
       "arousal": 0.3003966510295868,
       "dominance": 0.3905782997608185
     },
-    "text": "in the last few years I kind of started to realize like no unfortunately intent just "
+    "fluency": 0.5673333333333334,
+    "text": "in the last few years I kind of started to realize like no unfortunately intent just",
+    "disfluencyText": "in the last few years I kind of started to realize like no unfortunately intent just "
   },
   {
     "start": 974.52,
@@ -3924,7 +4296,9 @@
       "arousal": 0.2776150405406952,
       "dominance": 0.38089701533317566
     },
-    "text": "it means so little and $4so um even$ $34if you're$ causing harm and you don't get that you're "
+    "fluency": 0.5213333333333334,
+    "text": "it means so little and so um even if you're causing harm and you don't get that you're",
+    "disfluencyText": "it means so little and $4so um even$ $34if you're$ causing harm and you don't get that you're "
   },
   {
     "start": 980.02,
@@ -3945,7 +4319,9 @@
       "arousal": 0.34036803245544434,
       "dominance": 0.4247059226036072
     },
-    "text": "causing you don't know that you're causing harm you still have to be dealt with you know what I "
+    "fluency": 0.7944545454545455,
+    "text": "causing you don't know that you're causing harm you still have to be dealt with you know what I",
+    "disfluencyText": "causing you don't know that you're causing harm you still have to be dealt with you know what I "
   },
   {
     "start": 983.76,
@@ -3966,7 +4342,9 @@
       "arousal": 0.3185846507549286,
       "dominance": 0.38734692335128784
     },
-    "text": "mean so just an unfortunate $4you know$ reality $4anyways$ $14uh$ let's see what the hell else did I "
+    "fluency": 0.5423749999999999,
+    "text": "mean so just an unfortunate you know reality anyways uh let's see what the hell else did I",
+    "disfluencyText": "mean so just an unfortunate $4you know$ reality $4anyways$ $14uh$ let's see what the hell else did I "
   },
   {
     "start": 993.78,
@@ -3987,7 +4365,9 @@
       "arousal": 0.29891982674598694,
       "dominance": 0.34838560223579407
     },
-    "text": "write down $14um$ yeah $4I wrote down$ like you know these people like $4when they$ push $3life$ on you "
+    "fluency": 0.4413750000000001,
+    "text": "write down um yeah I wrote down like you know these people like when they push life on you",
+    "disfluencyText": "write down $14um$ yeah $4I wrote down$ like you know these people like $4when they$ push $3life$ on you "
   },
   {
     "start": 999.72,
@@ -4008,7 +4388,9 @@
       "arousal": 0.5484421849250793,
       "dominance": 0.6285642981529236
     },
-    "text": "like if when you're in $3especially when you're$ like a suicidal person you know when they start pushing life on you. It's like the games these fucking people are trying to push on you, "
+    "fluency": 0.6306315789473684,
+    "text": "like if when you're in especially when you're like a suicidal person you know when they start pushing life on you. It's like the games these fucking people are trying to push on you,",
+    "disfluencyText": "like if when you're in $3especially when you're$ like a suicidal person you know when they start pushing life on you. It's like the games these fucking people are trying to push on you, "
   },
   {
     "start": 1007.16,
@@ -4029,7 +4411,9 @@
       "arousal": 0.6056028008460999,
       "dominance": 0.6277276873588562
     },
-    "text": "these life games you're trying to push aren't even good games, right? It's just like, oh, consume, "
+    "fluency": 0.7121666666666666,
+    "text": "these life games you're trying to push aren't even good games, right? It's just like, oh, consume,",
+    "disfluencyText": "these life games you're trying to push aren't even good games, right? It's just like, oh, consume, "
   },
   {
     "start": 1011.62,
@@ -4050,7 +4434,9 @@
       "arousal": 0.6004306077957153,
       "dominance": 0.7197617292404175
     },
-    "text": "be a fucking consumer, right? $4Pay for the factory farms to$ rape the fucking animals. $4You$ know, "
+    "fluency": 0.48707142857142854,
+    "text": "be a fucking consumer, right? Pay for the factory farms to rape the fucking animals. You know,",
+    "disfluencyText": "be a fucking consumer, right? $4Pay for the factory farms to$ rape the fucking animals. $4You$ know, "
   },
   {
     "start": 1016.72,
@@ -4071,7 +4457,9 @@
       "arousal": 0.7777224779129028,
       "dominance": 0.8324846625328064
     },
-    "text": "these are the these are the fucking games we're playing as humans. It's sickening. Fuck, $3fuck these$ games. Why the fuck do I want to play these fucking games? It's absolutely absurd. "
+    "fluency": 0.43361111111111117,
+    "text": "these are the these are the fucking games we're playing as humans. It's sickening. Fuck, fuck these games. Why the fuck do I want to play these fucking games? It's absolutely absurd.",
+    "disfluencyText": "these are the these are the fucking games we're playing as humans. It's sickening. Fuck, $3fuck these$ games. Why the fuck do I want to play these fucking games? It's absolutely absurd. "
   },
   {
     "start": 1024.94,
@@ -4092,7 +4480,9 @@
       "arousal": 0.7114613652229309,
       "dominance": 0.7630526423454285
     },
-    "text": "Nobody intelligent would want to play these stupid fucking $4games. I$ $34feel$ like I'm surrounded by fucking ghouls "
+    "fluency": 0.4495499999999999,
+    "text": "Nobody intelligent would want to play these stupid fucking games. I feel like I'm surrounded by fucking ghouls",
+    "disfluencyText": "Nobody intelligent would want to play these stupid fucking $4games. I$ $34feel$ like I'm surrounded by fucking ghouls "
   },
   {
     "start": 1032.64,
@@ -4113,7 +4503,9 @@
       "arousal": 0.3386439085006714,
       "dominance": 0.3796965181827545
     },
-    "text": "okay $1what else$ $14I$ wrote $4down I mean I$ already said this but "
+    "fluency": 0.4598571428571429,
+    "text": "okay what else I wrote down I mean I already said this but",
+    "disfluencyText": "okay $1what else$ $14I$ wrote $4down I mean I$ already said this but "
   },
   {
     "start": 1037.74,
@@ -4134,7 +4526,9 @@
       "arousal": 0.43381640315055847,
       "dominance": 0.4914289712905884
     },
-    "text": "I kind of $3wrote it in a kind$ of a nice way $3so I'm going to read it$ "
+    "fluency": 0.42036363636363633,
+    "text": "I kind of wrote it in a kind of a nice way so I'm going to read it",
+    "disfluencyText": "I kind of $3wrote it in a kind$ of a nice way $3so I'm going to read it$ "
   },
   {
     "start": 1041.44,
@@ -4155,7 +4549,9 @@
       "arousal": 0.238423153758049,
       "dominance": 0.38140830397605896
     },
-    "text": "even though I've already said this I said children cannot consent to being born therefore you do not have consent "
+    "fluency": 0.7624285714285716,
+    "text": "even though I've already said this I said children cannot consent to being born therefore you do not have consent",
+    "disfluencyText": "even though I've already said this I said children cannot consent to being born therefore you do not have consent "
   },
   {
     "start": 1046.22,
@@ -4176,7 +4572,9 @@
       "arousal": 0.4181351959705353,
       "dominance": 0.5208684206008911
     },
-    "text": "the act of bringing someone into this world is a non-consensual act "
+    "fluency": 0.9536,
+    "text": "the act of bringing someone into this world is a non-consensual act",
+    "disfluencyText": "the act of bringing someone into this world is a non-consensual act "
   },
   {
     "start": 1049.32,
@@ -4197,7 +4595,9 @@
       "arousal": 0.3642274737358093,
       "dominance": 0.5036011934280396
     },
-    "text": "and is reminiscent of rape $4now$ in $4my$ mind I really strongly consider it rape "
+    "fluency": 0.7452666666666666,
+    "text": "and is reminiscent of rape now in my mind I really strongly consider it rape",
+    "disfluencyText": "and is reminiscent of rape $4now$ in $4my$ mind I really strongly consider it rape "
   },
   {
     "start": 1054.94,
@@ -4218,7 +4618,9 @@
       "arousal": 0.5539048314094543,
       "dominance": 0.6483725905418396
     },
-    "text": "I know some people are going to have an issue with me calling it that so the way I word it is very precise I said it's reminiscent of rape meaning I see a similar "
+    "fluency": 0.8942380952380953,
+    "text": "I know some people are going to have an issue with me calling it that so the way I word it is very precise I said it's reminiscent of rape meaning I see a similar",
+    "disfluencyText": "I know some people are going to have an issue with me calling it that so the way I word it is very precise I said it's reminiscent of rape meaning I see a similar "
   },
   {
     "start": 1063.1,
@@ -4239,7 +4641,9 @@
       "arousal": 0.4372822642326355,
       "dominance": 0.5357393622398376
     },
-    "text": "mindset okay and the people that are doing it okay that's what I'm saying to be very specific um "
+    "fluency": 0.6995624999999999,
+    "text": "mindset okay and the people that are doing it okay that's what I'm saying to be very specific um",
+    "disfluencyText": "mindset okay and the people that are doing it okay that's what I'm saying to be very specific um "
   },
   {
     "start": 1069.44,
@@ -4260,7 +4664,9 @@
       "arousal": 0.34149169921875,
       "dominance": 0.40642282366752625
     },
-    "text": "$1so$ let's see $4uh I$ wrote down these topics are too important for me to accept people ignoring them "
+    "fluency": 0.5367391304347826,
+    "text": "so let's see uh I wrote down these topics are too important for me to accept people ignoring them",
+    "disfluencyText": "$1so$ let's see $4uh I$ wrote down these topics are too important for me to accept people ignoring them "
   },
   {
     "start": 1078.66,
@@ -4281,7 +4687,9 @@
       "arousal": 0.329396516084671,
       "dominance": 0.4262821078300476
     },
-    "text": "and I said I don't actually believe people are ignoring them I think people who have control "
+    "fluency": 0.8395333333333334,
+    "text": "and I said I don't actually believe people are ignoring them I think people who have control",
+    "disfluencyText": "and I said I don't actually believe people are ignoring them I think people who have control "
   },
   {
     "start": 1084.4,
@@ -4302,7 +4710,9 @@
       "arousal": 0.3288470208644867,
       "dominance": 0.40733128786087036
     },
-    "text": "are censoring these topics by shadowbanning people who talk about them "
+    "fluency": 0.7022142857142857,
+    "text": "are censoring these topics by shadowbanning people who talk about them",
+    "disfluencyText": "are censoring these topics by shadowbanning people who talk about them "
   },
   {
     "start": 1089.1,
@@ -4323,7 +4733,9 @@
       "arousal": 0.16006481647491455,
       "dominance": 0.2874714434146881
     },
-    "text": "and then $4of course$ also all the algorithms that are in control "
+    "fluency": 0.4835,
+    "text": "and then of course also all the algorithms that are in control",
+    "disfluencyText": "and then $4of course$ also all the algorithms that are in control "
   },
   {
     "start": 1093.2,
@@ -4344,7 +4756,9 @@
       "arousal": 0.20290148258209229,
       "dominance": 0.289131224155426
     },
-    "text": "now $4that are$ used to manipulate $4what$ people see "
+    "fluency": 0.3990833333333334,
+    "text": "now that are used to manipulate what people see",
+    "disfluencyText": "now $4that are$ used to manipulate $4what$ people see "
   },
   {
     "start": 1097.36,
@@ -4365,7 +4779,9 @@
       "arousal": 0.28548482060432434,
       "dominance": 0.3763091266155243
     },
-    "text": "$34kind$ of what they $3think$ $34I$ think it's "
+    "fluency": 0.24053846153846153,
+    "text": "kind of what they think I think it's",
+    "disfluencyText": "$34kind$ of what they $3think$ $34I$ think it's "
   },
   {
     "start": 1101.58,
@@ -4386,7 +4802,9 @@
       "arousal": 0.5827375054359436,
       "dominance": 0.5888370275497437
     },
-    "text": "pretty effective I won't $4say it's$ crazy effective "
+    "fluency": 0.4197272727272728,
+    "text": "pretty effective I won't say it's crazy effective",
+    "disfluencyText": "pretty effective I won't $4say it's$ crazy effective "
   },
   {
     "start": 1105.06,
@@ -4407,7 +4825,9 @@
       "arousal": 0.5972433686256409,
       "dominance": 0.5960716009140015
     },
-    "text": "$3I don't$ $34think$ $4people are$ completely retarded and incapable of "
+    "fluency": 0.4744166666666667,
+    "text": "I don't think people are completely retarded and incapable of",
+    "disfluencyText": "$3I don't$ $34think$ $4people are$ completely retarded and incapable of "
   },
   {
     "start": 1109.44,
@@ -4428,7 +4848,9 @@
       "arousal": 0.522658109664917,
       "dominance": 0.5710639357566833
     },
-    "text": "knowing when they're being $2manipulated and$ fucked with. People kind of have an idea of when they're being "
+    "fluency": 0.5129166666666668,
+    "text": "knowing when they're being manipulated and fucked with. People kind of have an idea of when they're being",
+    "disfluencyText": "knowing when they're being $2manipulated and$ fucked with. People kind of have an idea of when they're being "
   },
   {
     "start": 1113.28,
@@ -4449,7 +4871,9 @@
       "arousal": 0.4238462746143341,
       "dominance": 0.4747343957424164
     },
-    "text": "and they kind of resist it $4but$ I'm $4just saying$ $34clearly$ "
+    "fluency": 0.32073333333333337,
+    "text": "and they kind of resist it but I'm just saying clearly",
+    "disfluencyText": "and they kind of resist it $4but$ I'm $4just saying$ $34clearly$ "
   },
   {
     "start": 1118.82,
@@ -4470,7 +4894,9 @@
       "arousal": 0.41416218876838684,
       "dominance": 0.4741951525211334
     },
-    "text": "it $3does work$ to some extent $4there's$ clearly a lot of "
+    "fluency": 0.25725,
+    "text": "it does work to some extent there's clearly a lot of",
+    "disfluencyText": "it $3does work$ to some extent $4there's$ clearly a lot of "
   },
   {
     "start": 1124.6,
@@ -4491,7 +4917,9 @@
       "arousal": 0.5204523801803589,
       "dominance": 0.4503304660320282
     },
-    "text": "coercion going on "
+    "fluency": 0.3235,
+    "text": "coercion going on",
+    "disfluencyText": "coercion going on "
   },
   {
     "start": 1127.94,
@@ -4512,7 +4940,9 @@
       "arousal": 0.5057636499404907,
       "dominance": 0.5392119884490967
     },
-    "text": "trying to get people to $4make$ babies and have more kids there's a lot of that going on "
+    "fluency": 0.6005384615384615,
+    "text": "trying to get people to make babies and have more kids there's a lot of that going on",
+    "disfluencyText": "trying to get people to $4make$ babies and have more kids there's a lot of that going on "
   },
   {
     "start": 1132.12,
@@ -4533,7 +4963,9 @@
       "arousal": 0.4196311831474304,
       "dominance": 0.4754904508590698
     },
-    "text": "a decent chunk $34of people are their brains$ $4do, it works$ for them basically "
+    "fluency": 0.3077857142857142,
+    "text": "a decent chunk of people are their brains do, it works for them basically",
+    "disfluencyText": "a decent chunk $34of people are their brains$ $4do, it works$ for them basically "
   },
   {
     "start": 1137.44,
@@ -4554,7 +4986,9 @@
       "arousal": 0.34466803073883057,
       "dominance": 0.3422612249851227
     },
-    "text": "it works on them but there's still a lot of people $4I$ think "
+    "fluency": 0.3743636363636364,
+    "text": "it works on them but there's still a lot of people I think",
+    "disfluencyText": "it works on them but there's still a lot of people $4I$ think "
   },
   {
     "start": 1140.98,
@@ -4575,7 +5009,9 @@
       "arousal": 0.4899190664291382,
       "dominance": 0.5577081441879272
     },
-    "text": "that $3are saying like$ nah no fuck this I'm not having kids, this is stupid, you $4know$, even $3with$, even $3with$, $34you know$, $3in the last$ few "
+    "fluency": 0.40877777777777785,
+    "text": "that are saying like nah no fuck this I'm not having kids, this is stupid, you know, even with, even with, you know, in the last few",
+    "disfluencyText": "that $3are saying like$ nah no fuck this I'm not having kids, this is stupid, you $4know$, even $3with$, even $3with$, $34you know$, $3in the last$ few "
   },
   {
     "start": 1147.62,
@@ -4596,7 +5032,9 @@
       "arousal": 0.3281214237213135,
       "dominance": 0.42026597261428833
     },
-    "text": "years, all $4this manipulation$ going on on the internet, and all the censorship going on, "
+    "fluency": 0.5784375,
+    "text": "years, all this manipulation going on on the internet, and all the censorship going on,",
+    "disfluencyText": "years, all $4this manipulation$ going on on the internet, and all the censorship going on, "
   },
   {
     "start": 1153.78,
@@ -4617,7 +5055,9 @@
       "arousal": 0.5301837921142578,
       "dominance": 0.5809799432754517
     },
-    "text": "you know, in the last few years, it's become so fucking $4extreme$, I $4mean, like$ YouTube comments, "
+    "fluency": 0.6025714285714285,
+    "text": "you know, in the last few years, it's become so fucking extreme, I mean, like YouTube comments,",
+    "disfluencyText": "you know, in the last few years, it's become so fucking $4extreme$, I $4mean, like$ YouTube comments, "
   },
   {
     "start": 1158.58,
@@ -4638,7 +5078,9 @@
       "arousal": 0.5646145343780518,
       "dominance": 0.6664460301399231
     },
-    "text": "for example, you can't say fucking anything now on YouTube comments, it's so goddamn bad, "
+    "fluency": 0.7099166666666666,
+    "text": "for example, you can't say fucking anything now on YouTube comments, it's so goddamn bad,",
+    "disfluencyText": "for example, you can't say fucking anything now on YouTube comments, it's so goddamn bad, "
   },
   {
     "start": 1163.04,
@@ -4659,7 +5101,9 @@
       "arousal": 0.5772453546524048,
       "dominance": 0.5784498453140259
     },
-    "text": "if it isn't in line with their $34narrative, you know, it just gets$, they aren't even shadow banning, "
+    "fluency": 0.5359285714285714,
+    "text": "if it isn't in line with their narrative, you know, it just gets, they aren't even shadow banning,",
+    "disfluencyText": "if it isn't in line with their $34narrative, you know, it just gets$, they aren't even shadow banning, "
   },
   {
     "start": 1168.44,
@@ -4680,7 +5124,9 @@
       "arousal": 0.6855601072311401,
       "dominance": 0.6511629223823547
     },
-    "text": "like they just straight up fucking remove $4comments like it's$ so wild I mean $3they do$ shadowban I'm "
+    "fluency": 0.3662,
+    "text": "like they just straight up fucking remove comments like it's so wild I mean they do shadowban I'm",
+    "disfluencyText": "like they just straight up fucking remove $4comments like it's$ so wild I mean $3they do$ shadowban I'm "
   },
   {
     "start": 1173.72,
@@ -4701,7 +5147,9 @@
       "arousal": 0.2991175055503845,
       "dominance": 0.3686467409133911
     },
-    "text": "just saying $4um they also often just straight$ up remove your comment and they don't even try to "
+    "fluency": 0.563875,
+    "text": "just saying um they also often just straight up remove your comment and they don't even try to",
+    "disfluencyText": "just saying $4um they also often just straight$ up remove your comment and they don't even try to "
   },
   {
     "start": 1179.54,
@@ -4722,7 +5170,9 @@
       "arousal": 0.3740196228027344,
       "dominance": 0.47831040620803833
     },
-    "text": "hide it from you like it's $4wild uh$ anyways so the censorship all this stuff really has got me quite "
+    "fluency": 0.646,
+    "text": "hide it from you like it's wild uh anyways so the censorship all this stuff really has got me quite",
+    "disfluencyText": "hide it from you like it's $4wild uh$ anyways so the censorship all this stuff really has got me quite "
   },
   {
     "start": 1185.66,
@@ -4743,7 +5193,9 @@
       "arousal": 0.49932920932769775,
       "dominance": 0.5803872346878052
     },
-    "text": "upset $3I really must say that how$ the $1how badly$ $13they fucked the$ $3internet is it's$ really upsetting "
+    "fluency": 0.40017647058823536,
+    "text": "upset I really must say that how the how badly they fucked the internet is it's really upsetting",
+    "disfluencyText": "upset $3I really must say that how$ the $1how badly$ $13they fucked the$ $3internet is it's$ really upsetting "
   },
   {
     "start": 1192.14,
@@ -4764,7 +5216,9 @@
       "arousal": 0.3944910764694214,
       "dominance": 0.475826233625412
     },
-    "text": "because it you know the internet really is important for people to communicate and whatnot "
+    "fluency": 0.5452,
+    "text": "because it you know the internet really is important for people to communicate and whatnot",
+    "disfluencyText": "because it you know the internet really is important for people to communicate and whatnot "
   },
   {
     "start": 1195.48,
@@ -4785,7 +5239,9 @@
       "arousal": 0.31086528301239014,
       "dominance": 0.3939161002635956
     },
-    "text": "$34get$ together $4form people who$ have similar beliefs "
+    "fluency": 0.4999375,
+    "text": "get together form people who have similar beliefs",
+    "disfluencyText": "$34get$ together $4form people who$ have similar beliefs "
   },
   {
     "start": 1201.12,
@@ -4806,7 +5262,9 @@
       "arousal": 0.46908560395240784,
       "dominance": 0.5110759735107422
     },
-    "text": "obviously $3are going to$ use the internet to try to come together "
+    "fluency": 0.49716666666666653,
+    "text": "obviously are going to use the internet to try to come together",
+    "disfluencyText": "obviously $3are going to$ use the internet to try to come together "
   },
   {
     "start": 1205.02,
@@ -4827,7 +5285,9 @@
       "arousal": 0.4753131568431854,
       "dominance": 0.5716272592544556
     },
-    "text": "$4and they're fucking with$ that and that's really upsetting to me "
+    "fluency": 0.6017999999999999,
+    "text": "and they're fucking with that and that's really upsetting to me",
+    "disfluencyText": "$4and they're fucking with$ that and that's really upsetting to me "
   },
   {
     "start": 1208.06,
@@ -4848,7 +5308,9 @@
       "arousal": 0.14626508951187134,
       "dominance": 0.241481214761734
     },
-    "text": "anyways "
+    "fluency": 0.5382,
+    "text": "anyways",
+    "disfluencyText": "anyways "
   },
   {
     "start": 1211.18,
@@ -4869,7 +5331,9 @@
       "arousal": 0.5586195588111877,
       "dominance": 0.6064252853393555
     },
-    "text": "I know there's assholes $4that are going to be$ like stop being online so much "
+    "fluency": 0.6390000000000001,
+    "text": "I know there's assholes that are going to be like stop being online so much",
+    "disfluencyText": "I know there's assholes $4that are going to be$ like stop being online so much "
   },
   {
     "start": 1214.84,
@@ -4890,7 +5354,9 @@
       "arousal": 0.6404920816421509,
       "dominance": 0.6635285019874573
     },
-    "text": "fuck you, the internet is really $4important quit$ $3pretending$ $34it's$ not "
+    "fluency": 0.5526,
+    "text": "fuck you, the internet is really important quit pretending it's not",
+    "disfluencyText": "fuck you, the internet is really $4important quit$ $3pretending$ $34it's$ not "
   },
   {
     "start": 1220.24,
@@ -4911,7 +5377,9 @@
       "arousal": 0.4483184218406677,
       "dominance": 0.5682945847511292
     },
-    "text": "quit pretending it's nothing $4it's$ such bullshit "
+    "fluency": 0.38610000000000005,
+    "text": "quit pretending it's nothing it's such bullshit",
+    "disfluencyText": "quit pretending it's nothing $4it's$ such bullshit "
   },
   {
     "start": 1223.46,
@@ -4932,7 +5400,9 @@
       "arousal": 0.2170415222644806,
       "dominance": 0.2584461271762848
     },
-    "text": "$14let's$ see "
+    "fluency": 0.2971666666666667,
+    "text": "let's see",
+    "disfluencyText": "$14let's$ see "
   },
   {
     "start": 1227.22,
@@ -4953,7 +5423,9 @@
       "arousal": 0.4357663691043854,
       "dominance": 0.47518661618232727
     },
-    "text": "$2okay$ that's about all I wrote down "
+    "fluency": 0.2738333333333333,
+    "text": "okay that's about all I wrote down",
+    "disfluencyText": "$2okay$ that's about all I wrote down "
   },
   {
     "start": 1231.24,
@@ -4974,7 +5446,9 @@
       "arousal": 0.11457857489585876,
       "dominance": 0.19311952590942383
     },
-    "text": "so yeah "
+    "fluency": 0.4075454545454546,
+    "text": "so yeah",
+    "disfluencyText": "so yeah "
   },
   {
     "start": 1234.56,
@@ -4995,7 +5469,9 @@
       "arousal": 0.4264347553253174,
       "dominance": 0.5358555316925049
     },
-    "text": "fuck pro-lifers fuck pro-life ideology "
+    "fluency": 0.48576923076923073,
+    "text": "fuck pro-lifers fuck pro-life ideology",
+    "disfluencyText": "fuck pro-lifers fuck pro-life ideology "
   },
   {
     "start": 1239.12,
@@ -5016,7 +5492,9 @@
       "arousal": 0.4811707139015198,
       "dominance": 0.5561535954475403
     },
-    "text": "there's absolutely no rational $4reason to$ be pro-life "
+    "fluency": 0.5264545454545455,
+    "text": "there's absolutely no rational reason to be pro-life",
+    "disfluencyText": "there's absolutely no rational $4reason to$ be pro-life "
   },
   {
     "start": 1242.68,
@@ -5037,7 +5515,9 @@
       "arousal": 0.45244982838630676,
       "dominance": 0.5342495441436768
     },
-    "text": "$4it's a$ zero-sum game it only causes harm "
+    "fluency": 0.68925,
+    "text": "it's a zero-sum game it only causes harm",
+    "disfluencyText": "$4it's a$ zero-sum game it only causes harm "
   },
   {
     "start": 1246.58,
@@ -5058,7 +5538,9 @@
       "arousal": 0.467761367559433,
       "dominance": 0.5703465342521667
     },
-    "text": "all it's capable of producing is harm $4it$ can't produce anything objectively good "
+    "fluency": 0.689857142857143,
+    "text": "all it's capable of producing is harm it can't produce anything objectively good",
+    "disfluencyText": "all it's capable of producing is harm $4it$ can't produce anything objectively good "
   },
   {
     "start": 1251.92,
@@ -5079,7 +5561,9 @@
       "arousal": 0.5042005777359009,
       "dominance": 0.6165808439254761
     },
-    "text": "it's never going to do that $4fuck$ transhumanism "
+    "fluency": 0.6136875000000002,
+    "text": "it's never going to do that fuck transhumanism",
+    "disfluencyText": "it's never going to do that $4fuck$ transhumanism "
   },
   {
     "start": 1257.54,
@@ -5100,7 +5584,9 @@
       "arousal": 0.37650078535079956,
       "dominance": 0.4400567412376404
     },
-    "text": "crazy shit, absolute nonsense and "
+    "fluency": 0.5277999999999999,
+    "text": "crazy shit, absolute nonsense and",
+    "disfluencyText": "crazy shit, absolute nonsense and "
   },
   {
     "start": 1263.3,
@@ -5121,7 +5607,9 @@
       "arousal": 0.3305489718914032,
       "dominance": 0.39238980412483215
     },
-    "text": "yeah, $4so I$ guess I would be considered a promortalist "
+    "fluency": 0.4933076923076924,
+    "text": "yeah, so I guess I would be considered a promortalist",
+    "disfluencyText": "yeah, $4so I$ guess I would be considered a promortalist "
   },
   {
     "start": 1267.96,
@@ -5142,7 +5630,9 @@
       "arousal": 0.38133224844932556,
       "dominance": 0.47939401865005493
     },
-    "text": "I don't like $4the way, I don't$ like that word "
+    "fluency": 0.39215384615384613,
+    "text": "I don't like the way, I don't like that word",
+    "disfluencyText": "I don't like $4the way, I don't$ like that word "
   },
   {
     "start": 1272.14,
@@ -5163,7 +5653,9 @@
       "arousal": 0.35152268409729004,
       "dominance": 0.4118625819683075
     },
-    "text": "that name I guess, promortalist $4because for people that don't think too$ deeply about it "
+    "fluency": 0.5559999999999999,
+    "text": "that name I guess, promortalist because for people that don't think too deeply about it",
+    "disfluencyText": "that name I guess, promortalist $4because for people that don't think too$ deeply about it "
   },
   {
     "start": 1277.56,
@@ -5184,7 +5676,9 @@
       "arousal": 0.31808117032051086,
       "dominance": 0.4480118453502655
     },
-    "text": "they're going to get the impression $4that that means I'm pro$-dying "
+    "fluency": 0.63075,
+    "text": "they're going to get the impression that that means I'm pro-dying",
+    "disfluencyText": "they're going to get the impression $4that that means I'm pro$-dying "
   },
   {
     "start": 1281.58,
@@ -5205,7 +5699,9 @@
       "arousal": 0.2904103398323059,
       "dominance": 0.3639557659626007
     },
-    "text": "$1and$ that's not exactly the case. "
+    "fluency": 0.64925,
+    "text": "and that's not exactly the case.",
+    "disfluencyText": "$1and$ that's not exactly the case. "
   },
   {
     "start": 1285.78,
@@ -5226,7 +5722,9 @@
       "arousal": 0.3823394179344177,
       "dominance": 0.4601573646068573
     },
-    "text": "I understand, obviously, there's many ways to die that are very bad and painful. "
+    "fluency": 0.7881818181818182,
+    "text": "I understand, obviously, there's many ways to die that are very bad and painful.",
+    "disfluencyText": "I understand, obviously, there's many ways to die that are very bad and painful. "
   },
   {
     "start": 1289.7,
@@ -5247,7 +5745,9 @@
       "arousal": 0.40445294976234436,
       "dominance": 0.5279848575592041
     },
-    "text": "So $3that's pretty$ negative and shitty, obviously. I'm pro-nonexistence "
+    "fluency": 0.6956153846153845,
+    "text": "So that's pretty negative and shitty, obviously. I'm pro-nonexistence",
+    "disfluencyText": "So $3that's pretty$ negative and shitty, obviously. I'm pro-nonexistence "
   },
   {
     "start": 1294.38,
@@ -5268,7 +5768,9 @@
       "arousal": 0.38234183192253113,
       "dominance": 0.46874022483825684
     },
-    "text": "is what I am, right? So that is what promortalism is. But obviously, I'm just saying "
+    "fluency": 0.7831333333333333,
+    "text": "is what I am, right? So that is what promortalism is. But obviously, I'm just saying",
+    "disfluencyText": "is what I am, right? So that is what promortalism is. But obviously, I'm just saying "
   },
   {
     "start": 1299.7,
@@ -5289,7 +5791,9 @@
       "arousal": 0.2994324564933777,
       "dominance": 0.37169143557548523
     },
-    "text": "promortalism can make people think that "
+    "fluency": 0.6736666666666666,
+    "text": "promortalism can make people think that",
+    "disfluencyText": "promortalism can make people think that "
   },
   {
     "start": 1303.56,
@@ -5310,7 +5814,9 @@
       "arousal": 0.32913830876350403,
       "dominance": 0.39289307594299316
     },
-    "text": "you're some kind of sadist or something who wants to "
+    "fluency": 0.5633,
+    "text": "you're some kind of sadist or something who wants to",
+    "disfluencyText": "you're some kind of sadist or something who wants to "
   },
   {
     "start": 1306.82,
@@ -5331,7 +5837,9 @@
       "arousal": 0.5373026728630066,
       "dominance": 0.558044970035553
     },
-    "text": "cause $4death, destruction, and whatnot. It's like$, no, that's not the case. "
+    "fluency": 0.6409230769230772,
+    "text": "cause death, destruction, and whatnot. It's like, no, that's not the case.",
+    "disfluencyText": "cause $4death, destruction, and whatnot. It's like$, no, that's not the case. "
   },
   {
     "start": 1311.58,
@@ -5352,7 +5860,9 @@
       "arousal": 0.4436824321746826,
       "dominance": 0.5177180767059326
     },
-    "text": "I $4know$ you're going to think how ironic because I'm causing destruction and probably possibly death. "
+    "fluency": 0.6357058823529413,
+    "text": "I know you're going to think how ironic because I'm causing destruction and probably possibly death.",
+    "disfluencyText": "I $4know$ you're going to think how ironic because I'm causing destruction and probably possibly death. "
   },
   {
     "start": 1318.4,
@@ -5373,7 +5883,9 @@
       "arousal": 0.5186054706573486,
       "dominance": 0.6032768487930298
     },
-    "text": "And it's like $4I'm$ only doing this because I feel like it's what I have to do to get people's fucking attention and to let the world know like, yes, I'm fucking serious about this shit. "
+    "fluency": 0.7027272727272728,
+    "text": "And it's like I'm only doing this because I feel like it's what I have to do to get people's fucking attention and to let the world know like, yes, I'm fucking serious about this shit.",
+    "disfluencyText": "And it's like $4I'm$ only doing this because I feel like it's what I have to do to get people's fucking attention and to let the world know like, yes, I'm fucking serious about this shit. "
   },
   {
     "start": 1327.52,
@@ -5394,7 +5906,9 @@
       "arousal": 0.5031915307044983,
       "dominance": 0.6140131950378418
     },
-    "text": "You have to take this seriously. Fuck you. You $4know$, because I can't go on the Internet and talk about this shit anymore. "
+    "fluency": 0.7231428571428572,
+    "text": "You have to take this seriously. Fuck you. You know, because I can't go on the Internet and talk about this shit anymore.",
+    "disfluencyText": "You have to take this seriously. Fuck you. You $4know$, because I can't go on the Internet and talk about this shit anymore. "
   },
   {
     "start": 1332.78,
@@ -5415,7 +5929,9 @@
       "arousal": 0.7125644087791443,
       "dominance": 0.790633499622345
     },
-    "text": "I can't find people anymore on the fucking Internet because they completely goddamn censored it. "
+    "fluency": 0.7602727272727272,
+    "text": "I can't find people anymore on the fucking Internet because they completely goddamn censored it.",
+    "disfluencyText": "I can't find people anymore on the fucking Internet because they completely goddamn censored it. "
   },
   {
     "start": 1336.08,
@@ -5436,7 +5952,9 @@
       "arousal": 0.4176616966724396,
       "dominance": 0.5069999098777771
     },
-    "text": "so I really feel like I'm being severely fucked with personally you know in "
+    "fluency": 0.5758461538461538,
+    "text": "so I really feel like I'm being severely fucked with personally you know in",
+    "disfluencyText": "so I really feel like I'm being severely fucked with personally you know in "
   },
   {
     "start": 1340.54,
@@ -5457,7 +5975,9 @@
       "arousal": 0.5196734666824341,
       "dominance": 0.5856667160987854
     },
-    "text": "so many $4fucking$ ways $4by you know not$ having the right "
+    "fluency": 0.50975,
+    "text": "so many fucking ways by you know not having the right",
+    "disfluencyText": "so many $4fucking$ ways $4by you know not$ having the right "
   },
   {
     "start": 1344.8,
@@ -5478,7 +5998,9 @@
       "arousal": 0.2757479250431061,
       "dominance": 0.38569891452789307
     },
-    "text": "to a graceful exit and then again by being completely censored and manipulated by the internet "
+    "fluency": 0.69925,
+    "text": "to a graceful exit and then again by being completely censored and manipulated by the internet",
+    "disfluencyText": "to a graceful exit and then again by being completely censored and manipulated by the internet "
   },
   {
     "start": 1348.84,
@@ -5499,7 +6021,9 @@
       "arousal": 0.4368084669113159,
       "dominance": 0.38111498951911926
     },
-    "text": "I mean the manipulation doesn't really work on me but the censoring obviously does "
+    "fluency": 0.754090909090909,
+    "text": "I mean the manipulation doesn't really work on me but the censoring obviously does",
+    "disfluencyText": "I mean the manipulation doesn't really work on me but the censoring obviously does "
   },
   {
     "start": 1352.3,
@@ -5520,7 +6044,9 @@
       "arousal": 0.5321797728538513,
       "dominance": 0.588816225528717
     },
-    "text": "it's actually pretty hard to get around especially with all the fucking AI shit now being used to "
+    "fluency": 0.7753076923076923,
+    "text": "it's actually pretty hard to get around especially with all the fucking AI shit now being used to",
+    "disfluencyText": "it's actually pretty hard to get around especially with all the fucking AI shit now being used to "
   },
   {
     "start": 1357.94,
@@ -5541,7 +6067,9 @@
       "arousal": 0.4123230278491974,
       "dominance": 0.4518275260925293
     },
-    "text": "$4censor people right so like now$ $34you can't even$ "
+    "fluency": 0.411,
+    "text": "censor people right so like now you can't even",
+    "disfluencyText": "$4censor people right so like now$ $34you can't even$ "
   },
   {
     "start": 1362.02,
@@ -5562,7 +6090,9 @@
       "arousal": 0.6382167935371399,
       "dominance": 0.6611777544021606
     },
-    "text": "sneakily $4make$ comments anymore because AI understands context, you know? So $4like$ $3it's$, it's really fucking bad now. The "
+    "fluency": 0.5299523809523808,
+    "text": "sneakily make comments anymore because AI understands context, you know? So like it's, it's really fucking bad now. The",
+    "disfluencyText": "sneakily $4make$ comments anymore because AI understands context, you know? So $4like$ $3it's$, it's really fucking bad now. The "
   },
   {
     "start": 1370.76,
@@ -5583,7 +6113,9 @@
       "arousal": 0.467367023229599,
       "dominance": 0.535582423210144
     },
-    "text": "censorship is really bad in the last few years. So it's very, $3very$ upsetting to me. Um, it really "
+    "fluency": 0.5724285714285715,
+    "text": "censorship is really bad in the last few years. So it's very, very upsetting to me. Um, it really",
+    "disfluencyText": "censorship is really bad in the last few years. So it's very, $3very$ upsetting to me. Um, it really "
   },
   {
     "start": 1375.98,
@@ -5604,7 +6136,9 @@
       "arousal": 0.39956384897232056,
       "dominance": 0.47585931420326233
     },
-    "text": "fucks with me. It's, I hate it. $4So, um$, you $34know, I$ $3think even like, I think$ Elon Musk $4banned$ the "
+    "fluency": 0.43121052631578943,
+    "text": "fucks with me. It's, I hate it. So, um, you know, I think even like, I think Elon Musk banned the",
+    "disfluencyText": "fucks with me. It's, I hate it. $4So, um$, you $34know, I$ $3think even like, I think$ Elon Musk $4banned$ the "
   },
   {
     "start": 1383.1,
@@ -5625,7 +6159,9 @@
       "arousal": 0.29122066497802734,
       "dominance": 0.3767337203025818
     },
-    "text": "words like, uh, antinatalism on Twitter and $3what$ $34else? Uh, well$, $4that's the main one, I guess$, "
+    "fluency": 0.5942000000000002,
+    "text": "words like, uh, antinatalism on Twitter and what else? Uh, well, that's the main one, I guess,",
+    "disfluencyText": "words like, uh, antinatalism on Twitter and $3what$ $34else? Uh, well$, $4that's the main one, I guess$, "
   },
   {
     "start": 1388.84,
@@ -5646,7 +6182,9 @@
       "arousal": 0.5525289177894592,
       "dominance": 0.5862600207328796
     },
-    "text": "right antinatalism $4um$ so yeah fuck I mean $34fuck$ $3you know$ fuck twitter it's a shithole now I guess but "
+    "fluency": 0.3999473684210526,
+    "text": "right antinatalism um so yeah fuck I mean fuck you know fuck twitter it's a shithole now I guess but",
+    "disfluencyText": "right antinatalism $4um$ so yeah fuck I mean $34fuck$ $3you know$ fuck twitter it's a shithole now I guess but "
   },
   {
     "start": 1396.46,
@@ -5667,7 +6205,9 @@
       "arousal": 0.30230391025543213,
       "dominance": 0.36424627900123596
     },
-    "text": "$4um$ I never really used it in the first place but $4anyways um$ "
+    "fluency": 0.5125294117647058,
+    "text": "um I never really used it in the first place but anyways um",
+    "disfluencyText": "$4um$ I never really used it in the first place but $4anyways um$ "
   },
   {
     "start": 1402.78,
@@ -5688,7 +6228,9 @@
       "arousal": 0.3167935013771057,
       "dominance": 0.3729574382305145
     },
-    "text": "yeah so $3that that's$ basically it I $3genuinely feel like$ $34it$ $4takes$ like "
+    "fluency": 0.3294999999999999,
+    "text": "yeah so that that's basically it I genuinely feel like it takes like",
+    "disfluencyText": "yeah so $3that that's$ basically it I $3genuinely feel like$ $34it$ $4takes$ like "
   },
   {
     "start": 1409.5,
@@ -5709,7 +6251,9 @@
       "arousal": 0.40859392285346985,
       "dominance": 0.5009057521820068
     },
-    "text": "$34uh$ basically $3these these topics are just they're$ way too $4fucking important um for it to be$ censored "
+    "fluency": 0.3618947368421052,
+    "text": "uh basically these these topics are just they're way too fucking important um for it to be censored",
+    "disfluencyText": "$34uh$ basically $3these these topics are just they're$ way too $4fucking important um for it to be$ censored "
   },
   {
     "start": 1416.6,
@@ -5730,7 +6274,9 @@
       "arousal": 0.3997674286365509,
       "dominance": 0.48970845341682434
     },
-    "text": "and ignored and $4like$ they need to be put on $4blast like people need to be$ thinking and talking about "
+    "fluency": 0.6704666666666665,
+    "text": "and ignored and like they need to be put on blast like people need to be thinking and talking about",
+    "disfluencyText": "and ignored and $4like$ they need to be put on $4blast like people need to be$ thinking and talking about "
   },
   {
     "start": 1422.46,
@@ -5751,7 +6297,9 @@
       "arousal": 0.3433791399002075,
       "dominance": 0.4104527235031128
     },
-    "text": "these issues because they really are big issues $4and um before you say oh it's$ just your life that's "
+    "fluency": 0.6825625000000001,
+    "text": "these issues because they really are big issues and um before you say oh it's just your life that's",
+    "disfluencyText": "these issues because they really are big issues $4and um before you say oh it's$ just your life that's "
   },
   {
     "start": 1428.34,
@@ -5772,7 +6320,9 @@
       "arousal": 0.40997105836868286,
       "dominance": 0.4634518325328827
     },
-    "text": "shitty you know $4um$ that's why you $4care so much um$ $34no$ $3I've just$ spent this entire recording explaining "
+    "fluency": 0.42855,
+    "text": "shitty you know um that's why you care so much um no I've just spent this entire recording explaining",
+    "disfluencyText": "shitty you know $4um$ that's why you $4care so much um$ $34no$ $3I've just$ spent this entire recording explaining "
   },
   {
     "start": 1436,
@@ -5793,7 +6343,9 @@
       "arousal": 0.3021851181983948,
       "dominance": 0.41976580023765564
     },
-    "text": "$4to you like$ objectively why life is bad um $4and$ it's causing harm and so it's not just about me "
+    "fluency": 0.5816470588235295,
+    "text": "to you like objectively why life is bad um and it's causing harm and so it's not just about me",
+    "disfluencyText": "$4to you like$ objectively why life is bad um $4and$ it's causing harm and so it's not just about me "
   },
   {
     "start": 1442.1,
@@ -5814,7 +6366,9 @@
       "arousal": 0.4123803377151489,
       "dominance": 0.4735797941684723
     },
-    "text": "it's pretty clear that I care $4about all sentient$ life "
+    "fluency": 0.5262857142857142,
+    "text": "it's pretty clear that I care about all sentient life",
+    "disfluencyText": "it's pretty clear that I care $4about all sentient$ life "
   },
   {
     "start": 1447.06,
@@ -5835,7 +6389,9 @@
       "arousal": 0.3750700354576111,
       "dominance": 0.4877617061138153
     },
-    "text": "all $4the$ feelings going $4on on earth$ $14so yeah just$ complete bullshit "
+    "fluency": 0.47574999999999995,
+    "text": "all the feelings going on on earth so yeah just complete bullshit",
+    "disfluencyText": "all $4the$ feelings going $4on on earth$ $14so yeah just$ complete bullshit "
   },
   {
     "start": 1453.48,
@@ -5856,7 +6412,9 @@
       "arousal": 0.40260493755340576,
       "dominance": 0.467964231967926
     },
-    "text": "$4the main reason why I$ feel like shit all the time "
+    "fluency": 0.6390909090909092,
+    "text": "the main reason why I feel like shit all the time",
+    "disfluencyText": "$4the main reason why I$ feel like shit all the time "
   },
   {
     "start": 1456.98,
@@ -5877,7 +6435,9 @@
       "arousal": 0.6160066723823547,
       "dominance": 0.715370774269104
     },
-    "text": "is because I'm aware of all the harm occurring to $4other fucking sentient beings$ "
+    "fluency": 0.7237857142857143,
+    "text": "is because I'm aware of all the harm occurring to other fucking sentient beings",
+    "disfluencyText": "is because I'm aware of all the harm occurring to $4other fucking sentient beings$ "
   },
   {
     "start": 1461.52,
@@ -5898,7 +6458,9 @@
       "arousal": 0.450370728969574,
       "dominance": 0.5667381286621094
     },
-    "text": "all the animals being raped in farms $4and even by nature$ itself obviously "
+    "fluency": 0.5319166666666667,
+    "text": "all the animals being raped in farms and even by nature itself obviously",
+    "disfluencyText": "all the animals being raped in farms $4and even by nature$ itself obviously "
   },
   {
     "start": 1465.88,
@@ -5919,7 +6481,9 @@
       "arousal": 0.353040874004364,
       "dominance": 0.419528067111969
     },
-    "text": "nature isn't nice, what it's doing isn't nice "
+    "fluency": 0.531,
+    "text": "nature isn't nice, what it's doing isn't nice",
+    "disfluencyText": "nature isn't nice, what it's doing isn't nice "
   },
   {
     "start": 1469.04,
@@ -5940,7 +6504,9 @@
       "arousal": 0.34781867265701294,
       "dominance": 0.4199216961860657
     },
-    "text": "obviously $3and$ $34uh$ and obviously and $4also I'll make this clear like$ yes I'm a vegan $4but$ um I "
+    "fluency": 0.45633333333333337,
+    "text": "obviously and uh and obviously and also I'll make this clear like yes I'm a vegan but um I",
+    "disfluencyText": "obviously $3and$ $34uh$ and obviously and $4also I'll make this clear like$ yes I'm a vegan $4but$ um I "
   },
   {
     "start": 1476.44,
@@ -5961,7 +6527,9 @@
       "arousal": 0.3078624904155731,
       "dominance": 0.4169115722179413
     },
-    "text": "understand that the harm being caused $1by nature is$ $13way way$ $1larger than anything$ humans are doing "
+    "fluency": 0.51,
+    "text": "understand that the harm being caused by nature is way way larger than anything humans are doing",
+    "disfluencyText": "understand that the harm being caused $1by nature is$ $13way way$ $1larger than anything$ humans are doing "
   },
   {
     "start": 1482.6,
@@ -5982,7 +6550,9 @@
       "arousal": 0.37342965602874756,
       "dominance": 0.47574543952941895
     },
-    "text": "$4right I just I'm$ $34upset$ about $3the the factory farm shit just$ because I feel like we should really "
+    "fluency": 0.5061428571428571,
+    "text": "right I just I'm upset about the the factory farm shit just because I feel like we should really",
+    "disfluencyText": "$4right I just I'm$ $34upset$ about $3the the factory farm shit just$ because I feel like we should really "
   },
   {
     "start": 1487.84,
@@ -6003,7 +6573,9 @@
       "arousal": 0.3378086984157562,
       "dominance": 0.35957813262939453
     },
-    "text": "know better you $4know like we$ have the ability to recognize harm and we're just completely "
+    "fluency": 0.6526000000000001,
+    "text": "know better you know like we have the ability to recognize harm and we're just completely",
+    "disfluencyText": "know better you $4know like we$ have the ability to recognize harm and we're just completely "
   },
   {
     "start": 1493.42,
@@ -6024,7 +6596,9 @@
       "arousal": 0.5180187225341797,
       "dominance": 0.6494101881980896
     },
-    "text": "squandering $4it you know$ $3and and$ then we consume it in such disgusting quantities $3and in$ such "
+    "fluency": 0.4325333333333333,
+    "text": "squandering it you know and and then we consume it in such disgusting quantities and in such",
+    "disfluencyText": "squandering $4it you know$ $3and and$ then we consume it in such disgusting quantities $3and in$ such "
   },
   {
     "start": 1498.66,
@@ -6045,7 +6619,9 @@
       "arousal": 0.4792620539665222,
       "dominance": 0.6034015417098999
     },
-    "text": "disgusting ways. I mean, it's just so, $34you$ $3know$, $23it's$ $2just so sickening$ $23in$ $3every$ way. "
+    "fluency": 0.24207142857142855,
+    "text": "disgusting ways. I mean, it's just so, you know, it's just so sickening in every way.",
+    "disfluencyText": "disgusting ways. I mean, it's just so, $34you$ $3know$, $23it's$ $2just so sickening$ $23in$ $3every$ way. "
   },
   {
     "start": 1504.44,
@@ -6066,7 +6642,9 @@
       "arousal": 0.2920990586280823,
       "dominance": 0.3317173719406128
     },
-    "text": "Everything about meat $3eating$ $34and, you know$, $3not just meat, but$ really, "
+    "fluency": 0.21483333333333335,
+    "text": "Everything about meat eating and, you know, not just meat, but really,",
+    "disfluencyText": "Everything about meat $3eating$ $34and, you know$, $3not just meat, but$ really, "
   },
   {
     "start": 1508.54,
@@ -6087,7 +6665,9 @@
       "arousal": 0.4247743487358093,
       "dominance": 0.4378449320793152
     },
-    "text": "you know, all the $4animal products$ too, $4you know$. Anyways, "
+    "fluency": 0.36653333333333327,
+    "text": "you know, all the animal products too, you know. Anyways,",
+    "disfluencyText": "you know, all the $4animal products$ too, $4you know$. Anyways, "
   },
   {
     "start": 1514.5,
@@ -6108,7 +6688,9 @@
       "arousal": 0.4576455056667328,
       "dominance": 0.44678831100463867
     },
-    "text": "what was $4I saying? Okay, so$, okay, I think this explains it pretty well. I think anyone who "
+    "fluency": 0.6204347826086957,
+    "text": "what was I saying? Okay, so, okay, I think this explains it pretty well. I think anyone who",
+    "disfluencyText": "what was $4I saying? Okay, so$, okay, I think this explains it pretty well. I think anyone who "
   },
   {
     "start": 1523.64,
@@ -6129,7 +6711,9 @@
       "arousal": 0.2296190857887268,
       "dominance": 0.32945966720581055
     },
-    "text": "listens to this has a pretty good idea $4now$ of $14why$ I've done "
+    "fluency": 0.5228333333333333,
+    "text": "listens to this has a pretty good idea now of why I've done",
+    "disfluencyText": "listens to this has a pretty good idea $4now$ of $14why$ I've done "
   },
   {
     "start": 1527.68,
@@ -6150,7 +6734,9 @@
       "arousal": 0.20388245582580566,
       "dominance": 0.3012166917324066
     },
-    "text": "this and why I do believe it's justified and I'm not "
+    "fluency": 0.5955,
+    "text": "this and why I do believe it's justified and I'm not",
+    "disfluencyText": "this and why I do believe it's justified and I'm not "
   },
   {
     "start": 1531.8,
@@ -6171,7 +6757,9 @@
       "arousal": 0.34060853719711304,
       "dominance": 0.4269056022167206
     },
-    "text": "getting off on it. I won't even be alive to witness it. $4So$ this isn't like me getting "
+    "fluency": 0.585875,
+    "text": "getting off on it. I won't even be alive to witness it. So this isn't like me getting",
+    "disfluencyText": "getting off on it. I won't even be alive to witness it. $4So$ this isn't like me getting "
   },
   {
     "start": 1537.58,
@@ -6192,7 +6780,9 @@
       "arousal": 0.5323574542999268,
       "dominance": 0.5909387469291687
     },
-    "text": "off on anything. $3You can't sit there$ and be like, oh, he's getting off on this. He wants attention or whatever. "
+    "fluency": 0.6065833333333333,
+    "text": "off on anything. You can't sit there and be like, oh, he's getting off on this. He wants attention or whatever.",
+    "disfluencyText": "off on anything. $3You can't sit there$ and be like, oh, he's getting off on this. He wants attention or whatever. "
   },
   {
     "start": 1541.72,
@@ -6213,7 +6803,9 @@
       "arousal": 0.5338547229766846,
       "dominance": 0.5882089734077454
     },
-    "text": "I mean, yes, I want attention, but it's not for me personally. Okay? It's for objectively "
+    "fluency": 0.8451666666666666,
+    "text": "I mean, yes, I want attention, but it's not for me personally. Okay? It's for objectively",
+    "disfluencyText": "I mean, yes, I want attention, but it's not for me personally. Okay? It's for objectively "
   },
   {
     "start": 1545.66,
@@ -6234,7 +6826,9 @@
       "arousal": 0.4233143925666809,
       "dominance": 0.48701581358909607
     },
-    "text": "important fucking causes. Okay? So I $14think$ $1it'll$ $14be$ pretty clear to anyone listening that $4like$, um, $4I'm$ doing this because I care "
+    "fluency": 0.5225000000000001,
+    "text": "important fucking causes. Okay? So I think it'll be pretty clear to anyone listening that like, um, I'm doing this because I care",
+    "disfluencyText": "important fucking causes. Okay? So I $14think$ $1it'll$ $14be$ pretty clear to anyone listening that $4like$, um, $4I'm$ doing this because I care "
   },
   {
     "start": 1558.96,
@@ -6255,7 +6849,9 @@
       "arousal": 0.18140293657779694,
       "dominance": 0.3197126090526581
     },
-    "text": "and because I can see how important these issues $3are and$, and the fact that they're being censored "
+    "fluency": 0.6631764705882355,
+    "text": "and because I can see how important these issues are and, and the fact that they're being censored",
+    "disfluencyText": "and because I can see how important these issues $3are and$, and the fact that they're being censored "
   },
   {
     "start": 1565.1,
@@ -6276,7 +6872,9 @@
       "arousal": 0.20100723206996918,
       "dominance": 0.32456186413764954
     },
-    "text": "by this, $4uh, ghoulish$ society that we live in, $4you$ know, that just wants to keep this system "
+    "fluency": 0.615125,
+    "text": "by this, uh, ghoulish society that we live in, you know, that just wants to keep this system",
+    "disfluencyText": "by this, $4uh, ghoulish$ society that we live in, $4you$ know, that just wants to keep this system "
   },
   {
     "start": 1571.36,
@@ -6297,7 +6895,9 @@
       "arousal": 0.2727435827255249,
       "dominance": 0.3255297541618347
     },
-    "text": "running. And so obviously it has to, obviously people can't be operating in some kind of honest "
+    "fluency": 0.8088888888888888,
+    "text": "running. And so obviously it has to, obviously people can't be operating in some kind of honest",
+    "disfluencyText": "running. And so obviously it has to, obviously people can't be operating in some kind of honest "
   },
   {
     "start": 1578.12,
@@ -6318,7 +6918,9 @@
       "arousal": 0.4197360575199127,
       "dominance": 0.536178469657898
     },
-    "text": "mode. Their brain can't be operating in truth or honest mode because "
+    "fluency": 0.8592500000000002,
+    "text": "mode. Their brain can't be operating in truth or honest mode because",
+    "disfluencyText": "mode. Their brain can't be operating in truth or honest mode because "
   },
   {
     "start": 1582.26,
@@ -6339,7 +6941,9 @@
       "arousal": 0.578868567943573,
       "dominance": 0.5750733017921448
     },
-    "text": "if it were, they would see how pointless it all is and they wouldn't continue this stupid "
+    "fluency": 0.8272499999999999,
+    "text": "if it were, they would see how pointless it all is and they wouldn't continue this stupid",
+    "disfluencyText": "if it were, they would see how pointless it all is and they wouldn't continue this stupid "
   },
   {
     "start": 1586.32,
@@ -6360,7 +6964,9 @@
       "arousal": 0.4352145493030548,
       "dominance": 0.4763762354850769
     },
-    "text": "system, right? So the system itself, the only way it can continue "
+    "fluency": 0.8737499999999999,
+    "text": "system, right? So the system itself, the only way it can continue",
+    "disfluencyText": "system, right? So the system itself, the only way it can continue "
   },
   {
     "start": 1590.48,
@@ -6381,7 +6987,9 @@
       "arousal": 0.4017523229122162,
       "dominance": 0.4729815721511841
     },
-    "text": "running is to get people to not see the truth, to hide the truth from them "
+    "fluency": 0.8518333333333333,
+    "text": "running is to get people to not see the truth, to hide the truth from them",
+    "disfluencyText": "running is to get people to not see the truth, to hide the truth from them "
   },
   {
     "start": 1594.36,
@@ -6402,7 +7010,9 @@
       "arousal": 0.36424049735069275,
       "dominance": 0.4576542377471924
     },
-    "text": "basically, right? To manipulate them to be consumers and all $4this shit, right$? "
+    "fluency": 0.7440833333333332,
+    "text": "basically, right? To manipulate them to be consumers and all this shit, right?",
+    "disfluencyText": "basically, right? To manipulate them to be consumers and all $4this shit, right$? "
   },
   {
     "start": 1600.44,
@@ -6423,7 +7033,9 @@
       "arousal": 0.3363852798938751,
       "dominance": 0.4497515857219696
     },
-    "text": "That's literally what it $3has to$ $23do to$ $2continue$ existing, right? It has to "
+    "fluency": 0.33349999999999996,
+    "text": "That's literally what it has to do to continue existing, right? It has to",
+    "disfluencyText": "That's literally what it $3has to$ $23do to$ $2continue$ existing, right? It has to "
   },
   {
     "start": 1604.42,
@@ -6444,7 +7056,9 @@
       "arousal": 0.45940980315208435,
       "dominance": 0.5261629223823547
     },
-    "text": "lie to you and push lies onto you and push addictions on to you and whatnot. "
+    "fluency": 0.6933076923076923,
+    "text": "lie to you and push lies onto you and push addictions on to you and whatnot.",
+    "disfluencyText": "lie to you and push lies onto you and push addictions on to you and whatnot. "
   },
   {
     "start": 1611.76,
@@ -6465,7 +7079,9 @@
       "arousal": 0.3288950026035309,
       "dominance": 0.4250446557998657
     },
-    "text": "Anyways, okay. So I think this is good. "
+    "fluency": 0.6808333333333333,
+    "text": "Anyways, okay. So I think this is good.",
+    "disfluencyText": "Anyways, okay. So I think this is good. "
   },
   {
     "start": 1616.2,
@@ -6486,7 +7102,9 @@
       "arousal": 0.2592809796333313,
       "dominance": 0.3202132284641266
     },
-    "text": "I know it's very rambly. I'm sorry. $4I'm just, I guess, I don't$ know. "
+    "fluency": 0.6242666666666666,
+    "text": "I know it's very rambly. I'm sorry. I'm just, I guess, I don't know.",
+    "disfluencyText": "I know it's very rambly. I'm sorry. $4I'm just, I guess, I don't$ know. "
   },
   {
     "start": 1621.72,
@@ -6507,7 +7125,9 @@
       "arousal": 0.3944379389286041,
       "dominance": 0.4794985353946686
     },
-    "text": "Whatever. It is what it is. I think $3it's$ a decent explanation. "
+    "fluency": 0.42145454545454547,
+    "text": "Whatever. It is what it is. I think it's a decent explanation.",
+    "disfluencyText": "Whatever. It is what it is. I think $3it's$ a decent explanation. "
   },
   {
     "start": 1626.9,
@@ -6528,7 +7148,9 @@
       "arousal": 0.49004799127578735,
       "dominance": 0.5355702042579651
     },
-    "text": "It's all very rational. And one more thing I want to add. $4Because$ I know there's $4going to be$ these assholes that $4are like$, "
+    "fluency": 0.5767142857142858,
+    "text": "It's all very rational. And one more thing I want to add. Because I know there's going to be these assholes that are like,",
+    "disfluencyText": "It's all very rational. And one more thing I want to add. $4Because$ I know there's $4going to be$ these assholes that $4are like$, "
   },
   {
     "start": 1635.34,
@@ -6549,7 +7171,9 @@
       "arousal": 0.5342907905578613,
       "dominance": 0.5183472633361816
     },
-    "text": "oh he clearly it's all about his feelings and whatnot $4like yes obviously$ this is strong I $3I$ "
+    "fluency": 0.4686875,
+    "text": "oh he clearly it's all about his feelings and whatnot like yes obviously this is strong I I",
+    "disfluencyText": "oh he clearly it's all about his feelings and whatnot $4like yes obviously$ this is strong I $3I$ "
   },
   {
     "start": 1641.38,
@@ -6570,7 +7194,9 @@
       "arousal": 0.4029492139816284,
       "dominance": 0.4951748251914978
     },
-    "text": "feel strongly about these things yes $4um just because someone has feelings about$ something "
+    "fluency": 0.4892142857142857,
+    "text": "feel strongly about these things yes um just because someone has feelings about something",
+    "disfluencyText": "feel strongly about these things yes $4um just because someone has feelings about$ something "
   },
   {
     "start": 1646.32,
@@ -6591,7 +7217,9 @@
       "arousal": 0.2610795795917511,
       "dominance": 0.3513129949569702
     },
-    "text": "does not make it irrational $4right um$ obviously $3the$ the feelings are just your brain's way of "
+    "fluency": 0.5651199999999997,
+    "text": "does not make it irrational right um obviously the the feelings are just your brain's way of",
+    "disfluencyText": "does not make it irrational $4right um$ obviously $3the$ the feelings are just your brain's way of "
   },
   {
     "start": 1656.52,
@@ -6612,7 +7240,9 @@
       "arousal": 0.42319875955581665,
       "dominance": 0.5058014392852783
     },
-    "text": "making you aware of some computation it's done right so your brain does some computation and "
+    "fluency": 0.7350588235294119,
+    "text": "making you aware of some computation it's done right so your brain does some computation and",
+    "disfluencyText": "making you aware of some computation it's done right so your brain does some computation and "
   },
   {
     "start": 1663.16,
@@ -6633,7 +7263,9 @@
       "arousal": 0.3033130168914795,
       "dominance": 0.40511682629585266
     },
-    "text": "And then it, based on the result, you see the outcome, the result as a feeling, right? "
+    "fluency": 0.6983749999999999,
+    "text": "And then it, based on the result, you see the outcome, the result as a feeling, right?",
+    "disfluencyText": "And then it, based on the result, you see the outcome, the result as a feeling, right? "
   },
   {
     "start": 1669.92,
@@ -6654,7 +7286,9 @@
       "arousal": 0.3414909243583679,
       "dominance": 0.42371833324432373
     },
-    "text": "And $4now$ then, yes, obviously, it's also important to then apply logic. "
+    "fluency": 0.6584,
+    "text": "And now then, yes, obviously, it's also important to then apply logic.",
+    "disfluencyText": "And $4now$ then, yes, obviously, it's also important to then apply logic. "
   },
   {
     "start": 1675.02,
@@ -6675,7 +7309,9 @@
       "arousal": 0.38065966963768005,
       "dominance": 0.4694605767726898
     },
-    "text": "So sit there and actively think about why you're feeling the way you're feeling, right? "
+    "fluency": 0.7410909090909091,
+    "text": "So sit there and actively think about why you're feeling the way you're feeling, right?",
+    "disfluencyText": "So sit there and actively think about why you're feeling the way you're feeling, right? "
   },
   {
     "start": 1680.1,
@@ -6696,7 +7332,9 @@
       "arousal": 0.47864922881126404,
       "dominance": 0.5616249442100525
     },
-    "text": "To $4make$ sure that it makes sense, right? $4And I've clearly done that$, right? "
+    "fluency": 0.5771428571428572,
+    "text": "To make sure that it makes sense, right? And I've clearly done that, right?",
+    "disfluencyText": "To $4make$ sure that it makes sense, right? $4And I've clearly done that$, right? "
   },
   {
     "start": 1685.08,
@@ -6717,7 +7355,9 @@
       "arousal": 0.3090893626213074,
       "dominance": 0.4545671343803406
     },
-    "text": "I've clearly sat here and thought a lot about my feelings and why I feel the way I do and whatnot. "
+    "fluency": 0.8029166666666665,
+    "text": "I've clearly sat here and thought a lot about my feelings and why I feel the way I do and whatnot.",
+    "disfluencyText": "I've clearly sat here and thought a lot about my feelings and why I feel the way I do and whatnot. "
   },
   {
     "start": 1689.08,
@@ -6738,7 +7378,9 @@
       "arousal": 0.36919084191322327,
       "dominance": 0.42897894978523254
     },
-    "text": "and $4um so you really$ can't say $4like$ oh well $4he you know hey I'm$ just saying these assholes that "
+    "fluency": 0.49904347826086964,
+    "text": "and um so you really can't say like oh well he you know hey I'm just saying these assholes that",
+    "disfluencyText": "and $4um so you really$ can't say $4like$ oh well $4he you know hey I'm$ just saying these assholes that "
   },
   {
     "start": 1698.88,
@@ -6759,7 +7401,9 @@
       "arousal": 0.4257030189037323,
       "dominance": 0.44003817439079285
     },
-    "text": "say $4like$ they don't I guess people don't say this but I can tell like a lot of people "
+    "fluency": 0.5596666666666666,
+    "text": "say like they don't I guess people don't say this but I can tell like a lot of people",
+    "disfluencyText": "say $4like$ they don't I guess people don't say this but I can tell like a lot of people "
   },
   {
     "start": 1704.02,
@@ -6780,7 +7424,9 @@
       "arousal": 0.3440646529197693,
       "dominance": 0.44041308760643005
     },
-    "text": "$4think this way like they don't like people$ $34who who$ feel strongly about things and it's just "
+    "fluency": 0.42592857142857143,
+    "text": "think this way like they don't like people who who feel strongly about things and it's just",
+    "disfluencyText": "$4think this way like they don't like people$ $34who who$ feel strongly about things and it's just "
   },
   {
     "start": 1709.24,
@@ -6801,7 +7447,9 @@
       "arousal": 0.6262156367301941,
       "dominance": 0.625158965587616
     },
-    "text": "fuck $3you$ fuck you $4um$ such bullshit $4you know um$ yeah okay anyways "
+    "fluency": 0.49539999999999995,
+    "text": "fuck you fuck you um such bullshit you know um yeah okay anyways",
+    "disfluencyText": "fuck $3you$ fuck you $4um$ such bullshit $4you know um$ yeah okay anyways "
   },
   {
     "start": 1717.2,
@@ -6822,7 +7470,9 @@
       "arousal": 0.4042070806026459,
       "dominance": 0.47877493500709534
     },
-    "text": "I think that's good $3I think that's that's enough$ a $4little$ add-on bit here regarding "
+    "fluency": 0.5548,
+    "text": "I think that's good I think that's that's enough a little add-on bit here regarding",
+    "disfluencyText": "I think that's good $3I think that's that's enough$ a $4little$ add-on bit here regarding "
   },
   {
     "start": 1725.34,
@@ -6843,7 +7493,9 @@
       "arousal": 0.31884559988975525,
       "dominance": 0.41266119480133057
     },
-    "text": "promortalism just you know something I think is a really important argument I guess to make in "
+    "fluency": 0.54425,
+    "text": "promortalism just you know something I think is a really important argument I guess to make in",
+    "disfluencyText": "promortalism just you know something I think is a really important argument I guess to make in "
   },
   {
     "start": 1731.16,
@@ -6864,7 +7516,9 @@
       "arousal": 0.4205431640148163,
       "dominance": 0.5249473452568054
     },
-    "text": "regards to promortalism $4for all the$ assholes that try to make it out to be evil or some bullshit "
+    "fluency": 0.7999166666666665,
+    "text": "regards to promortalism for all the assholes that try to make it out to be evil or some bullshit",
+    "disfluencyText": "regards to promortalism $4for all the$ assholes that try to make it out to be evil or some bullshit "
   },
   {
     "start": 1735.48,
@@ -6885,7 +7539,9 @@
       "arousal": 0.2609316110610962,
       "dominance": 0.364906370639801
     },
-    "text": "like that $4is$ that $4we're$ not the ones making death happen at all right all the promortalist is saying "
+    "fluency": 0.7360000000000001,
+    "text": "like that is that we're not the ones making death happen at all right all the promortalist is saying",
+    "disfluencyText": "like that $4is$ that $4we're$ not the ones making death happen at all right all the promortalist is saying "
   },
   {
     "start": 1742.58,
@@ -6906,7 +7562,9 @@
       "arousal": 0.2929950952529907,
       "dominance": 0.4149268567562103
     },
-    "text": "is like, hey, let's make the death thing happen sooner rather than later in life, right? "
+    "fluency": 0.7353571428571432,
+    "text": "is like, hey, let's make the death thing happen sooner rather than later in life, right?",
+    "disfluencyText": "is like, hey, let's make the death thing happen sooner rather than later in life, right? "
   },
   {
     "start": 1748.22,
@@ -6927,7 +7585,9 @@
       "arousal": 0.5978469252586365,
       "dominance": 0.5774288773536682
     },
-    "text": "We're just changing the date at which it happens. That's all we're trying to do, right? "
+    "fluency": 0.6264166666666667,
+    "text": "We're just changing the date at which it happens. That's all we're trying to do, right?",
+    "disfluencyText": "We're just changing the date at which it happens. That's all we're trying to do, right? "
   },
   {
     "start": 1752.46,
@@ -6948,7 +7608,9 @@
       "arousal": 0.23210585117340088,
       "dominance": 0.3494260311126709
     },
-    "text": "But $4recognize that, you$ know, once you exist, death is a guarantee, right? "
+    "fluency": 0.6636153846153847,
+    "text": "But recognize that, you know, once you exist, death is a guarantee, right?",
+    "disfluencyText": "But $4recognize that, you$ know, once you exist, death is a guarantee, right? "
   },
   {
     "start": 1756.94,
@@ -6969,7 +7631,9 @@
       "arousal": 0.6709282398223877,
       "dominance": 0.7412928938865662
     },
-    "text": "It's going to happen. So the promortalist isn't making a death happen. $3That's a$ bullshit way to think about it. "
+    "fluency": 0.6692857142857144,
+    "text": "It's going to happen. So the promortalist isn't making a death happen. That's a bullshit way to think about it.",
+    "disfluencyText": "It's going to happen. So the promortalist isn't making a death happen. $3That's a$ bullshit way to think about it. "
   },
   {
     "start": 1761.9,
@@ -6990,7 +7654,9 @@
       "arousal": 0.3613574802875519,
       "dominance": 0.44765377044677734
     },
-    "text": "That's a dishonest and untruthful way to think about it, right? "
+    "fluency": 0.74925,
+    "text": "That's a dishonest and untruthful way to think about it, right?",
+    "disfluencyText": "That's a dishonest and untruthful way to think about it, right? "
   },
   {
     "start": 1765.66,
@@ -7011,7 +7677,9 @@
       "arousal": 0.3041706383228302,
       "dominance": 0.4179418683052063
     },
-    "text": "The truth is the parents are the ones making the death happen, right? "
+    "fluency": 0.8470000000000001,
+    "text": "The truth is the parents are the ones making the death happen, right?",
+    "disfluencyText": "The truth is the parents are the ones making the death happen, right? "
   },
   {
     "start": 1770.36,
@@ -7032,7 +7700,9 @@
       "arousal": 0.47439563274383545,
       "dominance": 0.5181943774223328
     },
-    "text": "They're the ones making you exist in the first place. which then guarantees a death. "
+    "fluency": 0.8458333333333335,
+    "text": "They're the ones making you exist in the first place. which then guarantees a death.",
+    "disfluencyText": "They're the ones making you exist in the first place. which then guarantees a death. "
   },
   {
     "start": 1774.86,
@@ -7053,7 +7723,9 @@
       "arousal": 0.32069453597068787,
       "dominance": 0.44248464703559875
     },
-    "text": "Okay, so parents are the real killers here. "
+    "fluency": 0.7170833333333334,
+    "text": "Okay, so parents are the real killers here.",
+    "disfluencyText": "Okay, so parents are the real killers here. "
   },
   {
     "start": 1778.8,
@@ -7074,7 +7746,9 @@
       "arousal": 0.46211880445480347,
       "dominance": 0.5730463862419128
     },
-    "text": "Okay, they're the real ones imposing harm and suffering and some kind of death process onto people. "
+    "fluency": 0.8042,
+    "text": "Okay, they're the real ones imposing harm and suffering and some kind of death process onto people.",
+    "disfluencyText": "Okay, they're the real ones imposing harm and suffering and some kind of death process onto people. "
   },
   {
     "start": 1785.04,
@@ -7095,7 +7769,9 @@
       "arousal": 0.45842042565345764,
       "dominance": 0.5118057131767273
     },
-    "text": "All the promoralist is saying is, hey, let's make it happen sooner rather than later. "
+    "fluency": 0.8514999999999998,
+    "text": "All the promoralist is saying is, hey, let's make it happen sooner rather than later.",
+    "disfluencyText": "All the promoralist is saying is, hey, let's make it happen sooner rather than later. "
   },
   {
     "start": 1789.34,
@@ -7116,7 +7792,9 @@
       "arousal": 0.3920173645019531,
       "dominance": 0.5045886635780334
     },
-    "text": "So that way you experience less of life's bullshit, right? "
+    "fluency": 0.6944166666666666,
+    "text": "So that way you experience less of life's bullshit, right?",
+    "disfluencyText": "So that way you experience less of life's bullshit, right? "
   },
   {
     "start": 1793.64,
@@ -7137,7 +7815,9 @@
       "arousal": 0.3758251368999481,
       "dominance": 0.5087878704071045
     },
-    "text": "Less of this silly fucking zero-$4sum game, right$? "
+    "fluency": 0.49470000000000003,
+    "text": "Less of this silly fucking zero-sum game, right?",
+    "disfluencyText": "Less of this silly fucking zero-$4sum game, right$? "
   },
   {
     "start": 1796.68,
@@ -7158,7 +7838,9 @@
       "arousal": 0.19546829164028168,
       "dominance": 0.28479844331741333
     },
-    "text": "$1so$ yeah "
+    "fluency": 0.3685714285714286,
+    "text": "so yeah",
+    "disfluencyText": "$1so$ yeah "
   },
   {
     "start": 1801.52,
@@ -7179,7 +7861,9 @@
       "arousal": 0.3011336624622345,
       "dominance": 0.32584714889526367
     },
-    "text": "$4important$ argument you know to make $4to$ people who again $4try to$ make "
+    "fluency": 0.42623076923076914,
+    "text": "important argument you know to make to people who again try to make",
+    "disfluencyText": "$4important$ argument you know to make $4to$ people who again $4try to$ make "
   },
   {
     "start": 1806.12,
@@ -7200,7 +7884,9 @@
       "arousal": 0.2980040907859802,
       "dominance": 0.3895643949508667
     },
-    "text": "promortalism out to be evil $4or some$ bullshit like $4that it's these people are$ just "
+    "fluency": 0.5380769230769231,
+    "text": "promortalism out to be evil or some bullshit like that it's these people are just",
+    "disfluencyText": "promortalism out to be evil $4or some$ bullshit like $4that it's these people are$ just "
   },
   {
     "start": 1810.92,
@@ -7221,7 +7907,9 @@
       "arousal": 0.33270853757858276,
       "dominance": 0.4507296085357666
     },
-    "text": "if they hear this argument and they still disagree they're being "
+    "fluency": 0.8136363636363636,
+    "text": "if they hear this argument and they still disagree they're being",
+    "disfluencyText": "if they hear this argument and they still disagree they're being "
   },
   {
     "start": 1814.02,
@@ -7242,6 +7930,8 @@
       "arousal": 0.5263912081718445,
       "dominance": 0.5132216811180115
     },
-    "text": "dishonest basically because again all this shit is really $3simple to understand$. "
+    "fluency": 0.6198333333333333,
+    "text": "dishonest basically because again all this shit is really simple to understand.",
+    "disfluencyText": "dishonest basically because again all this shit is really $3simple to understand$. "
   }
 ]

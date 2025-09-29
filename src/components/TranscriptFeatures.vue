@@ -5,15 +5,15 @@ import Toggle from '@/components/Toggle.vue'
 import TranscriptFeaturesCanvas from '@/components/TranscriptFeaturesCanvas.vue'
 import TranscriptFeaturesEmotions from '@/components/TranscriptFeaturesEmotions.vue'
 import TranscriptFeaturesDimensions from '@/components/TranscriptFeaturesDimensions.vue'
-import type { EmotionSegment } from '@/types/segment'
+import type { AlignedSegment } from '@/types/segment'
 
-const props = defineProps<{ data: EmotionSegment | undefined }>()
+const props = defineProps<{ data: AlignedSegment | undefined }>()
 const annotated = defineModel('annotated', { type: Boolean, required: false })
 const locked = defineModel('locked', { type: Boolean, required: true })
 const show = ref<boolean>(false)
 
 // Keep the previous data in between segments
-const permaData = computed<EmotionSegment | undefined>((prev) => {
+const permaData = computed<AlignedSegment | undefined>((prev) => {
   if (!props.data) return prev
   return props.data
 })

@@ -1,11 +1,11 @@
 import { type Ref } from 'vue'
 import { onKeyStroke, useMagicKeys, useThrottleFn } from '@vueuse/core'
 import { playtime, playing, rapid } from '@/stores/state'
-import type { EmotionSegment } from '@/types/segment'
+import type { AlignedSegment } from '@/types/segment'
 
 
 export default function usePlaybackShortcuts(
-  segments: EmotionSegment[],
+  segments: AlignedSegment[],
   active: Ref<number>
 ) {
   const { control, meta } = useMagicKeys()

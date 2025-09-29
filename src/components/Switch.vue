@@ -32,8 +32,8 @@ label {
 }
 .button {
   padding: 0;
-  width: 2.25em;
-  height: 1.25em;
+  width: 2.3em;
+  height: 1.3em;
   background-color: resp($button-off-color);
   border: 1px solid resp($border-color);
   position: relative;
@@ -44,8 +44,8 @@ label {
 }
 .thumb {
   position: absolute;
-  top: 0.075em;
-  inset-inline-start: 0.1em;
+  top: 1px;
+  inset-inline-start: 1px;
   width: 1em;
   height: 1em;
   background-color: $white;

@@ -3,11 +3,11 @@ import { ref, useTemplateRef, watch, defineAsyncComponent, onMounted, nextTick }
 import { useThrottleFn } from '@vueuse/core'
 import { playtime } from '@/stores/state'
 import parsePlaceholders from '@/composables/parsePlaceholders'
-import type { EmotionSegment } from '@/types/segment'
+import type { AlignedSegment } from '@/types/segment'
 
 const Tooltip = defineAsyncComponent(() => import('@/components/Tooltip.vue'))
 
-const props = defineProps<{ segments: EmotionSegment[], annotated: boolean, locked: boolean }>()
+const props = defineProps<{ segments: AlignedSegment[], annotated: boolean, locked: boolean }>()
 const active = defineModel('active', { type: Number, required: true })
 
 const container = useTemplateRef('container')
@@ -61,7 +61,7 @@ function recordInteraction() {
   if (!props.locked) lastInteraction = Date.now()
 }
 
-function updatePlaytime(segment: EmotionSegment, index: number) {
+function updatePlaytime(segment: AlignedSegment, index: number) {
   active.value = index
   playtime.value = segment.start
 }
@@ -92,7 +92,7 @@ function updatePlaytime(segment: EmotionSegment, index: number) {
       aria-controls='audio-player'
       :aria-current='i == active'
     >
-      <template v-for='(token, j) in parsePlaceholders(seg.text)' :key='j'>
+      <template v-for='(token, j) in parsePlaceholders(seg.disfluencyText)' :key='j'>
         <template v-if='typeof token === "string"'>
           {{ token }}
         </template>

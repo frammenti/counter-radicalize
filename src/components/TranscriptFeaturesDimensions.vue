@@ -1,9 +1,9 @@
 <script setup lang='ts'>
 import { computed } from 'vue'
 import TranscriptFeaturesItem from '@/components/TranscriptFeaturesItem.vue'
-import type { EmotionSegment } from '@/types/segment'
+import type { AlignedSegment } from '@/types/segment'
 
-const props = defineProps<{ data: EmotionSegment['dimensions'] }>()
+const props = defineProps<{ data: AlignedSegment['dimensions'] }>()
 
 function getCutoff(n: number) {
   for (const cut of [0.25, 0.5, 0.75, 1]) {
