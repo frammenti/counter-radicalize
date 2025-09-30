@@ -4,7 +4,7 @@ import { TabsContent, TabsList, TabsRoot, TabsTrigger } from 'reka-ui'
 import { useThrottleFn } from '@vueuse/core'
 import type { AlignedSegment } from '@/types/segment'
 
-const props = defineProps<{ segments: AlignedSegment[] }>()
+defineProps<{ segments: AlignedSegment[] }>()
 const pagination = useTemplateRef('pagination')
 const tab = ref('emotions')
 
@@ -19,6 +19,7 @@ function forward(direction: 'ArrowRight' | 'ArrowLeft') {
     key: direction,
     bubbles: true,
   })
+  // @ts-ignore
   active.focus({ preventScroll: true, focusVisible: false })
   active.dispatchEvent(evt)
 }
