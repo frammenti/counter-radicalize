@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import { ref, useTemplateRef, watch, defineAsyncComponent, onMounted, nextTick } from 'vue'
 import { useThrottleFn } from '@vueuse/core'
-import { playtime } from '@/stores/state'
+import { playtime, playing, rapid } from '@/stores/state'
 import parsePlaceholders from '@/composables/parsePlaceholders'
 import type { AlignedSegment } from '@/types/segment'
 
@@ -33,12 +33,10 @@ watch(active, i => {
   const offset =
     el.offsetTop - container.value.clientHeight / 2 + el.getBoundingClientRect().height / 2
 
-  doThrottledScroll(offset)
+  doScroll(offset)
 })
 
-const doThrottledScroll = useThrottleFn((offset: number) => doScroll(offset), 300)
-
-function doScroll(offset: number) {
+const doScroll = useThrottleFn((offset: number) => {
   const parent = container.value!
   const maxScrollTop = parent.scrollHeight - parent.clientHeight - 2
   const atTop = parent.scrollTop <= 0 && offset <= 0
@@ -55,7 +53,7 @@ function doScroll(offset: number) {
     )
   }
   requestAnimationFrame (() =>  parent.scroll({ top: offset, behavior: 'smooth' }))
-}
+}, 300)
 
 function recordInteraction() {
   if (!props.locked) lastInteraction = Date.now()
@@ -65,6 +63,39 @@ function updatePlaytime(segment: AlignedSegment, index: number) {
   active.value = index
   playtime.value = segment.start
 }
+
+function play(e: Event) {
+  e.preventDefault()
+  playing.value = !playing.value
+}
+
+const focus = useThrottleFn((index: number, direction?: 'next' | 'prev', event?: KeyboardEvent) => {
+  if (event) rapid.value = event.repeat
+  let target: HTMLSpanElement
+  let targetIndex: number
+  if (direction === 'prev') {
+    targetIndex = index - 1
+    target = spans.value[targetIndex]
+    if (!target) {
+      targetIndex = spans.value.length - 1
+      target = spans.value[targetIndex]
+    }
+  } else if (direction === 'next') {
+    targetIndex = index + 1
+    target = spans.value[targetIndex]
+    if (!target) {
+      targetIndex = 0
+      target = spans.value[targetIndex]
+    }
+  } else {
+    console.log(index)
+    targetIndex = index
+    target = spans.value[targetIndex]
+  }
+  updatePlaytime(props.segments[targetIndex], targetIndex)
+  target.focus({ preventScroll: true })
+}, 150)
+
 </script>
 
 <template>
@@ -73,6 +104,7 @@ function updatePlaytime(segment: AlignedSegment, index: number) {
   ref='container'
   @wheel='recordInteraction'
   @touchmove='recordInteraction'
+  @keydown.self.enter='active > 0 ? focus(active) : focus(0)'
   :class='{ locked: locked }'
   :style='{ overflowY: locked ? (scrolling ? "auto" : "hidden") : "auto" }'
   :aria-activedescendant='active > 0 ? `seg-${active}` : undefined'
@@ -88,9 +120,13 @@ function updatePlaytime(segment: AlignedSegment, index: number) {
       :class='{ active: i === active }'
       class='segment'
       @click='updatePlaytime(seg, i)'
-      @keydown.enter='updatePlaytime(seg, i)'
+      @keydown.space='play($event)'
+      @keydown.right='focus(i, "next", $event)'
+      @keydown.left='focus(i, "prev", $event)'
+      aria-role='button'
       aria-controls='audio-player'
       :aria-current='i == active'
+      :tabindex='i == active ? 0 : -1'
     >
       <template v-for='(token, j) in parsePlaceholders(seg.disfluencyText)' :key='j'>
         <template v-if='typeof token === "string"'>
@@ -142,12 +178,16 @@ function updatePlaytime(segment: AlignedSegment, index: number) {
   box-decoration-break: clone;
   transition: background-color 150ms ease;
   cursor: pointer;
+
+  &:focus-visible {
+    background-color: resp($shadow-color);
+  }
 }
 .active {
   color: resp($link-color);
 }
 @media (hover: hover) {
-  #transcript-body > span:hover {
+  .segment:hover {
     background-color: resp($shadow-color);
   }
 }

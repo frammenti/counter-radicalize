@@ -233,7 +233,8 @@ function setPlaytime() {
   font-size: 0.5rem !important;
 }
 .plot-pointer :deep(svg) {
-  font-size: 0.55rem !important;
+  font-variant: tabular-nums;
+  font-size: 0.5rem !important;
 }
 @media screen and (width < $laptop) {
   .plot-scroll {

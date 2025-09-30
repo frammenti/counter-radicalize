@@ -10,9 +10,9 @@ defineProps<{ opaque?: boolean }>()
       </div>
       <ul class='pages'>
         <li><a href='#about'>About<span class='optional'> the project</span></a></li>
-        <li><a href='#close-reading'>Close reading</a></li>
-        <li><a href='#distant-reading'>Distant reading</a></li>
-        <li><a href='#linguistic-features'>Linguistic features</a></li>
+        <li><a href='#close-reading'>Close<span class='optional'> reading</span></a></li>
+        <li><a href='#distant-reading'>Distant<span class='optional'> reading</span></a></li>
+        <li><a href='#linguistic-features'><span class='optional'>Linguistic </span>features</a></li>
       </ul>
       <div class='github'>
         <a href='https://github.com/frammenti/counter-radicalize' target='_blank'>
@@ -42,6 +42,7 @@ header.opaque {
   line-height: 1.5;
   font-size: .875rem;
   height: $header-height;
+  text-align: center;
 }
 .logo, .github {
   flex: 1;
@@ -72,6 +73,7 @@ header a {
   .logo, .github { flex: auto }
   .pages { display: contents }
   .optional { display: none }
+  .pages a { text-transform: capitalize; }
   .github svg {
     height: 2.286em;
     width: 2.286em;

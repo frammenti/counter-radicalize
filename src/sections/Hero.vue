@@ -64,13 +64,15 @@
 .hero-button {
   color: resp($text-color);
   background-color: unset;
-  outline: 2px solid resp($text-color);
+  border: 2px solid resp($text-color);
   background: radial-gradient(circle var(--gradSize) at 50% 110%, resp($text-color) 49%, transparent 51%);
   transition: 
     --gradSize ease-in-out 370ms,
     color ease-in-out 150ms 100ms;
 }
-.hero-button:hover, .hero-button:active {
+.hero-button:hover,
+.hero-button:active,
+.hero-button:focus-visible {
   --gradSize: 200px;
   color: resp($background-color);
 

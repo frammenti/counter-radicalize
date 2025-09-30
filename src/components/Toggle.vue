@@ -50,7 +50,4 @@ const state = defineModel('modelValue', { type: Boolean, required: true })
     background-color: resp((shadow($brown, 0.1) shadow($taupe, 0.075)));
   }
 }
-svg {
-  fill: none;
-}
 </style>

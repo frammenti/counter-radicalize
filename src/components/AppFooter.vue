@@ -42,6 +42,7 @@ a:hover {
 svg {
   width: 5rem;
   height: 5rem;
+  fill: currentColor;
 }
 .grid {
   grid-template-areas: 'a b c';

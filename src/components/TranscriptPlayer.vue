@@ -72,6 +72,6 @@ watch(playing,
 
 <style scoped lang='scss'>
   #audio-player {
-    margin-block-start: 5%;
+    min-height: 65px;
   }
 </style>
