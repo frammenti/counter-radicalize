@@ -1,27 +1,74 @@
 <script setup lang='ts'>
-import { ref, useTemplateRef } from 'vue'
+import { ref, useTemplateRef, computed, defineAsyncComponent } from 'vue'
 import { TabsContent, TabsList, TabsRoot, TabsTrigger } from 'reka-ui'
 import { useThrottleFn } from '@vueuse/core'
+import usePalette from '@/composables/usePalette'
+import { sortMask, applyMask } from '@/utils'
+import colors from '@/assets/styles/emotions-pie.module.scss'
+import stats from '@/stores/stats.json'
 import type { AlignedSegment } from '@/types/segment'
+
+const PieChart = defineAsyncComponent(() => import('@/components/PieChart.vue'))
 
 defineProps<{ segments: AlignedSegment[] }>()
 const pagination = useTemplateRef('pagination')
-const tab = ref('emotions')
+const tab = ref('fluency')
 
+// Data prep
+type DataItem = { title: string, value: number }
+type DataMap = Record<string, DataItem[]>
+type OrderMap = Record<string, number[]>
+
+const labels: Record<string, string[]> = {
+  valence: ['positive', 'negative'],
+  arousal: ['excited', 'calm'],
+  dominance: ['empowered', 'submissive']
+}
+
+const { data, dataOrder } = Object.entries(stats).reduce(
+  (acc, [key, val]) => {
+    const group =
+      typeof val === 'object'
+        ? Object.entries(val).map(([k, v]) => ({ title: k, value: v }))
+        : [
+            { title: labels[key][0], value: val },
+            { title: labels[key][1], value: 1 - val }
+          ]
+    // Sorts group in place
+    acc.dataOrder[key] = sortMask(group, (a, b) => b.value - a.value)
+    acc.data[key] = group
+
+    return acc
+  },
+{ data: {} as DataMap, dataOrder: {} as OrderMap }
+)
+
+const _palettes = usePalette(colors)
+const colorRe = /(?<=\s)\w+(?=\s)|#\w+|\w+\([^\)]+\)/g
+
+const palettes = computed<Record<string, string[]>>(() =>
+  Object.fromEntries(
+    Object.entries(_palettes.value)
+      .map(([k, v ]) => [k, applyMask(v.match(colorRe), dataOrder[k])])
+    )
+)
+
+// Navigation
 let touchStartX = 0
-const threshold = 50
+const touchThreshold = 50
+const wheelThreshold = 10
 
 function forward(direction: 'ArrowRight' | 'ArrowLeft') {
   const active = pagination.value!.$el.querySelector('[data-active]') as HTMLElement | null
   if (!active) return
 
-  const evt = new KeyboardEvent('keydown', {
+  const e = new KeyboardEvent('keydown', {
     key: direction,
     bubbles: true,
   })
   // @ts-ignore
   active.focus({ preventScroll: true, focusVisible: false })
-  active.dispatchEvent(evt)
+  active.dispatchEvent(e)
 }
 
 function onTouchStart(e: TouchEvent) {
@@ -30,22 +77,21 @@ function onTouchStart(e: TouchEvent) {
 
 function onTouchEnd(e: TouchEvent) {
   const deltaX = e.changedTouches[0].clientX - touchStartX
-  if (Math.abs(deltaX) < threshold) return
+  if (Math.abs(deltaX) < touchThreshold) return
 
   const direction = deltaX < 0 ? 'ArrowRight' : 'ArrowLeft'
   forward(direction)
 }
 
 const onWheel = useThrottleFn((e: WheelEvent) => {
-  if (Math.abs(e.deltaX) < Math.abs(e.deltaY)) return
-
-  const threshold = 10
-  if (Math.abs(e.deltaX) < threshold) return
+  if (
+    Math.abs(e.deltaX) < Math.abs(e.deltaY) ||
+    Math.abs(e.deltaX) < wheelThreshold
+  ) return
 
   const direction = e.deltaX > 0 ? 'ArrowRight' : 'ArrowLeft'
   forward(direction)
 }, 300)
-
 </script>
 
 <template>
@@ -63,32 +109,50 @@ const onWheel = useThrottleFn((e: WheelEvent) => {
   >
     <TabsList class='pagination' aria-label='' ref='pagination'>
       <TabsTrigger class='button' value='emotions' />
-      <TabsTrigger class='button' value='arousal' />
       <TabsTrigger class='button' value='valence' />
+      <TabsTrigger class='button' value='arousal' />
+      <TabsTrigger class='button' value='dominance' />
       <TabsTrigger class='button' value='fluency' />
     </TabsList>
     <TabsContent value='emotions' tabindex='-1'>
       <h3>Emotions</h3>
       <p>
-      </p>
-    </TabsContent>
-    <TabsContent value='arousal' tabindex='-1'>
-      <h3>Arousal</h3>
-      <p>
+        Emotions are complex. Emotions are heavy. Emotions are an excuse.
       </p>
     </TabsContent>
     <TabsContent value='valence' tabindex='-1'>
       <h3>Valence</h3>
       <p>
+        I'm very very very.
+      </p>
+    </TabsContent>
+    <TabsContent value='arousal' tabindex='-1'>
+      <h3>Arousal</h3>
+      <p>
+        If you are happy and you know it clap your hands.
+      </p>
+    </TabsContent>
+    <TabsContent value='dominance' tabindex='-1'>
+      <h3>Dominance</h3>
+      <p>
+        Rawwwwr!
       </p>
     </TabsContent>
     <TabsContent value='fluency' tabindex='-1'>
       <h3>Fluency</h3>
       <p>
+        Ehm
       </p>
     </TabsContent>
   </TabsRoot>
-  <div style='background-color: red; height: 100%; width: 100%'></div>
+  <PieChart 
+    :items='data[tab]'
+    :palette='palettes[tab]'
+    :size='400'
+    :inner-cut='50'
+    :gap='2'
+    :rounded='2'
+  />
   <div class='card'></div>
   <div class='card'></div>
   </div>
@@ -148,7 +212,7 @@ const onWheel = useThrottleFn((e: WheelEvent) => {
   }
 }
 
-@media screen and (hover: hover) {
+@media (hover: hover) {
   .pagination .button:hover:after { background-color: resp($text-color); }
 }
 </style>
