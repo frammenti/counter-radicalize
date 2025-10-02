@@ -1,0 +1,28 @@
+@use 'sass:list';
+@use 'sass:map';
+@use 'sass:meta';
+@use '_functions' as *;
+@use '_emotions' as *;
+
+$light: (
+  emotions: values($emotions-light),
+  fluency: values($fluency-light)
+);
+
+$dark: (
+  emotions: values($emotions-dark),
+  fluency: values($fluency-dark)
+);
+
+$schemes: (
+  light: map.merge($light, $dimensions-light),
+  dark: map.merge($dark, $dimensions-dark)
+);
+
+:export {
+  @each $scheme, $palette in $schemes {
+    @each $key, $value in $palette {
+      #{$scheme}_#{$key}: #{$value};
+    }
+  }
+}

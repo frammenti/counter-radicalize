@@ -1,8 +1,8 @@
 <script setup lang='ts'>
-import { defineAsyncComponent, computed, useTemplateRef } from 'vue'
-import { usePreferredDark } from '@vueuse/core'
+import { defineAsyncComponent, useTemplateRef } from 'vue'
 import Tip from '@/components/Tip.vue'
-import emotionColors from '@/assets/styles/emotions-resp.module.scss'
+import usePalette from '@/composables/usePalette'
+import colors from '@/assets/styles/emotions-graph.module.scss'
 import fluency from '@/stores/fluency.json'
 import type { AlignedSegment } from '@/types/segment'
 
@@ -20,49 +20,7 @@ const data = props.segments.flatMap(({ start, emotions, dimensions }) =>
   }))
 )
 
-type Scheme = 'light' | 'dark'
-type Emotion = keyof AlignedSegment['emotions']
-
-const schemes = {
-  light: {
-    emotions: {} as Record<Emotion, string>,
-    valence: [
-      emotionColors.light_sadness,
-      'oklch(0.8813 0.2005 99.88)'
-    ],
-    arousal: [
-      emotionColors.dark_neutral,
-      emotionColors.light_anger
-    ],
-    fluency: [
-      emotionColors.light_fear,
-      emotionColors.light_disgust
-    ]
-  },
-  dark: {
-    emotions: {} as Record<Emotion, string>,
-    valence: [
-      emotionColors.dark_sadness,
-      emotionColors.dark_happiness
-    ],
-    arousal: [
-      emotionColors.dark_neutral,
-      emotionColors.dark_anger
-    ],
-    fluency: [
-      emotionColors.dark_fear,
-      emotionColors.dark_disgust
-    ]
-  }
-}
-
-for (const key in emotionColors) {
-  const [scheme, label] = key.split('_') as [Scheme, Emotion]
-  schemes[scheme]['emotions'][label] = emotionColors[key]
-}
-
-const dark = usePreferredDark()
-const scheme = computed(() => (dark.value ? schemes.dark : schemes.light))
+const palette = usePalette(colors)
 const hasMouse = window.matchMedia('(pointer: fine)').matches
 </script>
 
@@ -110,8 +68,8 @@ const hasMouse = window.matchMedia('(pointer: fine)').matches
     fy: { tickFormat: null },
     color: {
       type: 'categorical',
-      range: Object.values(scheme.emotions),
-      domain: Object.keys(scheme.emotions)
+      range: Object.values(palette.emotions),
+      domain: Object.keys(palette.emotions)
     },
     marks: [
       {
@@ -199,9 +157,7 @@ const hasMouse = window.matchMedia('(pointer: fine)').matches
           type: 'pointerX',
           options: {
             x: 'time',
-            stroke: dark
-            ? 'oklch(0.7935 0.10034 276.98)'
-            : 'oklch(0.4668 0.19179 337.977)',
+            stroke: palette.primary,
             strokeWidth: 2
           }
         }
@@ -213,12 +169,8 @@ const hasMouse = window.matchMedia('(pointer: fine)').matches
           type: 'pointerX',
           options: {
             x: 'time',
-            fill: dark
-            ? 'oklch(0.7935 0.10034 276.98)'
-            : 'oklch(0.4668 0.19179 337.977)',
-            stroke: dark
-            ? 'oklch(0.2256 0.00468 17.205)'
-            : 'oklch(0.9985 0.00011 360)',
+            fill: palette.primary,
+            stroke: palette.background,
             strokeWidth: 10,
             frameAnchor: 'bottom',
             lineAnchor: 'top',
@@ -245,9 +197,7 @@ const hasMouse = window.matchMedia('(pointer: fine)').matches
       {
         type: 'ruleX',
         options: {
-          stroke: dark
-          ? 'oklch(0.7935 0.10034 96.98)'
-          : 'oklch(0.4668 0.19179 137.977)',
+          stroke: palette.secondary,
           strokeWidth: 1,
           strokeOpacity: 0.7
         }
@@ -255,12 +205,8 @@ const hasMouse = window.matchMedia('(pointer: fine)').matches
       {
         type: 'textX',
         options: {
-          fill: dark
-          ? 'oklch(0.7935 0.10034 96.98)'
-          : 'oklch(0.4668 0.19179 137.977)',
-          stroke: dark
-          ? 'oklch(0.2256 0.00468 17.205)'
-          : 'oklch(0.9985 0.00011 360)',
+          fill: palette.secondary,
+          stroke: palette.background,
           strokeWidth: 10,
           frameAnchor: 'bottom',
           lineAnchor: 'top',
@@ -275,37 +221,37 @@ const hasMouse = window.matchMedia('(pointer: fine)').matches
       id: 'arousal',
       min: 0,
       max: 0.8,
-      low: scheme.arousal[0],
-      high: scheme.arousal[1]
+      low: palette.arousal.low,
+      high: palette.arousal.high
     },
     {
       id: 'valence',
       min: 0,
       max: 0.8,
-      low: scheme.valence[0],
-      high: scheme.valence[1]
+      low: palette.valence.low,
+      high: palette.valence.high
     },
     {
       id: 'fluency',
       min: 0.15,
       max: 1,
-      low: scheme.fluency[0],
-      high: scheme.fluency[1]
+      low: palette.fluency.low,
+      high: palette.fluency.high
     }
   ]"
   :legends="[
     {
       color: {
         type: 'categorical',
-        range: Object.values(scheme.emotions),
-        domain: Object.keys(scheme.emotions)
+        range: Object.values(palette.emotions),
+        domain: Object.keys(palette.emotions)
       },
       className: 'emotions'
     },
     {
       color: {
         type: 'categorical',
-        range: scheme.arousal,
+        range: [palette.arousal.low, palette.arousal.high],
         domain: ['calm', 'excited']
       },
       className: 'arousal'
@@ -313,7 +259,7 @@ const hasMouse = window.matchMedia('(pointer: fine)').matches
     {
       color: {
         type: 'categorical',
-        range: scheme.valence,
+        range: [palette.valence.low, palette.valence.high],
         domain: ['negative', 'positive']
       },
       className: 'valence'
@@ -321,7 +267,7 @@ const hasMouse = window.matchMedia('(pointer: fine)').matches
     {
       color: {
         type: 'categorical',
-        range: scheme.fluency,
+        range: [palette.fluency.low, palette.fluency.high],
         domain: ['disfluent', 'fluent']
       },
       className: 'fluency'

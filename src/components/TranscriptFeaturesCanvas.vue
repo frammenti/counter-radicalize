@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import { useTemplateRef, onMounted, watch, computed } from 'vue'
 import { rapid } from '@/stores/state'
-import emotionColors from '@/assets/styles/emotions-dec.module.scss'
+import emotionColors from '@/assets/styles/emotions-canvas.module.scss'
 import type { AlignedSegment } from '@/types/segment'
 
 const props = defineProps<{ data: AlignedSegment | undefined }>()

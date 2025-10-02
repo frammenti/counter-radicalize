@@ -37,7 +37,7 @@ const arousalSize = computed<string>(() => 50 + (props.data.arousal - 0.15) * (5
 </template>
 
 <style scoped lang='scss'>
-@include set-icon-legend($dimensions);
+@include set-icon-legend($dimensions-icon);
 .dimension {
   height: 1.5em;
   min-width: 1.5em;

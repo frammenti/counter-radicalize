@@ -15,3 +15,13 @@
 @function shadow($color, $opacity) {
   @return color.change($color, $alpha: $opacity)
 };
+
+@function values($map) {
+  $values: ();
+
+  @each $k, $v in $map {
+    $values: list.append($values, $v);
+  }
+
+  @return $values;
+};

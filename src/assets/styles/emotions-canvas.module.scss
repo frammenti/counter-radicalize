@@ -1,0 +1,14 @@
+@use 'sass:color';
+@use 'sass:math';
+@use '_emotions' as *;
+
+
+:export {
+  @each $label, $color in $emotions {
+    $norm: color.to-gamut($color, $space: rgb, $method: local-minde);
+    $r: math.div(color.channel($norm, 'red', $space: rgb), 255);
+    $g: math.div(color.channel($norm, 'green', $space: rgb), 255);
+    $b: math.div(color.channel($norm, 'blue', $space: rgb), 255);
+    #{$label}: ($r, $g, $b)
+  }
+}

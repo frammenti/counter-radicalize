@@ -1,9 +1,8 @@
-@use 'sass:color';
-@use 'sass:math';
-@use "sass:map";
+@use 'sass:map';
 @use '_functions' as *;
 @use '_emotions' as *;
 @use '_layout' as *;
+
 
 @mixin set-color-legend($map) {
   @each $emotion, $color in $map {
@@ -14,7 +13,7 @@
 };
 
 @mixin set-icon-legend($map) {
-  @each $dim, $icons in $dimensions {
+  @each $dim, $icons in $map {
     @if map.get($icons, 'cutoffs') {
       @each $cut, $icon in map.get($icons, 'cutoffs') {
         .#{$dim}[data-value="#{$cut}"]:before {
@@ -29,16 +28,6 @@
         content: "#{map.get($icons, 'icon')}";
       }
     }
-  }
-};
-
-@mixin rgb-float($map) {
-  @each $label, $color in $map {
-    $norm: color.to-gamut($color, $space: rgb, $method: local-minde);
-    $r: math.div(color.channel($norm, 'red', $space: rgb), 255);
-    $g: math.div(color.channel($norm, 'green', $space: rgb), 255);
-    $b: math.div(color.channel($norm, 'blue', $space: rgb), 255);
-    #{$label}: ($r, $g, $b)
   }
 };
 

@@ -1,8 +1,0 @@
-@use 'sass:color';
-@use 'sass:math';
-@use 'main' as *;
-
-
-:export {
-  @include rgb-float($emotions);
-}

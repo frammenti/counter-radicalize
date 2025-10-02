@@ -193,12 +193,12 @@ const focus = useThrottleFn((index: number, direction?: 'next' | 'prev', event?:
 }
 /* Disfluency annotated */
 [annotated="true"] :deep(.sound-repetition) {
-  text-decoration: underline dashed 1px resp($annotation-color);
+  text-decoration: underline dashed 1px resp($secondary-color);
 }
 [annotated="true"] :deep(.block):before {
   content: " ‖ ";
   font-weight: 600;
-  color: resp($annotation-color);
+  color: resp($secondary-color);
   font-style: normal;
   text-decoration: none;
 }
@@ -208,7 +208,7 @@ const focus = useThrottleFn((index: number, direction?: 'next' | 'prev', event?:
   font-variant: small-caps;
   font-size: 50%;
   vertical-align: top;
-  color: resp($annotation-color);
+  color: resp($secondary-color);
   text-decoration: none;
 }
 [annotated="true"] :deep(.word-repetition):has(+ .word-repetition):after,
@@ -218,22 +218,22 @@ const focus = useThrottleFn((index: number, direction?: 'next' | 'prev', event?:
 }
 [annotated="true"] :deep(.interjection) {
   font-style: italic;
-  color: resp($annotation-color);
+  color: resp($secondary-color);
 }
 [annotated="true"] :deep(.prolongation):after {
   content: ":::";
   font-weight: 400;
   font-style: normal;
-  color: resp($annotation-color);
+  color: resp($secondary-color);
   text-decoration: none;
 }
 [annotated="true"] .active :deep(.sound-repetition) {
-  text-decoration-color: resp-mix($link-color, $annotation-color);
+  text-decoration-color: resp-mix($link-color, $secondary-color);
 }
 [annotated="true"] .active :deep(.interjection),
 [annotated="true"] .active :deep(.block):before,
 [annotated="true"] .active :deep(.prolongation):after,
 [annotated="true"] .active :deep(.word-repetition):after {
-  color: resp-mix($link-color, $annotation-color);
+  color: resp-mix($link-color, $secondary-color);
 }
 </style>
