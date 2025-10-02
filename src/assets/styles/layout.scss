@@ -1,5 +1,6 @@
 @use 'main' as *;
 @use '_animations';
+@use '_fonts';
 
 *, *:before, *:after {
   box-sizing: border-box;
