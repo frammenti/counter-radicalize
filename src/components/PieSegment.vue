@@ -1,18 +1,18 @@
 <script setup lang='ts'>
-import { ref, toRef, onMounted } from 'vue'
-import { useInnerSlicePath, useOuterSlicePath, usePieArc } from '@/composables/usePieArc'
+import { ref, computed, watch } from 'vue'
+import { useOuterSlicePath } from '@/composables/usePieArc'
 import useTransition from '@/composables/useTransition'
+import { clamp } from '@/utils'
 
 const {
   value = 0,
   color,
   pattern,
   gap = 0,
-  innerCut,
+  innerCut = 0,
   rounded = 0,
   rotate = 0,
   hoverScale = 0.05,
-  hide = false,
   reveal = false,
   duration = 400,
   animation = (t: number) => (t ** 3)
@@ -25,7 +25,6 @@ const {
   rounded?: number
   rotate?: number
   hoverScale?: number
-  hide?: boolean
   reveal?: boolean
   animation?: (t: number) => number
   duration?: number
@@ -34,46 +33,31 @@ const {
 const active = defineModel('active', { type: Boolean, required: false, default: false })
 const state = ref(reveal ? 'initial' : 'disabled')
 const transition = { duration, transition: animation }
+const hoverZoomRatio = clamp(hoverScale, 0, 0.25)
 
-const {
-  hoverZoomRatio,
-  normalizedValue,
-  normalizedInnerCut,
-  outerX,
-  outerY,
-  arcWidth,
-} = usePieArc({ value, gap, hoverScale, innerCut, rounded }, active)
+// Computed dimensions
+const arcSize = computed(() => state.value === 'initial' ? 0 : clamp(value - 100 * gap / 360, 0.1, 99.99))
+const currArcSize = useTransition(arcSize, transition)
 
-const arcSize = toRef(() => state.value === 'initial' ? 0 : normalizedValue.value)
-const currentArcSize = useTransition(arcSize, transition)
+const angle = computed(() => state.value === 'initial' ? 360 : (rotate + gap / 2))
+const currAngle = useTransition(angle, transition)
 
-const angle = toRef(() => state.value === 'initial' ? 0 : (rotate + gap / 2))
-const currentAngle = useTransition(angle, transition)
+const arcRadius = computed(() => 50 * (active.value ? 1 : (1 - hoverZoomRatio)))
+const currArcRadius = useTransition(arcRadius, transition)
 
-const arcRadius = toRef(() => 50 * (active.value ? 1 : (1 - hoverZoomRatio.value)))
-const currentArcRadius = useTransition(arcRadius, transition)
-const currentArcWidth = useTransition(arcWidth, transition)
+const arcWidth = computed(() => 50 * (1 - clamp(innerCut / 100, 0, 1)) * (active.value ? 1 : (1 - hoverZoomRatio)))
+const currArcWidth = useTransition(arcWidth, transition)
 
 const outerSlicePath = useOuterSlicePath({
-  angle: currentAngle,
-  radius: currentArcRadius,
-  size: currentArcSize,
-  width: currentArcWidth,
+  size: currArcSize,
+  angle: currAngle,
+  radius: currArcRadius,
+  width: currArcWidth,
   rounded
 })
-const innerSlicePath = useInnerSlicePath({
-  angle: currentAngle,
-  radius: currentArcRadius.value - currentArcWidth.value,
-  size: currentArcSize
-})
 
-const overlayPath = toRef(() => `M 50 0 A 50 50 0 ${normalizedValue.value > 50 ? 1 : 0} 1 ${outerX.value} ${outerY.value} L 50 50`)
-
-function setActive(val: boolean) {
-  active.value = val
-}
-
-onMounted(async () => {
+// Animation on value change
+watch(() => value, async () => {
   if (reveal) {
     state.value = 'initial'
     await new Promise(resolve => requestAnimationFrame(resolve))
@@ -81,41 +65,29 @@ onMounted(async () => {
     await new Promise(resolve => setTimeout(resolve, duration))
     state.value = 'done'
   }
-})
+}, { immediate: true })
 </script>
 
 <template>
 <g
-  class='v-pie-segment'
+  class='pie-segment'
   :style='{ color: color }'
 >
   <path
-    key='outer-slice'
+    key='pie-slice'
     fill='currentColor'
+    cursor='crosshair'
     shape-rendering='geometricPrecision'
     :d='outerSlicePath'
+    @mouseenter.passive='active = true'
+    @mouseleave.passive='active = false'
   />
   <path
     v-if='pattern'
-    key='pattern-overlay'
+    key='pie-pattern'
     shape-rendering='geometricPrecision'
-    :fill='pattern'
+    fill='transparent'
     :d='outerSlicePath'
-  />
-  <path
-    v-if='!hide && normalizedInnerCut > 0'
-    key='inner-slice'
-    fill='transparent'
-    :d='innerSlicePath'
-  />
-  <path
-    v-if='["disabled", "done"].includes(state)'
-    :transform='`rotate(${currentAngle} 50 50)`'
-    class='v-pie-segment__overlay'
-    :d='overlayPath'
-    fill='transparent'
-    @mouseenter.passive='setActive(true)'
-    @mouseleave.passive='setActive(false)'
   />
 </g>
 </template>

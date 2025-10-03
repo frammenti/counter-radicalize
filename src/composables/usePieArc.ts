@@ -1,17 +1,7 @@
-import { computed, toRef, toValue } from 'vue'
-import type { MaybeRefOrGetter, Ref } from 'vue'
-import { clamp } from '@/utils'
+import { computed, type Ref } from 'vue'
 
 // Types
 type Point = [x: number, y: number]
-
-interface PieSegmentProps {
-  gap?: number | string
-  hoverScale?: number | string
-  innerCut?: number | string
-  rounded?: number | string
-  value: number
-}
 
 // Base functions
 function pointOnArc (center: Point, radius: number, angle: number) {
@@ -32,7 +22,7 @@ function drawCircle ([x, y]: Point, r: number, width: number) {
   ]
 }
 
-export function simpleArc (center: Point, r: number, startAngle: number, endAngle: number) {
+export function simpleArc(center: Point, r: number, startAngle: number, endAngle: number) {
   const start = pointOnArc(center, r, startAngle)
   const end = pointOnArc(center, r, endAngle)
   const sweep = endAngle - startAngle > 180 ? 1 : 0
@@ -45,7 +35,7 @@ export function simpleArc (center: Point, r: number, startAngle: number, endAngl
     .join(' ')
 }
 
-export function roundedArc (center: Point, radius: number, startAngle: number, endAngle: number, width: number, rounding: number): string {
+export function roundedArc(center: Point, radius: number, startAngle: number, endAngle: number, width: number, rounding: number): string {
   width = Math.min(radius, width)
 
   if (Math.abs(endAngle - startAngle) === 360) {
@@ -109,30 +99,6 @@ export function roundedArc (center: Point, radius: number, startAngle: number, e
     .join(' ')
 }
 
-export function usePieArc (props: PieSegmentProps, isHovering: Ref<boolean>) {
-  const hoverZoomRatio = toRef(() => clamp(Number(props.hoverScale ?? 0), 0, 0.25))
-  const normalizedValue = toRef(() => clamp(props.value - 100 * Number(props.gap ?? 0) / 360, 0.2, 99.99))
-  const normalizedInnerCut = toRef(() => {
-    const min = Number(props.rounded ?? 0) > 0 ? 0.2 : 0
-    return clamp(Number(props.innerCut ?? 0) / 100, min, 1)
-  })
-
-  const radians = computed(() => (360 * (-normalizedValue.value / 100) + 90) * (Math.PI / 180))
-  const arcWidth = computed(() => 50 * (1 - normalizedInnerCut.value) * (isHovering.value ? 1 : (1 - hoverZoomRatio.value)))
-
-  const outerX = toRef(() => 50 + 50 * Math.cos(radians.value))
-  const outerY = toRef(() => 50 - 50 * Math.sin(radians.value))
-
-  return {
-    hoverZoomRatio,
-    normalizedValue,
-    normalizedInnerCut,
-    outerX,
-    outerY,
-    arcWidth,
-  }
-}
-
 export function useOuterSlicePath ({
   angle,
   radius,
@@ -140,39 +106,20 @@ export function useOuterSlicePath ({
   width,
   rounded,
 }: {
-  angle: MaybeRefOrGetter<number>
-  radius: MaybeRefOrGetter<number>
-  size: MaybeRefOrGetter<number>
-  width: MaybeRefOrGetter<number>
-  rounded: MaybeRefOrGetter<number>
+  angle: Ref<number>
+  radius: Ref<number>
+  size: Ref<number>
+  width: Ref<number>
+  rounded: number
 }) {
   return computed(() =>
     roundedArc(
       [50, 50],
-      toValue(radius),
-      toValue(angle),
-      toValue(angle) + 360 * toValue(size) / 100, // angle end,
-      toValue(width),
-      toValue(rounded),
-    )
-  )
-}
-
-export function useInnerSlicePath ({
-  angle,
-  radius,
-  size,
-}: {
-  angle: MaybeRefOrGetter<number>
-  radius: MaybeRefOrGetter<number>
-  size: MaybeRefOrGetter<number>
-}) {
-  return computed(() =>
-    simpleArc(
-      [50, 50],
-      toValue(radius),
-      toValue(angle),
-      toValue(angle) + 360 * toValue(size) / 100, // angle end,
+      radius.value,
+      angle.value,
+      angle.value + 360 * size.value / 100, // angle end,
+      width.value,
+      rounded
     )
   )
 }

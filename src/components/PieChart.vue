@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import PieSegment from '@/components/PieSegment.vue'
 
 const {
@@ -15,7 +15,6 @@ const {
   innerCut,
   rounded,
   hoverScale,
-  hide,
   reveal,
   animation,
   duration
@@ -33,7 +32,6 @@ const {
   innerCut?: number
   rounded?: number
   hoverScale?: number
-  hide?: boolean
   reveal?: boolean
   animation?: (t: number) => number
   duration?: number
@@ -44,7 +42,6 @@ const segmentProps = {
   innerCut,
   rounded,
   hoverScale,
-  hide,
   reveal,
   animation,
   duration
@@ -57,7 +54,6 @@ interface PieItem {
   value: number
   title: string
   pattern: string
-  active: boolean
 }
 
 type Palette = { color: string; pattern: string }[] | string[]
@@ -87,8 +83,7 @@ const arcs = computed<PieItem[]>(() => {
         color: item.color ?? color(i),
         value: item[itemValue],
         title: item[itemTitle],
-        pattern: item.pattern ?? pattern(i),
-        active: false
+        pattern: item.pattern ?? pattern(i)
       }
     })
 })
@@ -103,8 +98,8 @@ function norm(v: number) {
 
 const total = computed(() => arcs.value.reduce((sum, item) => sum + norm(item.value), 0))
 
-const gaugeOffset = computed(() => (1 - Math.cos(Math.PI * Math.min(90, gaugeCut / 2) / 180)) / 2)
-const rotateDeg = computed(() => `${gaugeCut > 0 ? (180 + gaugeCut / 2) : rotate}deg`)
+const gaugeOffset = (1 - Math.cos(Math.PI * Math.min(90, gaugeCut / 2) / 180)) / 2
+const rotateDeg = `${gaugeCut > 0 ? (180 + gaugeCut / 2) : rotate}deg`
 
 function arcOffset(index: number) {
   return arcs.value
@@ -113,17 +108,18 @@ function arcOffset(index: number) {
 }
 
 function arcSize(v: number) { return norm(v) / total.value * (100 - gaugeCut / 3.6) }
+
+// Active item
+const active = ref<number>()
 </script>
 
 <template>
-<div
-  class='pie-chart'
-  :style='{ width: `${size}px`}'
->
+<div class='pie-chart'>
   <slot name='title'></slot>
   <div
-    class='pie-chart-content'
+    class='pie-content'
     :style='{
+      maxWidth: `${size}px`,
       transform: `rotate(${rotateDeg})`,
       marginBottom: `calc(-1 * ${size}px * ${gaugeOffset})`,
     }'
@@ -131,19 +127,19 @@ function arcSize(v: number) { return norm(v) / total.value * (100 - gaugeCut / 3
     <svg
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 100 100'
-      class='pie-chart-segments'
+      class='pie-segments'
     >
       <template v-for='(item, i) in arcs' :key='item.key'>
-      <PieSegment
-        v-if='item.value > 0'
-        v-bind='segmentProps'
-        :color='item.color'
-        :value='arcSize(item.value)'
-        :rotate='arcOffset(i)'
-        :pattern='item.pattern'
-        @update:active='val => arcs[i].active = val'
-        @touchend='arcs[i].active = true'
-      />
+        <PieSegment
+          v-if='item.value > 0'
+          :active='active === i'
+          v-bind='segmentProps'
+          :color='item.color'
+          :value='arcSize(item.value)'
+          :rotate='arcOffset(i)'
+          :pattern='item.pattern'
+          @update:active='(val) => { active = val ? i : undefined }'
+        />
       </template>
     </svg>
   </div>
@@ -151,4 +147,14 @@ function arcSize(v: number) { return norm(v) / total.value * (100 - gaugeCut / 3
 </template>
 
 <style lang='scss'>
+.pie-chart {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.pie-content {
+  width: 100%;
+}
 </style>

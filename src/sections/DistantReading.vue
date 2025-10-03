@@ -34,9 +34,7 @@ const hasMouse = window.matchMedia('(pointer: fine)').matches
       Drag to pan the graph. Tap to set playback position.
     </template>
   </Tip>
-  <hgroup>
-    <h2>Distant reading</h2>
-  </hgroup>
+  <h2>Distant reading</h2>
   <PlotFigure
   :axis-options="{
     height: 610,

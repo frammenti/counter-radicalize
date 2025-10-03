@@ -86,6 +86,7 @@ if (hasKeyboard) {
 @media screen and (width < $tablet) {
   #close-reading {
     padding-block-start: 4rem;
+    height: calc(100lvh - $section-spacing-mobile);
   }
 }
 </style>

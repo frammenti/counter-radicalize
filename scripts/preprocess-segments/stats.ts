@@ -1,28 +1,26 @@
-import type { EmotionSegment, FluencySegment, AlignedSegment, Segment } from '../../src/types/segment.ts'
+import type { EmotionSegment, FluencySegment } from '../../src/types/segment.ts'
 import { DisfluencyType } from '../../src/types/segment.ts'
 
-function map<T>(obj: T, fn: (v: number) => number): T {
-  let p: keyof T
-  for (p in obj) {
-    let val = obj[p] as any
-    if (!(typeof val === 'number' || typeof val === 'object')) {
-      delete obj[p]
-      continue
-    }
+function mapO<T extends object>(obj: T, fn: (v: number) => number): T {
+  for (const p in obj) {
+    let val = obj[p]
     obj[p] = typeof val === 'number'
-    ? fn(val)
-    : map(val, fn)
+    ? fn(val) as T[typeof p]
+    : typeof val === 'object' && val
+      ? mapO(val, fn)
+      : obj[p]
   }
   return obj
 }
 
-function zip<T>(acc: T, other: T, fn: (a: number, o: number) => number): T {
-  let p: keyof T
-  for (p in acc) {
-    let a = acc[p] as any, o = other[p] as any
-    acc[p] = typeof a === 'number'
-    ? fn(a, o)
-    : zip(a, o, fn)
+function zipO<T extends object>(acc: T, other: T, fn: (a: number, o: number) => number): T {
+  for (const p in acc) {
+    let a = acc[p], o = other[p]
+    acc[p] = typeof a === 'number' && typeof o === 'number'
+    ? fn(a, o) as T[typeof p]
+    : typeof a === 'object' && typeof o === 'object' && a && o
+      ? zipO(a, o, fn)
+      : acc[p]
   }
   return acc
 }
@@ -32,7 +30,7 @@ export default function weightedMean(segments: EmotionSegment[], windows: Fluenc
   // Emotions
   const { start, end, text, ...others } = segments[0]
   const stats = structuredClone(others)
-  map(stats, () => 0)
+  mapO(stats, () => 0)
 
   let segDuration = 0
 
@@ -40,13 +38,13 @@ export default function weightedMean(segments: EmotionSegment[], windows: Fluenc
     const duration = seg.end - seg.start
     segDuration += duration
 
-    zip(stats, seg, (a, o) => (a + o * duration))
+    zipO(stats, seg, (a, o) => (a + o * duration))
   }
 
-  map(stats, (v) => (v / segDuration))
+  mapO(stats, (v) => (v / segDuration))
 
   // Fluency
-  const fluency: Record<string, number> = { fluent: 0, ...Object.fromEntries(DisfluencyType.map(k => [k, 0])) }
+  const fluency = { fluent: 0, ...Object.fromEntries(DisfluencyType.map(k => [k, 0])) } as Record<"fluent" | typeof DisfluencyType[number], number>
   let totDisfluencies = 0
 
   for (const win of windows) {

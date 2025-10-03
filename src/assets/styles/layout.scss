@@ -76,7 +76,7 @@ h1, h2, h3 {
 }
 
 hgroup h2 {
-  margin-bottom: 0;
+  margin-block-end: 0;
 }
 
 hgroup p {
@@ -207,7 +207,8 @@ a {
     padding-inline: 1em;
     padding-block: $section-spacing-mobile;
     scroll-margin-block-start: $header-height-mobile;
-    max-height: calc(100lvh - $section-spacing-mobile);
+    height: unset;
+    min-height: calc(100lvh - $section-spacing-mobile);
   }
   header {
     height: $header-height-mobile;

@@ -12,7 +12,7 @@ const PieChart = defineAsyncComponent(() => import('@/components/PieChart.vue'))
 
 defineProps<{ segments: AlignedSegment[] }>()
 const pagination = useTemplateRef('pagination')
-const tab = ref('fluency')
+const tab = ref('emotions')
 
 // Data prep
 type DataItem = { title: string, value: number }
@@ -96,9 +96,7 @@ const onWheel = useThrottleFn((e: WheelEvent) => {
 
 <template>
 <section id='linguistic-features' class='paginated' aria-label='Linguistic features'>
-  <hgroup>
-    <h2>Linguistic features</h2>
-  </hgroup>
+  <h2>Linguistic features</h2>
   <div class='grid'>
   <TabsRoot
     class='tabs-root card'
@@ -152,6 +150,7 @@ const onWheel = useThrottleFn((e: WheelEvent) => {
     :inner-cut='50'
     :gap='2'
     :rounded='2'
+    reveal
   />
   <div class='card'></div>
   <div class='card'></div>
@@ -213,6 +212,39 @@ const onWheel = useThrottleFn((e: WheelEvent) => {
 }
 
 @media (hover: hover) {
-  .pagination .button:hover:after { background-color: resp($text-color); }
+  .pagination .button:hover:after { background-color: resp($text-color) }
+}
+
+@media screen and (width < $laptop) {
+  .grid {
+    height: unset;
+
+    :first-child {
+      grid-row: 1 / 2;
+    }
+    :nth-child(3),
+    :last-child {
+      grid-column: 1 / 3;
+    }
+  }
+}
+
+@media screen and (width < $tablet) {
+  .grid {
+    grid-template-columns: 100%;
+    grid-template-rows: 3fr 2fr 0.5fr 0.5fr;
+    height: unset;
+
+    :first-child {
+      grid-row: 2 / 3;
+    }
+    :nth-child(2) {
+      grid-row: 1 / 2;
+    }
+    :nth-child(3),
+    :last-child {
+      grid-column: 1 / 2;
+    }
+  }
 }
 </style>

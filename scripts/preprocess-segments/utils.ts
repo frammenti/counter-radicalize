@@ -1,5 +1,5 @@
 import type { AlignedWord } from '../../src/types/alignment.ts'
-import type { AlignedWindow, DisfluencyPattern } from '../../src/types/disfluency.ts'
+import type { AlignedWindow, DisfluencyPattern } from '../../src/types/alignment.ts'
 
 export function wordsInWindow(
   words: AlignedWord[],
