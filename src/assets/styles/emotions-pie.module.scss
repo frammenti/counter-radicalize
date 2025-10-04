@@ -5,13 +5,13 @@
 @use '_emotions' as *;
 
 $light: (
-  emotions: values($emotions-light),
-  fluency: values($fluency-light)
+  emotions: $emotions-light,
+  fluency: $fluency-light
 );
 
 $dark: (
-  emotions: values($emotions-dark),
-  fluency: values($fluency-dark)
+  emotions: $emotions-dark,
+  fluency: $fluency-dark
 );
 
 $schemes: (
@@ -19,10 +19,21 @@ $schemes: (
   dark: map.merge($dark, $dimensions-dark)
 );
 
+$patterns: (
+  emotions: (neutral: lines),
+  valence: (low: herringbone),
+  arousal: (low: scales),
+  dominance: (low: flowers),
+  fluency: (fluent: waves)
+);
+
 :export {
   @each $scheme, $palette in $schemes {
     @each $key, $value in $palette {
-      #{$scheme}_#{$key}: #{$value};
+      @each $k, $v in $value {
+        #{$scheme}_#{$key}_#{$k}_color: #{$v};
+        #{$scheme}_#{$key}_#{$k}_pattern: map.get($patterns, $key, $k);
+      }
     }
   }
 }

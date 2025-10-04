@@ -1,0 +1,29 @@
+@use 'sass:list';
+@use '_palette' as *;
+
+
+@function make($dark-theme: false) {
+  $pattern-color: if($dark-theme, list.nth($background-color, 2), list.nth($background-color, 1));
+  $pattern-opacity: 0.7;
+
+  $lines: "<pattern id='lines' width='20' height='20' patternTransform='rotate(145)scale(0.2)' patternUnits='userSpaceOnUse'><path fill='none' stroke='#{$pattern-color}' stroke-width='2' d='M0 10h20z' opacity='#{$pattern-opacity}'/></pattern>";
+
+  $minus: "<pattern id='minus' width='40' height='40' patternTransform='rotate(30)scale(0.2)' patternUnits='userSpaceOnUse'><path fill='none' stroke='#{$pattern-color}' stroke-linecap='square' stroke-width='3' d='M20-5V5m0 30v10m20-30v10M0 15v10m-5 15H5M-5 0H5m30 0h10M35 40h10M15 20h10' opacity='#{$pattern-opacity}'/></pattern>";
+
+  $herringbone: "<pattern id='herringbone' width='40' height='20' patternTransform='scale(0.5)' patternUnits='userSpaceOnUse'><path fill='none' stroke='#{$pattern-color}' d='M40 0 20-10V0l20 10zm0 10L20 0v10l20 10zm0 10L20 10v10l20 10zM0 20l20-10v10L0 30zm0-10L20 0v10L0 20zM0 0l20-10V0L0 10z' opacity='#{$pattern-opacity}'/></pattern>";
+
+  $scales: "<pattern id='scales' width='20' height='40' patternTransform='scale(0.3)' patternUnits='userSpaceOnUse'><path fill='#{$pattern-color}' d='M0 0v5.436c.385-.146.767.123 1.163.82.948 1.674 2.214 2.996 3.46 4.294C6.977 13.002 9.2 15.318 9.2 19.995c0 4.679-2.223 6.994-4.577 9.447-1.246 1.299-2.512 2.621-3.46 4.295-.396.698-.777.966-1.163.82V40h1.198v-.005c0-4.678 2.224-6.992 4.579-9.445 1.245-1.298 2.51-2.62 3.459-4.295.654-1.154 1.273-1.154 1.926 0 .95 1.673 2.214 2.997 3.46 4.295 2.353 2.452 4.578 4.767 4.578 9.445V40h.8v-5.442c-.252-.095-.504-.365-.762-.82-.95-1.675-2.214-2.998-3.46-4.296-2.353-2.452-4.576-4.768-4.576-9.447-.001-4.678 2.221-6.993 4.575-9.445 1.246-1.298 2.512-2.62 3.46-4.294.259-.456.511-.725.763-.82V0h-.8c0 4.676-2.224 6.991-4.577 9.442-1.246 1.298-2.512 2.621-3.46 4.296-.653 1.153-1.273 1.153-1.926 0-.948-1.675-2.214-2.998-3.46-4.296C3.424 6.991 1.2 4.676 1.2 0Z' opacity='#{$pattern-opacity}'/></pattern>";
+
+  $flowers: "<pattern id='flowers' width='20' height='20' patternTransform='scale(0.5)' patternUnits='userSpaceOnUse'><path fill='none' stroke='#{$pattern-color}' stroke-linecap='square' d='M18.822 18.717s.077-1.396-.737-2.21c-.813-.813-2.21-.736-2.21-.736s-.076 1.396.737 2.21c.814.813 2.21.736 2.21.736zm0-17.643s-1.396-.077-2.21.736c-.813.814-.736 2.21-.736 2.21s1.396.077 2.21-.736c.813-.814.736-2.21.736-2.21zM3.389 17.98c.813-.813.736-2.21.736-2.21s-1.396-.076-2.21.737c-.813.814-.736 2.21-.736 2.21s1.396.077 2.21-.737zm.736-13.96s.077-1.396-.736-2.21c-.814-.813-2.21-.736-2.21-.736s-.077 1.396.736 2.21c.814.813 2.21.736 2.21.736zm11.708 5.876s-.932-1.042-2.083-1.042c-1.15 0-2.083 1.042-2.083 1.042s.932 1.041 2.083 1.041c1.15 0 2.083-1.041 2.083-1.041zm-7.5 0S7.401 8.854 6.25 8.854c-1.15 0-2.083 1.042-2.083 1.042s.932 1.041 2.083 1.041c1.15 0 2.083-1.041 2.083-1.041zm2.709-3.75c0-1.15-1.042-2.083-1.042-2.083s-1.042.932-1.042 2.083C8.958 7.296 10 8.229 10 8.229s1.042-.933 1.042-2.083zm-2.084 7.5c0 1.15 1.042 2.083 1.042 2.083s1.042-.933 1.042-2.083S10 11.563 10 11.563s-1.042.932-1.042 2.083z' opacity='#{$pattern-opacity}'/></pattern>";
+
+  $waves: "<pattern id='waves' width='70' height='8' patternTransform='scale(0.5)' patternUnits='userSpaceOnUse'><path fill='none' stroke='#{$pattern-color}' d='M-.02 22c8.373 0 11.938-4.695 16.32-9.662C20.785 7.258 25.728 2 35 2s14.215 5.258 18.7 10.338C58.082 17.305 61.647 22 70.02 22M-.02 14.002C8.353 14 11.918 9.306 16.3 4.339 20.785-.742 25.728-6 35-6S49.215-.742 53.7 4.339c4.382 4.967 7.947 9.661 16.32 9.664M70 6.004c-8.373-.001-11.918-4.698-16.3-9.665C49.215-8.742 44.272-14 35-14S20.785-8.742 16.3-3.661C11.918 1.306 8.353 6-.02 6.002' opacity='#{$pattern-opacity}'/></pattern>";
+
+  @return (
+    lines: $lines,
+    minus: $minus,
+    herringbone: $herringbone,
+    scales: $scales,
+    flowers: $flowers,
+    waves: $waves
+  );
+}

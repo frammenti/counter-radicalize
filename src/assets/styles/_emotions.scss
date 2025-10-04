@@ -50,15 +50,33 @@ $emotions-dark: (
 
 // Dimensions
 $dimensions-light: (
-  valence: oklch(0.8813 0.2005 99.88) map.get($emotions-light, 'sadness'),
-  arousal: map.get($emotions-light, 'anger') map.get($emotions-dark, 'neutral'),
-  dominance: map.get($emotions-light, 'contempt') map.get($emotions-light, 'other')
+  valence: (
+    high: oklch(0.8813 0.2005 99.88),
+    low: map.get($emotions-light, sadness)
+  ),
+  arousal: (
+    high: map.get($emotions-light, anger),
+    low: map.get($emotions-dark, neutral)
+  ),
+  dominance: (
+    high: map.get($emotions-light, contempt),
+    low: map.get($emotions-light, other)
+  )
 );
 
 $dimensions-dark: (
-  valence: map.get($emotions-dark, 'happiness') map.get($emotions-dark, 'sadness'),
-  arousal: map.get($emotions-dark, 'anger') map.get($emotions-dark, 'neutral'),
-  dominance: map.get($emotions-dark, 'contempt') map.get($emotions-dark, 'other')
+  valence: (
+    high: map.get($emotions-dark, happiness),
+    low: map.get($emotions-dark, sadness)
+  ),
+  arousal: (
+    high: map.get($emotions-dark, anger),
+    low: map.get($emotions-dark, neutral)
+  ),
+  dominance: (
+    high: map.get($emotions-dark, contempt),
+    low: map.get($emotions-dark, other)
+  )
 );
 
 $dimensions-icon: (
@@ -68,24 +86,30 @@ $dimensions-icon: (
 );
 
 // Fluency
-$fluent-light: map.get($emotions-light, 'disgust') map.get($emotions-light, 'fear');
-$fluent-dark: map.get($emotions-dark, 'disgust') map.get($emotions-dark, 'fear');
+$fluent-light: (
+  high: map.get($emotions-light, disgust),
+  low: map.get($emotions-light, fear)
+);
+$fluent-dark: (
+  high: map.get($emotions-dark, disgust),
+  low: map.get($emotions-dark, fear)
+);
 
 $fluency-light: (
-  fluent: list.nth($fluent-light, 1),
-  block: map.get($emotions-light, 'anger'),
-  prolongation: map.get($emotions-light, 'fear'),
-  sound-repetition: map.get($emotions-light, 'sadness'),
-  word-repetition: map.get($emotions-light, 'surprise'),
-  interjection: list.nth(map.get($dimensions-light, 'valence'), 1)
+  fluent: map.get($fluent-light, high),
+  block: map.get($emotions-light, anger),
+  prolongation: map.get($emotions-light, fear),
+  sound-repetition: map.get($emotions-light, sadness),
+  word-repetition: map.get($emotions-light, surprise),
+  interjection: map.get($dimensions-light, valence, high)
 );
 
 $fluency-dark: (
-  fluent: list.nth($fluent-dark, 1),
-  block: map.get($emotions-dark, 'anger'),
-  prolongation: map.get($emotions-dark, 'fear'),
-  sound-repetition: map.get($emotions-dark, 'sadness'),
-  word-repetition: map.get($emotions-dark, 'surprise'),
-  interjection: map.get($emotions-dark, 'happiness')
+  fluent: map.get($fluent-dark, high),
+  block: map.get($emotions-dark, anger),
+  prolongation: map.get($emotions-dark, fear),
+  sound-repetition: map.get($emotions-dark, sadness),
+  word-repetition: map.get($emotions-dark, surprise),
+  interjection: map.get($emotions-dark, happiness)
 );
 

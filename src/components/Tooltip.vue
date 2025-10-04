@@ -73,35 +73,5 @@ const trigger = props.parentSize ? updateSide(props.parentSize) : undefined
 </template>
 
 <style scoped lang='scss'>
-:deep(.tooltip) {
-  animation-duration: 125ms;
-  animation-timing-function: ease-in-out;
-  will-change: transform opacity;
-  outline-offset: 0;
-  overflow: clip;
-  z-index: 2;
-  box-shadow: $box-shadow;
-  color: resp($text-color);
-  font-style: normal;
-  font-size: 0.9em;
-  padding-block: 0.3rem;
-  padding-inline: 0.6rem;
-}
-:deep(.tooltip)[data-side='top'] {
-  animation-name: fade-in-slide-up;
-}
-:deep(.tooltip)[data-side='left'] {
-  animation-name: fade-in-slide-left;
-}
-:deep(.tooltip)[data-side='right'] {
-  animation-name: fade-in-slide-right;
-}
-:deep(.arrow) {
-  fill: resp($modal-color);
-  stroke: resp($border-color);
-  z-index: 3;
-}
-:deep(.tooltip) p {
-  margin-block: 0;
-}
+@use '@/assets/styles/_tooltip'
 </style>

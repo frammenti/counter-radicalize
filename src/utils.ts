@@ -31,3 +31,24 @@ export function sortMask<T>(arr: T[], compareFn: (a: T, b: T) => number): number
 export function applyMask<T>(arr: T[], mask: number[]): T[] {
   return mask.map(i => arr[i])
 }
+
+type Key = string | number | symbol
+export class BiMap<T extends Record<Key, Key>> {
+  readonly map: T
+  readonly reverseMap: { [V in T[keyof T]]: keyof T }
+
+  constructor(map: T) {
+    this.map = map
+    this.reverseMap = Object.fromEntries(
+      Object.entries(map).map(([k, v]) => [v, k])
+    ) as { [V in T[keyof T]]: keyof T }
+  }
+
+  get<K extends keyof T>(key: K): T[K] {
+    return this.map[key]
+  }
+
+  revGet<V extends T[keyof T]>(value: V): keyof T {
+    return this.reverseMap[value]
+  }
+}

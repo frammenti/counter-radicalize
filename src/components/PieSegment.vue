@@ -56,8 +56,13 @@ const outerSlicePath = useOuterSlicePath({
   rounded
 })
 
+// Full-size slice without gaps for tooltips
+const radians = computed(() => (360 * (-value / 100) + 90) * (Math.PI / 180))
+const overlayPath = computed(() => `M 50 0 A 50 50 0 ${value > 50 ? 1 : 0} 1 ${50 + 50 * Math.cos(radians.value)} ${50 - 50 * Math.sin(radians.value)} L 50 50`)
+
 // Animation on value change
 watch(() => value, async () => {
+  active.value = false
   if (reveal) {
     state.value = 'initial'
     await new Promise(resolve => requestAnimationFrame(resolve))
@@ -76,18 +81,24 @@ watch(() => value, async () => {
   <path
     key='pie-slice'
     fill='currentColor'
-    cursor='crosshair'
     shape-rendering='geometricPrecision'
     :d='outerSlicePath'
-    @mouseenter.passive='active = true'
-    @mouseleave.passive='active = false'
   />
   <path
     v-if='pattern'
     key='pie-pattern'
     shape-rendering='geometricPrecision'
-    fill='transparent'
+    :fill='`url(#${pattern})`'
     :d='outerSlicePath'
+  />
+  <path
+    v-if='["disabled", "done"].includes(state)'
+    key='pie-overlay'
+    :transform='`rotate(${currAngle} 50 50)`'
+    fill='none'
+    :d='overlayPath'
+    @mouseenter.passive='active = true'
+    @mouseleave.passive='active = false'
   />
 </g>
 </template>

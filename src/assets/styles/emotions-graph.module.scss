@@ -1,6 +1,5 @@
 @use 'sass:list';
 @use 'sass:map';
-@use 'sass:meta';
 @use '_palette' as *;
 @use '_emotions' as *;
 
@@ -29,15 +28,8 @@ $schemes: (
 :export {
   @each $scheme, $palette in $schemes {
     @each $key, $value in $palette {
-      @if meta.type-of($value) == 'map' {
-        @each $k, $v in $value {
-          #{$scheme}_#{$key}_#{$k}: #{$v};
-        }
-      } @else if meta.type-of($value) == 'list' {
-        #{$scheme}_#{$key}_high: #{list.nth($value, 1)};
-        #{$scheme}_#{$key}_low: #{list.nth($value, 2)};
-      } @else {
-        #{$scheme}_#{$key}: #{$value};
+      @each $k, $v in $value {
+        #{$scheme}_#{$key}_#{$k}: #{$v};
       }
     }
   }

@@ -1,9 +1,9 @@
 <script setup lang='ts'>
-import { ref, useTemplateRef, computed, defineAsyncComponent } from 'vue'
+import { ref, useTemplateRef, defineAsyncComponent, computed } from 'vue'
 import { TabsContent, TabsList, TabsRoot, TabsTrigger } from 'reka-ui'
 import { useThrottleFn } from '@vueuse/core'
 import usePalette from '@/composables/usePalette'
-import { sortMask, applyMask } from '@/utils'
+import { BiMap } from '@/utils'
 import colors from '@/assets/styles/emotions-pie.module.scss'
 import stats from '@/stores/stats.json'
 import type { AlignedSegment } from '@/types/segment'
@@ -15,43 +15,48 @@ const pagination = useTemplateRef('pagination')
 const tab = ref('emotions')
 
 // Data prep
-type DataItem = { title: string, value: number }
-type DataMap = Record<string, DataItem[]>
-type OrderMap = Record<string, number[]>
+type Dimension = keyof AlignedSegment['dimensions']
 
-const labels: Record<string, string[]> = {
-  valence: ['positive', 'negative'],
-  arousal: ['excited', 'calm'],
-  dominance: ['empowered', 'submissive']
-}
+const labels: { [k in Dimension]: BiMap<{ high: string, low: string }> } = {
+  valence: new BiMap({ high: 'positive', low: 'negative' }),
+  arousal: new BiMap({ high: 'excited', low: 'calm' }),
+  dominance: new BiMap({ high: 'empowered', low: 'submissive'})
+} as const
 
-const { data, dataOrder } = Object.entries(stats).reduce(
-  (acc, [key, val]) => {
-    const group =
+const data = Object.fromEntries(
+  Object.entries(stats).map(([key, val]) =>
+    [
+      key,
       typeof val === 'object'
         ? Object.entries(val).map(([k, v]) => ({ title: k, value: v }))
         : [
-            { title: labels[key][0], value: val },
-            { title: labels[key][1], value: 1 - val }
+            { title: labels[key as Dimension].get('high'), value: val },
+            { title: labels[key as Dimension].get('low'), value: 1 - val }
           ]
-    // Sorts group in place
-    acc.dataOrder[key] = sortMask(group, (a, b) => b.value - a.value)
-    acc.data[key] = group
-
-    return acc
-  },
-{ data: {} as DataMap, dataOrder: {} as OrderMap }
+    ]
+  )
 )
+
+for (const k in data) {
+  data[k].sort((a, b) => b.value - a.value)
+}
 
 const _palettes = usePalette(colors)
-const colorRe = /(?<=\s)\w+(?=\s)|#\w+|\w+\([^\)]+\)/g
 
-const palettes = computed<Record<string, string[]>>(() =>
-  Object.fromEntries(
-    Object.entries(_palettes.value)
-      .map(([k, v ]) => [k, applyMask(v.match(colorRe), dataOrder[k])])
-    )
-)
+const palettes = computed(() => Object.fromEntries(
+  Object.entries(data).map(([key, items]) => 
+    [
+      key,
+      items.map(({ title }) => {
+        const normTitle = title.toLowerCase().replace(' ', '-')
+        const itemColors = _palettes.value[key][normTitle] ??
+                           _palettes.value[key][labels[key as Dimension]?.revGet(normTitle)]
+        if (!itemColors) return { color: null, pattern: null }
+        const { color, pattern } = itemColors
+        return { color, pattern }
+      })
+    ]
+)))
 
 // Navigation
 let touchStartX = 0
@@ -150,6 +155,7 @@ const onWheel = useThrottleFn((e: WheelEvent) => {
     :inner-cut='50'
     :gap='2'
     :rounded='2'
+    tooltip
     reveal
   />
   <div class='card'></div>

@@ -6,7 +6,7 @@ defineProps<{ label: string, value: number, short: string }>()
 <span class='label full-label'>{{ label }}</span>
 <span class='label short-label' :title='label'>{{ short }}</span>
 <span class='value'>
-  {{ Math.round(value * 100) }}<span class='percent'>%</span>
+  {{ Math.round(value * 100) }}<span class='percent'> %</span>
 </span>
 </template>
 
