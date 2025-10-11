@@ -54,7 +54,7 @@ if (sysModifier) keyList.unshift(sysModifier)
   align-items: center;
   justify-content: center;
   width: fit-content;
-  font-weight: 450;
+  font-variation-settings: 'wght' 450;
 }
 .kbd {
   min-width: 2.3em;
@@ -64,14 +64,15 @@ if (sysModifier) keyList.unshift(sysModifier)
   justify-content: center;
   font-family: inherit;
   margin-inline: 0.3rem;
-  border: 1px solid resp($border-color);
+  border: 1px solid;
   border-radius: $small-radius;
-}
-kbd:first-child {
-  margin-inline-start: 0;
-}
-kbd:last-child {
-  margin-inline-end: 0;
+  @include theme(border-color, text);
+  &:first-child {
+    margin-inline-start: 0;
+  }
+  &:last-child {
+    margin-inline-end: 0;
+  }
 }
 .command {
   margin-block: 0.2em 0;

@@ -2,7 +2,7 @@ import { DisfluencyType, type Disfluency } from '@/types/segment'
 
 export type Token =
   | string
-  | { content: Token[], class: string, desc: Disfluency[] }
+  | { content: Token[], class: string }
 
 export default function parsePlaceholders(text: string): Token[] {
   const delims = /\$\d+|\$/g
@@ -22,16 +22,13 @@ export default function parsePlaceholders(text: string): Token[] {
         disfluencies = left.exec(match[0])![1]
                            .split('')
                            .map(d => DisfluencyType[parseInt(d, 10)])
-                           .filter(Boolean)
         start = delims.lastIndex
       }
     } else if (level > 0) {
       if (--level == 0) {
         result.push({
           content: parsePlaceholders(text.slice(start, match.index)),
-          class: disfluencies.map(d => d.toLowerCase().replace(/\s+/g, '-'))
-                             .join(' '),
-          desc: disfluencies
+          class: disfluencies.join(' ').toLowerCase()
         })
         start = delims.lastIndex
       }

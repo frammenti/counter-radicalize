@@ -15,10 +15,10 @@
   "dominance": 0.48285931964135287,
   "fluency": {
     "fluent": 0.5691957657409954,
-    "Block": 0,
-    "Prolongation": 0.017450957494167658,
-    "Sound repetition": 0.0036464687301245853,
-    "Word repetition": 0.09116171825311463,
-    "Interjection": 0.3185450897815977
+    "block": 0,
+    "prolongation": 0.017450957494167658,
+    "sound repetition": 0.0036464687301245853,
+    "word repetition": 0.09116171825311463,
+    "interjection": 0.3185450897815977
   }
 }

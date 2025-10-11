@@ -34,13 +34,14 @@ label {
   padding: 0;
   width: 2.3em;
   height: 1.3em;
-  background-color: resp($button-off-color);
-  border: 1px solid resp($border-color);
+  border: 1px solid;
   position: relative;
   box-shadow: $box-shadow-small;
-}
-.button[data-state='checked'] {
-  background-color: resp($button-on-color);
+  @include theme(background-color, button-off);
+  @include theme(border-color, border);
+  &[data-state='checked'] {
+    @include theme(background-color, button-on);
+  }
 }
 .thumb {
   position: absolute;
@@ -50,9 +51,12 @@ label {
   height: 1em;
   background-color: $white;
   border-radius: $max-radius;
-  box-shadow: 0 2px 2px resp($shadow-color);
   transition: transform 100ms;
   will-change: transform;
+  box-shadow: 0 2px 2px light(shadow);
+  @media (prefers-color-scheme: dark) {
+    box-shadow: 0 2px 2px dark(shadow);
+  }
 }
 .thumb[data-state='checked'] {
   transform: translateX(100%);

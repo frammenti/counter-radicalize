@@ -1,8 +1,9 @@
 import { wordsInWindow, groupWindows, flattenWindows, insertPlaceholder } from './utils.ts'
 import { DisfluencyType } from '../../src/types/segment.ts'
-import type { EmotionSegment, FluencySegment, AlignedSegment } from '../../src/types/segment.ts'
+import type { EmotionSegment, FluencySegment, AlignedSegment, Disfluency } from '../../src/types/segment.ts'
 import { toIndex } from '../../src/types/segment.ts'
 import type { Alignment, AlignedWord, AlignedWindow, DisfluencyPattern } from '../../src/types/alignment.ts'
+
 
 export default function align(
   segments: EmotionSegment[],
@@ -87,12 +88,24 @@ export default function align(
       )
       const fluency = segWindows.reduce((acc, curr) => acc += curr.fluency, 0) / segWindows.length
 
+      const disfluencies = segWords.reduce((acc, curr) => {
+        curr.disfluencies.forEach(i => acc[DisfluencyType[i].toLowerCase() as Lowercase<Disfluency>]++)
+        return acc
+      }, {
+        block: 0,
+        prolongation: 0,
+        'sound repetition': 0,
+        'word repetition': 0,
+        interjection: 0
+      })
+
       return {
         start,
         end,
         emotions,
         dimensions,
         fluency,
+        disfluencies,
         text,
         disfluencyText: disfluencyText + ' ',
       }

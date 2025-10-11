@@ -1,32 +1,64 @@
+@use 'sass:color';
+@use 'sass:list';
 @use 'sass:map';
 @use '_functions' as *;
 @use '_emotions' as *;
 @use '_layout' as *;
+@use 'palette' as *;
 
+@mixin theme($property, $key, $invert: false) {
+  $colors: map.get($palette, $key);
+
+  @if $colors == null {
+    @error "Undefined theme color `#{$key}`.";
+  } @else if $invert == true {
+    $colors: list.nth($colors, 2) list.nth($colors, 1)
+  }
+
+  & {
+    #{$property}: list.nth($colors, 1);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    #{$property}: list.nth($colors, 2);
+  }
+}
+
+@mixin theme-mix($property, $key1, $key2) {
+  $colors1: map.get($palette, $key1);
+  $colors2: map.get($palette, $key2);
+
+  @if $colors1 == null and $colors2 == null {
+    @error "Undefined theme colors `#{$key1}` and `#{$key2}`.";
+  } @else if $colors1 == null {
+    @error "Undefined theme color `#{$key1}`.";
+  } @else if $colors2 == null {
+    @error "Undefined theme color `#{$key2}`.";
+  }
+
+  & {
+    #{$property}: color.mix(list.nth($colors1, 1), list.nth($colors2, 1), $weight: 30%, $method: lch);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    #{$property}: color.mix(list.nth($colors1, 2), list.nth($colors2, 2), $weight: 85%, $method: lch);
+  }
+};
+
+@mixin text-italic($weight: 300, $slant: 5) {
+  font-variation-settings: 'slnt' $slant, 'wght' $weight;
+  font-feature-settings: 'ss01'; // alt-a
+}
+
+@mixin title-italic($weight: 200, $slant: 9) {
+  font-variation-settings: 'ital' $slant, 'wght' $weight;
+  font-feature-settings: 'ss10'; // Geometric set
+}
 
 @mixin set-color-legend($map) {
   @each $emotion, $color in $map {
     .#{$emotion}:before {
       background-color: shadow($color, 0.7);
-    }
-  }
-};
-
-@mixin set-icon-legend($map) {
-  @each $dim, $icons in $map {
-    @if map.get($icons, 'cutoffs') {
-      @each $cut, $icon in map.get($icons, 'cutoffs') {
-        .#{$dim}[data-value="#{$cut}"]:before {
-          content: "#{$icon}";
-        @if map.get($icons, 'filter') {
-          filter: #{map.get($icons, 'filter')}(#{1.25 - $cut});
-        }
-        }
-      }
-    } @else {
-      .#{$dim}:before {
-        content: "#{map.get($icons, 'icon')}";
-      }
     }
   }
 };
@@ -52,7 +84,7 @@
 
         @media #{$queries} {
           #{$selector} {
-            background-image: url('@/assets/images/#{$file}');
+            background-image: url('/background/#{$file}');
           }
         }
       }

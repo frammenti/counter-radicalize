@@ -1,6 +1,6 @@
 <template>
-  <section class='hero grid paginated' aria-label='Hero'>
-    <div class='grid-item-1'>
+  <section class='grid' aria-label='Hero'>
+    <div>
       <h1 class='title'>
         <span>C</span>
         <span>o</span>
@@ -9,7 +9,7 @@
         <span class='breathe'>t</span>
         <span class='breathe'>e</span>
         <span class='breathe'>r</span>
-        <strong> / </strong>
+        <strong>–</strong>
         <span>R</span>
         <span>a</span>
         <span>d</span>
@@ -22,34 +22,50 @@
         <span class='breathe'>e</span>
       </h1>
     </div>
-    <div class='grid-item-2'>
+    <div>
       <p class='subtitle'>An experimental tool to analyze and visualize emotional content in speech.</p>
-      <a class='button hero-button' href='#about'>Dig deeper</a>
+      <a class='button' id='cta' href='#about'>Dig deeper</a>
     </div>
   </section>
 </template>
 
 <style scoped lang='scss'>
-.hero {
+.grid {
   grid-template-areas: '. t s';
   grid-template-columns: 0.25fr 0.8fr 1.1fr;
+
+  > :first-child {
+    grid-area: t;
+  }
+
+  > :nth-child(2) {
+    grid-area: s;
+    text-align: center;
+    margin: 2rem;
+  }
 }
 .title {
   font-size: 4.5rem;
+  font-weight: unset;
   font-feature-settings: 'kern' 0;
-  font-variation-settings: 'wght' 600;
+  font-variation-settings: 'wdth' 130, 'wght' 600;
   cursor: crosshair;
   line-height: 1.1;
   margin: 0;
   animation: disable 4.5s backwards;
+
+  span {
+    transition: font-variation-settings 700ms ease;
+
+    &:hover,
+    &:hover + span,
+    &:has(+ span:hover) {
+      font-variation-settings: 'wdth' 100, 'wght' 200;
+    }
+  }
 }
-.grid-item-1 {
-  grid-area: t;
-}
-.grid-item-2 {
-  grid-area: s;
-  text-align: center;
-  margin: 2rem;
+.breathe {
+  animation: letter-breathe 3s ease 1.5s;
 }
 .subtitle {
   font-size: 1.2rem;
@@ -61,39 +77,37 @@
   inherits: false;
   initial-value: 0px;
 }
-.hero-button {
-  color: resp($text-color);
+#cta {
+  padding-inline: 1.2em;
+  padding-block: 0.6em;
   background-color: unset;
-  border: 2px solid resp($text-color);
-  background: radial-gradient(circle var(--gradSize) at 50% 110%, resp($text-color) 49%, transparent 51%);
+  border: 2px solid;
   transition: 
     --gradSize ease-in-out 370ms,
     color ease-in-out 150ms 100ms;
-}
-.hero-button:hover,
-.hero-button:active,
-.hero-button:focus-visible {
-  --gradSize: 200px;
-  color: resp($background-color);
-
-}
-.title span {
-  transition: font-variation-settings 1s ease;
-}
-.title span:hover,
-.title span:hover + span,
-.title span:has(+ span:hover) {
-  font-variation-settings: 'wght' 300;
-}
-.breathe {
-  animation: letter-breathe 3s ease 1.5s;
+  background: radial-gradient(circle var(--gradSize) at 50% 110%, light(text) 49%, transparent 51%);
+  @include theme(color, text);
+  @include theme(border-color, text);
+  @media (prefers-color-scheme: dark) {
+    background: radial-gradient(circle var(--gradSize) at 50% 110%, dark(text) 49%, transparent 51%);
+  }
+  &:hover,
+  &:active,
+  &:focus-visible {
+    --gradSize: 200px;
+    @include theme(color, background);
+  }
 }
 @media screen and (width < $laptop) {
-  .hero {
+  .grid {
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content: center;
+
+    > :nth-child(2) {
+      margin: 0;
+    }
   }
   .title {
     font-size: 5.5rem;
@@ -106,12 +120,9 @@
     margin-block: 0 2.5rem;
     margin-inline: 3.5rem;
   }
-  .hero-button {
+  #cta {
     font-size: 1.1rem;
     line-height: 1.6;
-  }
-  .grid-item-2 {
-    margin: 0;
   }
 }
 @media screen and (width < $tablet) {
@@ -121,7 +132,7 @@
   .subtitle {
     font-size: 0.95rem;
   }
-  .hero-button {
+  #cta {
     font-size: 0.9rem;
     line-height: 1.5;
   }

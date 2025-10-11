@@ -1,7 +1,9 @@
 @use 'sass:color';
+@use 'sass:list';
 
 $fuchsia: oklch(0.4668 0.19179 337.977);
 $orchid: oklch(0.2976 0.06336 334.341);
+$salmon: oklch(0.7588 0.1296 13.2);
 $lilac: oklch(0.7935 0.10034 276.98);
 $black: oklch(0.2256 0.00468 17.205);
 $white: oklch(0.9985 0.00011 360);
@@ -10,26 +12,106 @@ $brown: oklch(0.2109 0.04514 21.633);
 $taupe: oklch(60.668% 0.0184 17.465);
 $transparent: oklch(0% 0 0 / 0);
 $shadow: oklch(0 0 0 / 0.102);
+$light-gray: oklch(0.9466 0 0);
+$dark-gray: oklch(0.278 0.0047 17.465);
 
-$primary-color: $orchid color.scale($lilac, $lightness: -15%, $chroma: 10%);
-$primary-muted-color: color.scale($orchid, $lightness: 10%, $chroma: 10%) color.scale($lilac, $lightness: -20%, $chroma: 20%);
-$link-color: $fuchsia $lilac;
-$secondary-color: color.adjust($fuchsia, $hue: 160deg) color.adjust($lilac, $hue: 180deg);
-$shadow-color: color.change($brown, $alpha: 0.05), color.change($taupe, $alpha: 0.15);
-$background-color: $white $black;
+$primary-color:
+  $orchid
+  color.scale($lilac, $lightness: -30%, $chroma: 20%);
 
-$text-color: $raisin color.change($white, $alpha: 0.87);
-$text-muted-color: color.change($raisin, $alpha: 0.5) color.change($white, $alpha: 0.5);
-$border-color: oklch(20.992% 0.03416 263.451 / 0.05) oklch(100% 0.00011 271.152 / 0.1);
-$modal-color: $white oklch(0.278 0.0047 17.465);
+$primary-hover-color:
+  color.scale($orchid, $lightness: 10%, $chroma: 10%)
+  color.scale($lilac, $lightness: -20%, $chroma: 20%);
 
-$button-off-color: color.change($brown, $alpha: 0.2) color.change($taupe, $alpha: 0.15);
-$button-on-color: color.change($orchid, $alpha: 0.6) $taupe;
+$primary-active-color:
+  color.scale($orchid, $lightness: 10%, $chroma: 30%)
+  color.scale($lilac, $lightness: -15%, $chroma: 10%);
+
+$link-color:
+  $fuchsia
+  $lilac;
+
+$link-visited-color:
+  color.scale($orchid, $lightness: 30%, $chroma: 20%)
+  color.scale($lilac, $lightness: -20%, $chroma: 20%);
+
+$selection-color:
+  oklch(0.8776 0.2363 148.74 / 50%)
+  oklch(0.7147 0.1164 10.18 / 23.92%);
+
+$tip-color:
+  color.scale($lilac, $lightness: 40%, $chroma: -40%)
+  color.scale($orchid, $lightness: -5%);
+
+$tip-text-color:
+  oklch(0.4011 0.0648 44.19)
+  oklch(0.9204 0.05565 339.1965);
+
+$secondary-color:
+  color.adjust($fuchsia, $hue: 160deg)
+  color.adjust($lilac, $hue: 180deg);
+
+$secondary-hover-color:
+  oklch(0.454 0.097024 134.341)
+  oklch(0.4825 0.0937 97.44);
+
+$secondary-active-color:
+  color.adjust($fuchsia, $hue: 160deg)
+  oklch(0.5675 0.0987 95.99);
+
+$background-color:
+  $white
+  $black;
+
+$text-color:
+  $raisin
+  color.change($white, $alpha: 0.87);
+
+$text-hover-color:
+  color.change($raisin, $alpha: 0.5)
+  color.change($white, $alpha: 0.5);
+
+$shadow-color:
+  color.change($brown, $alpha: 0.05)
+  color.change($taupe, $alpha: 0.15);
+
+$shadow-hover-color:
+  color.change($brown, $alpha: 0.1)
+  color.change($taupe, $alpha: 0.3);
+
+$shadow-active-color:
+  color.change($brown, $alpha: 0.2)
+  color.change($taupe, $alpha: 0.4);
+
+$border-color:
+  oklch(20.992% 0.03416 263.451 / 0.05)
+  oklch(100% 0.00011 271.152 / 0.1);
+
+$modal-color:
+  $light-gray
+  $dark-gray;
+
+$modal-alt-color:
+  $white
+  $dark-gray;
+
+$modal-fade-color:
+  color.scale($light-gray, $lightness: 60%)
+  color.scale($dark-gray, $lightness: -15%);
+
+$button-off-color:
+  color.change($brown, $alpha: 0.2)
+  color.change($taupe, $alpha: 0.15);
+
+$button-on-color:
+  color.change($orchid, $alpha: 0.6)
+  $taupe;
 
 $small-radius: 4.5px;
 $medium-radius: 6px;
 $large-radius: 8px;
-$max-radius: 9999px;
+$xlarge-radius: 1.25rem;
+$max-radius: 999px;
 
 $box-shadow:
   0 4px 6px -1px $shadow,
@@ -44,4 +126,34 @@ $box-shadow-large:
 $box-shadow-large-reverse:
   0px -10px 38px -10px $shadow,
   0px -10px 20px -15px $shadow;
+
+$animation-button:
+  moveUpInitial 200ms cubic-bezier(.5, 1.8, .62, 1) forwards,
+  moveUpEnd 200ms cubic-bezier(.5, 1.8, .62, 1) calc(200ms * 0.7) forwards;
+
+$palette: (
+  primary: $primary-color,
+  primary-hover: $primary-hover-color,
+  primary-active: $primary-active-color,
+  link: $link-color,
+  link-visited: $link-visited-color,
+  selection: $selection-color,
+  tip: $tip-color,
+  tip-text: $tip-text-color,
+  secondary: $secondary-color,
+  secondary-hover: $secondary-hover-color,
+  secondary-active: $secondary-active-color,
+  background: $background-color,
+  text: $text-color,
+  text-hover: $text-hover-color,
+  shadow: $shadow-color,
+  shadow-hover: $shadow-hover-color,
+  shadow-active: $shadow-active-color,
+  border: $border-color,
+  modal: $modal-color,
+  modal-alt: $modal-alt-color,
+  modal-fade: $modal-fade-color,
+  button-off: $button-off-color,
+  button-on: $button-on-color,
+)
 

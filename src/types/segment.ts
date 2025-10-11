@@ -50,5 +50,64 @@ export function toIndex(list: Iterable<Disfluency>): number[] {
 
 export interface AlignedSegment extends EmotionSegment {
   fluency: number
+  disfluencies: { [P in Lowercase<Disfluency>]: number }
   disfluencyText: string
+}
+
+export const dummy = {
+  emotions: {
+    anger: undefined,
+    contempt: undefined,
+    disgust: undefined,
+    fear: undefined,
+    happiness: undefined,
+    neutral: undefined,
+    sadness: undefined,
+    surprise: undefined,
+    other: undefined,
+  },
+  dimensions: {
+    valence: undefined,
+    arousal: undefined,
+    dominance: undefined,
+  },
+  fluency: undefined,
+  disfluencies: {
+    block: undefined,
+    prolongation: undefined,
+    'sound repetition': undefined,
+    'word repetition': undefined,
+    interjection: undefined
+  }
+}
+
+export interface RankedSegment extends Segment {
+  index: number
+  value: number
+  text: string
+}
+
+export interface Stats {
+  emotions: {
+    anger: number,
+    contempt: number,
+    disgust: number,
+    fear: number,
+    happiness: number,
+    neutral: number,
+    sadness: number,
+    surprise: number,
+    other: number
+  },
+  valence: number,
+  arousal: number,
+  dominance: number,
+  fluency: {
+    fluent: number,
+    block: number,
+    prolongation: number,
+    'sound repetition': number,
+    'word repetition': number,
+    interjection: number
+  }
 }

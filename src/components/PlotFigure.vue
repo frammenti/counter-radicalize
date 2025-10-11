@@ -88,7 +88,7 @@ function renderTimeMarker(time: number) {
     const options = {...props.timeMarkerOptions}
     const marks = options.marks as AsyncMark[]
     for (const m of marks) {
-      m.data = [new Date(time * 1000)]
+      m.data = [time]
     }
     timeMarkerContainer.value.appendChild(Plot.plot(appendMarks(options)))
   }
@@ -146,7 +146,7 @@ onMounted(async () => {
 
 function setPlaytime() {
   if (!pointer.value) return
-  playtime.value = pointer.value.time.getTime() / 1000
+  playtime.value = pointer.value.time
 }
 </script>
 
@@ -171,6 +171,9 @@ function setPlaytime() {
   position: relative;
   overflow-y: visible;
   padding-block-end: 0.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
 }
 .plot-axis {
   position: absolute;
@@ -179,30 +182,30 @@ function setPlaytime() {
   right: 0;
   z-index: 1;
   pointer-events: none;
-}
-.plot-axis:before,
-.plot-axis:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  background-color: resp($background-color);
-  z-index: -1;
-}
-.plot-axis:before {
-  left: -5px;
-  width: 42px;
-}
-.plot-axis:after {
-  right: -5px;
-  width: 20px;
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    @include theme(background-color, modal-fade);
+  }
+  &:before {
+    left: -5px;
+    width: 42px;
+  }
+  &:after {
+    right: -5px;
+    width: 20px;
+  }
 }
 .plot-legend {
   position: absolute;
   top: 5px;
   left: 40px;
   bottom: 30px;
-  width: 1094px;
+  width: 900px;
   display: flex;
   flex-flow: column;
   justify-content: stretch;
@@ -230,18 +233,13 @@ function setPlaytime() {
   font-family: $text-font-family;
 }
 :deep(svg) [font-variant="tabular-nums"] {
-  font-size: 0.5rem !important;
+  font-size: 0.55rem;
 }
 .plot-pointer :deep(svg) {
   font-variant: tabular-nums;
-  font-size: 0.5rem !important;
+  font-size: 0.55rem;
 }
 @media screen and (width < $laptop) {
-  .plot-scroll {
-    overflow-x: scroll;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-  }
   .plot-pointer {
     z-index: unset;
   }

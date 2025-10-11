@@ -1,29 +1,17 @@
 <script setup lang='ts'>
-import { ref, useTemplateRef, watch, defineAsyncComponent, onMounted, nextTick } from 'vue'
+import { ref, useTemplateRef, watch, nextTick } from 'vue'
 import { useThrottleFn } from '@vueuse/core'
 import { playtime, playing, rapid } from '@/stores/state'
 import parsePlaceholders from '@/composables/parsePlaceholders'
 import type { AlignedSegment } from '@/types/segment'
 
-const Tooltip = defineAsyncComponent(() => import('@/components/Tooltip.vue'))
-
-const props = defineProps<{ segments: AlignedSegment[], annotated: boolean, locked: boolean }>()
+const props = defineProps<{ segments: AlignedSegment[], locked: boolean }>()
 const active = defineModel('active', { type: Number, required: true })
 
 const container = useTemplateRef('container')
 const spans = ref<HTMLSpanElement[]>([])
 const scrolling = ref<boolean>(false)
-const hoverable = window.matchMedia('(hover: hover)').matches
 let lastInteraction: number = Date.now()
-let left: number = 0
-let right: number = 0
-
-onMounted(() => {
-  if (!hoverable) return
-  const dims = container.value!.getBoundingClientRect()
-  left = dims.left
-  right = dims.right
-})
 
 watch(active, i => {
   const el = spans.value[i]
@@ -109,7 +97,7 @@ const focus = useThrottleFn((index: number, direction?: 'next' | 'prev', event?:
   :style='{ overflowY: locked ? (scrolling ? "auto" : "hidden") : "auto" }'
   :aria-activedescendant='active > 0 ? `seg-${active}` : undefined'
 >
-  <p id='transcript-body' :annotated>
+  <p id='transcript-body'>
     <span
       v-for='(seg, i) in segments'
       :key='i'
@@ -120,7 +108,7 @@ const focus = useThrottleFn((index: number, direction?: 'next' | 'prev', event?:
       :class='{ active: i === active }'
       class='segment'
       @click='updatePlaytime(seg, i)'
-      @keydown.space='play($event)'
+      @keydown.space='play'
       @keydown.right='focus(i, "next", $event)'
       @keydown.left='focus(i, "prev", $event)'
       aria-role='button'
@@ -132,17 +120,13 @@ const focus = useThrottleFn((index: number, direction?: 'next' | 'prev', event?:
         <template v-if='typeof token === "string"'>
           {{ token }}
         </template>
-        <Tooltip v-else :parent='container' :disabled='!annotated' :parent-size='hoverable ? [left, right] : undefined'>
           <span
+            v-else
             class='disfluency'
             :class='token.class'
           >
-            {{ token.content.join("") }}
+            {{ token.content.join('') }}
           </span>
-          <template #content>
-            <p v-for='d in token.desc'>{{ d }}</p>
-          </template>
-        </Tooltip>
       </template>
     </span>
   </p>
@@ -158,16 +142,18 @@ const focus = useThrottleFn((index: number, direction?: 'next' | 'prev', event?:
   position: relative;
   scrollbar-gutter: stable;
   will-change: scroll-position;
-}
-#transcript-container.locked {
-  scrollbar-color: transparent transparent;
-  overflow-y: hidden;
+  &.locked {
+    scrollbar-color: transparent transparent;
+    overflow-y: hidden;
+  }
 }
 #transcript-body {
-  line-height: 1.6;
-  text-align: justify;
+  font-size: $fs-m;
+  line-height: 1.7;
+  text-align: left;
   padding-inline: 0.5rem;
   margin-block: 0;
+  hyphens: auto;
 }
 .segment {
   padding-block: 0.1rem;
@@ -178,62 +164,16 @@ const focus = useThrottleFn((index: number, direction?: 'next' | 'prev', event?:
   box-decoration-break: clone;
   transition: background-color 150ms ease;
   cursor: pointer;
-
   &:focus-visible {
-    background-color: resp($shadow-color);
+    @include theme(background-color, shadow);
   }
 }
 .active {
-  color: resp($link-color);
+  @include theme(color, link);
 }
 @media (hover: hover) {
   .segment:hover {
-    background-color: resp($shadow-color);
+    @include theme(background-color, shadow);
   }
-}
-/* Disfluency annotated */
-[annotated="true"] :deep(.sound-repetition) {
-  text-decoration: underline dashed 1px resp($secondary-color);
-}
-[annotated="true"] :deep(.block):before {
-  content: " ‖ ";
-  font-weight: 600;
-  color: resp($secondary-color);
-  font-style: normal;
-  text-decoration: none;
-}
-[annotated="true"] :deep(.word-repetition):after {
-  content: " x2";
-  font-weight: 600;
-  font-variant: small-caps;
-  font-size: 50%;
-  vertical-align: top;
-  color: resp($secondary-color);
-  text-decoration: none;
-}
-[annotated="true"] :deep(.word-repetition):has(+ .word-repetition):after,
-[annotated="true"] :deep(.word-repetition):has(+ div + .word-repetition):after
- {
-  content: ""
-}
-[annotated="true"] :deep(.interjection) {
-  font-style: italic;
-  color: resp($secondary-color);
-}
-[annotated="true"] :deep(.prolongation):after {
-  content: ":::";
-  font-weight: 400;
-  font-style: normal;
-  color: resp($secondary-color);
-  text-decoration: none;
-}
-[annotated="true"] .active :deep(.sound-repetition) {
-  text-decoration-color: resp-mix($link-color, $secondary-color);
-}
-[annotated="true"] .active :deep(.interjection),
-[annotated="true"] .active :deep(.block):before,
-[annotated="true"] .active :deep(.prolongation):after,
-[annotated="true"] .active :deep(.word-repetition):after {
-  color: resp-mix($link-color, $secondary-color);
 }
 </style>

@@ -6,7 +6,7 @@ defineProps<{ opaque?: boolean }>()
   <header :class='opaque ? "opaque" : ""'>
     <nav id='site-nav'>
       <div class='logo'>
-        <a href='/counter-radicalize/'>Con/rad</a>
+        <a href='/counter-radicalize/'>Con–rad</a>
       </div>
       <ul class='pages'>
         <li><a href='#about'>About<span class='optional'> the project</span></a></li>
@@ -28,10 +28,19 @@ defineProps<{ opaque?: boolean }>()
 header {
   background-color: transparent;
   will-change: background-color;
-}
-header.opaque {
-  background-color: resp($background-color);
-  box-shadow: 0 0 20px 10px resp($background-color);
+
+  &.opaque {
+    box-shadow: 0 0 20px 10px light(background);
+    @include theme(background-color, background);
+
+    @media (prefers-color-scheme: dark) {
+      box-shadow: 0 0 20px 10px dark(background);
+    }
+  }
+  a {
+    font-variation-settings: 'wght' 600;
+    @include theme(color, text);
+  }
 }
 #site-nav {
   display: flex;
@@ -40,48 +49,64 @@ header.opaque {
   justify-content: space-between;
   margin-inline: auto;
   line-height: 1.5;
-  font-size: .875rem;
+  font-size: $fs-base;
   height: $header-height;
   text-align: center;
-}
-.logo, .github {
-  flex: 1;
-  display: flex;
-}
-.logo {
-  font-family: $title-font-family;
-  font-size: 1.8em;
-  line-height: 1;
-  letter-spacing: -1px;
-}
-header a {
-  color: resp($text-color);
-  font-weight: 600;
-}
-.pages {
-  display: flex;
-  list-style: none;
-  margin-block: 0;
-  padding-inline: 0;
-  column-gap: 3rem;
-}
-.github {
-  justify-content: flex-end;
+
+  a { font-variation-settings: 'wght' 450; }
+
+  .logo, .github {
+    flex: 1;
+    display: flex;
+  }
+  .logo {
+    font-family: $title-font-family;
+    font-size: $fs-3xl;
+    line-height: 1;
+    font-weight: unset;
+    letter-spacing: -2px;
+
+    a {
+      font-variation-settings: 'wdth' 130, 'wght' 800;
+      transition: font-variation-settings 700ms cubic-bezier(0.86, 0, 0.07, 1);
+      will-change: font-variation-settings;
+    }
+
+    &:hover a,
+    a:focus {
+      font-variation-settings: 'wdth' 155, 'wght' 400;
+      background-color: unset;
+    }
+  }
+
+  .pages {
+    display: flex;
+    list-style: none;
+    margin-block: 0;
+    padding-inline: 0;
+    column-gap: 3rem;
+  }
+  .github {
+    justify-content: end;
+  }
 }
 @media screen and (width < $laptop) {
-  #site-nav { column-gap: 3rem }
-  .logo, .github { flex: auto }
-  .pages { display: contents }
-  .optional { display: none }
-  .pages a { text-transform: capitalize; }
-  .github svg {
-    height: 2.286em;
-    width: 2.286em;
+  #site-nav {
+    column-gap: 3rem;
+    .logo, .github { flex: auto }
+    .pages { display: contents }
+    .optional { display: none }
+    .pages a { text-transform: capitalize; }
+    .github svg {
+      height: 2.286em;
+      width: 2.286em;
+    }
   }
 }
 @media screen and (width < $tablet) {
   header {
-    outline: 1px solid resp($shadow-color);
+    outline: 1px solid;
+    @include theme(outline-color, shadow);
   }
   header.opaque {
     box-shadow: none;
@@ -89,8 +114,12 @@ header a {
   #site-nav {
     padding-inline: 0.9rem;
     height: $header-height-mobile;
-    font-size: 0.75rem;
-  }
+    font-size: $fs-s;
+
   .pages { display: none }
+
+  .logo { font-size: $fs-2xl;}
+
+  }
 }
 </style>

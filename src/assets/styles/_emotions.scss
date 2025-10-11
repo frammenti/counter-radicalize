@@ -79,12 +79,6 @@ $dimensions-dark: (
   )
 );
 
-$dimensions-icon: (
-  valence: (cutoffs: (0.25: 🙁, 0.5: 😐, 0.75: 🙂, 1: 😁), filter: grayscale),
-  arousal: (icon: 🔥),
-  dominance: (cutoffs: (0.25: 🐭, 0.5: 🐶, 0.75: 🐻, 1: 🦁))
-);
-
 // Fluency
 $fluent-light: (
   high: map.get($emotions-light, disgust),

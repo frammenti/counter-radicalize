@@ -1,5 +1,29 @@
-export function clamp (value: number, min = 0, max = 1) {
+export function clamp(value: number, min = 0, max = 1) {
   return Math.max(min, Math.min(max, value))
+}
+
+export function capitalize<S extends string>(s: S): Capitalize<S> {
+    return s[0].toUpperCase() + s.slice(1) as Capitalize<S>
+}
+
+export function round(v: number, per: number = 100, digits: number = 2) {
+  let base = 10 ** digits
+  return Math.round(v * base * per) / base
+}
+
+export function range(start: number, stop: number, step: number) {
+  return Array.from(
+    { length: Math.ceil((stop - start) / step) },
+    (_, i) => start + i * step,
+  )
+}
+
+export function formatTime(s: number, displaySeconds: boolean = true): string {
+  const totalSeconds = Math.round(s)
+  const minutes = Math.floor(totalSeconds / 60)
+  if (displaySeconds === false) return minutes.toString()
+  const seconds = totalSeconds % 60
+  return `${minutes}:${seconds.toString().padStart(2, '0')}`
 }
 
 export function fromNestedEntries(entries: [string, any][], sep: string = '_'): Record<string, any> {

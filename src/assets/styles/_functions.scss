@@ -1,16 +1,23 @@
 @use 'sass:color';
 @use 'sass:list';
+@use 'sass:map';
+@use 'palette' as *;
 
-@function resp($colors) {
-  @return light-dark(list.nth($colors, 1), list.nth($colors, 2));
-};
+@function light($key) {
+  $colors: map.get($palette, $key);
+  @if $colors == null {
+    @error"Undefined theme color `#{$key}`.";
+  }
+  @return list.nth($colors, 1);
+}
 
-@function resp-mix($colors1, $colors2) {
-  @return light-dark(
-    color.mix(list.nth($colors1, 1), list.nth($colors2, 1), $weight: 30%,$method: lch),
-    color.mix(list.nth($colors1, 2), list.nth($colors2, 2), $weight: 85%,$method: lch)
-  );
-};
+@function dark($key) {
+  $colors: map.get($palette, $key);
+  @if $colors == null {
+    @error"Undefined theme color `#{$key}`.";
+  }
+  @return list.nth($colors, 2);
+}
 
 @function shadow($color, $opacity) {
   @return color.change($color, $alpha: $opacity)

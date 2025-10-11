@@ -33,42 +33,48 @@ const { stop } = useIntersectionObserver(
   v-model:open='isVisible'
   :duration='30000'
   type='background'
-  class='toast-root card'
+  class='toast-root p-card'
   as='div'
 >
   <ToastTitle as='p' class='toast-title' v-if='title'>{{ title }}</ToastTitle>
   <ToastDescription as='div' class='toast-desc'>
     <slot>…</slot>
   </ToastDescription>
-  <ToastClose class='toast-close button'>Ok</ToastClose>
+  <ToastClose class='toast-close button'>Understood</ToastClose>
 </ToastRoot>
 </template>
 
 <style scoped lang='scss'>
 .toast-title {
-  font-weight: 500;
-  margin-block: 0 0.5rem;
-  text-align: start;
+  font-size: $fs-m;
+  font-variation-settings: 'wght' 550;
+  margin-block-end: 0.25rem;
+  line-height: 1;
 }
 .toast-desc {
-  margin-block: 0 1rem;
-  font-size: 0.8em;
+  margin-block-end: 10px;
   gap: 0.5em;
   display: flex;
   align-items: start;
   justify-content: space-between;
-  text-align: start;
+  text-align: center;
 }
 .toast-close {
-  font-size: .75em;
-  padding-block: .375em;
-  padding-inline: .75em;
-  border-radius: $medium-radius;
-  text-align: start;
+  font-size: inherit;
+  border-radius: $max-radius;
+  padding-inline: $button-padding-inline-xs;
+  padding-block: $button-padding-block-xs;
+  align-self: start;
+  font-variation-settings: 'wght' 300;
+  @include theme(background-color, background, true);
+  @include theme(color, tip)
 }
 @media screen and (width < $laptop) {
+  .toast-title {
+    font-size: $fs-l;
+  }
   .toast-close {
-    padding-inline: 1.25em;
+    align-self: center;
   }
 }
 </style>

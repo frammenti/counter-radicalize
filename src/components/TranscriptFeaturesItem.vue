@@ -1,35 +1,26 @@
 <script setup lang='ts'>
-defineProps<{ label: string, value: number, short: string }>()
+import { capitalize } from '@/utils'
+
+defineProps<{ label: string, value?: number }>()
 </script>
 
 <template>
-<span class='label full-label'>{{ label }}</span>
-<span class='label short-label' :title='label'>{{ short }}</span>
-<span class='value'>
-  {{ Math.round(value * 100) }}<span class='percent'> %</span>
+<span class='label'>{{ capitalize(label) }}</span>
+<span v-if='value' class='value'>
+  {{ Math.round(value * 100) }}<span class='percent'>%</span>
 </span>
 </template>
 
 <style scoped lang='scss'>
+.label, .value {
+  font-size: $fs-2xl;
+}
 .label {
-  font-weight: 500;
+  font-variation-settings: 'wght' 600;
   margin-inline-end: 0.4em;
-}
-.short-label {
-  display: none;
-}
-.value {
-  font-size: 0.85em;
 }
 .percent {
   opacity: 0.7;
-}
-@media screen and (width < $tablet) {
-  .full-label {
-    display: none;
-  }
-  .short-label {
-    display: inline;
-  }
+  font-size: 80%;
 }
 </style>

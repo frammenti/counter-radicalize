@@ -15,3 +15,9 @@ import LinkPreview from '@/components/LinkPreview.vue'
   <p>The inspiring youtuber <LinkPreview href='https://www.youtube.com/watch?v=5N8Jzbs7oqs'>has commented</LinkPreview> on the incident. <LinkPreview href='https://www.reddit.com/r/Vystopia/'>Reddit</LinkPreview> doesn't work. Another <LinkPreview href='https://archive.org/details/complete-cultural-phillistine-transcripts/'>resource</LinkPreview> linked on the attacker's website. His friend's <LinkPreview href='https://vegantinatalist.tumblr.com/'>Tumblr page</LinkPreview>.</p>
 </section>
 </template>
+
+<style scoped lang='scss'>
+h2 {
+  font-size: $fs-3xl;
+}
+</style>

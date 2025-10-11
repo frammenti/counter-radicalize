@@ -2,9 +2,9 @@ import { ref, watch } from 'vue'
 import { playtime } from '@/stores/state'
 import type { Segment } from '@/types/segment'
 
+export const active = ref<number>(-1)
 
 export default function useActiveSegment(segments: Segment[]) {
-  const active = ref<number>(-1)
   const lastIdx = segments.length - 1
   const secondStart = segments[1].start
   const lastStart = segments[lastIdx - 1].end

@@ -1,8 +1,7 @@
 <script setup lang='ts'>
 import { Toggle } from 'reka-ui'
-import { LockKeyhole, LockKeyholeOpen } from 'lucide-vue-next'
 
-defineProps<{ title?: string }>()
+defineProps<{ title?: string, textOn: string, textOff: string }>()
 const state = defineModel('modelValue', { type: Boolean, required: true })
 </script>
 
@@ -14,40 +13,46 @@ const state = defineModel('modelValue', { type: Boolean, required: true })
     @mouseenter='($event.currentTarget as HTMLButtonElement).classList.add("mouse-in")'
     @click='($event.currentTarget as HTMLButtonElement).classList.remove("mouse-in")'
   >
-    <component
-      :is='state ? LockKeyhole : LockKeyholeOpen'
-      :size='16'
-      :stroke-width='1.5'
-    />
+  <Transition name='bump' mode='out-in'>
+    <span :key='Number(state)'>{{ state ? textOn : textOff }}</span>
+  </Transition>
   </Toggle>
 </template>
 
 <style scoped lang='scss'>
 .button {
-  width: 2rem;
-  height: 2rem;
-  padding: 0;
-  font-size: 1rem;
-  line-height: 1rem;
-  color: resp($text-color);
-  border: 1px solid resp($border-color);
-  border-radius: $large-radius;
-  box-shadow: $box-shadow-small;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 0.1rem;
+  font-variation-settings: 'wght' 300;
+  
+  &[data-state='off'] {
+    @include theme(background-color, primary-active);
 
-  &[data-state='on'] {
-    background-color: resp((shadow($brown, 0.2), shadow($taupe, 0.4)));
+    &.secondary {
+      @include theme(background-color, secondary-active);
+    }
   }
 
-  &[data-state='off'] {
-    background-color: resp($background-color);
+  &[data-state='on'] {
+    @include theme(background-color, primary);
+
+      &.secondary {
+        background-color: oklch(0.3678 0.097024 134.341);
+
+        @media (prefers-color-scheme: dark) {
+          background-color: oklch(0.3956 0.081569 97.0101);
+        }
+    }
   }
 
   &[data-state='off'].mouse-in:hover {
-    background-color: resp((shadow($brown, 0.1) shadow($taupe, 0.075)));
+    @include theme(background-color, primary-hover);
+
+      &.secondary {
+      @include theme(background-color, secondary-hover);
+    }
+  }
+
+  .bump-enter-active {
+    animation: $animation-button;
   }
 }
 </style>

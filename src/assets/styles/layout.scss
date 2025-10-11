@@ -4,6 +4,24 @@
 
 *, *:before, *:after {
   box-sizing: border-box;
+  @media screen and (hover: none) {
+    @include theme(-webkit-tap-highlight-color, selection);
+  }
+}
+
+::selection {
+  @include theme(background-color, selection);
+}
+
+:focus-visible {
+  outline-offset: 2px;
+  outline-width: 2px;
+  outline-style: solid;
+  @include theme(outline-color, link);
+}
+
+[v-cloak] {
+  visibility: hidden;
 }
 
 html, body {
@@ -14,9 +32,8 @@ html, body {
 
 html {
   font-family: $text-font-family;
-  font-weight: 400;
+  font-variation-settings: 'wght' 300;
   line-height: 1.5;
-  color: resp($text-color);
   font-synthesis: none;
   font-feature-settings: 'kern', 'liga';
   text-rendering: optimizeLegibility;
@@ -25,6 +42,7 @@ html {
   scroll-behavior: smooth;
   overflow-y: auto;
   overflow-x: hidden;
+  @include theme(color, text);
 }
 
 body, #app, main, article {
@@ -38,7 +56,7 @@ body, #app {
 }
 
 body {
-  background-color: resp($background-color);
+  @include theme(background-color, background);
 }
 
 header {
@@ -50,29 +68,34 @@ header {
   z-index: 10;
 }
 
-.paginated {
-  height: calc(100lvh - $section-spacing);
-  max-width: 1200px;
-  width: 100%;
+.wrapper {
+  width: $main-width;
+  max-width: clamp(20rem, 100vw, 105rem);
   margin: 0 auto;
-  padding-inline: 2rem;
-  padding-block: $section-spacing;
-  scroll-margin-block-start: $header-height;
-  border-block-start: 1px solid resp($border-color);
+  container: wrapper / inline-size;
 }
 
-.paginated:first-of-type {
-  border-block-start: none;
+.full-page {
+  height: 100lvh;
+
+  > section {
+    height: 100%;
+    width: 100%;
+  }
 }
 
-.hero {
-  min-height: 100svh; // small viewport height
-  padding-top: $header-height;
+.paginated {
+  margin-block-start: $section-spacing;
+  scroll-margin-block-start: $section-spacing;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   font-family: $title-font-family;
-  font-weight: 600;
+  font-variation-settings: 'wght' 600, 'wdth' 130 ;
+}
+
+h2 {
+  font-size: $fs-xl;
 }
 
 hgroup h2 {
@@ -80,15 +103,15 @@ hgroup h2 {
 }
 
 hgroup p {
+  font-family: $title-font-family;
   font-size: 1.2rem;
-  font-weight: 500;
-  font-style: italic;
+  font-style: italic; // fallback
   margin-top: 0;
+  @include title-italic()
 }
 
 a {
-  color: resp($link-color);
-  font-weight: 500;
+  font-variation-settings: 'wght' 500;
   text-decoration: inherit;
   padding-inline: 0.2rem;
   padding-block: 0.2rem;
@@ -101,6 +124,7 @@ a {
   display: inline-flex;
   gap: 0.25rem;
   align-items: center;
+  @include theme(color, link);
 
   svg {
     height: 1.6rem;
@@ -110,29 +134,37 @@ a {
 }
 
 .button {
-  background-color: resp($primary-color);
+  appearance: none;
+  user-select: none;
   color: $white;
+  font-family: $text-font-family;
   font-size: .875em;
-  font-weight: 600;
+  font-variation-settings: 'wght' 600;
   line-height: 1.5;
   text-align: center;
+  text-wrap-mode: nowrap;
+  overflow: clip;
+  text-overflow: ellipsis;
   border-radius: $max-radius;
-  padding-inline: 1.2em;
-  padding-block: 0.6em;
+  padding-inline: $button-padding-inline;
+  padding-block: $button-padding-block;
   margin-inline: 0;
   margin-block: 0;
-  box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.102),
-    0 2px 4px -2px rgba(0, 0, 0, 0.102);
   border: 0 solid;
   cursor: pointer;
   will-change: background-color;
   transition: background-color 150ms ease;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  @include theme(background-color, primary);
 
   &:hover,
   &:focus {
-    background-color: resp($primary-muted-color);
+    @include theme(background-color, primary-hover);
+  }
+
+  > span {
+    display: block;
+    position: relative;
   }
 
   svg {
@@ -140,23 +172,63 @@ a {
   }
 }
 
+.p-cluster {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: $cluster-gap;
+  margin-block-end: $cluster-gap;
+
+  &:has(.audio) { min-height: 60px; }
+}
+
+fieldset {
+  appearance: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  gap: $cluster-gap;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .grid {
   display: grid;
   align-items: center;
   grid-template-columns: repeat(3, 1fr);
   width: 100%;
+
+  > :first-child {
+    justify-self: start;
+  }
+
+  > :nth-child(2) {
+    justify-self: center;
+  }
+
+  > :last-child {
+    justify-self: end;
+  }
+
+  &.cards {
+    gap: $gutter;
+
+    .p-card {
+      container: card / size;
+      width: 100%;
+      height: 100%;
+
+      &.no-contain {
+        container: card / inline-size;
+      }
+    }
+  }
 }
 
-.grid-item-1 {
-  justify-self: start;
-}
-
-.grid-item-2 {
-  justify-self: center;
-}
-
-.grid-item-3 {
-  justify-self: end;
+.grid.cards + .grid.cards,
+.p-card + .grid.cards {
+  margin-block-start: $gutter;
 }
 
 .noselect {
@@ -168,12 +240,42 @@ a {
 }
 
 .card {
-  background-color: resp($modal-color);
-  outline: 1px solid resp($border-color);
-  outline-offset: calc(1px * -1);
   border-radius: $large-radius;
   box-shadow: $box-shadow;
   padding: 1rem;
+  @include theme(background-color, modal-alt);
+}
+
+.p-card {
+  border-radius: $xlarge-radius;
+  padding: $card-padding;
+  @include theme(background-color, modal);
+
+  h4 {
+    font-size: $fs-s;
+  }
+}
+
+.card,
+.p-card {
+  > :first-child {
+    margin-block-start: 0;
+  }
+  > :last-child {
+    margin-block-end: 0;
+  }
+}
+
+.invert {
+  @include theme(background-color, background, true);
+  @include theme(color, text, true);
+  a {
+    @include theme(color, link-visited);
+  }
+}
+
+.fade {
+  @include theme(background-color, modal-fade);
 }
 
 .icon-outline {
@@ -198,19 +300,53 @@ a {
     overscroll-behavior: none;
   }
   a:hover, a:focus-visible, a[data-state='open'] {
-    background-color: resp($shadow-color);
+    @include theme(background-color, shadow);
+  }
+}
+
+@media screen and (width < $laptop) {
+  .paginated {
+    margin-block-start: $section-spacing-mobile;
+    scroll-margin-block-start: $section-spacing-mobile;
+  }
+  header {
+    height: $header-height-mobile;
   }
 }
 
 @media screen and (width < $tablet) {
-  .paginated {
-    padding-inline: 1em;
-    padding-block: $section-spacing-mobile;
-    scroll-margin-block-start: $header-height-mobile;
-    height: unset;
-    min-height: calc(100lvh - $section-spacing-mobile);
+  .wrapper {
+    width: $main-width-mobile;
   }
-  header {
-    height: $header-height-mobile;
+  .grid {
+    grid-template-columns: 100%;
+
+    > :first-child,
+    > :nth-child(2),
+    > :last-child {
+      justify-self: start;
+    }
+
+    &.cards {
+      gap: $gutter-mobile;
+    }
+  }
+
+  .grid.cards + .grid.cards,
+  .p-card + .grid.cards {
+    margin-block-start: $gutter-mobile;
+  }
+
+  .p-card {
+    padding: $card-padding-mobile;
+  }
+
+  .p-cluster {
+    > .audio { width: 100% }
+    > fieldset { flex: 1; }
+
+    &:has(.audio) {
+      min-height: calc(60px + $fs-base * 1.5 + $button-padding-block * 2 + $cluster-gap);
+    }
   }
 }

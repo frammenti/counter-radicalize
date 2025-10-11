@@ -1,83 +1,58 @@
 <script setup lang='ts'>
-import { ref, computed } from 'vue'
-import { SwitchRoot } from 'reka-ui'
+import { computed } from 'vue'
 import TranscriptFeaturesItem from '@/components/TranscriptFeaturesItem.vue'
+import usePartition from '@/composables/usePartition'
 import { rapid } from '@/stores/state'
-import type { AlignedSegment } from '@/types/segment'
+import { dummy, type AlignedSegment } from '@/types/segment'
 
-const props = defineProps<{ data: AlignedSegment['emotions'] }>()
-const more = ref<boolean>(false)
+const { data } = defineProps<{ data?: AlignedSegment }>()
 
-const THRESHOLD: number = 0.095
-const keys = [
-  'anger', 'contempt', 'disgust', 'fear', 'happiness',
-  'neutral', 'sadness', 'surprise', 'other'
-] as const
-const shortKeys = [
-  'ang.', 'cont.', 'disg.', 'fear', 'happ.',
-  'neut.', 'sad.', 'surp.', 'oth.'
-] as const
-
-function partition<T>(array: T[], condition: (item: T) => boolean): [T[], T[]] {
-  const pass: T[] = [], fail: T[] = [];
-  array.forEach((e) => (condition(e) ? pass : fail).push(e));
-  return [pass, fail];
-}
-
-const splitData = computed(() => {
-  const items = keys.map((k, i) => [
-    k,
-    props.data[k],
-    shortKeys[i],
-  ] as [string, number, string])
-
-  items.sort((a, b) => b[1] - a[1])
-  return partition(items, e => e[1] >= THRESHOLD)
-})
+const splitData = computed(() => data ? usePartition(data.emotions) : undefined)
 </script>
 
 <template>
 <TransitionGroup
-  :name='rapid ? "" : "list"'
+  :name='rapid ? "instant" : "list"'
   tag='ul'
   class='feature-list'
   :duration='300'
-  appear
 >
-  <li
-    v-for='item in splitData[0]'
-    :key='item[0]'
-    :class='item[0]'
-    class='emotion primary'
-  >
-    <TranscriptFeaturesItem
-      :label='item[0]'
-      :value='item[1]'
-      :short='item[2]'
-    />
-  </li>
-  <template v-if='more'>
-  <li
-    v-for='item in splitData[1]'
-    :key='item[0]'
-    :class='item[0]'
-    class='emotion secondary'
-  >
-    <TranscriptFeaturesItem
-      :label='item[0]'
-      :value='item[1]'
-      :short='item[2]'
-    />
-  </li>
+  <template v-if='splitData'>
+    <li
+      v-for='item in splitData[0]'
+      :key='item[0]'
+      :class='item[0]'
+      class='emotion'
+    >
+      <TranscriptFeaturesItem
+        :label='item[0]'
+        :value='item[1]'
+      />
+    </li>
+    <li><hr /></li>
+    <li
+      v-for='item in splitData[1]'
+      :key='item[0]'
+      :class='item[0]'
+      class='emotion extra'
+    >
+      <TranscriptFeaturesItem
+        :label='item[0]'
+        :value='item[1]'
+      />
+    </li>
   </template>
-  <li key='see-more'>
-    <SwitchRoot
-      id='see-more'
-      class='button noselect'
-      v-model='more'
-      aria-label='See more'
-    >…</SwitchRoot>
-  </li>
+  <template v-else>
+    <li
+      v-for='v, k in dummy.emotions'
+      :key='k'
+      :class='k'
+      class='emotion'
+    >
+      <TranscriptFeaturesItem :label='k' :value='v' />
+    </li>
+    <li style='visibility: hidden;'><hr /></li>
+  </template>
 </TransitionGroup>
 </template>
 
@@ -86,32 +61,13 @@ const splitData = computed(() => {
 .emotion:before {
   content: '';
   display: inline-block;
-  width: 0.8em;
-  height: 0.8em;
+  width: 0.9em;
+  height: 0.9em;
   border-radius: $max-radius;
-  margin-inline-end: 0.4em;
-  vertical-align: middle;
+  margin-inline-end: 0.5em;
+  vertical-align: text-top;
 }
-.secondary {
-  filter: opacity(0.7);
-}
-#see-more {
-  font-size: 1.15rem;
-  font-weight: 400;
-  line-height: 0;
-  color: currentColor;
-  background-color: resp($shadow-color);
-  padding-inline: 6px;
-  padding-block: 2px 14px;
-  margin-inline-start: -3px;
-  margin-block-start: 2px;
-  box-shadow: $box-shadow-small;
-}
-#see-more:hover,
-#see-more[data-state='checked'] {
-  background-color: resp((shadow($brown, 0.1), shadow($taupe, 0.2)));
-}
-#see-more[data-state='checked'] {
-  color: resp($text-muted-color);
+.extra {
+  opacity: 0.7;
 }
 </style>

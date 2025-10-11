@@ -8,11 +8,11 @@
   overflow: clip;
   z-index: 2;
   box-shadow: $box-shadow;
-  color: resp($text-color);
   font-style: normal;
   font-size: 0.9em;
   padding-block: 0.3rem;
   padding-inline: 0.6rem;
+@include theme(color, text);
 }
 :deep(.tooltip)[data-side='top'] {
   animation-name: fade-in-slide-up;
@@ -24,9 +24,9 @@
   animation-name: fade-in-slide-right;
 }
 :deep(.arrow) {
-  fill: resp($modal-color);
-  stroke: resp($border-color);
   z-index: 3;
+  @include theme(fill, modal);
+  @include theme(stroke, border);
 }
 :deep(.tooltip) p {
   margin-block: 0;

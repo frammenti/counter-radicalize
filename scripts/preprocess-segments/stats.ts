@@ -44,7 +44,7 @@ export default function weightedMean(segments: EmotionSegment[], windows: Fluenc
   mapO(stats, (v) => (v / segDuration))
 
   // Fluency
-  const fluency = { fluent: 0, ...Object.fromEntries(DisfluencyType.map(k => [k, 0])) } as Record<"fluent" | typeof DisfluencyType[number], number>
+  let fluency = { fluent: 0, ...Object.fromEntries(DisfluencyType.map(k => [k, 0])) } as Record<"fluent" | typeof DisfluencyType[number], number>
   let totDisfluencies = 0
 
   for (const win of windows) {
@@ -64,6 +64,9 @@ export default function weightedMean(segments: EmotionSegment[], windows: Fluenc
   for (const d of DisfluencyType) {
     fluency[d] /= normTotDisfluencies
   }
+  
+  // Keys to lowercase
+  fluency = Object.fromEntries(Object.entries(fluency).map(([k, v]) => [k.toLowerCase(), v]))
 
   // Result
   const { emotions, dimensions } = stats

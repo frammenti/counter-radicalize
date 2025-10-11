@@ -2,9 +2,10 @@
 
 <script setup lang='ts'>
 import { computed, ref, defineAsyncComponent } from 'vue'
-import PieSegment from '@/components/PieSegment.vue'
+import PieSlice from '@/components/PieSlice.vue'
 import usePalette from '@/composables/usePalette'
 import patternThemes from '@/assets/styles/patterns.module.scss'
+import { capitalize, round } from '@/utils'
 
 const TooltipCursor = defineAsyncComponent(() => import('@/components/TooltipCursor.vue'))
 
@@ -13,7 +14,6 @@ const {
   palette = [],
   itemValue = 'value',
   itemTitle = 'title',
-  size = 250,
   rotate = 0,
   gaugeCut = 0,
   min = 0.01, // the minimum value to normalize small values > 0
@@ -119,39 +119,39 @@ function arcOffset(index: number) {
 function arcSize(v: number) { return norm(v) / total.value * (100 - gaugeCut / 3.6) }
 
 // Active item
-const active = ref<number>()
+const activeIdx = defineModel<number | undefined>('active-idx', { type: Number, required: false, default: undefined })
 const anchor = ref({ x: 0, y: 0 })
 </script>
 
 <template>
 <div class='pie-chart'>
-  <slot name='title'></slot>
+  <slot></slot>
   <div
     class='pie-content'
     :style='{
-      maxWidth: `${size}px`,
+      maxWidth: size ? `${size}px` : "none",
       transform: `rotate(${rotateDeg})`,
-      marginBottom: `calc(-1 * ${size}px * ${gaugeOffset})`,
+      marginInline: `calc(-1 * ${size}px * ${gaugeOffset})`,
     }'
   >
     <TooltipCursor
       v-if='tooltip'
       :anchor='anchor'
-      :open='active !== undefined'
+      :open='activeIdx !== undefined'
       min-width='8rem'
       height='3.6rem'
     >
-        <div class='tooltip-content' v-if='active !== undefined'>
+        <div class='tooltip-content' v-if='activeIdx !== undefined'>
           <div class='tooltip-legend'
             :style='{
-              backgroundColor: arcs[active].color,
-              backgroundImage: patterns[arcs[active].pattern]?.url
+              backgroundColor: arcs[activeIdx].color,
+              backgroundImage: patterns[arcs[activeIdx].pattern]?.url
             }'
           ></div>
           <div class='tooltip-text'>
-            <div class='tooltip-title'>{{ `${arcs[active].title[0].toUpperCase()}${arcs[active].title.slice(1)}` }}</div>
+            <div class='tooltip-title'>{{ capitalize(arcs[activeIdx].title) }}</div>
             <div class='tooltip-value'>
-            {{ Math.round(arcs[active].value * 10000) / 100 }} %
+            {{ round(arcs[activeIdx].value) }} %
             </div>
           </div>
         </div>
@@ -167,20 +167,20 @@ const anchor = ref({ x: 0, y: 0 })
       }'
     >
       <defs>
-        <template v-for='({svg: pattern}) in patterns' :key='i'>
+        <template v-for='{svg: pattern}, _i in patterns' :key='_i'>
           <g v-html='pattern'></g>
         </template>
       </defs>
-      <template v-for='(item, i) in arcs' :key='item.key'>
-        <PieSegment
+      <template v-for='item, i in arcs' :key='item.key'>
+        <PieSlice
           v-if='item.value > 0'
-          :active='active === i'
+          :active='activeIdx === i'
           v-bind='segmentProps'
           :color='item.color'
           :value='arcSize(item.value)'
           :rotate='arcOffset(i)'
           :pattern='item.pattern'
-          @update:active='(val) => { active = val ? i : undefined }'
+          @update:active='(isActive) => activeIdx = isActive ? i : undefined'
         />
       </template>
     </svg>
@@ -195,10 +195,12 @@ const anchor = ref({ x: 0, y: 0 })
   align-items: center;
   justify-content: center;
   text-align: center;
+  width: 100%;
+  height: 100%;
 }
 .pie-content {
   width: 100%;
-  font-size: 0.875rem;
+  font-size: $fs-base;
 }
 .tooltip-content {
   display: flex;
@@ -212,7 +214,8 @@ const anchor = ref({ x: 0, y: 0 })
   height: 2.25rem;
   width: 2.25rem;
   border-radius: $max-radius;
-  border: 1px solid resp($border-color);
+  border: 1px solid;
+  @include theme(border-color, border);
 }
 .tooltip-value {
   font-size: 0.8rem;

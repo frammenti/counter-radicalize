@@ -1,5 +1,6 @@
 @use 'sass:list';
 @use 'sass:map';
+@use 'sass:meta';
 @use '_palette' as *;
 @use '_emotions' as *;
 
@@ -8,7 +9,7 @@ $light: (
   fluency: $fluent-light,
   primary: list.nth($link-color, 1),
   secondary: list.nth($secondary-color, 1),
-  background: list.nth($background-color, 1)
+  background: list.nth($modal-fade-color, 1)
 );
 
 $dark: (
@@ -16,7 +17,7 @@ $dark: (
   fluency: $fluent-dark,
   primary: list.nth($link-color, 2),
   secondary: list.nth($secondary-color, 2),
-  background: list.nth($background-color, 2)
+  background: list.nth($modal-fade-color, 2)
 );
 
 
@@ -28,8 +29,12 @@ $schemes: (
 :export {
   @each $scheme, $palette in $schemes {
     @each $key, $value in $palette {
-      @each $k, $v in $value {
-        #{$scheme}_#{$key}_#{$k}: #{$v};
+      @if meta.type-of($value) == 'map' {
+        @each $k, $v in $value {
+          #{$scheme}_#{$key}_#{$k}: #{$v};
+        }
+      } @else {
+         #{$scheme}_#{$key}: #{$value};
       }
     }
   }

@@ -57,10 +57,10 @@ watch(playing,
 </script>
 <template>
 <audio
+  class='audio'
   controls
   preload='auto'
   ref='audio'
-  id='audio-player'
   @timeupdate='updatePlaytime'
   @play='updateState'
   @pause='updateState'
@@ -71,7 +71,10 @@ watch(playing,
 </template>
 
 <style scoped lang='scss'>
-  #audio-player {
-    min-height: 65px;
-  }
+.audio {
+  border-radius: $max-radius;
+}
+.audio::-webkit-media-controls-panel {
+  @include theme(background-color, background);
+}
 </style>

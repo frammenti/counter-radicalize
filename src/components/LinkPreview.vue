@@ -25,6 +25,7 @@ const metadata = previews[props.href]
       class='popover card'
       align='center'
       side='top'
+      positionStrategy='absolute'
       :align-flip=true
       :prioritize-position=true
       :side-offset=5
@@ -76,15 +77,8 @@ const metadata = previews[props.href]
   box-shadow: $box-shadow-large-reverse;
 }
 :deep(.arrow) {
-  fill: resp($modal-color);
-  stroke: resp($border-color);
   z-index: 3;
-}
-.popover-content {
-  width: 100%;
-  display: flex;
-  flex-flow: column;
-  height: fit-content;
+  @include theme(fill, modal);
 }
 .popover-image {
   margin-inline: -20px;
@@ -95,38 +89,45 @@ const metadata = previews[props.href]
   background-position: center;
   opacity: 0.9;
 }
-.popover-content h5 {
-  margin-block: 0;
+.popover-content {
   width: 100%;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-}
-.popover-content p {
-  font-size: 0.8rem;
-  width: 100%;
-  margin-block: 0.25rem;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5;
-  line-clamp: 5;
-}
-.popover-content a {
-  font-size: 0.7rem;
-  border-radius: $max-radius;
-  background-color: resp($shadow-color);
-  width: fit-content;
-  padding-inline: 6px;
-  padding-block: 0.5px;
-  font-weight: inherit;
-  color: currentColor;
-  margin: 0;
-  margin-inline-start: -3px;
-}
-.popover-content a:hover {
-  background-color: resp((shadow($brown, 0.1), shadow($taupe, 0.3)));
+  display: flex;
+  flex-flow: column;
+  height: fit-content;
+  h5 {
+    font-variation-settings: 'wght' 550;
+    margin-block: 0;
+    width: 100%;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+  p {
+    font-size: 0.8rem;
+    width: 100%;
+    margin-block: 0.25rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+  }
+  a {
+    font-size: 0.7rem;
+    border-radius: $max-radius;
+    width: fit-content;
+    padding-inline: 6px;
+    padding-block: 0.5px;
+    font-variation-settings: 'wght' 300;
+    color: currentColor;
+    margin: 0;
+    margin-inline-start: -3px;
+    @include theme(background-color, shadow);
+  }
+  a:hover {
+    @include theme(background-color, shadow-hover);
+  }
 }
 </style>
