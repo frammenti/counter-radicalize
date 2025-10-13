@@ -48,6 +48,7 @@ html, body {
 
 html {
   font-family: $font-family-body;
+  font-size: 16px;
   font-variation-settings: 'wght' 300;
   line-height: 1.5;
   font-synthesis: none;
@@ -55,6 +56,8 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
   scroll-behavior: smooth;
   overflow-y: auto;
   overflow-x: hidden;

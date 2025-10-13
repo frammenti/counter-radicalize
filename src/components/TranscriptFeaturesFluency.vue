@@ -40,7 +40,7 @@ const disfluencies = computed(() => {
 }
 .value {
   vertical-align: baseline;
-  font-size: 1.15rem;
+  font-size: 18.4px;
   line-height: 0;
   font-family: $font-family-symbol;
   font-weight: 400;

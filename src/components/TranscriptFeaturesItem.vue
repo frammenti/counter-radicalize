@@ -5,18 +5,19 @@ defineProps<{ label: string, value?: number }>()
 </script>
 
 <template>
-<span>
-  <span class='label'>{{ capitalize(label) }}</span>&numsp;<span v-if='value' class='value'>{{ Math.round(value * 100) }}<span class='percent'>%</span>
+<span class='entry'>
+  <span class='label'>{{ capitalize(label) }}</span>&nbsp;<span v-if='value' class='value'>{{ Math.round(value * 100) }}<span class='percent'>%</span>
 </span>
 </span>
 </template>
 
 <style scoped lang='scss'>
-.label, .value {
+.entry {
   font-size: $fs-2xl;
 }
 .label {
   font-variation-settings: 'wght' 600;
+  margin-inline-end: 0.1em;
 }
 .percent {
   opacity: 0.7;
