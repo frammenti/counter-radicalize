@@ -147,7 +147,7 @@ h4 {
   }
 
   .button {
-    border-radius: $max-radius;
+    border-radius: $radius-max;
     height: 30px;
     width: 30px;
     padding: 0;
@@ -163,7 +163,7 @@ h4 {
       content: '';
       height: 10px;
       width: 10px;
-      border-radius: $max-radius;
+      border-radius: $radius-max;
       position: absolute;
       top: 33%;
       left: 33%;

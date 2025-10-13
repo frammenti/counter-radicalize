@@ -21,6 +21,7 @@ const state = defineModel('modelValue', { type: Boolean, required: true })
 
 <style scoped lang='scss'>
 .button {
+  font-size: $fs-base;
   font-variation-settings: 'wght' 300;
   
   &[data-state='off'] {

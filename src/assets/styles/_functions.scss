@@ -19,10 +19,6 @@
   @return list.nth($colors, 2);
 }
 
-@function shadow($color, $opacity) {
-  @return color.change($color, $alpha: $opacity)
-};
-
 @function values($map) {
   $values: ();
 

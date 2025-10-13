@@ -128,3 +128,25 @@
     transform: scale(1);
   }
 }
+
+/* Transition groups */
+.list-enter-active,
+.list-leave-active {
+  transition: opacity 150ms cubic-bezier(0.7, 0.9, 1, 1);
+}
+.list-move {
+  transition: transform 300ms cubic-bezier(0.86, 0, 0.07, 1);
+}
+.list-enter-from,
+.list-leave-to {
+  opacity: 0 !important;
+}
+.list-leave-active {
+  position: absolute;
+}
+
+.instant-move,
+.instant-enter-from,
+.instant-leave-to {
+  display: none;
+}

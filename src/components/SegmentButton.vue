@@ -60,11 +60,11 @@ $shift: 0.7rem;
 
 .button {
   width: calc(100% - $shift);
-  padding-block: clamp(.4375rem, .3794rem + .2907vw, .75rem);
-  padding-inline: clamp(.875rem, .7587rem + .5814vw, 1.5rem);
+  padding-block: $space-xs;
+  padding-inline: $space-s-m;
   margin-block-start: -1rem;
   margin-inline-start: $shift;
-  font-size: $fs-base;
+  font-size: $fs-s;
   text-align: left;
   font-variation-settings: 'wght' 400;
   box-shadow: none;
@@ -85,8 +85,8 @@ $shift: 0.7rem;
     transition: transform var(--duration, 0s) linear;
     @include theme(background-color, link);
   }
-  @media screen and (width < $tablet) {
-    font-size: $fs-s;
+  @media screen and (width >= $tablet) {
+    font-size: $fs-base;
   }
 }
 </style>

@@ -28,14 +28,11 @@ defineProps<{ opaque?: boolean }>()
 header {
   background-color: transparent;
   will-change: background-color;
+  outline: 1px solid;
+  @include theme(outline-color, shadow);
 
   &.opaque {
-    box-shadow: 0 0 20px 10px light(background);
     @include theme(background-color, background);
-
-    @media (prefers-color-scheme: dark) {
-      box-shadow: 0 0 20px 10px dark(background);
-    }
   }
   a {
     font-variation-settings: 'wght' 600;
@@ -44,24 +41,23 @@ header {
 }
 #site-nav {
   display: flex;
-  padding-inline: 2em;
+  flex-flow: row nowrap;
+  padding-inline: $space-s-l;
   align-items: center;
   justify-content: space-between;
   margin-inline: auto;
-  line-height: 1.5;
-  font-size: $fs-base;
-  height: $header-height;
+  font-size: $fs-s;
+  height: var(--header-height);
   text-align: center;
+  gap: $space-xl-2xl;
 
   a { font-variation-settings: 'wght' 450; }
 
-  .logo, .github {
-    flex: 1;
-    display: flex;
-  }
+  .logo, .github { display: flex; }
+
   .logo {
-    font-family: $title-font-family;
-    font-size: $fs-3xl;
+    font-family: $font-family-heading;
+    font-size: $fs-2xl;
     line-height: 1;
     font-weight: unset;
     letter-spacing: -2px;
@@ -79,47 +75,63 @@ header {
     }
   }
 
-  .pages {
-    display: flex;
-    list-style: none;
-    margin-block: 0;
-    padding-inline: 0;
-    column-gap: 3rem;
-  }
+  .pages, .optional { display: none; }
+
   .github {
     justify-content: end;
-  }
-}
-@media screen and (width < $laptop) {
-  #site-nav {
-    column-gap: 3rem;
-    .logo, .github { flex: auto }
-    .pages { display: contents }
-    .optional { display: none }
-    .pages a { text-transform: capitalize; }
-    .github svg {
-      height: 2.286em;
-      width: 2.286em;
+
+    svg {
+      height: 1.5lh;
+      width: 1.5lh;
     }
   }
 }
-@media screen and (width < $tablet) {
+
+@media screen and (width >= $tablet) {
   header {
-    outline: 1px solid;
-    @include theme(outline-color, shadow);
-  }
-  header.opaque {
-    box-shadow: none;
+    outline: none;
+
+    &.opaque {
+      box-shadow: 0 0 20px 10px light(background);
+
+      @media (prefers-color-scheme: dark) {
+        box-shadow: 0 0 20px 10px dark(background);
+      }
+    }
   }
   #site-nav {
-    padding-inline: 0.9rem;
-    height: $header-height-mobile;
-    font-size: $fs-s;
+    font-size: $fs-base;
 
-  .pages { display: none }
+    .pages {
+      display: contents;
+      list-style: none;
+      margin-block: 0;
+      padding-inline: 0;
 
-  .logo { font-size: $fs-2xl;}
+      a { text-transform: capitalize; }
+    }
 
+    .logo {
+      font-size: $fs-3xl;
+      flex: 1.15;
+    }
+
+    .github { flex: 1; }
+  }
+}
+
+@media screen and (width >= $laptop) {
+  #site-nav {
+    .pages a { text-transform: none; }
+
+    .logo { flex: 1.05; }
+
+    .optional { display: inline; text-wrap: nowrap; }
+
+    .github svg {
+      height: 1.2lh;
+      width: 1.2lh;
+    }
   }
 }
 </style>

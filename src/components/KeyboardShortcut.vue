@@ -44,12 +44,13 @@ if (sysModifier) keyList.unshift(sysModifier)
 .shortcut-container {
   width: fit-content;
   text-align: center;
-  margin-block-start: 0.25em;
+  margin-block-start: 0.25rem;
   cursor: default;
   user-select: none;
+  font-size: $fs-s;
 }
 .shortcut-keys {
-  font-size: 1em;
+  font-size: $fs-s;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -57,16 +58,16 @@ if (sysModifier) keyList.unshift(sysModifier)
   font-variation-settings: 'wght' 450;
 }
 .kbd {
-  min-width: 2.3em;
-  height: 2.3em;
+  min-width: 1.7lh;
+  height: 1.7lh;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-family: inherit;
   margin-inline: 0.3rem;
   border: 1px solid;
-  border-radius: $small-radius;
-  @include theme(border-color, text);
+  border-radius: $radius-m;
+  @include theme(border-color, text-hover);
   &:first-child {
     margin-inline-start: 0;
   }
@@ -75,13 +76,13 @@ if (sysModifier) keyList.unshift(sysModifier)
   }
 }
 .command {
-  margin-block: 0.2em 0;
+  margin-block: 0.2rem 0;
 }
 .kbd-square {
   width: 2em;
 }
 .kbd-long {
-  padding-inline: 0.6em;
+  padding-inline: 0.6rem;
 }
 .lucide {
   fill: none;

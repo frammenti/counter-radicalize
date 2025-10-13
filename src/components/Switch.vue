@@ -36,7 +36,7 @@ label {
   height: 1.3em;
   border: 1px solid;
   position: relative;
-  box-shadow: $box-shadow-small;
+  box-shadow: $shadow-s;
   @include theme(background-color, button-off);
   @include theme(border-color, border);
   &[data-state='checked'] {
@@ -50,7 +50,7 @@ label {
   width: 1em;
   height: 1em;
   background-color: $white;
-  border-radius: $max-radius;
+  border-radius: $radius-max;
   transition: transform 100ms;
   will-change: transform;
   box-shadow: 0 2px 2px light(shadow);

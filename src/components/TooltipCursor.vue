@@ -26,12 +26,9 @@ const { open, anchor } = defineProps<{
 </Teleport>
 </template>
 <style scoped lang='scss'>
-@use '@/assets/styles/_tooltip';
-
 .tooltip {
   position: fixed;
-  pointer-events: none;
-  padding-block: 0.4rem;
+  font-size: $fs-base;
   transition: opacity 100ms ease-in-out;
 }
 .fade-enter-active,

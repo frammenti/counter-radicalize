@@ -31,28 +31,21 @@
 
 <style scoped lang='scss'>
 .grid {
-  grid-template-areas: '. t s';
-  grid-template-columns: 0.25fr 0.8fr 1.1fr;
-
-  > :first-child {
-    grid-area: t;
-  }
-
-  > :nth-child(2) {
-    grid-area: s;
-    text-align: center;
-    margin: 2rem;
-  }
+  grid-template-columns: 100%;
+  grid-template-rows: auto auto;
+  align-content: center;
+  text-align: center;
 }
 .title {
-  font-size: 4.5rem;
-  font-weight: unset;
+  font-size: 3.1rem;
+  margin-block-start: 0;
+  line-height: 1;
   font-feature-settings: 'kern' 0;
   font-variation-settings: 'wdth' 130, 'wght' 600;
   cursor: crosshair;
-  line-height: 1.1;
-  margin: 0;
   animation: disable 4.5s backwards;
+
+  @media (pointer: coarse) { user-select: none; }
 
   span {
     transition: font-variation-settings 700ms ease;
@@ -68,9 +61,11 @@
   animation: letter-breathe 3s ease 1.5s;
 }
 .subtitle {
-  font-size: 1.2rem;
+  font-size: $fs-m;
+  margin-block-start: 0;
+  margin-block-end: $space-xl;
+  margin-inline: $space-xl;
   text-wrap: balance;
-  margin-block: 0 1.5rem;
 }
 @property --gradSize {
   syntax: '<length>';
@@ -78,6 +73,7 @@
   initial-value: 0px;
 }
 #cta {
+  font-size: $fs-base;
   padding-inline: 1.2em;
   padding-block: 0.6em;
   background-color: unset;
@@ -98,43 +94,45 @@
     @include theme(color, background);
   }
 }
-@media screen and (width < $laptop) {
+
+@media screen and (width >= $tablet) {
+  .title {
+    font-size: $fs-gigantic;
+    margin-block-end: $space-l;
+  }
+  .subtitle {
+    font-size: $fs-3xl;
+  }
+  #cta {
+    font-size: $fs-l;
+  }
+}
+
+@media screen and (width >= $laptop) {
   .grid {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
+    padding-inline-start: 12cqi;
+    grid-template-columns: 0.7fr 1fr;
+    grid-template-rows: 100%;
+
+    > :first-child {
+      text-align: start;
+    }
 
     > :nth-child(2) {
-      margin: 0;
+      margin: $space-xl;
     }
   }
   .title {
-    font-size: 5.5rem;
-    line-height: 1;
-    text-align: center;
-    margin-block: 0 2rem;
+    font-size: $fs-enormous;
+    line-height: 1.1;
+    margin-block-end: 0;
   }
   .subtitle {
-    font-size: 1.5rem;
-    margin-block: 0 2.5rem;
-    margin-inline: 3.5rem;
+    font-size: $fs-xl;
+    margin-block-end: 1.5rem;
   }
   #cta {
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-}
-@media screen and (width < $tablet) {
-  .title {
-    font-size: 3.1rem;
-  }
-  .subtitle {
-    font-size: 0.95rem;
-  }
-  #cta {
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: $fs-base;
   }
 }
 </style>

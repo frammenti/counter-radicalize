@@ -100,41 +100,35 @@ const onWheel = useThrottleFn((e: WheelEvent) => {
 </template>
 
 <style scoped lang='scss'>
+$button: calc((2 * $space-xs + 1.5 * $fs-base) - 0.8rem);
+$marker: calc($fs-base * 1.5);
+$marker-mobile: calc($fs-s * 1.5);
+$title: calc($fs-s * 1.5 + 0.5rem);
+
+$rank-height: calc(2 * var(--card-padding) + $title + 3 * ($button + $marker));
+$rank-height-mobile: calc(2 * var(--card-padding) + $title + 3 * ($button + $marker-mobile));
+
 .grid.cards {
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: calc(50cqi - $gutter) 20cqi 20cqi;
+  grid-template-columns: 100%;
+  grid-template-rows: 120cqi 100cqi repeat(2, $rank-height-mobile);
+}
 
-  > :nth-child(3),
-  > :last-child {
-    grid-column: span 2;
-  }
-
-  > :last-child[v-cloak] {
-    grid-row: span 2;
+@media screen and (width >= $tablet) {
+  .grid.cards {
+    grid-template-rows: 70cqi 100cqi repeat(2, $rank-height);
   }
 }
 
-@media screen and (width > 1440px) {
+@media screen and (width >= $laptop) {
   .grid.cards {
-    grid-template-rows: calc(50cqi - $gutter) 17cqi 17cqi;
-    }
-}
-
-@media screen and (width < $laptop) {
-  .grid.cards {
-    grid-template-columns: 100%;
-    grid-template-rows: 60cqi 100cqi repeat(2, 32cqi);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: calc(50cqi - var(--gutter)) repeat(2, $rank-height);
 
     > :nth-child(3),
     > :last-child {
-      grid-column: span 1;
+      grid-column: span 2;
     }
   }
 }
 
-@media screen and (width < $tablet) {
-  .grid.cards {
-    grid-template-rows: 120cqi 100cqi repeat(2, 55cqi);
-  }
-}
 </style>

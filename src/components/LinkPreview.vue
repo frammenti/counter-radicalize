@@ -43,9 +43,9 @@ const metadata = previews[props.href]
       </div>
     <HoverCardArrow
       class='arrow'
-      :width=10
-      :height=6
-      :rounded=true
+      :width='10'
+      :height='6'
+      :rounded='true'
     />
   </HoverCardContent>
   </HoverCardRoot>
@@ -67,67 +67,75 @@ const metadata = previews[props.href]
   outline-offset: 0;
   overflow: clip;
   z-index: 2;
-}
-:deep(.popover[data-side='top']) {
-  animation-name: fade-in-slide-up;
-  box-shadow: $box-shadow-large;
-}
-:deep(.popover[data-side='bottom']) {
-  animation-name: fade-in-slide-down;
-  box-shadow: $box-shadow-large-reverse;
-}
-:deep(.arrow) {
-  z-index: 3;
-  @include theme(fill, modal);
-}
-.popover-image {
-  margin-inline: -20px;
-  margin-block: -20px 15px;
-  height: 125px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.9;
-}
-.popover-content {
-  width: 100%;
-  display: flex;
-  flex-flow: column;
-  height: fit-content;
-  h5 {
-    font-variation-settings: 'wght' 550;
-    margin-block: 0;
+  text-align: start;
+  text-wrap: wrap;
+  @include theme(color, text);
+
+  &[data-side='top'] {
+    animation-name: fade-in-slide-up;
+    box-shadow: $shadow-xl;
+  }
+
+  &[data-side='bottom'] {
+    animation-name: fade-in-slide-down;
+    box-shadow: $shadow-xl-r;
+  }
+
+  .arrow {
+    z-index: 3;
+    @include theme(fill, modal-alt);
+  }
+
+  .popover-image {
+    margin-inline: calc($space-s-m * -1);
+    margin-block: calc($space-s-m * -1) 15px;
+    height: 125px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.9;
+  }
+
+  .popover-content {
     width: 100%;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-  }
-  p {
-    font-size: 0.8rem;
-    width: 100%;
-    margin-block: 0.25rem;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 5;
-    line-clamp: 5;
-  }
-  a {
-    font-size: 0.7rem;
-    border-radius: $max-radius;
-    width: fit-content;
-    padding-inline: 6px;
-    padding-block: 0.5px;
-    font-variation-settings: 'wght' 300;
-    color: currentColor;
-    margin: 0;
-    margin-inline-start: -3px;
-    @include theme(background-color, shadow);
-  }
-  a:hover {
-    @include theme(background-color, shadow-hover);
+    display: flex;
+    flex-flow: column;
+    height: fit-content;
+    h5 {
+      font-variation-settings: 'wght' 550;
+      margin-block: 0;
+      width: 100%;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+    }
+    p {
+      font-size: $fs-s;
+      width: 100%;
+      margin-block: 0.25rem;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+      line-clamp: 5;
+    }
+    a {
+      font-size: $fs-xs;
+      border-radius: $radius-max;
+      width: fit-content;
+      padding-inline: 6px;
+      padding-block: 0.5px;
+      font-variation-settings: 'wght' 300;
+      color: currentColor;
+      margin: 0;
+      margin-inline-start: -3px;
+      @include theme(background-color, shadow);
+    }
+    a:hover {
+      @include theme(background-color, shadow-hover);
+    }
   }
 }
 </style>

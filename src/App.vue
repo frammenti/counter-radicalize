@@ -42,13 +42,13 @@ useIntersectionObserver(landing, ([entry], _) => {
         <div class='wrapper'>
           <About v-once />
         </div>
-        <div class='wrapper section'>
+        <div class='wrapper'>
           <CloseReading :segments='segments' v-once />
         </div>
-        <div class='wrapper section'>
+        <div class='wrapper'>
           <DistantReading :segments='segments' v-once />
         </div>
-        <div class='wrapper section'>
+        <div class='wrapper'>
           <LinguisticFeatures v-once />
         </div>
       </article>
@@ -77,66 +77,5 @@ useIntersectionObserver(landing, ([entry], _) => {
   color: transparent;
   box-shadow: none;
   pointer-events: none;
-}
-// Toast
-:deep(.toast-viewport) {
-  position: fixed;
-  top: $header-height;
-  right: 0;
-  z-index: 50;
-  padding: $gutter;
-  width: 450px;
-  display: flex;
-  flex-flow: column;
-  gap: $gutter;
-}
-:deep(.toast-root) {
-  line-height: calc(1.25/.875);
-  font-size: $fs-s;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  padding: $button-padding-inline;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  gap: clamp(.4375rem, .4259rem + .0581vw, .5rem);
-  @include theme(background-color, tip);
-
-  &[data-state='open'] {
-    animation: fade-in-slide-left-long 300ms cubic-bezier(0.39, 0.575, 0.565, 1) backwards;
-  }
-
-  &[data-state='closed'] {
-    animation: fade-out 150ms cubic-bezier(0.47, 0, 0.745, 0.715);
-  }
-}
-
-@media screen and (width < $laptop) {
-  :deep(.toast-viewport) {
-    top: unset;
-    bottom: 0;
-    flex-flow: column-reverse;
-    width: 100%;
-    align-items: center;
-  }
-  :deep(.toast-root) {
-    width: 500px;
-    font-size: $fs-base;
-    align-items: center;
-    text-align: center;
-
-    &[data-state='open'] {
-      animation-name: fade-in-slide-up-long;
-    }
-  }
-}
-@media screen and (width < $tablet) {
-  :deep(.toast-viewport) {
-    padding: $gutter-mobile;
-    gap: $gutter-mobile;
-  }
-
-  :deep(.toast-root) {
-    width: 100%;
-  }
 }
 </style>

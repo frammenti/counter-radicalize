@@ -114,38 +114,36 @@ watch([playtime, playing], ([t, p]) => {
 
 <style scoped lang='scss'>
 .ranking {
-  display: flex;
-  flex-flow: column;
+  font-size: $fs-s;
 
   h4 {
+    font-variation-settings: 'wght' 550, 'wdth' 115;
     margin-block-end: 0.5rem;
-    font-variation-settings: 'wght' 550;
   }
   ol {
     margin-block: 0;
-    padding-inline-start: 0;
+    padding-inline-start: 0.25rem;
     list-style-position: inside;
     font-variation-settings: 'wght' 500;
-    font-size: $fs-base;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: space-between;
-    flex: 1;
     @include theme(color, link);
 
     li {
       width: 100%;
-      max-width: 900px;
-      flex: 1;
     }
   }
 }
 
-@media screen and (width < $tablet) {
+@media screen and (width >= $tablet) {
   .ranking {
+    font-size: $fs-base;
+
     ol {
-      font-size: $fs-s;
+      padding-inline-start: 0;
+
+      li {
+        max-width: 900px;
+        margin-inline: auto;
+      }
     }
   }
 }

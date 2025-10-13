@@ -40,41 +40,98 @@ const { stop } = useIntersectionObserver(
   <ToastDescription as='div' class='toast-desc'>
     <slot>…</slot>
   </ToastDescription>
-  <ToastClose class='toast-close button'>Understood</ToastClose>
+  <ToastClose class='toast-close button-slim'>Understood</ToastClose>
 </ToastRoot>
 </template>
 
-<style scoped lang='scss'>
+<style lang='scss'>
+.toast-viewport {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 50;
+  padding: var(--gutter);
+  width: 100%;
+  display: flex;
+  flex-flow: column-reverse;
+  align-items: center;
+  gap: var(--gutter);
+}
+.toast-root {
+  width: 100%;
+  line-height: 1.4;
+  font-size: $fs-base;
+  box-shadow: $shadow-l;
+  padding: $space-m;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  gap: $space-2xs;
+  @include theme(background-color, tip);
+
+  &[data-state='open'] {
+    animation: fade-in-slide-up-long 300ms cubic-bezier(0.39, 0.575, 0.565, 1) backwards;
+  }
+
+  &[data-state='closed'] {
+    animation: fade-out 150ms cubic-bezier(0.47, 0, 0.745, 0.715);
+  }
+}
 .toast-title {
-  font-size: $fs-m;
+  font-size: $fs-l;
   font-variation-settings: 'wght' 550;
   margin-block-end: 0.25rem;
   line-height: 1;
 }
 .toast-desc {
   margin-block-end: 10px;
-  gap: 0.5em;
+  gap: $space-s-m;
   display: flex;
   align-items: start;
   justify-content: space-between;
   text-align: center;
 }
 .toast-close {
-  font-size: inherit;
-  border-radius: $max-radius;
-  padding-inline: $button-padding-inline-xs;
-  padding-block: $button-padding-block-xs;
-  align-self: start;
-  font-variation-settings: 'wght' 300;
+  font-size: $fs-base;
+  align-self: center;
   @include theme(background-color, background, true);
   @include theme(color, tip)
 }
-@media screen and (width < $laptop) {
-  .toast-title {
-    font-size: $fs-l;
+
+@media screen and (width >= $tablet) {
+  .toast-root {
+    width: 500px;
   }
+}
+
+@media screen and (width >= $laptop) {
+  .toast-viewport {
+    top: var(--header-height);
+    bottom: unset;
+    width: 450px;
+    flex-flow: column;
+  }
+
+  .toast-root {
+    font-size: $fs-s;
+    text-align: start;
+    align-items: stretch;
+    width: 100%;
+
+    &[data-state='open'] {
+      animation-name: fade-in-slide-left-long;
+    }
+  }
+
+  .toast-title {
+    font-size: $fs-m;
+  }
+
   .toast-close {
-    align-self: center;
+    font-size: $fs-s;
+    align-self: start;
   }
 }
 </style>

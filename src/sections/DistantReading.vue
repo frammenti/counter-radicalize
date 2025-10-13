@@ -1,5 +1,6 @@
 <script setup lang='ts'>
-import { useTemplateRef, onMounted, defineAsyncComponent } from 'vue'
+import { useTemplateRef, computed, defineAsyncComponent } from 'vue'
+import { useElementSize } from '@vueuse/core'
 import type { AlignedSegment } from '@/types/segment'
 
 const PlotSegments = defineAsyncComponent(() => import('@/components/PlotSegments.vue'))
@@ -10,12 +11,10 @@ const section = useTemplateRef('section')
 const card = useTemplateRef('card')
 
 const hasMouse = window.matchMedia('(pointer: fine)').matches
-let width = 1072
 
-onMounted(() => {
-if (window.matchMedia('(width > 1280px)').matches)
-width = card.value!.clientWidth - 56
-})
+const { width: cardWidth } = useElementSize(card, { width: 1072, height: 0 })
+
+const width = computed(() => cardWidth.value > 1072 ? cardWidth.value : 1072)
 </script>
 
 <template>
@@ -34,35 +33,37 @@ width = card.value!.clientWidth - 56
       :segments='segments'
       :width='width'
       v-cloak
+      aria-hidden='true'
     />
   </div>
   <div class='grid cards'>
-    <div class='p-card'></div>
-    <div class='p-card'></div>
-    <div class='p-card'></div>
-    <div class='p-card'></div>
-    <div class='p-card'></div>
+    <p class='p-card no-contain'></p>
+    <p class='p-card no-contain'></p>
+    <p class='p-card no-contain'></p>
+    <p class='p-card no-contain'></p>
+    <p class='p-card no-contain'></p>
   </div>
 </section>
 </template>
 
 <style scoped lang='scss'>
 section > .p-card {
-  height: calc(600px + $card-padding * 2);
+  height: calc(600px + var(--card-padding) * 2);
 }
 .grid.cards {
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 336.773px;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(5, auto);
 }
-@media screen and (width < $laptop) {
+@media screen and (width >= $tablet) {
   .grid.cards {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
+    grid-template-rows: repeat(3, auto);
   }
 }
-@media screen and (width < $tablet) {
+@media screen and (width >= $laptop) {
   .grid.cards {
-    grid-template-columns: 100%;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto; // 336.773px
   }
 }
 </style>

@@ -3,7 +3,7 @@ import { ref, computed } from 'vue'
 import PieChart from '@/components/PieChart.vue'
 import usePalette from '@/composables/usePalette'
 import { BiMap } from '@/utils'
-import colors from '@/assets/styles/emotions-pie.module.scss'
+import colors from '@/assets/styles/pie-chart.module.scss'
 import stats from '@/stores/stats.json'
 import type { AlignedSegment, Stats } from '@/types/segment'
 

@@ -1,8 +1,7 @@
 @use 'sass:list';
 @use 'sass:map';
 @use 'sass:meta';
-@use '_functions' as *;
-@use '_emotions' as *;
+@use 'emotions' as *;
 
 $light: (
   emotions: $emotions-light,

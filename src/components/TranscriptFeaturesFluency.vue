@@ -28,7 +28,7 @@ const disfluencies = computed(() => {
   >
   <li v-for='v, k in disfluencies ?? dummy.disfluencies' :key='k'>
     <span class='label' :class='{ "extra": !v }' :id='k'>{{ capitalize(k) }}</span>
-    <span class='value'>{{ ' ●'.repeat(v ?? 0) }}</span>
+    <span class='value'>&nbsp;{{ ' ●'.repeat(v ?? 0) }}</span>
   </li>
   </TransitionGroup>
 </ul>
@@ -39,9 +39,38 @@ const disfluencies = computed(() => {
   margin-block-end: 0.2rem;
 }
 .value {
-  vertical-align: text-bottom;
+  vertical-align: baseline;
+  font-size: 1.15rem;
+  line-height: 0;
+  font-family: $font-family-symbol;
+  font-weight: 400;
 }
 .extra {
   opacity: 0.5;
+}
+
+// Disfluency legend
+[annotated="true"] {
+  [id='sound repetition'] {
+    text-decoration: underline dashed 1px;
+  }
+  #block:after {
+    content: " ‖";
+    font-variation-settings: 'wght' 600;
+  }
+  [id='word repetition']:after {
+    content: " x2";
+    font-variation-settings: 'wght' 600;
+    font-variant: small-caps;
+    font-size: 50%;
+    vertical-align: top;
+  }
+  #interjection {
+    @include text-italic();
+  }
+  #prolongation:after {
+    content: ":::";
+    font-variation-settings: 'wght' 400;
+  }
 }
 </style>

@@ -1,10 +1,10 @@
 @use 'sass:color';
 @use 'sass:list';
 @use 'sass:map';
-@use '_functions' as *;
-@use '_emotions' as *;
-@use '_layout' as *;
+@use 'base' as *;
 @use 'palette' as *;
+@use 'functions' as *;
+@use 'emotions' as *;
 
 @mixin theme($property, $key, $invert: false) {
   $colors: map.get($palette, $key);
@@ -58,12 +58,25 @@
 @mixin set-color-legend($map) {
   @each $emotion, $color in $map {
     .#{$emotion}:before {
-      background-color: shadow($color, 0.7);
+      background-color: color.change($color, $alpha: 0.7);
     }
   }
 };
 
 @mixin set-background($selector) {
+  $schemes: light, dark;
+
+  $breakpoints: (
+    mobile: 0,
+    tablet: $tablet,
+    desktop: $laptop
+  );
+
+  $resolutions: (
+    1x: '',
+    2x: '@2x'
+  );
+  
   @each $scheme in $schemes {
     @each $break, $min-width in $breakpoints {
       @each $res, $suffix in $resolutions {

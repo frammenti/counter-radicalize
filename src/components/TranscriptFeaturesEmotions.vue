@@ -63,7 +63,7 @@ const splitData = computed(() => data ? usePartition(data.emotions) : undefined)
   display: inline-block;
   width: 0.9em;
   height: 0.9em;
-  border-radius: $max-radius;
+  border-radius: $radius-max;
   margin-inline-end: 0.5em;
   vertical-align: text-top;
 }

@@ -47,7 +47,7 @@ watch(playing,
         await audio.value.play()
       } catch (e) {
         console.warn(e)
-        playing.value = false // fall back
+        playing.value = false // fallback
       }
     } else if (!shouldPlay && !audio.value.paused) {
       audio.value.pause()
@@ -57,7 +57,6 @@ watch(playing,
 </script>
 <template>
 <audio
-  class='audio'
   controls
   preload='auto'
   ref='audio'
@@ -71,10 +70,10 @@ watch(playing,
 </template>
 
 <style scoped lang='scss'>
-.audio {
-  border-radius: $max-radius;
+audio {
+  border-radius: $radius-max;
 }
-.audio::-webkit-media-controls-panel {
+audio::-webkit-media-controls-panel {
   @include theme(background-color, background);
 }
 </style>

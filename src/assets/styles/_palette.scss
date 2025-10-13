@@ -10,8 +10,7 @@ $white: oklch(0.9985 0.00011 360);
 $raisin: oklch(0.254 0.01336 353.411);
 $brown: oklch(0.2109 0.04514 21.633);
 $taupe: oklch(60.668% 0.0184 17.465);
-$transparent: oklch(0% 0 0 / 0);
-$shadow: oklch(0 0 0 / 0.102);
+$transparent: oklch(0 0 0 / 0%);
 $light-gray: oklch(0.9466 0 0);
 $dark-gray: oklch(0.278 0.0047 17.465);
 
@@ -42,10 +41,6 @@ $selection-color:
 $tip-color:
   color.scale($lilac, $lightness: 40%, $chroma: -40%)
   color.scale($orchid, $lightness: -5%);
-
-$tip-text-color:
-  oklch(0.4011 0.0648 44.19)
-  oklch(0.9204 0.05565 339.1965);
 
 $secondary-color:
   color.adjust($fuchsia, $hue: 160deg)
@@ -107,30 +102,6 @@ $button-on-color:
   color.change($orchid, $alpha: 0.6)
   $taupe;
 
-$small-radius: 4.5px;
-$medium-radius: 6px;
-$large-radius: 8px;
-$xlarge-radius: 1.25rem;
-$max-radius: 999px;
-
-$box-shadow:
-  0 4px 6px -1px $shadow,
-  0 2px 4px -2px $shadow;
-
-$box-shadow-small: 0 1px 2px 0 $shadow;
-
-$box-shadow-large:
-  0px 10px 38px -10px $shadow,
-  0px 10px 20px -15px $shadow;
-
-$box-shadow-large-reverse:
-  0px -10px 38px -10px $shadow,
-  0px -10px 20px -15px $shadow;
-
-$animation-button:
-  moveUpInitial 200ms cubic-bezier(.5, 1.8, .62, 1) forwards,
-  moveUpEnd 200ms cubic-bezier(.5, 1.8, .62, 1) calc(200ms * 0.7) forwards;
-
 $palette: (
   primary: $primary-color,
   primary-hover: $primary-hover-color,
@@ -139,7 +110,6 @@ $palette: (
   link-visited: $link-visited-color,
   selection: $selection-color,
   tip: $tip-color,
-  tip-text: $tip-text-color,
   secondary: $secondary-color,
   secondary-hover: $secondary-hover-color,
   secondary-active: $secondary-active-color,

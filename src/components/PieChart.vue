@@ -213,7 +213,7 @@ const anchor = ref({ x: 0, y: 0 })
 .tooltip-legend {
   height: 2.25rem;
   width: 2.25rem;
-  border-radius: $max-radius;
+  border-radius: $radius-max;
   border: 1px solid;
   @include theme(border-color, border);
 }

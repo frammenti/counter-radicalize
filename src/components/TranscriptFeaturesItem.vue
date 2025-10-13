@@ -5,9 +5,9 @@ defineProps<{ label: string, value?: number }>()
 </script>
 
 <template>
-<span class='label'>{{ capitalize(label) }}</span>
-<span v-if='value' class='value'>
-  {{ Math.round(value * 100) }}<span class='percent'>%</span>
+<span>
+  <span class='label'>{{ capitalize(label) }}</span>&numsp;<span v-if='value' class='value'>{{ Math.round(value * 100) }}<span class='percent'>%</span>
+</span>
 </span>
 </template>
 
@@ -17,7 +17,6 @@ defineProps<{ label: string, value?: number }>()
 }
 .label {
   font-variation-settings: 'wght' 600;
-  margin-inline-end: 0.4em;
 }
 .percent {
   opacity: 0.7;

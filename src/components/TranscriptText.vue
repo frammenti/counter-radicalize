@@ -135,7 +135,6 @@ const focus = useThrottleFn((index: number, direction?: 'next' | 'prev', event?:
 
 <style scoped lang='scss'>
 #transcript-container {
-  height: 100%;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
@@ -148,23 +147,21 @@ const focus = useThrottleFn((index: number, direction?: 'next' | 'prev', event?:
   }
 }
 #transcript-body {
-  font-size: $fs-m;
-  line-height: 1.7;
-  text-align: left;
   padding-inline: 0.5rem;
   margin-block: 0;
   hyphens: auto;
 }
 .segment {
-  padding-block: 0.1rem;
+  padding-block: 0.108lh;
   padding-inline: 0.2rem;
-  margin-block: -0.1rem;
+  margin-block: -0.108lh;
   margin-inline: -0.2rem;
-  border-radius: $large-radius;
+  border-radius: $radius-l;
   box-decoration-break: clone;
   transition: background-color 150ms ease;
   cursor: pointer;
   &:focus-visible {
+    outline-offset: -1px;
     @include theme(background-color, shadow);
   }
 }
@@ -174,6 +171,57 @@ const focus = useThrottleFn((index: number, direction?: 'next' | 'prev', event?:
 @media (hover: hover) {
   .segment:hover {
     @include theme(background-color, shadow);
+  }
+}
+
+// Disfluencies
+[annotated="true"] {
+  .sound.repetition {
+    text-decoration: underline dashed 1px;
+    @include theme(text-decoration-color, secondary);
+  }
+  .block:before {
+    content: " ‖ ";
+    font-variation-settings: 'wght' 600;
+    font-style: normal;
+    text-decoration: none;
+    @include theme(color, secondary);
+  }
+  .word.repetition:after {
+    content: " x2";
+    font-variation-settings: 'wght' 600;
+    font-variant: small-caps;
+    font-size: 50%;
+    vertical-align: top;
+    text-decoration: none;
+    @include theme(color, secondary);
+  }
+  .word.repetition:has(+ .word.repetition):after,
+  .word.repetition:has(+ div + .word.repetition):after
+  {
+    content: ""
+  }
+  .interjection {
+    @include text-italic();
+    @include theme(color, secondary);
+  }
+  .prolongation:after {
+    content: ":::";
+    font-variation-settings: 'wght' 400;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 100%;
+    vertical-align: auto;
+    @include theme(color, secondary);
+  }
+  .active .sound.repetition {
+    @include theme-mix(text-decoration-color, link, secondary);
+  }
+  .active .interjection,
+  .active .block:before,
+  .active .prolongation:after,
+  .active .word.repetition:after {
+    @include theme-mix(color, link, secondary);
   }
 }
 </style>

@@ -1,7 +1,7 @@
 // Source: PatternMonster (https://pattern.monster/)
 
 @use 'sass:list';
-@use '_palette' as *;
+@use 'palette' as *;
 
 
 @function make($dark-theme: false) {

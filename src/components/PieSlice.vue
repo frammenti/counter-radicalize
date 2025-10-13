@@ -102,6 +102,3 @@ watch(() => value, async () => {
   />
 </g>
 </template>
-
-<style scoped lang='scss'>
-</style>

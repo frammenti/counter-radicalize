@@ -10,6 +10,7 @@ import usePlaybackShortcuts from '@/composables/usePlaybackShortcuts'
 import type { AlignedSegment } from '@/types/segment'
 
 const Tip = defineAsyncComponent(() => import('@/components/Tip.vue'))
+const Tooltip = defineAsyncComponent(() => import('@/components/Tooltip.vue'))
 const Toggle = defineAsyncComponent(() => import('@/components/Toggle.vue'))
 const TranscriptText = defineAsyncComponent(() => import('@/components/TranscriptText.vue'))
 const TranscriptFeaturesCanvas = defineAsyncComponent(() => import('@/components/TranscriptFeaturesCanvas.vue'))
@@ -89,8 +90,18 @@ if (hasKeyboard) {
       <h3 id='dimensions'>Dimensions</h3>
       <TranscriptFeaturesDimensions :data='data' />
     </aside>
-    <aside class='p-card no-contain' aria-labelledby='speech-flow'>
-      <h3 id='speech-flow'>Speech flow</h3>
+    <aside class='p-card no-contain' aria-labelledby='speech-flow' style='position: relative;'>
+      <h3 id='speech-flow'>
+        Speech flow
+        <Tooltip>
+          ⓘ
+          <template #content>
+            <p>
+              Disfluencies that overlap segments are not displayed, but are still counted.
+            </p>
+          </template>
+        </Tooltip>
+      </h3>
       <TranscriptFeaturesFluency :data='data' />
     </aside>
   </section>
@@ -98,30 +109,37 @@ if (hasKeyboard) {
 </template>
 
 <style scoped lang='scss'>
-$transcript-height: calc(15lh + $card-padding * 2 + 60px);
-$transcript-height-mobile: calc(15lh + $card-padding * 2 + 60px + $fs-base * 1.5 + $button-padding-block * 2 + $cluster-gap * 2);
+$transcript-height: calc(60px + $cluster-gap + 15lh + var(--card-padding) * 3);
+$transcript-height-mobile: calc(60px + $fs-base * 1.5 + $button-padding-block * 2 + $cluster-gap * 2 + 15lh + var(--card-padding) * 3);
+
+:deep(#speech-flow) span {
+  font-family: $font-family-symbol;
+  font-size: $fs-m;
+  line-height: 0;
+  padding-inline: 0.15rem;
+  opacity: 0.9;
+  cursor: default;
+  user-select: none;
+}
 
 #transcript-text {
-  height: $transcript-height;
+  height: $transcript-height-mobile;
   display: flex;
   flex-direction: column;
-}
-:deep(#transcript-container) {
-  padding-inline: 22cqi;
-  margin-block-end: $card-padding;
+  font-size: $fs-m;
+  line-height: 1.7;
+
+  #transcript-container {
+    margin-block-end: var(--card-padding);
+  }
 }
 aside ul {
   padding-inline-start: 0;
   list-style-type: none;
 }
 .grid.cards {
-  grid-template-columns: 43cqi 1fr 1fr;
-  grid-template-rows: auto auto;
-
-  > :first-child,
-  > :nth-child(2) {
-    grid-row: span 2;
-  }
+  grid-template-columns: 100%;
+  grid-template-rows: 100cqi auto auto auto;
 
   > :first-child {
     display: flex;
@@ -132,143 +150,47 @@ aside ul {
       aspect-ratio: 1 / 1;
     }
   }
-
-  h3 {
-    font-size: $fs-s;
-  }
 }
 
-@media screen and (width > 1440px) {
-  .grid.cards {
-    grid-template-columns: 52cqi 1fr 1fr;
-    }
-}
-
-@media screen and (width < $laptop) {
-  :deep(#transcript-container) {
-    padding-inline: 0;
+@media screen and (width >= $tablet) {
+  #transcript-text {
+    height: $transcript-height;
   }
-
   .grid.cards {
-    grid-template-columns: 1.1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 70cqi auto auto;
 
     > :first-child {
-      grid-row: span 1;
       grid-column: span 2;
+    }
+
+    > :nth-child(2) {
+      grid-row: span 2;
     }
   }
 }
 
-@media screen and (width < $tablet) {
+@media screen and (width >= $laptop) {
   #transcript-text {
-    height: $transcript-height-mobile;
+    #transcript-container {
+      padding-inline: 22cqi;
+    }
   }
   .grid.cards {
-    grid-template-columns: 100%;
-    grid-template-rows: 100cqi auto auto auto;
+    grid-template-columns: 43cqi 1fr 1.1fr;
+    grid-template-rows: auto auto;
 
     > :first-child,
     > :nth-child(2) {
-      grid-row: span 1;
       grid-column: span 1;
+      grid-row: span 2;
     }
   }
 }
 
-/* Transitions */
-:deep(.list-enter-active),
-:deep(.list-leave-active) {
-  transition: opacity 150ms cubic-bezier(0.7, 0.9, 1, 1);
-}
-:deep(.list-move) {
-  transition: transform 300ms cubic-bezier(0.86, 0, 0.07, 1);
-}
-:deep(.list-enter-from),
-:deep(.list-leave-to) {
-  opacity: 0;
-}
-:deep(.list-leave-active) {
-  position: absolute;
-}
-
-:deep(.instant-move),
-:deep(.instant-enter-from),
-:deep(.instant-leave-to) {
-  display: none;
-}
-
-// Disfluencies
-[annotated="true"] {
-  :deep(.sound.repetition) {
-    text-decoration: underline dashed 1px;
-    @include theme(text-decoration-color, secondary);
-  }
-  :deep(.block):before {
-    content: " ‖ ";
-    font-variation-settings: 'wght' 600;
-    font-style: normal;
-    text-decoration: none;
-    @include theme(color, secondary);
-  }
-  :deep(.word.repetition):after {
-    content: " x2";
-    font-variation-settings: 'wght' 600;
-    font-variant: small-caps;
-    font-size: 50%;
-    vertical-align: top;
-    text-decoration: none;
-    @include theme(color, secondary);
-  }
-  :deep(.word.repetition):has(+ .word.repetition):after,
-  :deep(.word.repetition):has(+ div + .word.repetition):after
-  {
-    content: ""
-  }
-  :deep(.interjection) {
-    @include text-italic();
-    @include theme(color, secondary);
-  }
-  :deep(.prolongation):after {
-    content: ":::";
-    font-variation-settings: 'wght' 400;
-    font-style: normal;
-    text-decoration: none;
-    font-size: 100%;
-    vertical-align: auto;
-    @include theme(color, secondary);
-  }
-  :deep(.active) .sound.repetition {
-    @include theme-mix(text-decoration-color, link, secondary);
-  }
-  :deep(.active) .interjection,
-  :deep(.active) .block:before,
-  :deep(.active) .prolongation:after,
-  :deep(.active) .word.repetition:after {
-    @include theme-mix(color, link, secondary);
-  }
-
-  // Legend
-  :deep([id='sound repetition']) {
-    text-decoration: underline dashed 1px;
-  }
-  :deep(#block:after) {
-    content: " ‖";
-    font-variation-settings: 'wght' 600;
-  }
-  :deep([id='word repetition']:after) {
-    content: " x2";
-    font-variation-settings: 'wght' 600;
-    font-variant: small-caps;
-    font-size: 50%;
-    vertical-align: top;
-  }
-  :deep(#interjection) {
-    @include text-italic();
-  }
-  :deep(#prolongation:after) {
-    content: ":::";
-    font-variation-settings: 'wght' 400;
+@media screen and (width >= $desktop) {
+  .grid.cards {
+    grid-template-columns: 50cqi 1fr 1fr;
   }
 }
 </style>

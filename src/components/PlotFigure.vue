@@ -166,82 +166,89 @@ function setPlaytime() {
 .plot {
   margin: 0;
   position: relative;
-}
-.plot-scroll {
-  position: relative;
-  overflow-y: visible;
-  padding-block-end: 0.5rem;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-}
-.plot-axis {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
-  pointer-events: none;
-  &:before,
-  &:after {
-    content: '';
+
+  .plot-scroll {
+    position: relative;
+    overflow-y: visible;
+    padding-block-end: 0.5rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+  .plot-axis {
     position: absolute;
     top: 0;
-    bottom: 0;
-    z-index: -1;
-    @include theme(background-color, modal-fade);
+    left: 0;
+    right: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+      @include theme(background-color, modal-fade);
+    }
+
+    &:before {
+      left: -5px;
+      width: 42px;
+    }
+
+    &:after {
+      right: -5px;
+      width: 35px;
+    }
   }
-  &:before {
-    left: -5px;
-    width: 42px;
+  .plot-legend {
+    position: absolute;
+    top: 5px;
+    left: 40px;
+    bottom: 30px;
+    width: 900px;
+    display: flex;
+    flex-flow: column;
+    justify-content: stretch;
+    overflow-y: visible;
   }
-  &:after {
-    right: -5px;
-    width: 20px;
+  .plot-legend :deep(div) {
+    flex: 1;
+    align-items: start;
+    justify-content: start;
+    margin-block-start: 0.7rem;
+
+    &:first-child {
+      margin-block: 3px 32px;
+    }
   }
-}
-.plot-legend {
-  position: absolute;
-  top: 5px;
-  left: 40px;
-  bottom: 30px;
-  width: 900px;
-  display: flex;
-  flex-flow: column;
-  justify-content: stretch;
-  overflow-y: visible;
-}
-.plot-legend :deep(div) {
-  flex: 1;
-  align-items: start;
-  justify-content: start;
-  margin-block-start: 0.7rem;
-}
-.plot-legend :deep(div):first-child {
-  margin-block: 3px 32px;
-}
-.plot-pointer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-}
-:deep(svg) {
-  max-width: none;
-}
-:deep(svg), :deep([class*="-swatches"]) {
-  font-family: $text-font-family;
-}
-:deep(svg) [font-variant="tabular-nums"] {
-  font-size: 0.55rem;
-}
-.plot-pointer :deep(svg) {
-  font-variant: tabular-nums;
-  font-size: 0.55rem;
-}
-@media screen and (width < $laptop) {
   .plot-pointer {
-    z-index: unset;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    :deep(svg) {
+      font-variant: tabular-nums;
+      font-size: 0.55rem;
+    }
+  }
+  :deep(svg) {
+    max-width: none;
+
+    &, [class*="-swatches"] {
+      font-family: $font-family-body;
+    }
+
+    [font-variant="tabular-nums"] {
+      font-size: 0.55rem;
+    }
+  }
+}
+@media screen and (width >= $laptop) {
+  .plot .plot-pointer {
+    z-index: 2;
   }
 }
 </style>

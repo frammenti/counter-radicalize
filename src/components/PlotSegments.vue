@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import PlotFigure from '@/components/PlotFigure.vue'
 import usePalette from '@/composables/usePalette'
-import colors from '@/assets/styles/emotions-graph.module.scss'
+import colors from '@/assets/styles/graph.module.scss'
 import fluency from '@/stores/fluency.json'
 import type { AlignedSegment } from '@/types/segment'
 import { range, formatTime } from '@/utils'
@@ -27,7 +27,7 @@ const palette = usePalette(colors)
     height: 600,
     marginLeft: 37,
     marginTop: 30,
-    marginRight: 20,
+    marginRight: 30,
     x: { type: 'linear', label: 'mins', ticks: 0, line: true },
     y: {
       percent: true,
@@ -47,7 +47,7 @@ const palette = usePalette(colors)
     width: width,
     height: 600,
     marginTop: 30,
-    marginRight: 20,
+    marginRight: 30,
     x: { type: 'linear', label: null },
     y: { percent: true, label: null, ticks: 0 },
     fy: { tickFormat: null },
@@ -126,7 +126,7 @@ const palette = usePalette(colors)
     width: width,
     height: 600,
     marginTop: 30,
-    marginRight: 20,
+    marginRight: 30,
     marginLeft: 40,
     x: {
       type: 'utc',
@@ -170,7 +170,7 @@ const palette = usePalette(colors)
     width: width,
     height: 600,
     marginTop: 30,
-    marginRight: 20,
+    marginRight: 30,
     marginLeft: 40,
     x: {
       type: 'utc',
@@ -260,11 +260,3 @@ const palette = usePalette(colors)
   ]"
 />
 </template>
-
-<style scoped lang='scss'>
-@media screen and (width < $laptop) {
-  :deep(.plot) {
-    margin-right: 0.3rem !important;
-  }
-}
-</style>

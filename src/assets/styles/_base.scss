@@ -1,0 +1,126 @@
+// Fonts
+$font-family-body: 'Object Sans', 'Montserrat', system-ui, sans-serif;
+$font-family-heading: 'Agrandir', 'Montserrat', system-ui, sans-serif;
+$font-family-symbol: 'Noto Sans Symbols', 'Noto Sans', system-ui, sans-serif; 
+
+$fs-xs: 0.6914rem;
+$fs-s: 0.7778rem;
+$fs-base: 0.875rem;
+$fs-m: 0.9844rem;
+$fs-l: 1.1074rem;
+$fs-xl: 1.2458rem;
+$fs-2xl: 1.4016rem;
+$fs-3xl: 1.5768rem;
+$fs-4xl: 1.7739rem;
+$fs-huge: 2.25rem;
+$fs-enormous: 4.5rem;
+$fs-gigantic: 5.5rem;
+
+// Space
+$space-3xs: clamp(.25rem, .25rem + 0vw, .25rem);
+$space-2xs: clamp(.4375rem, .4259rem + .0581vw, .5rem);
+$space-xs: clamp(.6875rem, .6759rem + .0581vw, .75rem);
+$space-s: clamp(.875rem, .8517rem + .1163vw, 1rem);
+$space-m: clamp(1.3125rem, 1.2776rem + .1744vw, 1.5rem);
+$space-l: clamp(1.75rem, 1.7035rem + .2326vw, 2rem);
+$space-xl: clamp(2.625rem, 2.5552rem + .3488vw, 3rem);
+$space-2xl: clamp(3.5rem, 3.407rem + .4651vw, 4rem);
+$space-3xl: clamp(5.25rem, 5.1105rem + .6977vw, 6rem);
+$space-4xl: clamp(7rem, 6.814rem + .9302vw, 8rem);
+$space-5xl: clamp(8.75rem, 8.5174rem + 1.1628vw, 10rem);
+$space-3xs-2xs: clamp(.25rem, .2035rem + .2326vw, .5rem);
+$space-2xs-xs: clamp(.4375rem, .3794rem + .2907vw, .75rem);
+$space-xs-s: clamp(.6875rem, .6294rem + .2907vw, 1rem);
+$space-s-m: clamp(.875rem, .7587rem + .5814vw, 1.5rem);
+$space-m-l: clamp(1.3125rem, 1.1846rem + .6395vw, 2rem);
+$space-xl-2xl: clamp(2.625rem, 2.3692rem + 1.2791vw, 4rem);
+$space-2xl-3xl: clamp(3.5rem, 3.0349rem + 2.3256vw, 6rem);
+$space-3xl-4xl: clamp(5.25rem, 4.7384rem + 2.5581vw, 8rem);
+$space-4xl-5xl: clamp(7rem, 6.4419rem + 2.7907vw, 10rem);
+$space-s-l: clamp(.875rem, .6657rem + 1.0465vw, 2rem);
+$space-m-xl: clamp(1.3125rem, .9985rem + 1.5698vw, 3rem);
+$space-l-xl: clamp(1.75rem, 1.5174rem + 1.1628vw, 3rem);
+$space-xl-3xl: clamp(2.625rem, 1.9971rem + 3.1395vw, 6rem);
+$space-s-xl: clamp(.875rem, .4797rem + 1.9767vw, 3rem);
+
+// Radii
+$radius-s: 4.5px;
+$radius-m: 6px;
+$radius-l: 8px;
+$radius-xl: 1.25rem;
+$radius-max: 999px;
+
+// Box shadows
+$shadow-subtle: oklch(0 0 0 / 0.1);
+$shadow-bold: oklch(0 0 0 / 0.2);
+$shadow-s: 0 1px 2px 0 $shadow-subtle;
+$shadow-m:
+  0 4px 6px -1px $shadow-subtle,
+  0 2px 4px -2px $shadow-subtle;
+$shadow-l: 0px 4px 10px $shadow-bold;
+$shadow-xl:
+  0px 10px 38px -10px $shadow-subtle,
+  0px 10px 20px -15px $shadow-subtle;
+$shadow-xl-r:
+  0px -10px 38px -10px $shadow-subtle,
+  0px -10px 20px -15px $shadow-subtle;
+
+// Breakpoints
+$tablet: 768px;
+$laptop: 1200px;
+$desktop: 1440px;
+
+// Main
+$main-width: 87.5vw;
+$main-width-mobile: 92vw;
+
+// Header
+$header-height: 2.875rem;
+$header-height-mobile: 3rem;
+
+// Grid
+$gutter: $space-s-l;
+$gutter-mobile: $space-s;
+
+// Section
+$section-spacing: calc($gutter * 4);
+$section-spacing-mobile: calc($gutter-mobile * 5);
+
+// Card
+$card-padding: clamp(.875rem, .6657rem + 1.045vw, 2rem);
+$card-padding-mobile: $space-s;
+
+// Button
+$button-padding-inline: $space-m;
+$button-padding-block: $space-xs;
+$button-slim-padding-inline: $space-s;
+$button-slim-padding-block: $space-2xs;
+
+// Button cluster
+$cluster-gap: $space-xs;
+
+// Animations
+$animation-button:
+  moveUpInitial 200ms cubic-bezier(.5, 1.8, .62, 1) forwards,
+  moveUpEnd 200ms cubic-bezier(.5, 1.8, .62, 1) calc(200ms * 0.7) forwards;
+
+/*
+$duration-short: .1s;
+$duration-default: .2s;
+$duration-medium: .3s;
+$duration-long: .5s;
+$duration-extra-long: .6s;
+$duration-extra-longer: .75s;
+$duration-extended: 3s;
+$ease-in-cubic: cubic-bezier(.32, 0, .67, 0);
+$ease-out-cubic: cubic-bezier(.33, 1, .68, 1);
+$ease-out-sine: cubic-bezier(.61, 1, .88, 1);
+$ease-out-quint: cubic-bezier(.22, 1, .36, 1);
+$ease-in-quint: cubic-bezier(.64, 0, .78, 0);
+$ease-in-out: cubic-bezier(.7, 0, .2, 1);
+$ease-bump: cubic-bezier(.5, 1.8, .62, 1);
+$animation-slide-in: slideIn var($duration-extra-long) var($ease-out-quint) forwards;
+$animation-fade-in: fadeIn var($duration-extra-long) var($ease-out-quint);
+$animation-spin: spin 1s linear infinite;
+$scroll-margin-top: 160px
+*/
