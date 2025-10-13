@@ -115,6 +115,8 @@ $transcript-height-mobile: calc(60px + $fs-base * 1.5 + $button-padding-block * 
 :deep(#speech-flow) span {
   font-family: $font-family-symbol;
   font-size: $fs-m;
+  font-variation-settings: normal;
+  font-weight: 700;
   line-height: 0;
   padding-inline: 0.15rem;
   opacity: 0.9;
@@ -177,7 +179,7 @@ aside ul {
     }
   }
   .grid.cards {
-    grid-template-columns: 43cqi 1fr 1.1fr;
+    grid-template-columns: 43cqi 1fr 1.2fr;
     grid-template-rows: auto auto;
 
     > :first-child,
@@ -190,7 +192,7 @@ aside ul {
 
 @media screen and (width >= $desktop) {
   .grid.cards {
-    grid-template-columns: 50cqi 1fr 1fr;
+    grid-template-columns: 50cqi 1fr 1.1fr;
   }
 }
 </style>

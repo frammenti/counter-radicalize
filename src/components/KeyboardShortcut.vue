@@ -44,7 +44,7 @@ if (sysModifier) keyList.unshift(sysModifier)
 .shortcut-container {
   width: fit-content;
   text-align: center;
-  margin-block-start: 0.25rem;
+  margin-block: 0.25rem -0.25rem;
   cursor: default;
   user-select: none;
   font-size: $fs-s;
