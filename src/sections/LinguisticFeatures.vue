@@ -17,7 +17,7 @@ const tabs = Object.keys(content) as Array<keyof Stats>
 
 // Tab Navigation
 let touchStartX = 0
-const touchThreshold = 120
+const touchThreshold = 100
 const wheelThreshold = 20
 
 function forward(direction: 'right' | 'left') {

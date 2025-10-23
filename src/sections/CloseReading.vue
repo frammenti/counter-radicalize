@@ -119,7 +119,7 @@ if (hasKeyboard) {
 
 <style scoped lang='scss'>
 $transcript-height: calc(60px + $cluster-gap + 15.5lh + var(--card-padding) * 3);
-$transcript-height-mobile: calc(60px + $fs-base * 1.5 + $button-padding-block * 2 + $cluster-gap * 2 + 15.5lh + var(--card-padding) * 3);
+$transcript-height-mobile: calc(60px + $fs-base * 1.5 + $button-padding-block * 2 + $cluster-gap * 2 + 16lh + var(--card-padding) * 3);
 
 legend { opacity: 0; position: absolute; pointer-events: none; }
 

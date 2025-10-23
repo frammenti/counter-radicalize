@@ -174,7 +174,7 @@ function center(i: number) {
 
 watch(locked, (n, o) => {
   if (n === undefined) return
-  if (canHover && hovered.value === n && o === undefined) return
+  if (canHover.value && hovered.value === n && o === undefined) return
     anchor.value = center(n)
 }, { flush: 'post' })
 
@@ -257,7 +257,7 @@ watch(() => items, () => {
             :value='arcSize(item.value)'
             :rotate='arcOffset(i)'
             :pattern='item.pattern'
-            @update:active='isActive => hovered = isActive ? i : undefined'
+            @update:active='isActive => hovered = isActive && canHover ? i : undefined'
             @lock='locked = i'
           />
         </template>
