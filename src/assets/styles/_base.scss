@@ -17,7 +17,7 @@ $fs-enormous: 4.5rem;
 $fs-gigantic: 5.5rem;
 
 // Space
-$space-3xs: clamp(.25rem, .25rem + 0vw, .25rem);
+$space-3xs: .25rem;
 $space-2xs: clamp(.4375rem, .4259rem + .0581vw, .5rem);
 $space-xs: clamp(.6875rem, .6759rem + .0581vw, .75rem);
 $space-s: clamp(.875rem, .8517rem + .1163vw, 1rem);
@@ -48,6 +48,7 @@ $radius-s: 4.5px;
 $radius-m: 6px;
 $radius-l: 8px;
 $radius-xl: 1.25rem;
+$radius-xxl: 28px;
 $radius-max: 999px;
 
 // Box shadows
@@ -66,7 +67,7 @@ $shadow-xl-r:
   0px -10px 20px -15px $shadow-subtle;
 
 // Breakpoints
-$tablet: 768px;
+$tablet: 730px;
 $laptop: 1200px;
 $desktop: 1440px;
 
@@ -100,27 +101,15 @@ $button-slim-padding-block: $space-2xs;
 $cluster-gap: $space-xs;
 
 // Animations
-$animation-button:
-  moveUpInitial 200ms cubic-bezier(.5, 1.8, .62, 1) forwards,
-  moveUpEnd 200ms cubic-bezier(.5, 1.8, .62, 1) calc(200ms * 0.7) forwards;
-
-/*
-$duration-short: .1s;
-$duration-default: .2s;
-$duration-medium: .3s;
-$duration-long: .5s;
-$duration-extra-long: .6s;
-$duration-extra-longer: .75s;
-$duration-extended: 3s;
+$ease-in-sine: cubic-bezier(0.47, 0, 0.745, 0.715);
+$ease-out-sine: cubic-bezier(.61, 1, .88, 1);
 $ease-in-cubic: cubic-bezier(.32, 0, .67, 0);
 $ease-out-cubic: cubic-bezier(.33, 1, .68, 1);
-$ease-out-sine: cubic-bezier(.61, 1, .88, 1);
-$ease-out-quint: cubic-bezier(.22, 1, .36, 1);
 $ease-in-quint: cubic-bezier(.64, 0, .78, 0);
+$ease-out-quint: cubic-bezier(.22, 1, .36, 1);
 $ease-in-out: cubic-bezier(.7, 0, .2, 1);
 $ease-bump: cubic-bezier(.5, 1.8, .62, 1);
-$animation-slide-in: slideIn var($duration-extra-long) var($ease-out-quint) forwards;
-$animation-fade-in: fadeIn var($duration-extra-long) var($ease-out-quint);
-$animation-spin: spin 1s linear infinite;
-$scroll-margin-top: 160px
-*/
+
+$animation-bump:
+  moveUpInitial 200ms $ease-bump forwards,
+  moveUpEnd 200ms $ease-bump 140ms forwards;

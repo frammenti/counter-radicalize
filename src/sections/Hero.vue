@@ -9,7 +9,7 @@
         <span class='breathe'>t</span>
         <span class='breathe'>e</span>
         <span class='breathe'>r</span>
-        <strong>–</strong>
+        <strong>–</strong><br />
         <span>R</span>
         <span>a</span>
         <span>d</span>
@@ -35,6 +35,10 @@
   grid-template-rows: auto auto;
   align-content: center;
   text-align: center;
+
+  > :first-child {
+    justify-self: center;
+  }
 }
 .title {
   font-size: 3.1rem;
@@ -42,7 +46,7 @@
   line-height: 1;
   font-feature-settings: 'kern' 0;
   font-variation-settings: 'wdth' 130, 'wght' 600;
-  cursor: crosshair;
+  cursor: default;
   animation: disable 4.5s backwards;
 
   @media (pointer: coarse) { user-select: none; }
@@ -76,7 +80,6 @@
   font-size: $fs-base;
   padding-inline: 1.2em;
   padding-block: 0.6em;
-  background-color: unset;
   border: 2px solid;
   transition: 
     --gradSize ease-in-out 370ms,
@@ -115,6 +118,7 @@
     grid-template-rows: 100%;
 
     > :first-child {
+      justify-self: start;
       text-align: start;
     }
 

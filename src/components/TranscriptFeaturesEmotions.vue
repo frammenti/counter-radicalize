@@ -70,4 +70,8 @@ const splitData = computed(() => data ? usePartition(data.emotions) : undefined)
 .extra {
   opacity: 0.7;
 }
+hr {
+  margin-inline-start: 0;
+  width: max(13rem, 65%);
+}
 </style>

@@ -1,11 +1,11 @@
 <script setup lang='ts'>
-import { ref, useTemplateRef, watch, nextTick } from 'vue'
+import { ref, computed, useTemplateRef, watch, nextTick } from 'vue'
 import { useThrottleFn } from '@vueuse/core'
 import { playtime, playing, rapid } from '@/stores/state'
 import parsePlaceholders from '@/composables/parsePlaceholders'
 import type { AlignedSegment } from '@/types/segment'
 
-const props = defineProps<{ segments: AlignedSegment[], locked: boolean }>()
+const { segments, locked } = defineProps<{ segments: AlignedSegment[], locked: boolean }>()
 const active = defineModel('active', { type: Number, required: true })
 
 const container = useTemplateRef('container')
@@ -16,7 +16,7 @@ let lastInteraction: number = Date.now()
 watch(active, i => {
   const el = spans.value[i]
   if (!el || !container.value) return
-  if (Date.now() - lastInteraction < 3000 && !props.locked) return
+  if (Date.now() - lastInteraction < 3000 && !locked) return
 
   const offset =
     el.offsetTop - container.value.clientHeight / 2 + el.getBoundingClientRect().height / 2
@@ -30,9 +30,9 @@ const doScroll = useThrottleFn((offset: number) => {
   const atTop = parent.scrollTop <= 0 && offset <= 0
   const atBottom = parent.scrollTop >= maxScrollTop && offset >= maxScrollTop
 
-  if (props.locked && (atTop || atBottom)) return
+  if (locked && (atTop || atBottom)) return
 
-  if (props.locked) {
+  if (locked) {
     scrolling.value = true
     parent.addEventListener(
       'scrollend',
@@ -44,7 +44,7 @@ const doScroll = useThrottleFn((offset: number) => {
 }, 300)
 
 function recordInteraction() {
-  if (!props.locked) lastInteraction = Date.now()
+  if (!locked) lastInteraction = Date.now()
 }
 
 function updatePlaytime(segment: AlignedSegment, index: number) {
@@ -80,16 +80,36 @@ const focus = useThrottleFn((index: number, direction?: 'next' | 'prev', event?:
     targetIndex = index
     target = spans.value[targetIndex]
   }
-  updatePlaytime(props.segments[targetIndex], targetIndex)
+  updatePlaytime(segments[targetIndex], targetIndex)
   target.focus({ preventScroll: true })
 }, 150)
 
+// Paragraphs
+interface IndexedSegment extends AlignedSegment {
+  index: number
+}
+const paragraphs = computed(() => {
+  const groups: IndexedSegment[][] = []
+  let current: IndexedSegment[] = []
+
+  segments.forEach((seg, index) => {
+    const segI = { ...seg, index }
+    current.push(segI)
+    if (segI.disfluencyText.endsWith('\n')) {
+      groups.push(current)
+      current = []
+    }
+  })
+  if (current.length > 0) groups.push(current)
+  return groups
+})
 </script>
 
 <template>
 <div
   id='transcript-container'
   ref='container'
+  tabindex='0'
   @wheel='recordInteraction'
   @touchmove='recordInteraction'
   @keydown.self.enter='active > 0 ? focus(active) : focus(0)'
@@ -97,39 +117,41 @@ const focus = useThrottleFn((index: number, direction?: 'next' | 'prev', event?:
   :style='{ overflowY: locked ? (scrolling ? "auto" : "hidden") : "auto" }'
   :aria-activedescendant='active > 0 ? `seg-${active}` : undefined'
 >
-  <p id='transcript-body'>
-    <span
-      v-for='(seg, i) in segments'
-      :key='i'
-      :id='"seg-" + i'
-      :ref='(el) => {
-        if (el) spans[i] = el as HTMLSpanElement
-      }'
-      :class='{ active: i === active }'
-      class='segment'
-      @click='updatePlaytime(seg, i)'
-      @keydown.space='play'
-      @keydown.right='focus(i, "next", $event)'
-      @keydown.left='focus(i, "prev", $event)'
-      aria-role='button'
-      aria-controls='audio-player'
-      :aria-current='i == active'
-      :tabindex='i == active ? 0 : -1'
-    >
-      <template v-for='(token, j) in parsePlaceholders(seg.disfluencyText)' :key='j'>
-        <template v-if='typeof token === "string"'>
-          {{ token }}
+  <div id='transcript-body'>
+    <p v-for='(group, g) in paragraphs' :key='g'>
+      <span
+        v-for='seg in group'
+        :key='seg.index'
+        :id='"seg-" + seg.index'
+        :ref='(el) => {
+          if (el) spans[seg.index] = el as HTMLSpanElement
+        }'
+        :class='{ active: seg.index === active }'
+        class='segment'
+        @click='updatePlaytime(seg, seg.index)'
+        @keydown.space='play'
+        @keydown.right='focus(seg.index, "next", $event)'
+        @keydown.left='focus(seg.index, "prev", $event)'
+        role='button'
+        aria-controls='audio-player'
+        :aria-current='seg.index == active'
+        :tabindex='seg.index == active ? 0 : -1'
+      >
+        <template v-for='(token, j) in parsePlaceholders(seg.disfluencyText)' :key='j'>
+          <template v-if='typeof token === "string"'>
+            {{ token }}
+          </template>
+            <span
+              v-else
+              class='disfluency'
+              :class='token.class'
+            >
+              {{ token.content.join('') }}
+            </span>
         </template>
-          <span
-            v-else
-            class='disfluency'
-            :class='token.class'
-          >
-            {{ token.content.join('') }}
-          </span>
-      </template>
-    </span>
-  </p>
+      </span>
+    </p>
+  </div>
 </div>
 </template>
 
@@ -166,7 +188,7 @@ const focus = useThrottleFn((index: number, direction?: 'next' | 'prev', event?:
   }
 }
 .active {
-  @include theme(color, link);
+  @include theme(color, primary-text);
 }
 @media (hover: hover) {
   .segment:hover {
@@ -176,52 +198,60 @@ const focus = useThrottleFn((index: number, direction?: 'next' | 'prev', event?:
 
 // Disfluencies
 [annotated="true"] {
+  .sound.repetition,
+  .interjection {
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    @include theme(text-decoration-color, secondary-text);
+  }
   .sound.repetition {
-    text-decoration: underline dashed 1px;
-    @include theme(text-decoration-color, secondary);
+    text-decoration-style: double;
+  }
+  .interjection {
+    text-decoration-style: wavy;
+  }
+  .block:before,
+  .word.repetition:after,
+  .prolongation:after {
+    display: inline-flex;
+    @include theme(color, secondary-text);
+  }
+  .block:before,
+  .word.repetition:after {
+    font-variation-settings: 'wght' 600;
   }
   .block:before {
-    content: " ‖ ";
-    font-variation-settings: 'wght' 600;
-    font-style: normal;
-    text-decoration: none;
-    @include theme(color, secondary);
+    content: ' ‖ ';
   }
   .word.repetition:after {
-    content: " x2";
-    font-variation-settings: 'wght' 600;
+    content: ' x2';
     font-variant: small-caps;
     font-size: 50%;
     vertical-align: top;
-    text-decoration: none;
-    @include theme(color, secondary);
   }
   .word.repetition:has(+ .word.repetition):after,
   .word.repetition:has(+ div + .word.repetition):after
   {
-    content: ""
+    content: '';
   }
-  .interjection {
-    @include text-italic();
-    @include theme(color, secondary);
+  .block:before,
+  .prolongation:after {
+    vertical-align: auto;
   }
   .prolongation:after {
-    content: ":::";
+    content: ':::';
     font-variation-settings: 'wght' 400;
-    font-style: normal;
-    text-decoration: none;
-    font-size: 100%;
-    vertical-align: auto;
-    @include theme(color, secondary);
   }
-  .active .sound.repetition {
-    @include theme-mix(text-decoration-color, link, secondary);
-  }
-  .active .interjection,
-  .active .block:before,
-  .active .prolongation:after,
-  .active .word.repetition:after {
-    @include theme-mix(color, link, secondary);
+  .active {
+    .sound.repetition,
+    .interjection {
+      @include theme-mix(text-decoration-color, primary-text, secondary-text, 30%, 85%);
+    }
+    .block:before,
+    .prolongation:after,
+    .word.repetition:after {
+      @include theme-mix(color, primary-text, secondary-text, 30%, 85%);
+    }
   }
 }
 </style>

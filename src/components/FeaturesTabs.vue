@@ -1,185 +1,90 @@
 
 <script setup lang='ts'>
-import { TabsContent, TabsList, TabsRoot, TabsTrigger } from 'reka-ui'
+import { RovingFocusGroup, RovingFocusItem } from 'reka-ui'
+import { capitalize } from '@/utils'
 import type { Stats } from '@/types/segment'
 
-/*const { subtabColor } = */defineProps<{ subtabColor?: string }>()
-
-const tab = defineModel<keyof Stats>('tab', { required: false })
-const subtab = defineModel<keyof Stats['emotions'] | keyof Stats['fluency']>('subtab', { required: false })
+const tab = defineModel<keyof Stats>('modelValue', { required: false })
+const { labels } = defineProps<{ labels: string[] }>()
 </script>
 
 <template>
-<TabsRoot
-  v-model='tab'
+<RovingFocusGroup
+  v-model:current-tab-stop-id='tab'
+  orientation='horizontal'
+  :prevent-scroll-on-entry-focus='true'
+  loop
+  class='pagination'
+  role='tablist'
+  aria-label='Linguistic features'
 >
-  <TabsList class='pagination' aria-label=''>
-    <TabsTrigger class='button' value='emotions' />
-    <TabsTrigger class='button' value='valence' />
-    <TabsTrigger class='button' value='arousal' />
-    <TabsTrigger class='button' value='dominance' />
-    <TabsTrigger class='button' value='fluency' />
-  </TabsList>
-  <TabsContent value='emotions' tabindex='-1'>
-    <h3>Emotions</h3>
-    <p>
-      Emotions are complex. Emotions are heavy. Emotions are an excuse.
-    </p>
-    </TabsContent>
-  <TabsContent value='valence' tabindex='-1'>
-    <h3>Valence</h3>
-    <p>
-      I'm very very very.
-    </p>
-  </TabsContent>
-  <TabsContent value='arousal' tabindex='-1'>
-    <h3>Arousal</h3>
-    <p>
-      If you are happy and you know it clap your hands.
-    </p>
-  </TabsContent>
-  <TabsContent value='dominance' tabindex='-1'>
-    <h3>Dominance</h3>
-    <p>
-      Rawwwwr!
-    </p>
-  </TabsContent>
-  <TabsContent value='fluency' tabindex='-1'>
-    <h3>Fluency</h3>
-    <p>
-      Ehm
-    </p>
-  </TabsContent>
-</TabsRoot>
-<TabsRoot
-  class='tabs-root vertical'
-  orientation='vertical'
-  v-model='subtab'
->
-  <TabsList class='pagination vertical' aria-label='' ref='emoPagination'>
-    <TabsTrigger class='button' value='anger' />
-    <TabsTrigger class='button' value='contempt' />
-    <TabsTrigger class='button' value='disgust' />
-    <TabsTrigger class='button' value='fear' />
-    <TabsTrigger class='button' value='happiness' />
-    <TabsTrigger class='button' value='neutral' />
-    <TabsTrigger class='button' value='sadness' />
-    <TabsTrigger class='button' value='surprise' />
-    <TabsTrigger class='button' value='other' />
-  </TabsList>
-  <TabsContent value='anger' tabindex='-1'>
-    <h4>Anger</h4>
-    <p>
-      Grrr
-    </p>
-  </TabsContent>
-  <TabsContent value='contempt' tabindex='-1'>
-    <h4>Contempt</h4>
-    <p>
-      Meh
-    </p>
-  </TabsContent>
-  <TabsContent value='disgust' tabindex='-1'>
-    <h4>Disgust</h4>
-    <p>
-      Bleah
-    </p>
-  </TabsContent>
-  <TabsContent value='fear' tabindex='-1'>
-    <h4>Fear</h4>
-    <p>
-      Ahhhhh
-    </p>
-  </TabsContent>
-  <TabsContent value='happiness' tabindex='-1'>
-    <h4>Happiness</h4>
-    <p>
-      Yay!
-    </p>
-  </TabsContent>
-  <TabsContent value='neutral' tabindex='-1'>
-    <h4>Neutral</h4>
-    <p>
-      Mmmmmh
-    </p>
-  </TabsContent>
-  <TabsContent value='sadness' tabindex='-1'>
-    <h4>Sadness</h4>
-    <p>
-      :(((
-    </p>
-  </TabsContent>
-  <TabsContent value='surprise' tabindex='-1'>
-    <h4>Surprise</h4>
-    <p>
-      !!!
-    </p>
-  </TabsContent>
-  <TabsContent value='other' tabindex='-1'>
-    <h4>Other</h4>
-    <p>
-      ???
-    </p>
-  </TabsContent>
-</TabsRoot>
+  <RovingFocusItem
+    v-for='label in labels'
+    :key='label'
+    :tab-stop-id='label'
+    :value='label'
+    as='button'
+    :id='`tab-trigger-${label}`'
+    class='button'
+    role='tab'
+    :aria-label='capitalize(label)'
+    :aria-selected='label === tab'
+    :aria-controls='`tab-content-${label}`'
+  />
+</RovingFocusGroup>
 </template>
 
-<style scoped lang='scss'>
-h3 {
-  font-size: $fs-huge;
-}
-h4 {
-  font-size: $fs-xl;
-}
-.tabs-root.vertical {
-  display: flex;
-}
+<style lang='scss'>
 .pagination {
   display: flex;
   flex-flow: row nowrap;
-  width: 100%;
-  justify-content: start;
   gap: 0.5rem;
-
-  &.vertical {
-    flex-flow: column nowrap;
-    width: unset;
-  }
+  pointer-events: all;
+  align-items: center;
+  justify-content: stretch;
+  width: 100%;
+  height: 100%;
 
   .button {
-    border-radius: $radius-max;
-    height: 30px;
-    width: 30px;
-    padding: 0;
-    border: 1px solid transparent;
+    border-radius: 0;
     background: none;
+    will-change: auto;
+    padding: 0;
+    flex: 1;
+    height: 100%;
     position: relative;
-    box-shadow: none;
-    will-change: border-color;
-    transition: border-color 150ms ease;
-    scroll-margin-block-end: 78lvh;
 
     &:after {
       content: '';
-      height: 10px;
-      width: 10px;
-      border-radius: $radius-max;
+      display: block;
       position: absolute;
-      top: 33%;
-      left: 33%;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 5px;
+      border-radius: $radius-max;
       will-change: background-color;
       transition: background-color 150ms ease;
-      @include theme(background-color, border);
+      @include theme(background-color, modal-contrast);
     }
-    &[data-active] {
-      @include theme(border-color, text);
+
+    &:hover:after {
+      @include theme(background-color, modal-hover);
+    }
+
+    &[aria-selected='true']:after {
+      @include theme(background-color, text);
+    }
+
+    &:focus-visible {
+      outline: none;
+      overflow: visible;
+
       &:after {
-        @include theme(background-color, text);
-      }
-    }
-    @media (hover: hover) {
-      &:hover:after {
-        @include theme(background-color, text);
+        outline-offset: 2px;
+        outline-width: 2px;
+        outline-style: solid;
+        @include theme(outline-color, primary-text);
       }
     }
   }

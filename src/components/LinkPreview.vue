@@ -6,15 +6,15 @@ import {
   HoverCardArrow
 } from 'reka-ui'
 import { usePreviews } from '@/composables/usePreviews'
+import { canHover } from '@/stores/state'
 
 const props = defineProps<{ href: string }>()
-const hoverable = window.matchMedia('(hover: hover)').matches
-const previews = hoverable ? usePreviews() : {}
+const previews = canHover ? usePreviews() : {}
 const metadata = previews[props.href]
 </script>
 
 <template>
-  <HoverCardRoot v-if='hoverable && metadata' :open-delay='100' :close-delay='150'>
+  <HoverCardRoot v-if='canHover && metadata' :open-delay='100' :close-delay='150'>
     <HoverCardTrigger
       :href=props.href
       target='_blank'

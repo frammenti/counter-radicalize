@@ -1,10 +1,4 @@
 {
-  "https://github.com/frammenti": {
-    "title": "frammenti - Overview",
-    "description": "A zither and a gear @unibo. frammenti has 5 repositories available. Follow their code on GitHub.",
-    "image": "https://avatars.githubusercontent.com/u/146438454?v=4?s=400",
-    "url": "github.com"
-  },
   "https://en.wikipedia.org/wiki/2025_Palm_Springs_fertility_clinic_bombing": {
     "title": "2025 Palm Springs fertility clinic bombing",
     "description": "On May 17, 2025, a car bombing occurred at a reproductive center in Palm Springs, California, United States, leaving one person near the vehicle, later confirmed to be the perpetrator, dead and four others injured. The explosion was described as one of the largest bombing investigations that the Federal Bureau of Investigation (FBI) has investigated in Southern California since the Aliso Viejo package bombing that killed one person and seriously injured two others in 2018. The perpetrator was identified as Guy Edward Bartkus, a 25-year-old man from Twentynine Palms, California. He was the only person killed in the attack, and his motives stemmed from the ideologies of promortalism, antinatalism, \"anti-pro-life\", and efilism. Bartkus's alleged co-conspirator, Daniel Jongyon Park, died while in custody on June 24, 2025.",
@@ -28,5 +22,11 @@
     "description": "🌱 Vegan ♀ Radfem ⥀ Antinatalist/Efilist × Sanctioned Suicide Supporter 27F, asexual/celibate wlw, I...",
     "image": "https://64.media.tumblr.com/064aeb0b82fa2a48529e3c03d0c3e8a1/23d26f3e7f5db8f9-f2/s128x128u_c1/a166bde0860f6d5e241495b23a011ed35599f06c.jpg",
     "url": "vegantinatalist.tumblr.com"
+  },
+  "https://github.com/frammenti": {
+    "title": "frammenti - Overview",
+    "description": "A zither and a gear @unibo. frammenti has 5 repositories available. Follow their code on GitHub.",
+    "image": "https://avatars.githubusercontent.com/u/146438454?v=4?s=400",
+    "url": "github.com"
   }
 }

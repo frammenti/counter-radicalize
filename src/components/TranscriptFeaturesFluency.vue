@@ -53,24 +53,24 @@ const disfluencies = computed(() => {
 // Disfluency legend
 [annotated="true"] {
   [id='sound repetition'] {
-    text-decoration: underline dashed 1px;
+    text-decoration: underline double 1px;
   }
   #block:after {
-    content: " ‖";
+    content: ' ‖';
     font-variation-settings: 'wght' 600;
   }
   [id='word repetition']:after {
-    content: " x2";
+    content: ' x2';
     font-variation-settings: 'wght' 600;
     font-variant: small-caps;
     font-size: 50%;
     vertical-align: top;
   }
   #interjection {
-    @include text-italic();
+    text-decoration: underline wavy 1px;
   }
   #prolongation:after {
-    content: ":::";
+    content: ':::';
     font-variation-settings: 'wght' 400;
   }
 }

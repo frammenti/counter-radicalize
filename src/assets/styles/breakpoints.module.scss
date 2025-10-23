@@ -1,0 +1,8 @@
+@use 'base' as *;
+
+:export {
+  mobile: 0;
+  tablet: $tablet;
+  laptop: $laptop;
+  desktop: $desktop
+}

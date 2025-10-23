@@ -30,7 +30,7 @@ useIntersectionObserver(landing, ([entry], _) => {
       :label='((hotkey: string) => `Info (${hotkey})`)'
       class='toast-viewport'
     />
-    <a id='skip' class='button' href='#about'>Skip to content</a>
+    <a id='skip' class='button button-primary' href='#about'>Skip to content</a>
     <AppHeader :opaque='!heroVisible' />
     <main>
       <div class='landing' ref='landing'>
@@ -66,11 +66,12 @@ useIntersectionObserver(landing, ([entry], _) => {
   background-position: 50% 100%;
 }
 #skip {
-  position: absolute;
+  position: fixed;
   top: calc($header-height + 1rem);
   left: 1rem;
   transition: none;
-  user-select: none !important;
+  user-select: none;
+  z-index: 10;
 }
 #skip:not(:focus-visible) {
   background-color: transparent;

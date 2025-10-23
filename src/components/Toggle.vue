@@ -23,37 +23,37 @@ const state = defineModel('modelValue', { type: Boolean, required: true })
 .button {
   font-size: $fs-base;
   font-variation-settings: 'wght' 300;
-  
-  &[data-state='off'] {
-    @include theme(background-color, primary-active);
 
-    &.secondary {
+  &-primary {
+    &[data-state='off'] {
+      @include theme(background-color, primary);
+    }
+
+    &[data-state='on'] {
+      @include theme(background-color, primary-active);
+    }
+
+    &[data-state='off'].mouse-in:hover {
+      @include theme(background-color, primary-hover);
+    }
+  }
+
+  &-secondary {
+    &[data-state='off'] {
+      @include theme(background-color, secondary);
+    }
+
+    &[data-state='on'] {
       @include theme(background-color, secondary-active);
     }
-  }
 
-  &[data-state='on'] {
-    @include theme(background-color, primary);
-
-      &.secondary {
-        background-color: oklch(0.3678 0.097024 134.341);
-
-        @media (prefers-color-scheme: dark) {
-          background-color: oklch(0.3956 0.081569 97.0101);
-        }
-    }
-  }
-
-  &[data-state='off'].mouse-in:hover {
-    @include theme(background-color, primary-hover);
-
-      &.secondary {
+    &[data-state='off'].mouse-in:hover {
       @include theme(background-color, secondary-hover);
     }
   }
 
   .bump-enter-active {
-    animation: $animation-button;
+    animation: $animation-bump;
   }
 }
 </style>

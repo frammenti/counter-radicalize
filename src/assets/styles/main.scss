@@ -32,7 +32,7 @@
   outline-offset: 2px;
   outline-width: 2px;
   outline-style: solid;
-  @include theme(outline-color, link);
+  @include theme(outline-color, primary-text);
 }
 
 [v-cloak] {
@@ -58,6 +58,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: none;
   -moz-text-size-adjust: none;
+  quotes: '“' '”';
   scroll-behavior: smooth;
   overflow-y: auto;
   overflow-x: hidden;
@@ -153,7 +154,11 @@ a {
   display: inline-flex;
   gap: 0.25rem;
   align-items: center;
-  @include theme(color, link);
+  @include theme(color, primary-text);
+
+  &:visited {
+    @include theme(color, primary-text-visited);
+  }
 
   svg {
     height: 1.2lh;
@@ -167,19 +172,16 @@ a {
 .button-slim {
   appearance: none;
   user-select: none;
-  color: $white;
   font-family: $font-family-body;
   text-align: center;
   text-wrap-mode: nowrap;
   overflow: clip;
   text-overflow: ellipsis;
   border-radius: $radius-max;
-  margin-inline: 0;
-  margin-block: 0;
+  margin: 0;
   border: 0 solid;
   cursor: pointer;
   -webkit-tap-highlight-color: $transparent;
-  @include theme(background-color, primary);
 }
 
 .button {
@@ -189,11 +191,6 @@ a {
   will-change: background-color;
   transition: background-color 150ms ease;
 
-  &:hover,
-  &:focus {
-    @include theme(background-color, primary-hover);
-  }
-
   > span {
     display: block;
     position: relative;
@@ -202,6 +199,37 @@ a {
   svg {
     transition: all 150ms ease;
   }
+
+  &-primary, &-secondary {
+    color: $white;
+
+    &:visited {
+      color: $white;
+    }
+  }
+
+  &-primary {
+    @include theme(background-color, primary);
+    &:hover,
+    &:focus {
+      @include theme(background-color, primary-hover);
+    }
+    &:active {
+      @include theme(background-color, primary-active);
+    }
+  }
+
+  &-secondary {
+    @include theme(background-color, secondary);
+    &:hover,
+    &:focus {
+      @include theme(background-color, secondary-hover);
+    }
+    &:active {
+      @include theme(background-color, secondary-active);
+    }
+  }
+
 }
 
 .button-slim {
@@ -209,6 +237,8 @@ a {
   padding-block: $button-slim-padding-block;
   font-variation-settings: 'wght' 300;
   line-height: 1.3;
+  @include theme(background-color, background, true);
+  @include theme(color, text, true);
 }
 
 // Button cluster
@@ -355,7 +385,7 @@ hr {
   @include theme(color, text, true);
 
   a {
-    @include theme(color, link-visited);
+    @include theme(color, primary-text-visited);
   }
 
   .icon {
@@ -405,8 +435,17 @@ hr {
   }
 
   .p-cluster {
+    flex-wrap: nowrap;
     &:has(audio) { min-height: 60px; }
-    > audio { width: fit-content }
+    > audio { width: revert; }
     > fieldset { flex: 0 }
+  }
+}
+
+@media print {
+  .button,
+  audio,
+  header {
+    display: none;
   }
 }

@@ -21,10 +21,10 @@ const width = computed(() => cardWidth.value > 1072 ? cardWidth.value : 1072)
 <section id='distant-reading' class='paginated' aria-label='Distant reading' ref='section'>
   <Tip :anchor='section' title='How to navigate'>
     <template v-if='hasMouse'>
-      Click once to set playback position. Click again to clear.
+      <p>Click once to set playback position. Click again to clear.</p>
     </template>
     <template v-else>
-      Drag to pan the graph. Tap to set playback position.
+      <p>Drag to pan the graph. Tap to set playback position.</p>
     </template>
   </Tip>
   <h2>Distant reading</h2>
@@ -33,15 +33,25 @@ const width = computed(() => cardWidth.value > 1072 ? cardWidth.value : 1072)
       :segments='segments'
       :width='width'
       v-cloak
-      aria-hidden='true'
+      aria-role='figure'
     />
   </div>
   <div class='grid cards'>
-    <p class='p-card no-contain'></p>
-    <p class='p-card no-contain'></p>
-    <p class='p-card no-contain'></p>
-    <p class='p-card no-contain'></p>
-    <p class='p-card no-contain'></p>
+    <p class='p-card no-contain'>
+      
+    </p>
+    <p class='p-card no-contain'>
+      
+    </p>
+    <p class='p-card no-contain'>
+      
+    </p>
+    <p class='p-card no-contain'>
+      
+    </p>
+    <p class='p-card no-contain'>
+      
+    </p>
   </div>
 </section>
 </template>

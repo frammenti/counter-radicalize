@@ -1,49 +1,27 @@
 <script setup lang='ts'>
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 import PieChart from '@/components/PieChart.vue'
 import usePalette from '@/composables/usePalette'
-import { BiMap } from '@/utils'
+import { BiMap, capitalize } from '@/utils'
 import colors from '@/assets/styles/pie-chart.module.scss'
 import stats from '@/stores/stats.json'
 import type { AlignedSegment, Stats } from '@/types/segment'
 
-const { facet, subfacet } = defineProps<{
-  facet: keyof Stats
-  subfacet?: keyof Stats['emotions'] | keyof Stats['fluency']
-}>()
-
-const emit = defineEmits<{
-  'update:subfacet': [title?: string, color?: string]
-}>()
+const { facet } = defineProps<{ facet: keyof Stats }>()
 
 // Active Pie Slice
-const activeSliceIdx = ref<number | undefined>()
-
-const activeSlice = computed<number | undefined>({
-  get(prev) {
-    if (!subfacet) return
-    if (prev === activeSliceIdx.value) return prev
-    const idx = fData.value.findIndex((item) => item.title === subfacet)
-    return idx >= 0 ? idx : undefined
+const activeSlice = defineModel({
+  get(value: keyof Stats['emotions'] | keyof Stats['fluency'] | undefined) {
+    if (!value) return undefined
+    const i = fData.value.findIndex(item => item.title === value)
+    return i >= 0 ? i : undefined
   },
-  set(i?: number) {
-    activeSliceIdx.value = i
+  set(i: number) {
+    return i === undefined
+      ? undefined
+      : fData.value[i]?.title
   }
 })
-
-const activeSliceData = computed<[title?: string, color?: string]>(() => {
-  if (activeSliceIdx.value === undefined) return [undefined, undefined]
-  return [
-    fData.value[activeSliceIdx.value].title,
-    fPalette.value[activeSliceIdx.value].color,
-  ]
-})
-
-function updateSubfacet(i?: number) {
-  activeSlice.value = i
-  emit("update:subfacet", ...activeSliceData.value)
-}
-
 
 // Data prep
 type Dimension = keyof AlignedSegment['dimensions']
@@ -95,15 +73,15 @@ const fPalette = computed(() => palette.value[facet])
 
 <template>
 <PieChart
+  v-model='activeSlice'
   :items='fData'
   :palette='fPalette'
-  :size='540'
+  :label='`${capitalize(facet)} statistics`'
+  :size='510'
   :inner-cut='50'
   :gap='2'
   :rounded='2'
   tooltip
   reveal
-  :active='activeSlice'
-  @update:active-idx='updateSubfacet'
 />
 </template>

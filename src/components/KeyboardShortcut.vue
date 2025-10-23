@@ -44,13 +44,13 @@ if (sysModifier) keyList.unshift(sysModifier)
 .shortcut-container {
   width: fit-content;
   text-align: center;
-  margin-block: 0.25rem -0.25rem;
+  margin-block: $space-3xs;
   cursor: default;
   user-select: none;
-  font-size: $fs-s;
+  font-size: $fs-xs;
 }
 .shortcut-keys {
-  font-size: $fs-s;
+  font-size: $fs-xs;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -58,8 +58,8 @@ if (sysModifier) keyList.unshift(sysModifier)
   font-variation-settings: 'wght' 450;
 }
 .kbd {
-  min-width: 1.7lh;
-  height: 1.7lh;
+  min-width: 1.9lh;
+  height: 1.9lh;
   display: inline-flex;
   align-items: center;
   justify-content: center;

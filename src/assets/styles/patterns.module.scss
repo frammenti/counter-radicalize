@@ -1,32 +1,9 @@
 // Source: URL-encoded Inline SVG using SCSS mixin by Kevin Weber
 // https://codepen.io/kevinweber/pen/dXWoRw
 
-@use 'sass:string';
 @use 'patterns';
+@use 'functions' as *;
 
-@function str-replace($string, $search, $replace: '') {
-  $index: string.index($string, $search);
-  @if $index {
-    @return string.slice($string, 1, $index - 1) + $replace + str-replace(string.slice($string, $index + string.length($search)), $search, $replace);
-  }
-  @return $string;
-}
-
-$encoding-reference: (
-  ('%','%25'), // Encode "%" first
-  ('<','%3C'),
-  ('>','%3E'),
-  ('"','\''), // or ('"','%22')
-  ('#','%23'),
-  ('&','%26')
-);
-
-@function svg-encode($svg) {
-  @each $char, $encoded in $encoding-reference {
-    $svg: str-replace($svg, $char, $encoded);
-  }
-  @return 'data:image/svg+xml,' + $svg;
-}
 
 @function svg-pattern($pattern-id, $pattern) {
   @return "<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs>#{$pattern}</defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(##{$pattern-id})'/></svg>";

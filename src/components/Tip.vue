@@ -7,7 +7,7 @@ const props = defineProps<{ anchor: HTMLElement | null, title?: string }>()
 const isVisible = ref<boolean>(false)
 const target = computed(() => props.anchor)
 
-const DELAY = 3000 // ms
+const DELAY = 5000 // ms
 let cancelDelay: (() => void) | null = null
 
 const { stop } = useIntersectionObserver(
@@ -76,7 +76,7 @@ const { stop } = useIntersectionObserver(
   }
 
   &[data-state='closed'] {
-    animation: fade-out 150ms cubic-bezier(0.47, 0, 0.745, 0.715);
+    animation: fade-out 150ms $ease-in-sine;
   }
 }
 .toast-title {
@@ -85,18 +85,12 @@ const { stop } = useIntersectionObserver(
   margin-block-end: 0.25rem;
   line-height: 1;
 }
-.toast-desc {
-  margin-block-end: 10px;
-  gap: $space-s-m;
-  display: flex;
-  align-items: start;
-  justify-content: space-between;
-  text-align: center;
+.toast-desc p {
+  margin-block: $space-3xs;
+
+  &:first-child { margin-block-start: 0; }
 }
 .toast-close {
-  font-size: $fs-base;
-  align-self: center;
-  @include theme(background-color, background, true);
   @include theme(color, tip)
 }
 

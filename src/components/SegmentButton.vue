@@ -48,7 +48,8 @@ watch(() => state, syncState)
 </script>
 
 <template>
-<button class='button'
+<button
+  class='button'
   ref='button'
 >
   {{ capitalize(seg.text) }}
@@ -56,14 +57,10 @@ watch(() => state, syncState)
 </template>
 
 <style scoped lang='scss'>
-$shift: 0.7rem;
 
 .button {
-  width: calc(100% - $shift);
   padding-block: $space-xs;
   padding-inline: $space-s-m;
-  margin-block-start: -1rem;
-  margin-inline-start: $shift;
   font-size: $fs-s;
   text-align: left;
   font-variation-settings: 'wght' 400;
@@ -71,6 +68,7 @@ $shift: 0.7rem;
   position: relative;
   overflow: hidden;
   isolation: isolate;
+  user-select: text;
   @include theme(background-color, background);
   @include theme(color, text);
   &:after {
@@ -83,7 +81,7 @@ $shift: 0.7rem;
     will-change: transform;
     transform-origin: left;
     transition: transform var(--duration, 0s) linear;
-    @include theme(background-color, link);
+    @include theme(background-color, primary-text);
   }
   @media screen and (width >= $tablet) {
     font-size: $fs-base;

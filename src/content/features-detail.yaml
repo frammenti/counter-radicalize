@@ -1,0 +1,46 @@
+emotions:
+  anger:
+    Anger is characterized by high arousal and low valence.
+
+  contempt:
+    
+
+  disgust:
+    
+
+  fear:
+    
+
+  happiness:
+    
+
+  neutral:
+    
+
+  sadness:
+    
+
+  surprise:
+    
+
+  other:
+    
+
+fluency:
+  fluent:
+    A fluent speech is...
+
+  block:
+    Due to the confidence threshold, the model was not able to identify blocks with sufficient confidence.
+
+  prolongation:
+    
+
+  sound repetition:
+    
+
+  word repetition:
+    
+
+  interjection:
+    

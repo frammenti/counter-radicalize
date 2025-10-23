@@ -107,3 +107,15 @@ $fluency-dark: (
   interjection: map.get($emotions-dark, happiness)
 );
 
+$features: (
+  light: (
+    emotions: $emotions-light,
+    dimensions: $dimensions-light,
+    fluency: $fluency-light
+  ),
+  dark: (
+    emotions: $emotions-dark,
+    dimensions: $dimensions-dark,
+    fluency: $fluency-dark
+  )
+);

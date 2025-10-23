@@ -1,38 +1,60 @@
 @use 'sass:color';
 @use 'sass:list';
 
+@function mix($l1, $l2, $w: 50%) {
+  $result: ();
+
+  @each $c1, $c2 in list.zip($l1, $l2) {
+    $result: list.append($result, color.mix($c1, $c2, $weight: $w, $method: oklch));
+  }
+  @return $result;
+}
+
 $fuchsia: oklch(0.4668 0.19179 337.977);
 $orchid: oklch(0.2976 0.06336 334.341);
-$salmon: oklch(0.7588 0.1296 13.2);
 $lilac: oklch(0.7935 0.10034 276.98);
-$black: oklch(0.2256 0.00468 17.205);
+$green: color.adjust($fuchsia, $hue: 160deg);
+$ochra: color.adjust($lilac, $hue: 180deg);
+$black: oklch(0.1591 0 0);
 $white: oklch(0.9985 0.00011 360);
 $raisin: oklch(0.254 0.01336 353.411);
 $brown: oklch(0.2109 0.04514 21.633);
 $taupe: oklch(60.668% 0.0184 17.465);
 $transparent: oklch(0 0 0 / 0%);
 $light-gray: oklch(0.9466 0 0);
-$dark-gray: oklch(0.278 0.0047 17.465);
+$dark-gray: oklch(0.2002 0 0);
 
-$primary-color:
-  $orchid
-  color.scale($lilac, $lightness: -30%, $chroma: 20%);
-
-$primary-hover-color:
-  color.scale($orchid, $lightness: 10%, $chroma: 10%)
-  color.scale($lilac, $lightness: -20%, $chroma: 20%);
-
-$primary-active-color:
-  color.scale($orchid, $lightness: 10%, $chroma: 30%)
-  color.scale($lilac, $lightness: -15%, $chroma: 10%);
-
-$link-color:
+$primary-text-color:
   $fuchsia
   $lilac;
 
-$link-visited-color:
-  color.scale($orchid, $lightness: 30%, $chroma: 20%)
+$primary-text-visited-color:
+  color.scale($orchid, $lightness: 30%, $chroma: 5%)
   color.scale($lilac, $lightness: -20%, $chroma: 20%);
+
+$primary-color:
+  color.scale($orchid, $lightness: 10%, $chroma: 30%)
+  color.scale($lilac, $lightness: -15%, $chroma: 10%);
+
+$primary-active-color:
+  $orchid
+  color.scale($lilac, $lightness: -30%, $chroma: 20%);
+
+$primary-hover-color: mix($primary-color, $primary-active-color);
+
+$secondary-text-color:
+  color.scale($green, $lightness: 5%, $chroma: 20%)
+  $ochra;
+
+$secondary-color:
+  $green
+  color.scale($ochra, $lightness: -20%);
+
+$secondary-active-color:
+  oklch(0.3605 0.1224 142.5)
+  color.scale($ochra, $lightness: -35%, $chroma: 20%);
+
+$secondary-hover-color: mix($secondary-color, $secondary-active-color);
 
 $selection-color:
   oklch(0.8776 0.2363 148.74 / 50%)
@@ -41,18 +63,6 @@ $selection-color:
 $tip-color:
   color.scale($lilac, $lightness: 40%, $chroma: -40%)
   color.scale($orchid, $lightness: -5%);
-
-$secondary-color:
-  color.adjust($fuchsia, $hue: 160deg)
-  color.adjust($lilac, $hue: 180deg);
-
-$secondary-hover-color:
-  oklch(0.454 0.097024 134.341)
-  oklch(0.4825 0.0937 97.44);
-
-$secondary-active-color:
-  color.adjust($fuchsia, $hue: 160deg)
-  oklch(0.5675 0.0987 95.99);
 
 $background-color:
   $white
@@ -92,7 +102,15 @@ $modal-alt-color:
 
 $modal-fade-color:
   color.scale($light-gray, $lightness: 60%)
-  color.scale($dark-gray, $lightness: -15%);
+  color.scale($dark-gray, $lightness: -13%);
+
+$modal-contrast-color:
+  $light-gray
+  oklch(0.2817 0.0036 14);
+
+$modal-hover-color:
+  oklch(0.8853 0 0)
+  oklch(0.316 0.0054 14);
 
 $button-off-color:
   color.change($brown, $alpha: 0.2)
@@ -106,13 +124,14 @@ $palette: (
   primary: $primary-color,
   primary-hover: $primary-hover-color,
   primary-active: $primary-active-color,
-  link: $link-color,
-  link-visited: $link-visited-color,
-  selection: $selection-color,
-  tip: $tip-color,
+  primary-text: $primary-text-color,
+  primary-text-visited: $primary-text-visited-color,
   secondary: $secondary-color,
   secondary-hover: $secondary-hover-color,
   secondary-active: $secondary-active-color,
+  secondary-text: $secondary-text-color,
+  selection: $selection-color,
+  tip: $tip-color,
   background: $background-color,
   text: $text-color,
   text-hover: $text-hover-color,
@@ -123,6 +142,8 @@ $palette: (
   modal: $modal-color,
   modal-alt: $modal-alt-color,
   modal-fade: $modal-fade-color,
+  modal-contrast: $modal-contrast-color,
+  modal-hover: $modal-hover-color,
   button-off: $button-off-color,
   button-on: $button-on-color,
 )

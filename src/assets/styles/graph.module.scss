@@ -7,16 +7,16 @@
 $light: (
   emotions: $emotions-light,
   fluency: $fluent-light,
-  primary: list.nth($link-color, 1),
-  secondary: list.nth($secondary-color, 1),
+  primary: list.nth($primary-text-color, 1),
+  secondary: list.nth($secondary-text-color, 1),
   background: list.nth($modal-fade-color, 1)
 );
 
 $dark: (
   emotions: $emotions-dark,
   fluency: $fluent-dark,
-  primary: list.nth($link-color, 2),
-  secondary: list.nth($secondary-color, 2),
+  primary: list.nth($primary-text-color, 2),
+  secondary: list.nth($secondary-text-color, 2),
   background: list.nth($modal-fade-color, 2)
 );
 

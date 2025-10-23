@@ -1,9 +1,10 @@
 // Simplified chart inspired by https://vuetifyjs.com/en/components/pie-charts/
 
 <script setup lang='ts'>
-import { computed, ref, defineAsyncComponent } from 'vue'
+import { ref, shallowRef, useTemplateRef, computed, watch, defineAsyncComponent, type ComponentPublicInstance } from 'vue'
 import PieSlice from '@/components/PieSlice.vue'
 import usePalette from '@/composables/usePalette'
+import { canHover, isMobile } from '@/stores/state'
 import patternThemes from '@/assets/styles/patterns.module.scss'
 import { capitalize, round } from '@/utils'
 
@@ -14,6 +15,7 @@ const {
   palette = [],
   itemValue = 'value',
   itemTitle = 'title',
+  label,
   rotate = 0,
   gaugeCut = 0,
   min = 0.01, // the minimum value to normalize small values > 0
@@ -30,6 +32,7 @@ const {
   palette?: Palette
   itemValue?: string
   itemTitle?: string
+  label?: string
   size?: number
   rotate?: number
   gaugeCut?: number
@@ -119,8 +122,99 @@ function arcOffset(index: number) {
 function arcSize(v: number) { return norm(v) / total.value * (100 - gaugeCut / 3.6) }
 
 // Active item
-const activeIdx = defineModel<number | undefined>('active-idx', { type: Number, required: false, default: undefined })
+// Selected slice, emitted
+const locked = defineModel<number | undefined>('modelValue', {
+  set(i) {
+    return i !== locked.value
+      ? i
+      : undefined
+  },
+  get(i) {
+    return i !== undefined && arcs.value[i].value > 0
+      ? i
+      : undefined
+  }
+})
+
+// Local hover state, internal
+const hovered = ref<number>()
+
+const active = computed(() => locked.value ?? hovered.value)
+
+const svg = useTemplateRef('svg')
+const rect = computed(() => svg.value?.getBoundingClientRect())
+const slices = shallowRef(new Map<number, ComponentPublicInstance<typeof PieSlice>>())
 const anchor = ref({ x: 0, y: 0 })
+const tooltipHeight = computed(() => isMobile.value ? 52 : 57.6)
+const tooltipWidth = computed(() => isMobile.value ? 104 : 128)
+
+function center(i: number) {
+  const slice = slices.value.get(i)
+  const tot = rect.value
+  if (!(slice && tot)) return { x: 0, y: 0 }
+
+  const { width, height } = tot
+  const center = { x: width / 2, y: height / 2 }
+
+  let x = slice.center.x / 100 * width
+  let y = slice.center.y / 100 * height
+
+  if (isMobile.value) {
+    const factor = 0.6
+    x = center.x + (x - center.x) * factor
+    y = center.y + (y - center.y) * factor
+  }
+
+  x -= tooltipWidth.value / (isMobile.value ? 2 : 4)
+  y += tooltipHeight.value / 2
+
+  return { x, y }
+}
+
+watch(locked, (n, o) => {
+  if (n === undefined) return
+  if (canHover && hovered.value === n && o === undefined) return
+    anchor.value = center(n)
+}, { flush: 'post' })
+
+watch(() => items, () => {
+  locked.value = undefined
+  hovered.value = undefined
+  if (focused.value !== undefined) {
+    getSlice(focused.value).tabIndex = -1
+    focused.value = undefined
+  }
+}, { flush: 'pre' })
+
+// Keyboard accessibility
+const focused = ref<number>()
+
+function getSlice(i: number): SVGPathElement {
+  return slices.value.get(i)!.$el.children[1]
+}
+
+function focusSlice(direction?: 'prev' | 'next') {
+  const i = focused.value ?? 0
+  const last = arcs.value.filter(item => item.value > 0).length - 1
+
+  switch(direction) {
+    case 'prev':
+      if (focused.value === undefined) return
+      getSlice(i).tabIndex = -1
+      focused.value = i === 0 ? last : i - 1
+      break
+    case 'next':
+      if (focused.value === undefined) return
+      getSlice(i).tabIndex = -1
+      focused.value = i === last ? 0 : i + 1
+      break
+    default:
+      focused.value = i
+  }
+  const target: SVGPathElement = getSlice(focused.value)
+  target.tabIndex = 0
+  target.focus({ preventScroll: true })
+}
 </script>
 
 <template>
@@ -137,21 +231,21 @@ const anchor = ref({ x: 0, y: 0 })
     <TooltipCursor
       v-if='tooltip'
       :anchor='anchor'
-      :open='activeIdx !== undefined'
-      min-width='8rem'
-      height='3.6rem'
+      :open='active !== undefined'
+      :min-width='`${tooltipWidth}px`'
+      :height='`${tooltipHeight}px`'
     >
-        <div class='tooltip-content' v-if='activeIdx !== undefined'>
+        <div class='tooltip-content' v-if='active !== undefined'>
           <div class='tooltip-legend'
             :style='{
-              backgroundColor: arcs[activeIdx].color,
-              backgroundImage: patterns[arcs[activeIdx].pattern]?.url
+              backgroundColor: arcs[active].color,
+              backgroundImage: patterns[arcs[active].pattern]?.url
             }'
           ></div>
           <div class='tooltip-text'>
-            <div class='tooltip-title'>{{ capitalize(arcs[activeIdx].title) }}</div>
+            <div class='tooltip-title'>{{ capitalize(arcs[active].title) }}</div>
             <div class='tooltip-value'>
-            {{ round(arcs[activeIdx].value) }} %
+            {{ round(arcs[active].value) }}%
             </div>
           </div>
         </div>
@@ -159,28 +253,44 @@ const anchor = ref({ x: 0, y: 0 })
     <svg
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 100 100'
+      ref='svg'
       class='pie-segments'
-      pointer-events='fill'
       @pointermove='(e) => {
-        anchor.x = e.clientX
-        anchor.y = e.clientY
+        if (locked !== undefined) return
+        anchor.x = e.offsetX
+        anchor.y = e.offsetY
       }'
+      @keydown.enter.passive='focusSlice'
+      @keydown.arrow-left.passive='focusSlice("prev")'
+      @keydown.arrow-right.passive='focusSlice("next")'
+      pointer-events='none'
+      overflow='visible'
+      role='graphics-datachart'
+      :aria-label='label'
+      aria-roledescription='pie chart'
+      aria-live='polite'
+      aria-datatype='portion'
+      :tabindex='focused === undefined ? 0 : -1'
     >
       <defs>
         <template v-for='{svg: pattern}, _i in patterns' :key='_i'>
           <g v-html='pattern'></g>
         </template>
       </defs>
+      <circle class='outline' cx='50' cy='50' r='52' stroke='none' fill='none' pointer-events='none' stroke-width='1px' stroke-linecap='round' stroke-linejoin='round' />
       <template v-for='item, i in arcs' :key='item.key'>
         <PieSlice
           v-if='item.value > 0'
-          :active='activeIdx === i'
+          :ref="(el: any) => { if (el) slices.set(i, el) }"
+          :active='active === i'
           v-bind='segmentProps'
+          :label='capitalize(item.title)'
           :color='item.color'
           :value='arcSize(item.value)'
           :rotate='arcOffset(i)'
           :pattern='item.pattern'
-          @update:active='(isActive) => activeIdx = isActive ? i : undefined'
+          @update:active='isActive => hovered = isActive ? i : undefined'
+          @lock='locked = i'
         />
       </template>
     </svg>
@@ -202,22 +312,47 @@ const anchor = ref({ x: 0, y: 0 })
   width: 100%;
   font-size: $fs-base;
 }
-.tooltip-content {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: space-around;
-  gap: 1rem;
-  text-wrap: nowrap;
+.pie-segments {
+  &:focus, &:focus-visible {
+    outline: none;
+  }
+  
+  &:focus-visible {
+   .outline { @include theme(stroke, primary-text); }
+  }
 }
-.tooltip-legend {
-  height: 2.25rem;
-  width: 2.25rem;
-  border-radius: $radius-max;
-  border: 1px solid;
-  @include theme(border-color, border);
+.tooltip {
+  &-content {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: start;
+    gap: 1em;
+    font-size: $fs-base;
+    text-wrap: nowrap;
+    text-align: start;
+  }
+  &-legend {
+    flex-shrink: 0;
+    height: 1.6lh;
+    width: 1.6lh;
+    border-radius: $radius-max;
+    border: 1px solid;
+    @include theme(border-color, border);
+  }
+  &-value {
+    font-size: $fs-xs;
+  }
 }
-.tooltip-value {
-  font-size: 0.8rem;
+
+@media screen and (width >= $tablet) {
+  .tooltip {
+    &-content {
+      font-size: $fs-m;
+    }
+    &-value {
+      font-size: $fs-s;
+    }
+  }
 }
 </style>

@@ -107,7 +107,7 @@ export default function align(
         fluency,
         disfluencies,
         text,
-        disfluencyText: disfluencyText + ' ',
+        disfluencyText: /[.!?]\s*$/.test(disfluencyText) ? disfluencyText + '\n' : disfluencyText + ' ',
       }
     }
   )

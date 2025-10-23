@@ -1,0 +1,14 @@
+emotions:
+  
+
+valence:
+  Emotion polarity.
+
+arousal:
+  
+
+dominance:
+  The perceived level of control of the speaker over the situation. It was added as an additional dimension to differentiate emotions connotated by similar levels of valence and arousal (i.e. low valence, high arousal emotions like fear and anger).
+
+fluency:
+  

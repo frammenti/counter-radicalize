@@ -59,6 +59,7 @@ watch(playing,
 <audio
   controls
   preload='auto'
+  id='audio-player'
   ref='audio'
   @timeupdate='updatePlaytime'
   @play='updateState'

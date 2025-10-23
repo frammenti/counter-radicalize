@@ -1,18 +1,44 @@
 <script setup lang='ts'>
-import { ref, reactive, watch } from 'vue'
+import { ref, reactive, computed, watch } from 'vue'
+import { RovingFocusGroup, RovingFocusItem } from 'reka-ui'
 import SegmentButton from '@/components/SegmentButton.vue'
 import { active } from '@/composables/useActiveSegment'
 import { playtime, playing } from '@/stores/state'
-import { capitalize } from '@/utils'
+import { round, capitalize } from '@/utils'
 import ranking from '@/stores/ranking.json'
-import type { AlignedSegment, RankedSegment, Stats } from '@/types/segment'
+import type { RankedSegment, Stats } from '@/types/segment'
 
 
-const { facet, subfacet } = defineProps<{
+const { facet, subfacet = 'neutral' } = defineProps<{
   facet: keyof Stats,
-  subfacet: keyof Stats['emotions'] | keyof Stats['fluency']
+  subfacet?: EmotionKey | string
 }>()
 
+// Data
+const ranks = ['top', 'bottom'] as const
+type Rank = typeof ranks[number]
+type Ranking = Record<Rank, RankedSegment[]>
+
+type EmotionKey = keyof Stats['emotions']
+
+type RankingData = {
+  emotions: Record<EmotionKey, Ranking>
+} & Record<Exclude<keyof Stats, 'emotions'>, Ranking>
+
+const typedRanking = ranking as RankingData
+
+function isEmotion(facet: keyof Stats): facet is 'emotions' {
+  return facet === 'emotions'
+}
+
+const data = computed(() => {
+  if (isEmotion(facet)) {
+    return typedRanking.emotions[subfacet as EmotionKey]
+  }
+  return typedRanking[facet]
+})
+
+// State
 type State = 'start' | 'end' | 'resume' | 'cancel'
 
 const activeSeg = ref<RankedSegment>()
@@ -58,7 +84,7 @@ watch([playtime, playing], ([t, p]) => {
     setState(seg.index, 'end')
     playing.value = false
     activeSeg.value = undefined
-    requestAnimationFrame(() => setState(seg.index, 'cancel'))
+    setTimeout(() => setState(seg.index, 'cancel'), 200)
   } else if (t > seg.start && states[seg.index] !== 'resume') {
     setState(seg.index, 'resume')
   }
@@ -68,67 +94,117 @@ watch([playtime, playing], ([t, p]) => {
 <template>
 <div
   class='p-card ranking'
-  v-for='rank in ["top", "bottom"] as const'
+  v-for='rank in ranks'
   :key='rank'
+  role='region'
+  :aria-label='`${capitalize(rank)} 3 segments for ${isEmotion(facet) ? subfacet : facet}`'
 >
-  <template v-if='facet === "emotions"'>
-  <h4>{{ capitalize(rank) }} 3 segments for {{
-    subfacet === 'neutral'
-      ? 'neutral emotion'
-      : subfacet === 'other'
-        ? 'other emotions'
-        : subfacet
-  }}</h4>
-  <ol>
+  <hgroup>
+    <h3>{{ capitalize(rank) }} 3</h3>
+    <p>
+       {{ capitalize(isEmotion(facet) ? subfacet : facet) }}
+    </p>
+  </hgroup>
+  <RovingFocusGroup
+    orientation='vertical'
+    :prevent-scroll-on-entry-focus='true'
+    loop
+    as='ol'
+  >
     <li
-      v-for='seg, i in ranking[facet][subfacet as keyof AlignedSegment["emotions"]][rank]'
-      :key='i'
+      v-for='seg, i in data[rank]'
+      :key='i + 1'
     >
-      <SegmentButton
-        :seg='seg'
-        :state='states[seg.index]'
-        @click.passive='setActive(seg)'
-        @keydown.enter.passive='setActive(seg)'
-      />
+      <RovingFocusItem
+        :id='`${rank}-${i + 1}-${isEmotion(facet) ? subfacet : facet}`'
+        :tab-stop-id='`${i + 1}`'
+        as-child
+      >
+        <SegmentButton
+          :seg='seg'
+          :state='states[seg.index]'
+          @click.passive='setActive(seg)'
+          @keydown.enter.passive='setActive(seg)'
+          aria-controls='audio-player'
+        />
+      </RovingFocusItem>
+      <span class='percentage'>&nbsp;{{ round(seg.value, 100, 0) }}%</span>
     </li>
-  </ol>
-  </template>
-  <template v-else>
-  <h4>{{ capitalize(rank) }} 3 segments for {{ facet }}</h4>
-  <ol>
-    <li
-      v-for='seg, i in ranking[facet][rank]'
-      :key='i'
-    >
-      <SegmentButton
-        :seg='seg'
-        :state='states[seg.index]'
-        @click.passive='setActive(seg)'
-        @keydown.enter.passive='setActive(seg)'
-      />
-    </li>
-  </ol>
-  </template>
+  </RovingFocusGroup>
 </div>
 </template>
 
-<style scoped lang='scss'>
+<style lang='scss'>
 .ranking {
   font-size: $fs-s;
+  pointer-events: all;
 
-  h4 {
-    font-variation-settings: 'wght' 550, 'wdth' 115;
-    margin-block-end: 0.5rem;
+  hgroup {
+    margin-block-end: $space-s;
+
+    h3 {
+      margin-block: 0;
+      display: inline;
+      font-size: $fs-base;
+    }
+
+    p {
+      display: inline;
+      margin-block: 0;
+      font-size: $fs-m;
+
+      &:before {
+        content: ' • ';
+        font-variation-settings: 'wght' 900;
+      }
+    }
   }
+
   ol {
     margin-block: 0;
-    padding-inline-start: 0.25rem;
-    list-style-position: inside;
+    padding-inline-start: 0;
+    list-style-type: none;
     font-variation-settings: 'wght' 500;
-    @include theme(color, link);
+    @include theme(color, primary-text);
 
     li {
       width: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      gap: $space-2xs;
+      margin-block-end: $space-xs;
+
+      &:before {
+        user-select: text;
+        flex: 1 0;
+        font-variation-settings: 'wght' 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 1.4lh;
+        max-width: 1.4lh;
+        border-radius: $radius-max;
+        @include theme(color, text, true);
+        @include theme(background-color, background, true);
+      }
+
+      &:first-child:before { content: '1'; }
+      &:nth-child(2):before { content: '2'; }
+      &:nth-child(3):before { content: '3'; }
+
+      .button {
+        flex: 1;
+      }
+
+      .percentage {
+        display: none;
+        font-size: $fs-s;
+        font-variation-settings: 'wght' 300;
+        @include theme(color, text);
+      }
+
+      &:hover { .percentage { display: inline; } }
     }
   }
 }
@@ -137,12 +213,19 @@ watch([playtime, playing], ([t, p]) => {
   .ranking {
     font-size: $fs-base;
 
+    hgroup {
+      h3 { font-size: $fs-m; }
+      p { font-size: $fs-l; }
+    }
+
     ol {
       padding-inline-start: 0;
 
       li {
         max-width: 900px;
         margin-inline: auto;
+
+        .percentage { display: inline; }
       }
     }
   }

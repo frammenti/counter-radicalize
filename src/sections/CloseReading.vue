@@ -34,6 +34,7 @@ if (hasKeyboard) {
 <template>
 <section id='close-reading' class='paginated' aria-label='Close reading' ref='section' :annotated>
   <Tip v-if='hasKeyboard' :anchor='section' title='Keyboard shortcuts'>
+    <div class='shortcuts'>
     <KeyboardShortcut
       modifier='meta'
       :keys='["ArrowLeft"]'
@@ -49,6 +50,8 @@ if (hasKeyboard) {
       :keys='["ArrowRight"]'
       id='shortcut-next'
     >next segment</KeyboardShortcut>
+    </div>
+    <p>Press and hold to quickly scan through segments.</p>
   </Tip>
   <h2>Close reading</h2>
   <section id='transcript-text' class='p-card' aria-label='Transcript Text'>
@@ -56,19 +59,25 @@ if (hasKeyboard) {
       <TranscriptPlayer 
         src='/counter-radicalize/hls/message.m3u8'
       />
-      <fieldset>
+      <fieldset
+        aria-label='Text controls'
+      >
+      <legend>Control annotation visibility and the ability to scroll the transcript.</legend>
       <Toggle
         v-model='annotated'
+        title='disfluency annotations'
         text-on='Hide disfluencies'
         text-off='Show disfluencies'
         :style='{ minWidth: "10.7rem" }'
-        class='secondary'
+        class='button-secondary'
       />
       <Toggle
         v-model='locked'
+        title='text scroll'
         text-on='Unlock'
         text-off='Lock'
         :style='{ minWidth: "7rem" }'
+        class='button-primary'
       />
       </fieldset>
     </div>
@@ -97,7 +106,7 @@ if (hasKeyboard) {
           ⓘ
           <template #content>
             <p>
-              Disfluencies that overlap segments are not displayed, but are still counted.
+              Disfluencies that overlap segments are not displayed in the text, but are still counted.
             </p>
           </template>
         </Tooltip>
@@ -109,8 +118,10 @@ if (hasKeyboard) {
 </template>
 
 <style scoped lang='scss'>
-$transcript-height: calc(60px + $cluster-gap + 15lh + var(--card-padding) * 3);
-$transcript-height-mobile: calc(60px + $fs-base * 1.5 + $button-padding-block * 2 + $cluster-gap * 2 + 15lh + var(--card-padding) * 3);
+$transcript-height: calc(60px + $cluster-gap + 15.5lh + var(--card-padding) * 3);
+$transcript-height-mobile: calc(60px + $fs-base * 1.5 + $button-padding-block * 2 + $cluster-gap * 2 + 15.5lh + var(--card-padding) * 3);
+
+legend { opacity: 0; position: absolute; pointer-events: none; }
 
 :deep(#speech-flow) span {
   font-family: $font-family-symbol;
@@ -122,6 +133,16 @@ $transcript-height-mobile: calc(60px + $fs-base * 1.5 + $button-padding-block * 
   opacity: 0.9;
   cursor: default;
   user-select: none;
+}
+
+.shortcuts {
+  gap: $space-s-m;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+  margin-block-end: $space-2xs;
 }
 
 #transcript-text {
@@ -173,10 +194,9 @@ aside ul {
 }
 
 @media screen and (width >= $laptop) {
-  #transcript-text {
-    #transcript-container {
-      padding-inline: 22cqi;
-    }
+  :deep(#transcript-body) {
+    max-width: 42rem;
+    margin: auto;
   }
   .grid.cards {
     grid-template-columns: 43cqi 1fr 1.2fr;

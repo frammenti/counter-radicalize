@@ -236,14 +236,14 @@ function setPlaytime() {
   }
   :deep(svg) {
     max-width: none;
-
-    &, [class*="-swatches"] {
-      font-family: $font-family-body;
-    }
+    font-family: $font-family-body;
 
     [font-variant="tabular-nums"] {
       font-size: 0.55rem;
     }
+  }
+  :deep(svg), :deep([class*="-swatches"]) {
+    font-family: $font-family-body;
   }
 }
 @media screen and (width >= $laptop) {
