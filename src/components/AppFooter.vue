@@ -18,7 +18,7 @@ import LinkPreview from '@/components/LinkPreview.vue'
         <ul>
           <li>Francesca Massarenti</li>
           <li><LinkPreview href='https://github.com/frammenti'>@frammenti</LinkPreview></li>
-          <li><a href='mailto:francesca.massarent2@studio.unibo.it'>francesca.massarent2<wbr />@studio.unibo.it</a></li>
+          <li><a href='mailto:fra.mmenti@inventati.org'>fra.mmenti<wbr />@inventati.org</a></li>
         </ul>
       </div>
     </div>

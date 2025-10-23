@@ -33,7 +33,7 @@ const doScroll = useThrottleFn((offset: number, instant: boolean) => {
 
   if (locked && (atTop || atBottom)) return
 
-  if (locked) {
+  if (locked && !instant) {
     scrolling.value = true
     parent.addEventListener(
       'scrollend',

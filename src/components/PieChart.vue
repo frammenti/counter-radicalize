@@ -230,7 +230,7 @@ watch(() => items, () => {
         ref='svg'
         class='pie-segments'
         @pointermove='(e) => {
-          if (locked !== undefined) return
+          if (locked !== undefined || !canHover) return
           anchor.x = e.offsetX
           anchor.y = e.offsetY
         }'

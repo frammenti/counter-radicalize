@@ -187,6 +187,9 @@ watch(active, (n, o) => {
     :style='{ minHeight: minHeight + "px" }'
     role='region'
     :aria-activedescendant='active ? `${name}-trigger-${active}` : undefined'
+    @touchstart.stop
+    @touchend.stop
+    @click.self.passive='active = undefined'
   >
     <div
       v-for='(text, label, i) in content'
@@ -260,7 +263,7 @@ $expanded-width-mobile: 70cqi;
   gap: $space-xs;
   width: 100%;
   height: 100%;
-  pointer-events: none;
+  pointer-events: all;
   font-size: $fs-base;
   -webkit-tap-highlight-color: $transparent;
 
@@ -294,6 +297,10 @@ $expanded-width-mobile: 70cqi;
       outline-width: 2px;
       outline-style: solid;
       @include theme(outline-color, primary-text);
+    }
+
+    &:not(:hover) {
+      transition: background-color 150ms $ease-in-sine;
     }
   }
 

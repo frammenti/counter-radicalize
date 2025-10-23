@@ -35,8 +35,12 @@ const disfluencies = computed(() => {
 </template>
 
 <style scoped lang='scss'>
-.feature-list li:first-child {
-  margin-block-end: 0.2rem;
+.feature-list {
+  height: 157px;
+
+ li:first-child {
+    margin-block-end: 0.2rem;
+  }
 }
 .value {
   vertical-align: baseline;
