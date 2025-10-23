@@ -14,18 +14,18 @@ const scrolling = ref<boolean>(false)
 const visible = useElementVisibility(container)
 let lastInteraction: number = Date.now()
 
-watch(active, i => {
+watch([active, visible], ([i, inView], [_, prevView]) => {
   const el = spans.value[i]
-  if (!el || !container.value) return
+  if (!el || !container.value || !inView) return
   if (Date.now() - lastInteraction < 3000 && !locked) return
 
   const offset =
     el.offsetTop - container.value.clientHeight / 2 + el.getBoundingClientRect().height / 2
 
-  doScroll(offset)
+  doScroll(offset, !prevView)
 })
 
-const doScroll = useThrottleFn((offset: number) => {
+const doScroll = useThrottleFn((offset: number, instant: boolean) => {
   const parent = container.value!
   const maxScrollTop = parent.scrollHeight - parent.clientHeight - 2
   const atTop = parent.scrollTop <= 0 && offset <= 0
@@ -33,7 +33,7 @@ const doScroll = useThrottleFn((offset: number) => {
 
   if (locked && (atTop || atBottom)) return
 
-  if (locked && visible.value) {
+  if (locked) {
     scrolling.value = true
     parent.addEventListener(
       'scrollend',
@@ -41,7 +41,7 @@ const doScroll = useThrottleFn((offset: number) => {
       { once: true }
     )
   }
-  requestAnimationFrame (() =>  parent.scrollTo({ top: offset, behavior: visible.value ? 'smooth' : 'instant' }))
+  requestAnimationFrame (() =>  parent.scrollTo({ top: offset, behavior: instant ? 'instant' : 'smooth' }))
 }, 300)
 
 function recordInteraction() {
@@ -159,7 +159,6 @@ const paragraphs = computed(() => {
 <style scoped lang='scss'>
 #transcript-container {
   overflow-y: auto;
-  overscroll-behavior: contain;
   scrollbar-width: thin;
   position: relative;
   scrollbar-gutter: stable;

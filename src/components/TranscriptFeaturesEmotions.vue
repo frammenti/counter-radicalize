@@ -58,6 +58,9 @@ const splitData = computed(() => data ? usePartition(data.emotions) : undefined)
 
 <style scoped lang='scss'>
 @include set-color-legend($emotions);
+.feature-list {
+  height: 321px;
+}
 .emotion:before {
   content: '';
   display: inline-block;
