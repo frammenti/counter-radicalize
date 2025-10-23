@@ -175,10 +175,11 @@ watch(active, (n, o) => {
 
 <template>
 <RovingFocusGroup
-  ref='accordion'
+  :current-tab-stop-id='active ?? null'
   orientation='vertical'
   :prevent-scroll-on-entry-focus='true'
   loop
+  ref='accordion'
   as-child
   >
   <div
@@ -228,7 +229,7 @@ watch(active, (n, o) => {
         :disabled='activeIdx === 0'
         @click.passive='prev'
       >
-        <ChevronUp :size='18' :stroke-width='3.5' role='img' aria-label='Arrow Up' />
+        <ChevronUp :size='18' :stroke-width='3.5' role='presentation' />
       </button>
       <button
         aria-label='Next item'
@@ -236,7 +237,7 @@ watch(active, (n, o) => {
         :disabled='activeIdx === items.length - 1'
         @click.passive='next'
         >
-        <ChevronDown :size='18' :stroke-width='3.5' role='img' aria-label='Arrow Down' />
+        <ChevronDown :size='18' :stroke-width='3.5' role='presentation' />
       </button>
     </div>
   </div>
@@ -261,6 +262,7 @@ $expanded-width-mobile: 70cqi;
   height: 100%;
   pointer-events: none;
   font-size: $fs-base;
+  -webkit-tap-highlight-color: $transparent;
 
   &-item, &-control {
     transition:

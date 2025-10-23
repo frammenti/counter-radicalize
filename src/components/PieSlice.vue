@@ -1,8 +1,9 @@
 <script setup lang='ts'>
 import { ref, computed, watch } from 'vue'
+import { RovingFocusItem } from 'reka-ui'
 import { useOuterSlicePath } from '@/composables/usePieArc'
 import useTransition from '@/composables/useTransition'
-import { clamp, round } from '@/utils'
+import { clamp } from '@/utils'
 
 const {
   value = 0,
@@ -105,21 +106,25 @@ watch(() => value, async () => {
     :pointer-events='["disabled", "done"].includes(state) ? "all" : "none"'
     @mouseenter.passive='active = true'
   />
-  <path
-    key='pie-slice'
-    fill='currentColor'
-    shape-rendering='geometricPrecision'
-    :d='outerSlicePath'
-    :pointer-events='["disabled", "done"].includes(state) ? "visiblePainted" : "none"'
-    style='cursor: pointer;'
-    @mouseenter.passive='active = true'
-    @click.passive='$emit("lock")'
-    @keydown.enter.passive='$emit("lock")'
-    role='graphics-dataregion'
-    :aria-label='label'
-    :aria-datavalues='round(value, 1)'
-    focusable='true'
-  />
+  <RovingFocusItem
+    :tab-stop-id='label?.toLowerCase()'
+    as-child
+  >
+    <path
+      key='pie-slice'
+      fill='currentColor'
+      shape-rendering='geometricPrecision'
+      :d='outerSlicePath'
+      :pointer-events='["disabled", "done"].includes(state) ? "visiblePainted" : "none"'
+      style='cursor: pointer;'
+      @mouseenter.passive='active = true'
+      @click.passive='$emit("lock")'
+      @keydown.enter.passive='$emit("lock")'
+      role='img'
+      :aria-label='label'
+      focusable='true'
+    />
+  </RovingFocusItem>
   <path
     v-if='pattern'
     key='pie-pattern'

@@ -23,6 +23,8 @@ const palette = usePalette(colors)
 
 <template>
 <PlotFigure
+  aria-labelledby='graph-title'
+  aria-details=''
   :axis-options="{
     height: 600,
     marginLeft: 37,

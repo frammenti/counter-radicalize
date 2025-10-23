@@ -56,11 +56,11 @@ const disfluencies = computed(() => {
     text-decoration: underline double 1px;
   }
   #block:after {
-    content: ' ‖';
+    content: '\a0‖';
     font-variation-settings: 'wght' 600;
   }
   [id='word repetition']:after {
-    content: ' x2';
+    content: '\202fx2';
     font-variation-settings: 'wght' 600;
     font-variant: small-caps;
     font-size: 50%;
@@ -70,7 +70,7 @@ const disfluencies = computed(() => {
     text-decoration: underline wavy 1px;
   }
   #prolongation:after {
-    content: ':::';
+    content: '\2060:::';
     font-variation-settings: 'wght' 400;
   }
 }

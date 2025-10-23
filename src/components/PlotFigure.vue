@@ -151,9 +151,16 @@ function setPlaytime() {
 </script>
 
 <template>
-<figure class='plot' :style='{height: options.height + "px"}'>
-  <div ref='axisContainer' class='plot-axis'></div>
-  <div class='plot-scroll'>
+<figure
+  class='plot'
+  :style='{ height: options.height + "px" }'
+>
+  <div
+    ref='axisContainer'
+    class='plot-axis'
+    aria-hidden='true'
+  ></div>
+  <div class='plot-scroll' aria-hidden='true'>
     <div ref='container' class='plot-content'></div>
     <div ref='legendContainer' class='plot-legend'></div>
     <div ref='timeMarkerContainer' class='plot-pointer'></div>

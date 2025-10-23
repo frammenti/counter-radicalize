@@ -113,7 +113,7 @@ watch([playtime, playing], ([t, p]) => {
   >
     <li
       v-for='seg, i in data[rank]'
-      :key='i + 1'
+      :key='i'
     >
       <RovingFocusItem
         :id='`${rank}-${i + 1}-${isEmotion(facet) ? subfacet : facet}`'

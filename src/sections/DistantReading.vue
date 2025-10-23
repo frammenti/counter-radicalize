@@ -27,13 +27,15 @@ const width = computed(() => cardWidth.value > 1072 ? cardWidth.value : 1072)
       <p>Drag to pan the graph. Tap to set playback position.</p>
     </template>
   </Tip>
+  <hgroup>
   <h2>Distant reading</h2>
+  <p id='graph-title'>Trend of emotions, arousal, valence, and fluency in the speech</p>
+  </hgroup>
   <div class='p-card fade' ref='card'>
     <PlotSegments
       :segments='segments'
       :width='width'
       v-cloak
-      aria-role='figure'
     />
   </div>
   <div class='grid cards'>

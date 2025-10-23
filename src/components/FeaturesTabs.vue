@@ -22,7 +22,6 @@ const { labels } = defineProps<{ labels: string[] }>()
     v-for='label in labels'
     :key='label'
     :tab-stop-id='label'
-    :value='label'
     as='button'
     :id='`tab-trigger-${label}`'
     class='button'

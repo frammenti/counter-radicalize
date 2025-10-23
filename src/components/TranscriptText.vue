@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import { ref, computed, useTemplateRef, watch, nextTick } from 'vue'
-import { useThrottleFn } from '@vueuse/core'
+import { useThrottleFn, useElementVisibility } from '@vueuse/core'
 import { playtime, playing, rapid } from '@/stores/state'
 import parsePlaceholders from '@/composables/parsePlaceholders'
 import type { AlignedSegment } from '@/types/segment'
@@ -11,6 +11,7 @@ const active = defineModel('active', { type: Number, required: true })
 const container = useTemplateRef('container')
 const spans = ref<HTMLSpanElement[]>([])
 const scrolling = ref<boolean>(false)
+const visible = useElementVisibility(container)
 let lastInteraction: number = Date.now()
 
 watch(active, i => {
@@ -32,7 +33,7 @@ const doScroll = useThrottleFn((offset: number) => {
 
   if (locked && (atTop || atBottom)) return
 
-  if (locked) {
+  if (locked && visible.value) {
     scrolling.value = true
     parent.addEventListener(
       'scrollend',
@@ -40,7 +41,7 @@ const doScroll = useThrottleFn((offset: number) => {
       { once: true }
     )
   }
-  requestAnimationFrame (() =>  parent.scroll({ top: offset, behavior: 'smooth' }))
+  requestAnimationFrame (() =>  parent.scrollTo({ top: offset, behavior: visible.value ? 'smooth' : 'instant' }))
 }, 300)
 
 function recordInteraction() {
@@ -158,7 +159,7 @@ const paragraphs = computed(() => {
 <style scoped lang='scss'>
 #transcript-container {
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
   scrollbar-width: thin;
   position: relative;
   scrollbar-gutter: stable;
@@ -191,6 +192,9 @@ const paragraphs = computed(() => {
   @include theme(color, primary-text);
 }
 @media (hover: hover) {
+  #transcript-container {
+    overscroll-behavior: auto;
+  }
   .segment:hover {
     @include theme(background-color, shadow);
   }
@@ -214,6 +218,7 @@ const paragraphs = computed(() => {
   .word.repetition:after,
   .prolongation:after {
     display: inline-flex;
+    text-wrap: nowrap;
     @include theme(color, secondary-text);
   }
   .block:before,
@@ -221,10 +226,10 @@ const paragraphs = computed(() => {
     font-variation-settings: 'wght' 600;
   }
   .block:before {
-    content: ' ‖ ';
+    content: '\a0‖\a0';
   }
   .word.repetition:after {
-    content: ' x2';
+    content: '\202fx2';
     font-variant: small-caps;
     font-size: 50%;
     vertical-align: top;
@@ -239,7 +244,7 @@ const paragraphs = computed(() => {
     vertical-align: auto;
   }
   .prolongation:after {
-    content: ':::';
+    content: '\2060:::';
     font-variation-settings: 'wght' 400;
   }
   .active {

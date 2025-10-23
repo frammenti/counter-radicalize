@@ -17,6 +17,7 @@ const metadata = previews[props.href]
   <HoverCardRoot v-if='canHover && metadata' :open-delay='100' :close-delay='150'>
     <HoverCardTrigger
       :href=props.href
+      class='out'
       target='_blank'
       rel='noreferrer noopener'>
       <slot>…</slot>
@@ -51,6 +52,7 @@ const metadata = previews[props.href]
   </HoverCardRoot>
   <a v-else
     :href=props.href
+    class='out'
     target='_blank'
     rel='noreferrer noopener'
   >
@@ -59,6 +61,21 @@ const metadata = previews[props.href]
 </template>
 
 <style scoped lang='scss'>
+.out {
+  text-decoration: underline dotted 1px currentColor;
+  display: inline;
+
+  &:after {
+    content: "↗";
+    display: inline-flex;
+    margin-inline-start: 0.15em;
+    font-family: $font-family-heading;
+    font-variation-settings: 'wght' 900;
+    font-size: 1.2em;
+    line-height: 1;
+  }
+}
+
 :deep(.popover) {
   width: 250px;
   animation-duration: 125ms;
@@ -132,9 +149,10 @@ const metadata = previews[props.href]
       margin: 0;
       margin-inline-start: -3px;
       @include theme(background-color, shadow);
-    }
-    a:hover {
+
+    &:hover {
       @include theme(background-color, shadow-hover);
+    }
     }
   }
 }

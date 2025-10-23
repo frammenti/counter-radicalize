@@ -385,7 +385,7 @@ hr {
   @include theme(color, text, true);
 
   a {
-    @include theme(color, primary-text-visited);
+    @include theme-mix(color, primary, background, 50, 70);
   }
 
   .icon {

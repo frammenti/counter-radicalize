@@ -2,6 +2,7 @@
 
 <script setup lang='ts'>
 import { ref, shallowRef, useTemplateRef, computed, watch, defineAsyncComponent, type ComponentPublicInstance } from 'vue'
+import { RovingFocusGroup } from 'reka-ui'
 import PieSlice from '@/components/PieSlice.vue'
 import usePalette from '@/composables/usePalette'
 import { canHover, isMobile } from '@/stores/state'
@@ -180,41 +181,7 @@ watch(locked, (n, o) => {
 watch(() => items, () => {
   locked.value = undefined
   hovered.value = undefined
-  if (focused.value !== undefined) {
-    getSlice(focused.value).tabIndex = -1
-    focused.value = undefined
-  }
 }, { flush: 'pre' })
-
-// Keyboard accessibility
-const focused = ref<number>()
-
-function getSlice(i: number): SVGPathElement {
-  return slices.value.get(i)!.$el.children[1]
-}
-
-function focusSlice(direction?: 'prev' | 'next') {
-  const i = focused.value ?? 0
-  const last = arcs.value.filter(item => item.value > 0).length - 1
-
-  switch(direction) {
-    case 'prev':
-      if (focused.value === undefined) return
-      getSlice(i).tabIndex = -1
-      focused.value = i === 0 ? last : i - 1
-      break
-    case 'next':
-      if (focused.value === undefined) return
-      getSlice(i).tabIndex = -1
-      focused.value = i === last ? 0 : i + 1
-      break
-    default:
-      focused.value = i
-  }
-  const target: SVGPathElement = getSlice(focused.value)
-  target.tabIndex = 0
-  target.focus({ preventScroll: true })
-}
 </script>
 
 <template>
@@ -250,50 +217,52 @@ function focusSlice(direction?: 'prev' | 'next') {
           </div>
         </div>
     </TooltipCursor>
-    <svg
-      xmlns='http://www.w3.org/2000/svg'
-      viewBox='0 0 100 100'
-      ref='svg'
-      class='pie-segments'
-      @pointermove='(e) => {
-        if (locked !== undefined) return
-        anchor.x = e.offsetX
-        anchor.y = e.offsetY
-      }'
-      @keydown.enter.passive='focusSlice'
-      @keydown.arrow-left.passive='focusSlice("prev")'
-      @keydown.arrow-right.passive='focusSlice("next")'
-      pointer-events='none'
-      overflow='visible'
-      role='graphics-datachart'
-      :aria-label='label'
-      aria-roledescription='pie chart'
-      aria-live='polite'
-      aria-datatype='portion'
-      :tabindex='focused === undefined ? 0 : -1'
+    <RovingFocusGroup
+      :current-tab-stop-id='locked ? items[locked].title : null'
+      orientation='horizontal'
+      :prevent-scroll-on-entry-focus='true'
+      loop
+      as-child
     >
-      <defs>
-        <template v-for='{svg: pattern}, _i in patterns' :key='_i'>
-          <g v-html='pattern'></g>
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        viewBox='0 0 100 100'
+        ref='svg'
+        class='pie-segments'
+        @pointermove='(e) => {
+          if (locked !== undefined) return
+          anchor.x = e.offsetX
+          anchor.y = e.offsetY
+        }'
+        pointer-events='none'
+        overflow='visible'
+        role='figure'
+        :aria-label='label'
+        aria-roledescription='pie chart'
+      >
+        <defs>
+          <template v-for='{svg: pattern}, _i in patterns' :key='_i'>
+            <g v-html='pattern'></g>
+          </template>
+        </defs>
+        <circle class='outline' cx='50' cy='50' r='52' stroke='none' fill='none' pointer-events='none' stroke-width='1px' stroke-linecap='round' stroke-linejoin='round' />
+        <template v-for='item, i in arcs' :key='item.key'>
+          <PieSlice
+            v-if='item.value > 0'
+            :ref="(el: any) => { if (el) slices.set(i, el) }"
+            :active='active === i'
+            v-bind='segmentProps'
+            :label='capitalize(item.title)'
+            :color='item.color'
+            :value='arcSize(item.value)'
+            :rotate='arcOffset(i)'
+            :pattern='item.pattern'
+            @update:active='isActive => hovered = isActive ? i : undefined'
+            @lock='locked = i'
+          />
         </template>
-      </defs>
-      <circle class='outline' cx='50' cy='50' r='52' stroke='none' fill='none' pointer-events='none' stroke-width='1px' stroke-linecap='round' stroke-linejoin='round' />
-      <template v-for='item, i in arcs' :key='item.key'>
-        <PieSlice
-          v-if='item.value > 0'
-          :ref="(el: any) => { if (el) slices.set(i, el) }"
-          :active='active === i'
-          v-bind='segmentProps'
-          :label='capitalize(item.title)'
-          :color='item.color'
-          :value='arcSize(item.value)'
-          :rotate='arcOffset(i)'
-          :pattern='item.pattern'
-          @update:active='isActive => hovered = isActive ? i : undefined'
-          @lock='locked = i'
-        />
-      </template>
-    </svg>
+      </svg>
+    </RovingFocusGroup>
   </div>
 </div>
 </template>
@@ -307,6 +276,7 @@ function focusSlice(direction?: 'prev' | 'next') {
   text-align: center;
   width: 100%;
   height: 100%;
+  -webkit-tap-highlight-color: $transparent;
 }
 .pie-content {
   width: 100%;

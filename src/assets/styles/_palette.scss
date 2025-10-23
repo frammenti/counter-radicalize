@@ -29,7 +29,7 @@ $primary-text-color:
   $lilac;
 
 $primary-text-visited-color:
-  color.scale($orchid, $lightness: 30%, $chroma: 5%)
+  color.scale($orchid, $lightness: 25%, $chroma: 10%)
   color.scale($lilac, $lightness: -20%, $chroma: 20%);
 
 $primary-color:

@@ -31,13 +31,13 @@ const { stop } = useIntersectionObserver(
 <template>
 <ToastRoot
   v-model:open='isVisible'
-  :duration='30000'
+  :duration='20000'
   type='background'
   class='toast-root p-card'
   as='div'
 >
   <ToastTitle as='p' class='toast-title' v-if='title'>{{ title }}</ToastTitle>
-  <ToastDescription as='div' class='toast-desc'>
+  <ToastDescription as='div' class='toast-desc' @vue:mounted='stop'>
     <slot>…</slot>
   </ToastDescription>
   <ToastClose class='toast-close button-slim'>Understood</ToastClose>
