@@ -91,6 +91,7 @@ audio::-webkit-media-controls-panel {
 
 $size: $space-2xl-3xl;
 $margin: calc(var(--gutter) * 1.2);
+
 .audio-button-container {
   position: absolute;
   top: 100lvh;
@@ -105,7 +106,7 @@ $margin: calc(var(--gutter) * 1.2);
     margin-block-end: calc($margin * 1.5);
     height: $size;
     width: $size;
-    top: calc(100lvh - ($size + $margin * 1.5));
+    top: calc(100dvh - ($size + $margin * 1.5 + env(safe-area-inset-bottom)));
     z-index: 30;
     pointer-events: all;
   }
