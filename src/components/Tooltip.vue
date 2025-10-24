@@ -1,49 +1,58 @@
 <script setup lang='ts'>
-import { ref } from 'vue'
-import { TooltipArrow, TooltipContent, TooltipRoot, TooltipTrigger } from 'reka-ui'
+import {
+  HoverCardContent,
+  HoverCardRoot,
+  HoverCardTrigger,
+  HoverCardArrow
+} from 'reka-ui'
 
-
-const open = ref<boolean>(false)
-
-function toggle() {
-  if (!open.value) open.value = true
-}
-
+const { label = 'tooltip' } = defineProps<{ label?: string }>()
 </script>
 
 <template>
-<TooltipRoot v-model:open='open'>
-  <TooltipTrigger as-child @click='toggle'>
-    <span>
+<HoverCardRoot :open-delay='100' :close-delay='150'>
+  <HoverCardTrigger as-child>
+    <span
+      class='tooltip-trigger'
+      tabindex='0'
+      aria-label='Info'
+      :aria-describedby='`${label}-content`'
+    >
       <slot>…</slot>
     </span>
-  </TooltipTrigger>
-  <TooltipContent
+  </HoverCardTrigger>
+  <HoverCardContent
     side='top'
     align='center'
     position-strategy='absolute'
-    :avoid-collisions='false'
-    :collision-padding='{ top: 20 }'
-    hide-when-detached
+    :disable-update-on-layout-shift='true'
     class='tooltip card invert'
+    :id='`${label}-content`'
+    role='tooltip'
   >
     <slot name='content'>…</slot>
-    <TooltipArrow
+    <HoverCardArrow
       class='arrow'
       :width='10'
       :height='6'
       :rounded='true'
     />
-  </TooltipContent>
-</TooltipRoot>
+  </HoverCardContent>
+</HoverCardRoot>
 </template>
 
 <style scoped lang='scss'>
+.tooltip-trigger {
+  min-width: 1lh;
+  border-radius: $radius-xl;
+}
 :deep(.tooltip) {
   animation-duration: 100ms;
   animation-timing-function: ease-in-out;
   will-change: transform opacity;
   border-radius: $radius-l;
+  pointer-events: all;
+  user-select: text;
 
   &[data-side='top'] {
     animation-name: fade-in-slide-up;

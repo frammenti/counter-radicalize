@@ -127,7 +127,7 @@ function toggle(item: AccordionItemState) {
     item.close()
     active.value = undefined
   } else {
-    const prev = items.find(i => i.value === active.value)
+    const prev = active.value ? items[pos.get(active.value)!] : undefined
     prev?.close()
     item.open()
     active.value = item.value
@@ -300,7 +300,7 @@ $expanded-width-mobile: 70cqi;
     }
 
     &:not(:hover) {
-      transition: background-color 150ms $ease-in-sine;
+      transition: none;
     }
   }
 

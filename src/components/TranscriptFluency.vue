@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import { computed } from 'vue'
-import TranscriptFeaturesItem from '@/components/TranscriptFeaturesItem.vue'
+import TranscriptItem from '@/components/TranscriptItem.vue'
 import { rapid } from '@/stores/state'
 import { dummy, type AlignedSegment } from '@/types/segment'
 import { capitalize } from '@/utils'
@@ -17,7 +17,7 @@ const disfluencies = computed(() => {
 <template>
 <ul class='feature-list'>
   <li>
-    <TranscriptFeaturesItem
+    <TranscriptItem
       label='Fluency'
       :value='data ? data.fluency : dummy.fluency'
     />

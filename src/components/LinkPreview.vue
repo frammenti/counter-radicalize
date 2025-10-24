@@ -26,9 +26,9 @@ const metadata = previews[props.href]
       class='popover card'
       align='center'
       side='top'
-      positionStrategy='absolute'
-      :align-flip=true
-      :prioritize-position=true
+      position-strategy='absolute'
+      :align-flip='true'
+      :prioritize-position='true'
       :side-offset=5
       :collision-padding='{ top: 64 }'
     >

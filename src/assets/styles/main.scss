@@ -83,6 +83,10 @@ body {
   @include theme(background-color, background);
 }
 
+main {
+  position: relative;
+}
+
 // Header
 header {
   position: fixed;
@@ -181,6 +185,7 @@ a {
   margin: 0;
   border: 0 solid;
   cursor: pointer;
+  touch-action: manipulation;
   -webkit-tap-highlight-color: $transparent;
 }
 
@@ -214,7 +219,7 @@ a {
     &:focus {
       @include theme(background-color, primary-hover);
     }
-    &:active {
+    &[aria-pressed='true'] {
       @include theme(background-color, primary-active);
     }
   }
@@ -225,7 +230,7 @@ a {
     &:focus {
       @include theme(background-color, secondary-hover);
     }
-    &:active {
+    &[aria-pressed='true'] {
       @include theme(background-color, secondary-active);
     }
   }

@@ -129,6 +129,10 @@ $title-mobile: calc($fs-m * 1.5 + $space-s);
 $rank-height: calc(2 * var(--card-padding) + $title + 3 * ($button));
 $rank-height-mobile: calc(2 * var(--card-padding) + $title-mobile + 3 * ($button-mobile));
 
+#linguistic-features {
+  touch-action: pan-x;
+}
+
 .grid {
   pointer-events: none;
 }

@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import { computed } from 'vue'
-import TranscriptFeaturesItem from '@/components/TranscriptFeaturesItem.vue'
+import TranscriptItem from '@/components/TranscriptItem.vue'
 import usePartition from '@/composables/usePartition'
 import { rapid } from '@/stores/state'
 import { dummy, type AlignedSegment } from '@/types/segment'
@@ -24,7 +24,7 @@ const splitData = computed(() => data ? usePartition(data.emotions) : undefined)
       :class='item[0]'
       class='emotion'
     >
-      <TranscriptFeaturesItem
+      <TranscriptItem
         :label='item[0]'
         :value='item[1]'
       />
@@ -36,7 +36,7 @@ const splitData = computed(() => data ? usePartition(data.emotions) : undefined)
       :class='item[0]'
       class='emotion extra'
     >
-      <TranscriptFeaturesItem
+      <TranscriptItem
         :label='item[0]'
         :value='item[1]'
       />
@@ -49,7 +49,7 @@ const splitData = computed(() => data ? usePartition(data.emotions) : undefined)
       :class='k'
       class='emotion'
     >
-      <TranscriptFeaturesItem :label='k' :value='v' />
+      <TranscriptItem :label='k' :value='v' />
     </li>
     <li style='visibility: hidden;'><hr /></li>
   </template>

@@ -45,18 +45,6 @@ const { stop } = useIntersectionObserver(
 </template>
 
 <style lang='scss'>
-.toast-viewport {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  z-index: 50;
-  padding: var(--gutter);
-  width: 100%;
-  display: flex;
-  flex-flow: column-reverse;
-  align-items: center;
-  gap: var(--gutter);
-}
 .toast-root {
   width: 100%;
   line-height: 1.4;

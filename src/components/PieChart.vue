@@ -49,6 +49,7 @@ const {
 }>()
 
 const segmentProps = {
+  tooltip,
   gap,
   innerCut,
   rounded,
@@ -202,7 +203,12 @@ watch(() => items, () => {
       :min-width='`${tooltipWidth}px`'
       :height='`${tooltipHeight}px`'
     >
-        <div class='tooltip-content' v-if='active !== undefined'>
+        <div
+          v-if='active !== undefined'
+          :id='`pie-chart-${arcs[active].title.replace(" ", "-")}-tooltip`'
+          class='tooltip-content'
+          role='tooltip'
+        >
           <div class='tooltip-legend'
             :style='{
               backgroundColor: arcs[active].color,
@@ -238,7 +244,7 @@ watch(() => items, () => {
         overflow='visible'
         role='figure'
         :aria-label='label'
-        aria-roledescription='pie chart'
+        aria-roledescription='Pie chart'
       >
         <defs>
           <template v-for='{svg: pattern}, _i in patterns' :key='_i'>

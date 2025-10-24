@@ -10,6 +10,7 @@ const {
   label,
   color,
   pattern,
+  tooltip,
   gap = 0,
   innerCut = 0,
   rounded = 0,
@@ -20,9 +21,10 @@ const {
   animation = (t: number) => (t ** 3)
 } = defineProps<{
   value?: number
-  label?: string
+  label: string
   color: string
   pattern?: string
+  tooltip: boolean
   gap?: number
   innerCut?: number
   rounded?: number
@@ -107,7 +109,7 @@ watch(() => value, async () => {
     @mouseenter.passive='active = true'
   />
   <RovingFocusItem
-    :tab-stop-id='label?.toLowerCase()'
+    :tab-stop-id='label.toLowerCase()'
     as-child
   >
     <path
@@ -122,6 +124,7 @@ watch(() => value, async () => {
       @keydown.enter.passive='$emit("lock")'
       role='img'
       :aria-label='label'
+      :aria-describedby='tooltip ? `pie-chart-${label.toLowerCase().replace(" ", "-")}-tooltip` : undefined'
       focusable='true'
     />
   </RovingFocusItem>

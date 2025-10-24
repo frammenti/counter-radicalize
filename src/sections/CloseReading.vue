@@ -1,22 +1,22 @@
 <script setup lang='ts'>
 import { ref, useTemplateRef, defineAsyncComponent, computed } from 'vue'
 import TranscriptPlayer from '@/components/TranscriptPlayer.vue'
-import TranscriptFeaturesEmotions from '@/components/TranscriptFeaturesEmotions.vue'
-import TranscriptFeaturesDimensions from '@/components/TranscriptFeaturesDimensions.vue'
-import TranscriptFeaturesFluency from '@/components/TranscriptFeaturesFluency.vue'
+import TranscriptEmotions from '@/components/TranscriptEmotions.vue'
+import TranscriptDimensions from '@/components/TranscriptDimensions.vue'
+import TranscriptFluency from '@/components/TranscriptFluency.vue'
 import KeyboardShortcut from '@/components/KeyboardShortcut.vue'
 import useActiveSegment from '@/composables/useActiveSegment'
 import usePlaybackShortcuts from '@/composables/usePlaybackShortcuts'
+import { hasMouse } from '@/stores/state'
 import type { AlignedSegment } from '@/types/segment'
 
 const Tip = defineAsyncComponent(() => import('@/components/Tip.vue'))
 const Tooltip = defineAsyncComponent(() => import('@/components/Tooltip.vue'))
 const Toggle = defineAsyncComponent(() => import('@/components/Toggle.vue'))
 const TranscriptText = defineAsyncComponent(() => import('@/components/TranscriptText.vue'))
-const TranscriptFeaturesCanvas = defineAsyncComponent(() => import('@/components/TranscriptFeaturesCanvas.vue'))
+const TranscriptCanvas = defineAsyncComponent(() => import('@/components/TranscriptCanvas.vue'))
 
 const { segments } = defineProps<{ segments: AlignedSegment[] }>()
-const hasKeyboard = window.matchMedia('(pointer: fine)').matches
 const section = useTemplateRef('section')
 const locked = ref<boolean>(true)
 const annotated = ref<boolean>(false)
@@ -26,14 +26,14 @@ const active = useActiveSegment(segments)
 const data = computed(() => segments[active.value] )
 
 // Enable shortcuts only when a physical keyboard is available
-if (hasKeyboard) {
+if (hasMouse.value) {
   usePlaybackShortcuts(segments, active)
 }
 </script>
 
 <template>
 <section id='close-reading' class='paginated' aria-label='Close reading' ref='section' :annotated>
-  <Tip v-if='hasKeyboard' :anchor='section' title='Keyboard shortcuts'>
+  <Tip v-if='hasMouse' :anchor='section' title='Keyboard shortcuts'>
     <div class='shortcuts'>
     <KeyboardShortcut
       modifier='meta'
@@ -89,15 +89,15 @@ if (hasKeyboard) {
   </section>
   <section id='transcript-features' class='grid cards' aria-label='Transcript Features'>
     <section class='p-card fade' aria-label='Emotion Circle'>
-      <TranscriptFeaturesCanvas :data='data' />
+      <TranscriptCanvas :data='data' />
     </section>
     <aside class='p-card no-contain' aria-labelledby='emotions'>
       <h3 id='emotions'>Emotions</h3>
-      <TranscriptFeaturesEmotions :data='data' />
+      <TranscriptEmotions :data='data' />
     </aside>
     <aside class='p-card no-contain' aria-labelledby='dimensions'>
       <h3 id='dimensions'>Dimensions</h3>
-      <TranscriptFeaturesDimensions :data='data' />
+      <TranscriptDimensions :data='data' />
     </aside>
     <aside class='p-card no-contain' aria-labelledby='speech-flow' style='position: relative;'>
       <h3 id='speech-flow'>
@@ -111,7 +111,7 @@ if (hasKeyboard) {
           </template>
         </Tooltip>
       </h3>
-      <TranscriptFeaturesFluency :data='data' />
+      <TranscriptFluency :data='data' />
     </aside>
   </section>
 </section>

@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import { ref, reactive, computed, watch } from 'vue'
 import { RovingFocusGroup, RovingFocusItem } from 'reka-ui'
-import SegmentButton from '@/components/SegmentButton.vue'
+import FeaturesRankButton from '@/components/FeaturesRankButton.vue'
 import { active } from '@/composables/useActiveSegment'
 import { playtime, playing } from '@/stores/state'
 import { round, capitalize } from '@/utils'
@@ -120,7 +120,7 @@ watch([playtime, playing], ([t, p]) => {
         :tab-stop-id='`${i + 1}`'
         as-child
       >
-        <SegmentButton
+        <FeaturesRankButton
           :seg='seg'
           :state='states[seg.index]'
           @click.passive='setActive(seg)'
@@ -204,7 +204,12 @@ watch([playtime, playing], ([t, p]) => {
         @include theme(color, text);
       }
 
-      &:hover { .percentage { display: inline; } }
+      &:hover {
+        .percentage {
+          display: inline;
+          animation: fade-in-slide-right 200ms;
+        }
+      }
     }
   }
 }
@@ -225,7 +230,13 @@ watch([playtime, playing], ([t, p]) => {
         max-width: 900px;
         margin-inline: auto;
 
-        .percentage { display: inline; }
+        .percentage {
+          display: inline;
+        }
+
+        &:hover .percentage {
+          animation: none;
+        }
       }
     }
   }

@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import { useTemplateRef, provide, ref } from 'vue'
 import { useIntersectionObserver } from '@vueuse/core'
-import { TooltipProvider, ToastProvider, ToastViewport } from 'reka-ui'
+import { ToastProvider, ToastViewport } from 'reka-ui'
 import AppHeader from '@/components/AppHeader.vue'
 import AppFooter from '@/components/AppFooter.vue'
 import Hero from '@/sections/Hero.vue'
@@ -23,42 +23,53 @@ useIntersectionObserver(landing, ([entry], _) => {
 
 <template>
 <ToastProvider label='Info'>
-  <TooltipProvider :delay-duration='100' disable-closing-trigger>
-    <ToastViewport
-      as='aside'
-      :hotkey="['i']"
-      :label='((hotkey: string) => `Info (${hotkey})`)'
-      class='toast-viewport'
-    />
-    <a id='skip' class='button button-primary' href='#about'>Skip to content</a>
-    <AppHeader :opaque='!heroVisible' />
-    <main>
-      <div class='landing' ref='landing'>
-        <div class='wrapper full-page'>
-          <Hero v-once/>
-        </div>
+  <ToastViewport
+    :hotkey="['i']"
+    :label='((hotkey: string) => `Info (${hotkey})`)'
+    id='viewport'
+    class='toast-viewport'
+  />
+  <a id='skip' class='button button-primary' href='#about'>Skip to content</a>
+  <AppHeader :opaque='!heroVisible' />
+  <main>
+    <div class='landing' ref='landing'>
+      <div class='wrapper full-page'>
+        <Hero v-once/>
       </div>
-      <article>
-        <div class='wrapper'>
-          <About v-once />
-        </div>
-        <div class='wrapper'>
-          <CloseReading :segments='segments' v-once />
-        </div>
-        <div class='wrapper'>
-          <DistantReading :segments='segments' v-once />
-        </div>
-        <div class='wrapper'>
-          <LinguisticFeatures v-once />
-        </div>
-      </article>
-    </main>
-    <AppFooter v-once />
-  </TooltipProvider>
+    </div>
+    <article>
+      <div class='wrapper'>
+        <About v-once />
+      </div>
+      <div class='wrapper'>
+        <CloseReading :segments='segments' v-once />
+      </div>
+      <div class='wrapper'>
+        <DistantReading :segments='segments' v-once />
+      </div>
+      <div class='wrapper'>
+        <LinguisticFeatures v-once />
+      </div>
+    </article>
+  </main>
+  <AppFooter v-once />
 </ToastProvider>
 </template>
 
-<style scoped lang='scss'>
+<style lang='scss'>
+.toast-viewport {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 50;
+  margin: 0;
+  padding: var(--gutter);
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: var(--gutter);
+}
 @include set-background('.landing');
 .landing {
   background-repeat: no-repeat;
