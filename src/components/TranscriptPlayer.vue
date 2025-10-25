@@ -106,7 +106,7 @@ $margin: calc(var(--gutter) * 1.2);
     margin-block-end: calc($margin * 1.5);
     height: $size;
     width: $size;
-    top: calc(100dvh - ($size + $margin * 1.5 + env(safe-area-inset-bottom)));
+    top: calc(100svh - ($size + $margin * 1.5 + env(safe-area-inset-bottom, 0)));
     z-index: 30;
     pointer-events: all;
   }
